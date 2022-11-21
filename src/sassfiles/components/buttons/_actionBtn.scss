@@ -1,0 +1,15 @@
+@use "../../colors" as *;
+
+.JoinOurListBtn {
+  background: $btncolor;
+  border-radius: 10px;
+  height: 3rem;
+  width: 10rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: $btntextcolor;
+  //   font-weight: 500;
+  //   font-size: 20px;
+}

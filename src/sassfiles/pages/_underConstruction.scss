@@ -1,0 +1,19 @@
+@use "../colors" as *;
+@use "../components/buttons/actionBtn" as *;
+
+.underconstructionPageBg {
+  background-color: $terbgcolor;
+}
+
+.paragraphColor {
+  color: $prytextcolor;
+  font-weight: 600 !important;
+}
+.headerFontColor {
+  color: $sectextcolor;
+}
+.paragraphText {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: "Comfortaa", cursive;
+}
