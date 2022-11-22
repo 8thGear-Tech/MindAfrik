@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 //internal import
-import mindafrikfulllogo from "../../src/assets/images/logo/mindafrik-web.png";
+import mindafrikfulllogo from "../../src/assets/images/logo/mindafrik-full-logo-250.png";
 
 //icons
 import { FacebookIcon } from "../assets/icons/socialIcons";
@@ -18,7 +18,7 @@ import { Twittericon } from "../assets/icons/socialIcons";
 export const NavbarSection = () => {
   return (
     <>
-      <Navbar expand="lg">
+      <Navbar expand="lg" className="navbar-light">
         <Container fluid>
           <Navbar.Brand href="#">
             <img
@@ -27,8 +27,11 @@ export const NavbarSection = () => {
               alt="MindAfrik logo"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Toggle
+            className="navbar-toggler btn"
+            aria-controls="navbarScroll"
+          />
+          <Navbar.Collapse id="navbarScroll" className="text-center">
             <Nav
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}

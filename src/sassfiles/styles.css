@@ -58,6 +58,15 @@ p {
   color: #ffffff;
 }
 
+.navbar-light .navbar-toggler {
+  border-color: transparent !important;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .underconstructionPageBg {
   background-color: rgba(215, 232, 239, 0.5);
 }
