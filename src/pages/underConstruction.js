@@ -22,10 +22,10 @@ const UnderConstruction = () => {
 const SectionOne = () => {
   return (
     <>
-      <div className="px-4 container-fluid underconstructionPageBg py-4">
+      <div className="px-4 container-fluid underconstructionPageBg pb-4">
         <NavbarSection />
         <div className="row align-items-center justify-content-center mt-4">
-          <div className="col-lg-6 col-md-7 col-sm-12">
+          <div className="col-lg-6 col-md-7 col-sm-12 ">
             <h1 className="headerFontColor">Launching soon!</h1>
             <h4 className="headerFontColor">Thank you for visiting.</h4>
             <p className="d-flex">

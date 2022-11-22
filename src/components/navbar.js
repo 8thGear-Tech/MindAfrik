@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 //internal import
-import mindafrikfulllogo from "../../src/assets/images/logo/mindafrik-full-logo.png";
+import mindafrikfulllogo from "../../src/assets/images/logo/mindafrik-web.png";
 
 //icons
 import { FacebookIcon } from "../assets/icons/socialIcons";
@@ -23,9 +23,6 @@ export const NavbarSection = () => {
           <Navbar.Brand href="#">
             <img
               src={mindafrikfulllogo}
-              style={{ maxWidth: "30%", maxHeight: "30%" }}
-              // width="30"
-              // height="30"
               className="d-inline-block align-top"
               alt="MindAfrik logo"
             />
@@ -41,15 +38,6 @@ export const NavbarSection = () => {
             <Instagramicon />
             <LinkedInicon />
             <Twittericon />
-            {/* <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
