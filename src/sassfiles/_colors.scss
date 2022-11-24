@@ -2,6 +2,15 @@ $prytextcolor: #000000;
 $sectextcolor: #0b78af;
 $btncolor: #0060c6;
 $btntextcolor: #ffffff;
-$prybgcolor: #ffffff;
-// $secbgcolor:
-$terbgcolor: rgba(215, 232, 239, 0.5);
+$prybgcolor: rgba(129, 229, 140, 0.5);
+$secbgcolor: rgba(215, 232, 239, 0.5);
+$terbgcolor: rgba(215, 232, 239, 0.3);
+
+$dashboardcolor: linear-gradient(
+    0deg,
+    rgba(20, 129, 92, 0.5),
+    rgba(20, 129, 92, 0.5)
+  ),
+  linear-gradient(0deg, #058547, #058547),
+  linear-gradient(0deg, rgba(59, 192, 142, 0.1), rgba(59, 192, 142, 0.1)),
+  #09cd1e;
