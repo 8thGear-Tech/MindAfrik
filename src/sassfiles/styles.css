@@ -18,6 +18,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -46,11 +47,11 @@ p {
   font-family: "Comfortaa", cursive;
 }
 
-.JoinOurListBtn {
+.BookaSessionBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 3rem;
-  width: 10rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
@@ -67,17 +68,13 @@ p {
   box-shadow: none;
 }
 
-.underconstructionPageBg {
-  background-color: rgba(215, 232, 239, 0.5);
-}
-
 .paragraphColor {
   color: #000000;
   font-weight: 600 !important;
 }
 
 .headerFontColor {
-  color: #0b78af;
+  color: #08ba47;
 }
 
 .paragraphText {

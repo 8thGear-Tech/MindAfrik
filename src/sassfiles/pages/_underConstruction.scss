@@ -1,16 +1,16 @@
 @use "../colors" as *;
 @use "../components/buttons/actionBtn" as *;
 @use "../components/navbar/guestNavbar.";
-.underconstructionPageBg {
-  background-color: $terbgcolor;
-}
+// .underconstructionPageBg {
+//   background-color: $terbgcolor;
+// }
 
 .paragraphColor {
   color: $prytextcolor;
   font-weight: 600 !important;
 }
 .headerFontColor {
-  color: $sectextcolor;
+  color: $tertextcolor;
 }
 .paragraphText {
   font-size: 1rem;
