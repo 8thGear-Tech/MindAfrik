@@ -66,8 +66,8 @@ const SectionOne = () => {
               <div className="d-flex justify-content-center">
                 {" "}
                 <PhoneIcon />
-                <a href="tel:2348133199953" className="text-decoration-none">
-                  <p className="paragraphColor mx-3">+2348133199953</p>
+                <a href="tel:2349131862169" className="text-decoration-none">
+                  <p className="paragraphColor mx-3">+2349131862169</p>
                 </a>
               </div>
               <div className="d-flex justify-content-center">
