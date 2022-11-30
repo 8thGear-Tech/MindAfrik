@@ -1,5 +1,5 @@
 //internal import
-import { NavbarSection } from "../components/navbar";
+import { NavbarSection } from "../components/guestNavbar";
 
 //buttons
 import { BookaSessionBtn } from "../components/Buttons/actionBtn";
