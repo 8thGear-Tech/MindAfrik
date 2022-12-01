@@ -7,13 +7,13 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 //internal import
-import mindafrikfulllogo from "../../src/assets/images/logo/mindafrik-full-logo-250.png";
+import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
 
 //icons
-import { FacebookIcon } from "../assets/icons/socialIcons";
-import { Instagramicon } from "../assets/icons/socialIcons";
-import { LinkedInicon } from "../assets/icons/socialIcons";
-import { Twittericon } from "../assets/icons/socialIcons";
+import { FacebookIcon } from "../../assets/icons/socialIcons";
+import { Instagramicon } from "../../assets/icons/socialIcons";
+import { LinkedInicon } from "../../assets/icons/socialIcons";
+import { Twittericon } from "../../assets/icons/socialIcons";
 
 export const NavbarSection = () => {
   return (

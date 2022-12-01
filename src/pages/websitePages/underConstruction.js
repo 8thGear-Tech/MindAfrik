@@ -1,15 +1,15 @@
 //internal import
-import { NavbarSection } from "../components/guestNavbar";
+import { NavbarSection } from "../../components/Navbar/guestNavbar";
 
 //buttons
-import { BookaSessionBtn } from "../components/Buttons/actionBtn";
+import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
 
 //images
-import underconstructionhero from "../assets/images/hero/underconstructionhero.png";
+import underconstructionhero from "../../assets/images/hero/underconstructionhero.png";
 
 //icons
-import { PhoneIcon } from "../assets/icons/socialIcons";
-import { Mailicon } from "../assets/icons/socialIcons";
+import { PhoneIcon } from "../../assets/icons/socialIcons";
+import { Mailicon } from "../../assets/icons/socialIcons";
 
 const UnderConstruction = () => {
   return (

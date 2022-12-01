@@ -1,18 +1,35 @@
 //external import
-// Send_Btn
-// BookNow_Btn
-// Proceed_Btn
-// Continue_Btn
-// Submit_Btn
-// GetInTouch_Btn
-// Save_Btn
-//Take-A-Test_Btn
-// StartYourAssessment_Btn
-// TakeAssessment_Btn
-// Book-a-session-now_Btn
-// schedule-a-session_Btn
-// start-a-discussion_Btn
-// startChatting_Btn
+//Website Buttons
+// SendBtn
+// BookNowBtn
+// ProceedBtn
+// GetInTouchBtn
+// SaveBtn
+//TakeATestBtn
+// StartYourAssessmentBtn
+// TakeAssessmentBtn
+// BookASessionBtn
+//ContactBtn
+//SubscribeBtn
+
+// DashboardButtons
+// BookASessionNowBtn
+// ScheduleASessionBtn
+// StartADiscussionBtn
+// StartChattingBtn
+//SaveBtn
+// ContinueBtn
+//AddToCalendar
+//ViewProfile
+// SubmitBtn
+//CheckStatus
+//RemoveNote
+//EditNote
+//ViewProfile
+// EditProfile
+// RemoveUser
+// AddUser
+
 import Button from "react-bootstrap/Button";
 
 export const BookaSessionBtn = () => {
