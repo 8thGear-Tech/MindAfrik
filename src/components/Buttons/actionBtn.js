@@ -1,5 +1,6 @@
 //external import
 //Website Buttons
+
 // SendBtn
 // BookNowBtn
 // ProceedBtn
@@ -22,6 +23,7 @@
 //AddToCalendar
 //ViewProfile
 // SubmitBtn
+
 //CheckStatus
 //RemoveNote
 //EditNote
@@ -38,6 +40,37 @@ export const BookaSessionBtn = () => {
       <a href="https://bit.ly/MindafrikCounsellingSession" target="_blank">
         {" "}
         <Button className="BookaSessionBtn">Book a Session</Button>
+      </a>
+    </>
+  );
+};
+//Opeyemi
+export const CheckStatusBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="CheckStatusBtn">Check Status</Button>
+      </a>
+    </>
+  );
+};
+export const RemoveNoteBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="RemoveNoteBtn">Remove Note</Button>
+      </a>
+    </>
+  );
+};
+export const EditNoteBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="EditNoteBtn">Edit Note</Button>
       </a>
     </>
   );

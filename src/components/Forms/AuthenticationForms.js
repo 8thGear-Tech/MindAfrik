@@ -1,4 +1,5 @@
 // SignInForm
-// ForgotPassword
-// SignUpAsCounselor
-// SignUpAsCounselee
+// ForgotPasswordForm
+// SignUpAsCounselorForm
+// SignUpAsCounseleeForm
+//SubscribeToNewsletterForm

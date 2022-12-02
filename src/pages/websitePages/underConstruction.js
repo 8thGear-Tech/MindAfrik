@@ -2,7 +2,11 @@
 import { NavbarSection } from "../../components/Navbar/guestNavbar";
 
 //buttons
-import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
+import {
+  BookaSessionBtn,
+  CheckStatusBtn,
+  RemoveNoteBtn,
+} from "../../components/Buttons/actionBtn";
 
 //images
 import underconstructionhero from "../../assets/images/hero/underconstructionhero.png";

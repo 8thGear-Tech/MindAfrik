@@ -1,15 +1,28 @@
 @use "../../colors" as *;
 
-.BookaSessionBtn {
+@mixin Btns {
   background: $btncolor;
   border-radius: 10px;
-  height: 3rem;
-  width: 11.5rem;
-  font-weight: 500;
+  height: 2.7rem;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: $btntextcolor;
-  //   font-weight: 500;
-  //   font-size: 20px;
+}
+.BookaSessionBtn {
+  @include Btns;
+  width: 11.5rem;
+}
+.CheckStatusBtn {
+  @include Btns;
+  width: 10.2rem;
+}
+.RemoveNoteBtn {
+  @include Btns;
+  width: 10.5rem;
+}
+.EditNoteBtn {
+  @include Btns;
+  width: 10.5rem;
 }
