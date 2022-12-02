@@ -75,3 +75,43 @@ export const EditNoteBtn = () => {
     </>
   );
 };
+export const ViewProfileBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="ViewProfileBtn">View Profile</Button>
+      </a>
+    </>
+  );
+};
+export const EditProfileBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="EditProfileBtn">Edit Profile</Button>
+      </a>
+    </>
+  );
+};
+export const RemoveUserBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="RemoveUserBtn">Remove User</Button>
+      </a>
+    </>
+  );
+};
+export const AddUserBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="AddUserBtn">Add User</Button>
+      </a>
+    </>
+  );
+};

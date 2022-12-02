@@ -92,7 +92,55 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 10.5rem;
+  width: 8.4rem;
+}
+
+.ViewProfileBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 9.5rem;
+}
+
+.EditProfileBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8.8rem;
+}
+
+.RemoveUserBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10.4rem;
+}
+
+.AddUserBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 7.8rem;
 }
 
 .navbar-light .navbar-toggler {

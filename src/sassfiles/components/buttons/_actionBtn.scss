@@ -24,5 +24,21 @@
 }
 .EditNoteBtn {
   @include Btns;
-  width: 10.5rem;
+  width: 8.4rem;
+}
+.ViewProfileBtn {
+  @include Btns;
+  width: 9.5rem;
+}
+.EditProfileBtn {
+  @include Btns;
+  width: 8.8rem;
+}
+.RemoveUserBtn {
+  @include Btns;
+  width: 10.4rem;
+}
+.AddUserBtn {
+  @include Btns;
+  width: 7.8rem;
 }
