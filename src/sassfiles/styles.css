@@ -50,36 +50,96 @@ p {
 .BookaSessionBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 3rem;
-  width: 11.5rem;
+  height: 2.7rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   color: #ffffff;
+  width: 11.5rem;
 }
 
-.navbar-light .navbar-toggler {
-  border-color: transparent !important;
+.sendBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 8rem;
 }
 
-.btn:focus {
-  outline: none;
-  box-shadow: none;
+.bookNowBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 9rem;
 }
 
-.paragraphColor {
-  color: #000000;
-  font-weight: 600 !important;
+.proceedBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 8rem;
 }
 
-.headerFontColor {
-  color: #08ba47;
+.getInTouchBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 10rem;
 }
 
-.paragraphText {
-  font-size: 1rem;
-  font-weight: 300;
-  font-family: "Comfortaa", cursive;
+.saveBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.takeATestBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 10rem;
+}
+
+.startYourAssessmentBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  width: 20rem;
 }
 /*# sourceMappingURL=styles.css.map */

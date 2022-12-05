@@ -1,15 +1,46 @@
 @use "../../colors" as *;
 
-.BookaSessionBtn {
+@mixin reoccuredBtnProperties {
   background: $btncolor;
   border-radius: 10px;
-  height: 3rem;
-  width: 11.5rem;
+  height: 2.7rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   color: $btntextcolor;
-  //   font-weight: 500;
-  //   font-size: 20px;
+}
+
+.BookaSessionBtn {
+  @include reoccuredBtnProperties;
+  width: 11.5rem;
+}
+.sendBtn {
+  @include reoccuredBtnProperties;
+  width: 8rem;
+}
+.bookNowBtn {
+  @include reoccuredBtnProperties;
+  width: 9rem;
+}
+.proceedBtn {
+  @include reoccuredBtnProperties;
+  width: 8rem;
+}
+.getInTouchBtn {
+  @include reoccuredBtnProperties;
+  width: 10rem;
+}
+.saveBtn {
+  @include reoccuredBtnProperties;
+  width: 8rem;
+}
+
+.takeATestBtn {
+  @include reoccuredBtnProperties;
+  width: 10rem;
+}
+.startYourAssessmentBtn {
+  @include reoccuredBtnProperties;
+  width: 20rem;
 }

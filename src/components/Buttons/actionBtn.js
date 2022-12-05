@@ -42,3 +42,55 @@ export const BookaSessionBtn = () => {
     </>
   );
 };
+
+export const SendBtn = () => {
+  return (
+    <div>
+      <Button className="sendBtn">Send</Button>{" "}
+    </div>
+  );
+};
+
+export const BookNowBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="bookNowBtn">Book Now</Button>{" "}
+    </div>
+  );
+};
+export const ProceedBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="proceedBtn">Proceed</Button>{" "}
+    </div>
+  );
+};
+export const GetInTouchBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="getInTouchBtn">Get In Touch</Button>{" "}
+    </div>
+  );
+};
+
+export const SaveBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="saveBtn">Save</Button>{" "}
+    </div>
+  );
+};
+export const TakeATestBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="takeATestBtn">Take A Test</Button>{" "}
+    </div>
+  );
+};
+export const StartYourAssessmentBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="startYourAssessmentBtn">START YOUR ASSESSMENT</Button>{" "}
+    </div>
+  );
+};
