@@ -47,6 +47,18 @@ p {
   font-family: "Comfortaa", cursive;
 }
 
+.cardShadow {
+  box-shadow: 4px 4px 7px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  height: 10rem;
+}
+
+.hello {
+  position: absolute;
+  height: 143px;
+  top: 220px;
+}
+
 .BookaSessionBtn {
   background: #0060c6;
   border-radius: 10px;
