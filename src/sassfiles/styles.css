@@ -50,13 +50,77 @@ p {
 .BookaSessionBtn {
   background: #0060c6;
   border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+}
+
+.CheckStatusBtn {
+  background: #0060c6;
+  border-radius: 10px;
   height: 2.7rem;
-  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
-  width: 11.5rem;
+  width: 10.2rem;
+}
+
+.RemoveNoteBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10.5rem;
+}
+
+.EditNoteBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8.4rem;
+}
+
+.ViewProfileBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 9.5rem;
+}
+
+.EditProfileBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8.8rem;
+}
+
+.RemoveUserBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
 }
 
 .sendBtn {
@@ -76,11 +140,19 @@ p {
   border-radius: 10px;
   height: 2.7rem;
   font-weight: 500;
+  color: #ffffff;
+  width: 10.4rem;
+}
+
+.AddUserBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
-  width: 9rem;
 }
 
 .proceedBtn {

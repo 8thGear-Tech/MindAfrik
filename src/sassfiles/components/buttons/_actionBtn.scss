@@ -3,11 +3,13 @@
 @mixin reoccuredBtnProperties {
   background: $btncolor;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: $btntextcolor;
 }
 
@@ -43,4 +45,36 @@
 .startYourAssessmentBtn {
   @include reoccuredBtnProperties;
   width: 20rem;
+}
+.BookaSessionBtn {
+  @include Btns;
+  width: 11.5rem;
+}
+.CheckStatusBtn {
+  @include Btns;
+  width: 10.2rem;
+}
+.RemoveNoteBtn {
+  @include Btns;
+  width: 10.5rem;
+}
+.EditNoteBtn {
+  @include Btns;
+  width: 8.4rem;
+}
+.ViewProfileBtn {
+  @include Btns;
+  width: 9.5rem;
+}
+.EditProfileBtn {
+  @include Btns;
+  width: 8.8rem;
+}
+.RemoveUserBtn {
+  @include Btns;
+  width: 10.4rem;
+}
+.AddUserBtn {
+  @include Btns;
+  width: 7.8rem;
 }

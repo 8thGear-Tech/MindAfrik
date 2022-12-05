@@ -1,2 +1,72 @@
-*{box-sizing:border-box;font-family:"Karla",Rubik}body{margin:0;padding:0 !important;overflow:visible !important}h1{font-size:2.5rem;font-weight:600;color:var(--white);font-family:"Montserrat",sans-serif}h2{font-size:2rem;font-weight:600;font-family:"Montserrat",sans-serif}h3{font-size:1.5rem;font-weight:600;font-family:"Montserrat",sans-serif}h4{font-size:1.3rem;font-weight:600;font-family:"Montserrat",sans-serif}h5{font-weight:300;font-family:"Montserrat",sans-serif}p{font-size:1rem;font-weight:300;color:var(--white);line-height:1.75rem;font-family:"Comfortaa",cursive}.BookaSessionBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:11.5rem}.sendBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:8rem}.bookNowBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:9rem}.proceedBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:8rem}.getInTouchBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:10rem}.saveBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:8rem}.takeATestBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:10rem}.startYourAssessmentBtn{background:#0060c6;border-radius:10px;height:2.7rem;font-weight:500;font-size:20px;font-family:"Montserrat",sans-serif;font-style:normal;color:#fff;width:20rem}
+* {
+  box-sizing: border-box;
+  font-family: "Karla", Rubik;
+}
+body {
+  margin: 0;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+h5 {
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.75rem;
+  font-family: "Comfortaa", cursive;
+}
+.BookaSessionBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: #fff;
+}
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.paragraphColor {
+  color: #000;
+  font-weight: 600 !important;
+}
+.headerFontColor {
+  color: #08ba47;
+}
+.paragraphText {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: "Comfortaa", cursive;
+}
 /*# sourceMappingURL=styles.min.css.map */

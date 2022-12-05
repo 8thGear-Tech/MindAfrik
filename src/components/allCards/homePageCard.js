@@ -1,3 +1,3 @@
-// howItWorksCards
-// whyChooseUsCards
-// testimonialsCards
+// howItWorksCard
+// whyChooseUsCard
+// testimonialsCard
