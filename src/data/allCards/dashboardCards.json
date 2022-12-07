@@ -1,0 +1,33 @@
+{
+  "adminStatsInfo": [
+    {
+      "id": 1,
+      "headingone": "5,678",
+      "headingtwo": "Total signed up Users",
+      " paragraphtext": "+0.5% than last Month",
+      "icon": "../../assets/images/admin-dashboard/stat-one.png"
+    },
+    {
+      "id": 2,
+      "headingone": "427",
+      "headingtwo": "Total verified counsellors",
+      " paragraphtext": "",
+      "icon": "../../assets/images/admin-dashboard/stat-two.png"
+    },
+    {
+      "id": 3,
+      "headingone": "1,020",
+      "headingtwo": "Total booked sesssions",
+      " paragraphtext": "",
+      "icon": "../../assets/images/admin-dashboard/stat-three.png"
+    },
+
+    {
+      "id": 4,
+      "headingone": "204",
+      "headingtwo": "Total form messages",
+      " paragraphtext": "",
+      "icon": "../../assets/images/admin-dashboard/stat-four.png"
+    }
+  ]
+}

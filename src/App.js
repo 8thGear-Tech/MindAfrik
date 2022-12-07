@@ -11,6 +11,7 @@ import { SaveBtn } from "./components/Buttons/actionBtn";
 import { TakeATestBtn } from "./components/Buttons/actionBtn";
 import { StartYourAssessmentBtn } from "./components/Buttons/actionBtn";
 import { ExploreCards } from "./components/allCards/dashBoardcards";
+// import { EvaluationCard } from "./components/allCards/PsychologicalAssessment";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       {/* <Routes>
         <Route path="/" element={<UnderConstruction />} />
       </Routes> */}
+      {/* <Route path="cards" element={<EvaluationCard />} /> */}
     </BrowserRouter>
   );
 }

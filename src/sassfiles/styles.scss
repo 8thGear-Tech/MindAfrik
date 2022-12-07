@@ -1,5 +1,6 @@
 @use "./reset";
 @use "./font" as *;
+@use "./components/allCards/dashBoardcards" as *;
 @use "./pages/websitePages/underConstruction" as *;
 @use "./components/buttons/actionBtn" as *;
 @use "./components/allCards/dashBoardcards" as *;
