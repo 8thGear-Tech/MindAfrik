@@ -52,85 +52,25 @@ p {
   border-radius: 10px;
   height: 3rem;
   width: 11.5rem;
-}
-
-.CheckStatusBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 10.2rem;
-}
-
-.RemoveNoteBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #ffffff;
-  width: 10.5rem;
-}
-
-.EditNoteBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #ffffff;
-  width: 8.4rem;
-}
-
-.ViewProfileBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #ffffff;
-  width: 9.5rem;
-}
-
-.EditProfileBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #ffffff;
-  width: 8.8rem;
-}
-
-.RemoveUserBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
+  width: 11.5rem;
 }
 
 .sendBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
   width: 8rem;
 }
@@ -138,31 +78,27 @@ p {
 .bookNowBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
-  color: #ffffff;
-  width: 10.4rem;
-}
-
-.AddUserBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
+  width: 9rem;
 }
 
 .proceedBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
   width: 8rem;
 }
@@ -170,11 +106,13 @@ p {
 .getInTouchBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
   width: 10rem;
 }
@@ -182,11 +120,13 @@ p {
 .saveBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
   width: 8rem;
 }
@@ -194,11 +134,13 @@ p {
 .takeATestBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
   width: 10rem;
 }
@@ -206,12 +148,46 @@ p {
 .startYourAssessmentBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
   font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 500;
   color: #ffffff;
   width: 20rem;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent !important;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.paragraphColor {
+  color: #000000;
+  font-weight: 600 !important;
+}
+
+.headerFontColor {
+  color: #08ba47;
+}
+
+.paragraphText {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: "Comfortaa", cursive;
+}
+
+.videoIcon {
+  font-size: 45px !important;
+}
+
+.scheduleASession {
+  margin-left: 190px;
 }
 /*# sourceMappingURL=styles.css.map */

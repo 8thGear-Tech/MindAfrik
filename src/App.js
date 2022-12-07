@@ -10,17 +10,19 @@ import { GetInTouchBtn } from "./components/Buttons/actionBtn";
 import { SaveBtn } from "./components/Buttons/actionBtn";
 import { TakeATestBtn } from "./components/Buttons/actionBtn";
 import { StartYourAssessmentBtn } from "./components/Buttons/actionBtn";
+import { ExploreCards } from "./components/allCards/dashBoardcards";
 
 function App() {
   return (
     <BrowserRouter>
-      <SendBtn />
+      {/* <SendBtn />
       <BookNowBtn />
       <ProceedBtn />
       <GetInTouchBtn />
       <SaveBtn />
       <TakeATestBtn />
-      <StartYourAssessmentBtn />
+      <StartYourAssessmentBtn /> */}
+      <ExploreCards />
       {/* <Routes>
         <Route path="/" element={<UnderConstruction />} />
       </Routes> */}
