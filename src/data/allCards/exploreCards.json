@@ -1,0 +1,29 @@
+{
+  "exploreCards": [
+    {
+      "id": 1,
+      "exploreParagraphtext": "Feeling Overwhelmed? Talk to our Therapists. they are here to help you.",
+      "exploreIcon": "../../assets/images/admin-dashboard/videocam.png",
+      "buttonText": "Schedule a Session"
+    },
+    {
+      "id": 2,
+      "exploreParagraphtext": "Something on your mind. ask questions, comment or share anonymously.",
+      "exploreIcon": "../../assets/images/admin-dashboard/aboutUsHeroImage.png",
+      "buttonText": "Start a Discussion"
+    },
+    {
+      "id": 3,
+      "exploreParagraphtext": "Feeling Overwhelmed? Talk to our Therapists. they are here to help you.",
+      "exploreIcon": "../../assets/images/admin-dashboard/aboutUsHeroImage.png",
+      "buttonText": "Take a Test"
+    },
+
+    {
+      "id": 4,
+      "exploreParagraphtext": "For enquiries, clarification or isssues, Don't worry, chat with us now.",
+      "exploreIcon": "../../assets/images/admin-dashboard/aboutUsHeroImage.png",
+      "buttonText": "Start Chatting"
+    }
+  ]
+}

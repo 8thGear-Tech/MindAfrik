@@ -10,20 +10,31 @@ import { GetInTouchBtn } from "./components/Buttons/actionBtn";
 import { SaveBtn } from "./components/Buttons/actionBtn";
 import { TakeATestBtn } from "./components/Buttons/actionBtn";
 import { StartYourAssessmentBtn } from "./components/Buttons/actionBtn";
-import { ExploreCards } from "./components/allCards/dashBoardcards";
+// import { ExploreCard } from "./components/allCards/dashBoardcards";
+// import { DashboardProfileCards } from "./components/allCards/dashBoardcards";
+// import { CounselorsDashboardCard } from "./components/allCards/dashBoardcards";
+// import { CounseleeProfilePageCard } from "./components/allCards/dashBoardcards";
+
+// import { AboutUsHero } from "./components/hero";
+
 // import { EvaluationCard } from "./components/allCards/PsychologicalAssessment";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <SendBtn />
+      <SendBtn />
       <BookNowBtn />
       <ProceedBtn />
       <GetInTouchBtn />
       <SaveBtn />
       <TakeATestBtn />
-      <StartYourAssessmentBtn /> */}
-      <ExploreCards />
+      <StartYourAssessmentBtn />
+      {/* <AboutUsHero /> */}
+      {/* <ExploreCard /> */}
+      {/* <DashboardProfileCards /> */}
+      {/* <CounselorsDashboardCard /> */}
+      {/* <CounseleeProfilePageCard /> */}
+
       {/* <Routes>
         <Route path="/" element={<UnderConstruction />} />
       </Routes> */}

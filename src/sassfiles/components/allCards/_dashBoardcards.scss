@@ -1,3 +1,5 @@
+@use "../../colors" as *;
+
 .videoIcon {
   font-size: 45px !important;
 }
@@ -16,4 +18,25 @@
     // left: 113px;
     top: 220px;
   }
+}
+
+.dashboardProfileList {
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: $btntextcolor;
+}
+.dashboardProfileCardsBorder {
+  border: 1px solid red;
+  max-width: 280px;
+  max-height: 130px;
+  border-radius: 20px;
+  background-color: #08ba47;
+}
+.dashboardProfileCardsBorder img {
+  width: 100px;
+  height: 100px;
+}
+.counselorsDashboardCard img {
+  max-width: 400px;
 }

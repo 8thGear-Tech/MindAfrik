@@ -163,7 +163,7 @@ export const TakeATestBtn = () => {
 export const StartYourAssessmentBtn = () => {
   return (
     <div className="mt-2">
-      <Button className="startYourAssessmentBtn">START YOUR ASSESSMENT</Button>{" "}
+      <Button className="startYourAssessmentBtn">Start Your Assessment</Button>{" "}
     </div>
   );
 };

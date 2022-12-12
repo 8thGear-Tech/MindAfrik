@@ -1,6 +1,12 @@
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
+import { SendBtn } from "../Buttons/actionBtn";
+import adminStats from "../../data/allCards/dashboardCards.json";
+import exploreCardHolder from "../../data/allCards/exploreCards.json";
+import dashboardProfile_CardsImage from "../../assets/images/hero/dashboardProfile_Cards.png";
+import counselorsDashboardImage from "../../assets/images/hero/counselorsDashboardImage.png";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
 // explore_Cards
 // dashboardProfile_Cards
 // counselorsDashboard_Card
@@ -9,49 +15,53 @@ import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 // counseleeSessionPageCard
 //AdminStatisticsCards
 
-export const ExploreCards = () => {
+export const SingleExploreCard = (props) => {
+  const { exploreParagraphtext, exploreIcon } = props;
   return (
-    <Card style={{ width: "22rem" }}>
-      <Card.Body>
-        <div className="row">
-          <Card.Text className="col-lg-10 col-md-10 col-sm-10 d-none d-md-block">
-            Feeling Overwhelmed? Talk to our Therapists. they are here to help
-            you.
-          </Card.Text>
-
-          {/* To appear on mobile start*/}
-          <Card.Text className="text-center d-md-none d-xs-block">
-            Feeling Overwhelmed? Talk to our Therapists. they are here to help
-            you.
-          </Card.Text>
-          {/* To appear on mobile end */}
-
-          <div className="col-lg-2 col-md-2 col-sm-2 videoIcon d-none d-md-block">
-            <ScheduleASessionIcon />
+    <>
+      <Card border="" style={{ width: "25rem" }} className="me-4">
+        {" "}
+        <Card.Body>
+          {" "}
+          <Card.Text>{exploreParagraphtext}</Card.Text>
+          <div className="">
+            <Card.Img
+              src={exploreIcon}
+              className=""
+              style={{ maxHeight: "50px", maxWidth: "50px" }}
+            />
           </div>
-
-          {/* To appear on mobile start*/}
-          <div className="text-center d-md-none d-xs-block">
-            <ScheduleASessionIcon />
+          <div>
+            <button className="">{props.buttonText}</button>
           </div>
-          {/* To appear on mobile end*/}
-        </div>
-        <div className="d-none d-md-block">
-          <Button className="scheduleASession">Go somewhere</Button>
-        </div>
-
-        {/* To appear on mobile start */}
-        <div className="text-center my-2 d-md-none d-xs-block">
-          <Button className="">Go somewhere</Button>
-        </div>
-        {/* To appear on mobile end */}
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
+    </>
   );
 };
 
-import Card from "react-bootstrap/Card";
-import adminStats from "../../data/allCards/dashboardCards.json";
+export const ExploreCard = () => {
+  return (
+    <>
+      <div className="">
+        <div className="row mx-2">
+          {exploreCardHolder.exploreCards.map((explore) => {
+            return (
+              <>
+                <div
+                  className="col-lg-4 col-md-4 col-sm-10 my-4"
+                  key={explore.id}
+                >
+                  <SingleExploreCard {...explore} />
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+};
 
 export const AdminStatisticsCard = (props) => {
   const { headingone, headingtwo, paragraphtext, icon } = props;
@@ -99,6 +109,82 @@ export const AdminStatistics = () => {
         </div>
       </div>
     </>
+  );
+};
+
+export const DashboardProfileCards = () => {
+  return (
+    <div className="dashboardProfileCardsBorder ms-5 mt-5">
+      <div className="d-flex py-1 ps-3">
+        <img src={dashboardProfile_CardsImage} alt="" className="mt-2" />
+        <div>
+          <ul className="dashboardProfileList mt-3">
+            <li>Username</li>
+            <li className="py-1">Phone Number</li>
+            <li>Email Address</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const CounselorsDashboardCard = () => {
+  return (
+    <div>
+      <div className="counselorsDashboardCard container-fluid d-none d-md-block d-lg-block">
+        <div className="d-flex">
+          <div className="mt-5 pt-3">
+            <h3 className="pt-3">Welcome, Peter Uche</h3>
+            <p className="pt-5">
+              “Not until we are lost do we begin to understand ourselves”
+            </p>
+          </div>
+          <img src={counselorsDashboardImage} alt="" className="ms-2 mt-2" />
+        </div>
+      </div>
+
+      {/* mobile view begin */}
+      <div className="text-center container-fluid d-sm-block d-md-none d-xs-block">
+        <div className="">
+          <h3 className="">Welcome, Peter Uche</h3>
+          <p className="">
+            “Not until we are lost do we begin to understand ourselves”
+          </p>
+        </div>
+        <img
+          src={counselorsDashboardImage}
+          alt=""
+          className=""
+          style={{ height: "200px" }}
+        />
+      </div>
+      {/* mobile view end*/}
+    </div>
+  );
+};
+
+export const CounseleeProfilePageCard = () => {
+  return (
+    <div className="dashboardProfileCardsBorder ms-5 mt-5">
+      <div className="d-flex py-1 ps-3">
+        <img src={dashboardProfile_CardsImage} alt="" className="mt-2" />
+        <div>
+          <ul className="dashboardProfileList mt-3">
+            <li>Username</li>
+            <li className="py-1">Phone Number</li>
+            <li>Email Address</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <button>
+          {" "}
+          <ArrowBackIcon />
+          Michael
+        </button>
+      </div>
+    </div>
   );
 };
 
