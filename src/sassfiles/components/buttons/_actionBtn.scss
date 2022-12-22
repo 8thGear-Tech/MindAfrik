@@ -42,3 +42,31 @@
   @include Btns;
   width: 7.8rem;
 }
+.TakeAssessmentBtn {
+  @include Btns;
+  width: 13rem;
+  padding: 12px, 32px, 12px, 32px;
+}
+.BookASessionBtn {
+  @include Btns;
+  width: 13rem;
+  padding: 12px, 32px;
+}
+.ContactBtn {
+  @include Btns;
+  width: 10rem;
+}
+.SubscribeBtn {
+  @include Btns;
+  width: 7.8rem;
+}
+.BookASessionNowBtn {
+  @include Btns;
+  width: 15rem;
+  padding: 12px, 32px, 12px, 32px;
+}
+.ScheduleASessionBtn {
+  @include Btns;
+  width: 14rem;
+  padding: 12px, 32px, 12px, 32px;
+}

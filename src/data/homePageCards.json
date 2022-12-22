@@ -1,0 +1,63 @@
+{
+  "homepageData": [
+    {
+      "id": 1,
+      "title": "Create an Account",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind."
+    },
+    {
+      "id": 2,
+      "title": "Take an Assessment",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind."
+    },
+    {
+      "id": 3,
+      "title": "Start your Therapy Journey",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind."
+    }
+  ],
+
+  "whyChooseUsData": [
+    {
+      "id": 1,
+      "title": "Safe  & Secure",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 2,
+      "title": "Standardized Sessions",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 3,
+      "title": "Quality Counsellors",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
+    },
+    {
+      "id": 4,
+      "title": "Quality Psychologists",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
+    }
+  ],
+
+  "testimonialsData": [
+    {
+      "id": 1,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 2,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 3,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
+    }
+  ]
+}
