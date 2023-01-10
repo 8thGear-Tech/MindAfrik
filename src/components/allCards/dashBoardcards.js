@@ -57,6 +57,24 @@ export const AdminStatistics = () => {
   );
 };
 
+export const viewProfileCard = () => {
+  return (
+    <>
+      <Card style={{ width: "18rem" }}>
+        <ListGroup variant="flush">
+          <ListGroup.Item>Name: Ayobami kosofe</ListGroup.Item>
+          <ListGroup.Item>Addresses:100 ikorordu Road</ListGroup.Item>
+          <ListGroup.Item>Phone Number : 08033399988</ListGroup.Item>
+          <ListGroup.Item>Email : sample@gmail.com</ListGroup.Item>
+          <ListGroup.Item>Gender : Male</ListGroup.Item>
+          <ListGroup.Item>Degree : M.Sc Psychology</ListGroup.Item>
+          <ListGroup.Item>DOB :06-07-2003</ListGroup.Item>
+        </ListGroup>
+      </Card>
+    </>
+  );
+};
+
 // <div className="px-3">
 //   <div className="px-4 container-fluid pb-4">
 //     <div className="row mt-3">

@@ -115,3 +115,74 @@ export const AddUserBtn = () => {
     </>
   );
 };
+export const TakeAssessmentBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="TakeAssessmentBtn">Take Assessment </Button>
+      </a>
+    </>
+  );
+};
+export const BookASessionBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="BookASessionBtn">Book A Session</Button>
+      </a>
+    </>
+  );
+};
+
+export const ContactBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="ContactBtn">Contact Us</Button>
+      </a>
+    </>
+  );
+};
+export const SubscribeBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="SubscribeBtn">Subscribe</Button>
+      </a>
+    </>
+  );
+};
+export const DashboardButtons = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="DashboardButtons">DashboardButtons</Button>
+      </a>
+    </>
+  );
+};
+export const BookASessionNowBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="BookASessionNowBtn">Book a Session Now</Button>
+      </a>
+    </>
+  );
+};
+export const ScheduleASessionBtn = () => {
+  return (
+    <>
+      <a href="" target="_blank">
+        {" "}
+        <Button className="ScheduleASessionBtn">Schedule a Session</Button>
+      </a>
+    </>
+  );
+};

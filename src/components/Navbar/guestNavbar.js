@@ -51,9 +51,15 @@ export const NavbarSection = () => {
 
 export const NavSection = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img
+            src={mindafrikfulllogo}
+            className="d-inline-block align-top"
+            alt="MindAfrik logo"
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
           id="responsive-navbar-nav"
@@ -75,10 +81,18 @@ export const NavSection = () => {
             </NavDropdown>
           </Nav> */}
           <Nav>
-            <Nav.Link href="#deets">Home</Nav.Link>
-            <Nav.Link href="#memes">About Us</Nav.Link>
-            <Nav.Link href="#memes">Contact</Nav.Link>
-            <Nav.Link href="#memes">Take a test</Nav.Link>
+            <Nav.Link href="#deets" className="text-black">
+              Home
+            </Nav.Link>
+            <Nav.Link href="#memes" className="text-black">
+              About Us
+            </Nav.Link>
+            <Nav.Link href="#memes" className="text-black">
+              Contact
+            </Nav.Link>
+            <Nav.Link href="#memes" className="text-black">
+              Take a test
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -3,23 +3,23 @@ import { NavbarSection } from "../../components/Navbar/guestNavbar";
 
 //buttons
 import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
-
+import { TakeAssessmentBtn } from "../../components/Buttons/actionBtn";
+import { BookASessionBtn } from "../../components/Buttons/actionBtn";
+import { ContactBtn } from "../../components/Buttons/actionBtn";
+import { SubscribeBtn } from "../../components/Buttons/actionBtn";
+import { BookASessionNowBtn } from "../../components/Buttons/actionBtn";
+import { ScheduleASessionBtn } from "../../components/Buttons/actionBtn";
 //images
 import underconstructionhero from "../../assets/images/hero/underconstructionhero.png";
-
+import CounselorProfileForm from "../../components/Forms/UserProfileForm";
 //icons
 import { PhoneIcon } from "../../assets/icons/socialIcons";
 import { Mailicon } from "../../assets/icons/socialIcons";
+import { HowItWorks } from "../../components/allCards/homePageCard";
+import { WhyChooseUsCard } from "../../components/allCards/homePageCard";
+import { TestimonialsCard } from "../../components/allCards/homePageCard";
 
 const UnderConstruction = () => {
-  return (
-    <>
-      <SectionOne />
-    </>
-  );
-};
-
-const SectionOne = () => {
   return (
     <>
       <div className="px-3">
@@ -52,6 +52,13 @@ const SectionOne = () => {
               </div>
               <div className="text-center mb-4">
                 <BookaSessionBtn />
+                <howItWorksCard />
+                <TakeAssessmentBtn />
+                <BookASessionBtn />
+                <ContactBtn />
+                <SubscribeBtn />
+                <BookASessionNowBtn />
+                <ScheduleASessionBtn />
               </div>
             </div>
             <div className="col-lg-5 col-md-12 col-sm-10 mb-5">
@@ -79,10 +86,15 @@ const SectionOne = () => {
                   <p className="paragraphColor mx-3">info@mindafrik.com</p>
                 </a>
               </div>
+              <HowItWorks />
+              <WhyChooseUsCard />
+              <TestimonialsCard />
+              <CounselorProfileForm />
             </div>
           </div>
         </div>
       </div>
+      //{" "}
     </>
   );
 };
