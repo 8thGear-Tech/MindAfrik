@@ -611,7 +611,7 @@ export const HowItWorks = () => {
   return (
     <>
       <div className="container">
-        <div className="CardWork row justify-content-center justify-content-evenly ">
+        <div className="CardWork row text-center justify-content-around ">
           {howItWorksDatas.homepageData.map((Itworks) => {
             return (
               <>
