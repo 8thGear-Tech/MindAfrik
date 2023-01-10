@@ -69,7 +69,9 @@ p {
 .BookaSessionBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -78,88 +80,102 @@ p {
   width: 11.5rem;
 }
 
-.CheckStatusBtn {
+.sendBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 10.2rem;
+  width: 8rem;
 }
 
-.RemoveNoteBtn {
+.bookNowBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 10.5rem;
+  width: 9rem;
 }
 
-.EditNoteBtn {
+.proceedBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 8.4rem;
+  width: 8rem;
 }
 
-.ViewProfileBtn {
+.getInTouchBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 9.5rem;
+  width: 10rem;
 }
 
-.EditProfileBtn {
+.saveBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 8.8rem;
+  width: 8rem;
 }
 
-.RemoveUserBtn {
+.takeATestBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 10.4rem;
+  width: 10rem;
 }
 
-.AddUserBtn {
+.startYourAssessmentBtn {
   background: #0060c6;
   border-radius: 10px;
-  height: 2.7rem;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 7.8rem;
+  width: 20rem;
 }
 
 .TakeAssessmentBtn {
@@ -356,5 +372,51 @@ p {
   background-color: purple;
   width: 300px;
   height: 360px;
+}
+
+.videoIcon {
+  font-size: 45px !important;
+}
+
+.scheduleASession {
+  margin-left: 190px;
+}
+.scheduleASession .cardShadow {
+  box-shadow: 4px 4px 7px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  height: 10rem;
+}
+.scheduleASession .hello {
+  position: absolute;
+  height: 143px;
+  top: 220px;
+}
+
+.dashboardProfileList {
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.dashboardProfileCardsBorder {
+  border: 1px solid red;
+  max-width: 280px;
+  max-height: 130px;
+  border-radius: 20px;
+  background-color: #08ba47;
+}
+
+.dashboardProfileCardsBorder img {
+  width: 100px;
+  height: 100px;
+}
+
+.counselorsDashboardCard img {
+  max-width: 400px;
+}
+
+.aboutUsHeroText {
+  margin-top: 100px;
 }
 /*# sourceMappingURL=styles.css.map */

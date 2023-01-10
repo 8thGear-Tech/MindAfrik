@@ -1,5 +1,51 @@
 @use "../../colors" as *;
 
+@mixin reoccuredBtnProperties {
+  background: $btncolor;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: $btntextcolor;
+}
+
+.BookaSessionBtn {
+  @include reoccuredBtnProperties;
+  width: 11.5rem;
+}
+.sendBtn {
+  @include reoccuredBtnProperties;
+  width: 8rem;
+}
+.bookNowBtn {
+  @include reoccuredBtnProperties;
+  width: 9rem;
+}
+.proceedBtn {
+  @include reoccuredBtnProperties;
+  width: 8rem;
+}
+.getInTouchBtn {
+  @include reoccuredBtnProperties;
+  width: 10rem;
+}
+.saveBtn {
+  @include reoccuredBtnProperties;
+  width: 8rem;
+}
+
+.takeATestBtn {
+  @include reoccuredBtnProperties;
+  width: 10rem;
+}
+.startYourAssessmentBtn {
+  @include reoccuredBtnProperties;
+  width: 20rem;
+}
 @mixin Btns {
   background: $btncolor;
   border-radius: 10px;
@@ -9,38 +55,6 @@
   font-style: normal;
   font-weight: 500;
   color: $btntextcolor;
-}
-.BookaSessionBtn {
-  @include Btns;
-  width: 11.5rem;
-}
-.CheckStatusBtn {
-  @include Btns;
-  width: 10.2rem;
-}
-.RemoveNoteBtn {
-  @include Btns;
-  width: 10.5rem;
-}
-.EditNoteBtn {
-  @include Btns;
-  width: 8.4rem;
-}
-.ViewProfileBtn {
-  @include Btns;
-  width: 9.5rem;
-}
-.EditProfileBtn {
-  @include Btns;
-  width: 8.8rem;
-}
-.RemoveUserBtn {
-  @include Btns;
-  width: 10.4rem;
-}
-.AddUserBtn {
-  @include Btns;
-  width: 7.8rem;
 }
 .TakeAssessmentBtn {
   @include Btns;
@@ -70,3 +84,35 @@
   width: 14rem;
   padding: 12px, 32px, 12px, 32px;
 }
+// .BookaSessionBtn {
+//   @include Btns;
+//   width: 11.5rem;
+// }
+// .CheckStatusBtn {
+//   @include Btns;
+//   width: 10.2rem;
+// }
+// .RemoveNoteBtn {
+//   @include Btns;
+//   width: 10.5rem;
+// }
+// .EditNoteBtn {
+//   @include Btns;
+//   width: 8.4rem;
+// }
+// .ViewProfileBtn {
+//   @include Btns;
+//   width: 9.5rem;
+// }
+// .EditProfileBtn {
+//   @include Btns;
+//   width: 8.8rem;
+// }
+// .RemoveUserBtn {
+//   @include Btns;
+//   width: 10.4rem;
+// }
+// .AddUserBtn {
+//   @include Btns;
+//   width: 7.8rem;
+// }
