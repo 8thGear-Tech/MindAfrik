@@ -3,14 +3,15 @@ import * as React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import UnderConstruction from "./pages/websitePages/underConstruction";
-import { EvaluationCard } from "./components/allCards/PsychologicalAssessment";
+import { Evaluation } from "./components/allCards/PsychologicalAssessment";
+import { NavSection } from "./components/Navbar/guestNavbar";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UnderConstruction />} />
-        <Route path="cards" element={<EvaluationCard />} />
+        <Route path="/" element={<NavSection />} />
+        <Route path="cards" element={<Evaluation />} />
       </Routes>
     </BrowserRouter>
   );
