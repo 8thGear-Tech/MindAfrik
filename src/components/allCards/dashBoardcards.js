@@ -7,6 +7,7 @@ import dashboardProfile_CardsImage from "../../assets/images/hero/dashboardProfi
 import counselorsDashboardImage from "../../assets/images/hero/counselorsDashboardImage.png";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 // explore_Cards
 // dashboardProfile_Cards
 // counselorsDashboard_Card
@@ -67,21 +68,26 @@ export const AdminStatisticsCard = (props) => {
   const { headingone, headingtwo, paragraphtext, icon } = props;
   return (
     <>
-      <Card border="" style={{ width: "25rem" }} className="cardShadow">
-        <div className="d-flex align-items-center ms-2 me-4 my-auto">
+      <Card border="" style={{ width: "14rem" }} className="cardShadow">
+        <div className="d-flex ms-2 me-4 my-auto">
           {" "}
           <Card.Body>
             {" "}
-            <Card.Title>{headingone}</Card.Title>
-            <Card.Title>{headingtwo}</Card.Title>
+            <Card.Title className="statFont">
+              <b>{headingone}</b>
+            </Card.Title>
+            <Card.Title className="text-muted textMutedFont">
+              {headingtwo}
+            </Card.Title>
             <Card.Text>{paragraphtext}</Card.Text>
           </Card.Body>
-          <Card.Img
+          <HomeOutlinedIcon className="mt-3" />
+          {/* <Card.Img
             variant="top"
             src={icon}
             className="mx-lg-auto img-fluid"
             style={{ maxHeight: "100px", maxWidth: "120px" }}
-          />
+          /> */}
         </div>
       </Card>
       <br />
@@ -93,12 +99,12 @@ export const AdminStatistics = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row justify-content-center mx-5 pt-5">
+        <div className="row justify-content-center py-4">
           {adminStats.adminStatsInfo.map((stats) => {
             return (
               <>
                 <div
-                  className="col-lg-4 col-md-4 col-sm-10 my-4"
+                  className="col-lg-3 col-md-4 col-sm-10 my-4 d-flex align-items-stretch"
                   key={stats.id}
                 >
                   <AdminStatisticsCard {...stats} />
@@ -112,23 +118,23 @@ export const AdminStatistics = () => {
   );
 };
 
-<<<<<<< HEAD
-export const viewProfileCard = () => {
-  return (
-    <>
-      <Card style={{ width: "18rem" }}>
-        <ListGroup variant="flush">
-          <ListGroup.Item>Name: Ayobami kosofe</ListGroup.Item>
-          <ListGroup.Item>Addresses:100 ikorordu Road</ListGroup.Item>
-          <ListGroup.Item>Phone Number : 08033399988</ListGroup.Item>
-          <ListGroup.Item>Email : sample@gmail.com</ListGroup.Item>
-          <ListGroup.Item>Gender : Male</ListGroup.Item>
-          <ListGroup.Item>Degree : M.Sc Psychology</ListGroup.Item>
-          <ListGroup.Item>DOB :06-07-2003</ListGroup.Item>
-        </ListGroup>
-      </Card>
-    </>
-=======
+// export const viewProfileCard = () => {
+//   return (
+//     <>
+//       <Card style={{ width: "18rem" }}>
+//         <ListGroup variant="flush">
+//           <ListGroup.Item>Name: Ayobami kosofe</ListGroup.Item>
+//           <ListGroup.Item>Addresses:100 ikorordu Road</ListGroup.Item>
+//           <ListGroup.Item>Phone Number : 08033399988</ListGroup.Item>
+//           <ListGroup.Item>Email : sample@gmail.com</ListGroup.Item>
+//           <ListGroup.Item>Gender : Male</ListGroup.Item>
+//           <ListGroup.Item>Degree : M.Sc Psychology</ListGroup.Item>
+//           <ListGroup.Item>DOB :06-07-2003</ListGroup.Item>
+//         </ListGroup>
+//       </Card>
+//     </>
+//   );
+// };
 export const DashboardProfileCards = () => {
   return (
     <div className="dashboardProfileCardsBorder ms-5 mt-5">
@@ -202,7 +208,6 @@ export const CounseleeProfilePageCard = () => {
         </button>
       </div>
     </div>
->>>>>>> 8de4fbfd1210b15749a38e85993330ad24f350ae
   );
 };
 

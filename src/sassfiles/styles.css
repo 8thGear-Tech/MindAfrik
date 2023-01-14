@@ -416,7 +416,27 @@ p {
   max-width: 400px;
 }
 
+.cardShadow {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.statFont {
+  font-size: 1.35rem;
+}
+
+.textMutedFont {
+  font-size: 1rem;
+}
+
 .aboutUsHeroText {
   margin-top: 100px;
+}
+
+.SideNavItem {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

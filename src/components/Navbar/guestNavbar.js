@@ -52,7 +52,7 @@ export const NavbarSection = () => {
 export const NavSection = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
-      <Container>
+      <Container fluid className="px-5">
         <Navbar.Brand href="#">
           <img
             src={mindafrikfulllogo}
@@ -81,18 +81,21 @@ export const NavSection = () => {
             </NavDropdown>
           </Nav> */}
           <Nav>
-            <Nav.Link href="#deets" className="text-black">
+            <Nav.Link href="#deets" className="text-black mx-2">
               Home
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black">
+            <Nav.Link href="#memes" className="text-black mx-2">
               About Us
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black">
+            <Nav.Link href="#memes" className="text-black mx-2">
               Contact
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black">
+            <Nav.Link href="#memes" className="text-black mx-2">
               Take a test
             </Nav.Link>
+            {/* <div href="#memes" className="text-black">
+             Insert Login Button
+            </div> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
