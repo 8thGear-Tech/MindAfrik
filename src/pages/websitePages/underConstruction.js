@@ -11,13 +11,12 @@ import { BookASessionNowBtn } from "../../components/Buttons/actionBtn";
 import { ScheduleASessionBtn } from "../../components/Buttons/actionBtn";
 //images
 import underconstructionhero from "../../assets/images/hero/underconstructionhero.png";
-import CounselorProfileForm from "../../components/Forms/UserProfileForm";
+
 //icons
 import { PhoneIcon } from "../../assets/icons/socialIcons";
 import { Mailicon } from "../../assets/icons/socialIcons";
-import { HowItWorks } from "../../components/allCards/homePageCard";
-import { WhyChooseUsCard } from "../../components/allCards/homePageCard";
-import { TestimonialsCard } from "../../components/allCards/homePageCard";
+
+
 
 const UnderConstruction = () => {
   return (
@@ -51,6 +50,9 @@ const UnderConstruction = () => {
                 </ul>
               </div>
               <div className="text-center mb-4">
+                <a href="take-a-testPage.js">Launching Our Site Soon!</a>
+                <a href="websiteForms.js">Our Site Soon!</a>
+                <a href="hero.js">Launching Site Soon!</a>
                 <BookaSessionBtn />
                 <howItWorksCard />
                 <TakeAssessmentBtn />
@@ -86,10 +88,6 @@ const UnderConstruction = () => {
                   <p className="paragraphColor mx-3">info@mindafrik.com</p>
                 </a>
               </div>
-              <HowItWorks />
-              <WhyChooseUsCard />
-              <TestimonialsCard />
-              <CounselorProfileForm />
             </div>
           </div>
         </div>

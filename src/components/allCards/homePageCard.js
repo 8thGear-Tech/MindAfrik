@@ -618,7 +618,7 @@ export const HowItWorks = () => {
                 <div className="col-lg-3 col-md-5 col-sm-12" key={Itworks.id}>
                   <HowItWorksCard {...Itworks} />
                 </div>
-              </>
+              </> 
             );
           })}
           ;
