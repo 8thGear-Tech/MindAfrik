@@ -8,13 +8,13 @@ import { Footer } from "./components/footer";
 import { DashboardNavbar } from "./components/Navbar/dashBoardNavbar";
 
 //Admin Dashboard Pages
-import AdminDashboardHomePage from "./pages/dashboardPages/admin/adminDashboardHomePage";
+import CounsellorDashboardHomePage from "./pages/dashboardPages/counsellor/counselorsDashboardHomePage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AdminDashboardHomePage />} />
+        <Route path="/" element={<CounsellorDashboardHomePage />} />
         {/* <Route path="/" element={<DashboardNavbar />} /> */}
         <Route path="cards" element={<Evaluation />} />
       </Routes>

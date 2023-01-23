@@ -80,7 +80,8 @@ export const ViewProfileBtn = () => {
     <>
       <a href="" target="_blank">
         {" "}
-        <Button className="ViewProfileBtn">View Profile</Button>
+        View Profile
+        {/* <Button className="ViewProfileBtn">View Profile</Button> */}
       </a>
     </>
   );

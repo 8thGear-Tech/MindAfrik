@@ -9,12 +9,12 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 // explore_Cards
+//AdminStatisticsCards
 // dashboardProfile_Cards
 // counselorsDashboard_Card
 // counseleeProfilePageCard
 // viewProfileCard
 // counseleeSessionPageCard
-//AdminStatisticsCards
 
 export const SingleExploreCard = (props) => {
   const { exploreParagraphtext, exploreIcon } = props;
@@ -155,20 +155,22 @@ export const DashboardProfileCards = () => {
 export const CounselorsDashboardCard = () => {
   return (
     <div>
-      <div className="counselorsDashboardCard container-fluid d-none d-md-block d-lg-block">
+      <div className="counselorsDashboardCard container-fluid">
         <div className="d-flex">
-          <div className="mt-5 pt-3">
+          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3 ">
             <h3 className="pt-3">Welcome, Peter Uche</h3>
             <p className="pt-5">
               “Not until we are lost do we begin to understand ourselves”
             </p>
           </div>
-          <img src={counselorsDashboardImage} alt="" className="ms-2 mt-2" />
+          <div className="">
+            <img src={counselorsDashboardImage} alt="" className="ms-2 mt-2" />
+          </div>
         </div>
       </div>
 
       {/* mobile view begin */}
-      <div className="text-center container-fluid d-sm-block d-md-none d-xs-block">
+      {/* <div className="text-center container-fluid d-sm-block d-md-none d-xs-block">
         <div className="">
           <h3 className="">Welcome, Peter Uche</h3>
           <p className="">
@@ -181,7 +183,7 @@ export const CounselorsDashboardCard = () => {
           className=""
           style={{ height: "200px" }}
         />
-      </div>
+      </div> */}
       {/* mobile view end*/}
     </div>
   );

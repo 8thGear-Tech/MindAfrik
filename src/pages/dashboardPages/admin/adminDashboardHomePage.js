@@ -12,20 +12,20 @@ const AdminDashboardHomePage = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-3">
+        <div className="row d-flex justify-content-cente">
+          <div className="col-lg-3">
             <DashboardSideNav />
           </div>
-          <div className="col-9">
+          <div className="col-lg-9 col-md-12">
             <div className="col">
-              <div className="col">
+              <div className="">
                 {" "}
                 <DashboardNavbar />
               </div>
-              <div className="col">
+              <div className="">
                 <AdminStatistics />
               </div>
-              <div className="col">
+              <div className="">
                 <RegisteredUsersList />
               </div>
             </div>
@@ -45,7 +45,7 @@ const RegisteredUsersList = () => {
           <p className="">Registered Users List</p>
           <p>Sort by</p>
         </div>{" "}
-        <Table striped>
+        <Table striped responsive>
           <thead>
             <tr>
               <th></th>

@@ -73,7 +73,22 @@ import sidebarfooterImage from "../../assets/images/dashboard/sidebarfooterImage
 export const DashboardNavbar = () => {
   return (
     <>
-      <Navbar expand="lg" className="navbar-light">
+      <div className="">
+        <div className="d-flex justify-content-between mt-3 justify-content-center ">
+          <img
+            src={mindafrikfulllogo}
+            className="d-inline-block align-top d-none d-sm-none d-lg-block d-md-block"
+            alt="MindAfrik logo"
+          />
+          <div className="d-flex align-items-center">
+            {" "}
+            <AccountCircleOutlinedIcon className="mx-3" />
+            <NotificationsActiveIcon className="mx-3" />
+            <LogoutOutlinedIcon className="mx-3" />
+          </div>
+        </div>
+      </div>
+      {/* <Navbar expand="lg" className="navbar-light">
         <Container fluid>
           <Navbar.Brand href="#">
             <img
@@ -95,13 +110,10 @@ export const DashboardNavbar = () => {
             <AccountCircleOutlinedIcon className="mx-3" />
             <NotificationsActiveIcon className="mx-3" />
             <LogoutOutlinedIcon className="mx-3" />
-            {/* <FacebookIcon />
-            <Instagramicon />
-            <LinkedInicon />
-            <Twittericon /> */}
+           
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
     </>
   );
   // <p>Hello</p>;
