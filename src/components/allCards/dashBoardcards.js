@@ -3,8 +3,7 @@ import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 import { SendBtn } from "../Buttons/actionBtn";
 import adminStats from "../../data/allCards/dashboardCards.json";
 import exploreCardHolder from "../../data/allCards/exploreCards.json";
-import dashboardProfile_CardsImage from "../../assets/images/hero/dashboardProfile_Cards.png";
-import counselorsDashboardImage from "../../assets/images/hero/counselorsDashboardImage.png";
+
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -15,6 +14,11 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 // counseleeProfilePageCard
 // viewProfileCard
 // counseleeSessionPageCard
+
+//images
+import dashboardProfile_CardsImage from "../../assets/images/hero/dashboardProfile_Cards.png";
+import counselleeDashboardImage from "../../assets/images/hero/counselleeDashboardImage.png";
+import counsellorsdashboardimg from "../../assets/images/counsellorsdashboard/counsellorsdashboardimg.png";
 
 export const SingleExploreCard = (props) => {
   const { exploreParagraphtext, exploreIcon } = props;
@@ -152,7 +156,7 @@ export const DashboardProfileCards = () => {
   );
 };
 
-export const CounselorsDashboardCard = () => {
+export const CounseleeDashboardCard = () => {
   return (
     <div>
       <div className="counselorsDashboardCard container-fluid">
@@ -164,27 +168,27 @@ export const CounselorsDashboardCard = () => {
             </p>
           </div>
           <div className="">
-            <img src={counselorsDashboardImage} alt="" className="ms-2 mt-2" />
+            <img src={counselleeDashboardImage} alt="" className="ms-2 mt-2" />
           </div>
         </div>
       </div>
-
-      {/* mobile view begin */}
-      {/* <div className="text-center container-fluid d-sm-block d-md-none d-xs-block">
-        <div className="">
-          <h3 className="">Welcome, Peter Uche</h3>
-          <p className="">
-            “Not until we are lost do we begin to understand ourselves”
-          </p>
+    </div>
+  );
+};
+export const CounselorsDashboardCard = () => {
+  return (
+    <div>
+      <div className="counselorsDashboardCard container-fluid">
+        <div className="d-flex">
+          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3">
+            <h3 className="pt-3">You have an upcoming appointment</h3>
+            <p className="pt-2">Tomorrow, Dec 22, 2022</p>
+          </div>
+          <div className="">
+            <img src={counsellorsdashboardimg} alt="" className="ms-2 mt-2" />
+          </div>
         </div>
-        <img
-          src={counselorsDashboardImage}
-          alt=""
-          className=""
-          style={{ height: "200px" }}
-        />
-      </div> */}
-      {/* mobile view end*/}
+      </div>
     </div>
   );
 };

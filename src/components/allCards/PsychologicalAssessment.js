@@ -8,8 +8,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 //internal import
-import gotYouCoveredCardInfo from "../../data/allCards/psychologicalAssessment.json";
-import evaluationInfo from "../../data/allCards/psychologicalAssessment.json";
 
 // images
 import stressevaluation from "../../assets/images/stress-evaluation.png";
@@ -46,26 +44,7 @@ export const EvaluationCard = (props) => {
     </>
   );
 };
-export const Evaluation = (props) => {
-  return (
-    <>
-      <div className="container-fluid px-5 pt-5 pb-3 mt-5">
-        <Row xs={1} md={2} className="g-0 justify-content-evenly mt-5">
-          {evaluationInfo.evaluationInfo.map((info) => {
-            return (
-              <Col
-                className="col-lg-12 col-md-12 col-sm-10 px-lg-5 px-md-4 px-sm-5 d-flex align-items-stretch"
-                key={info.id}
-              >
-                <EvaluationCard {...info} />
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    </>
-  );
-};
+
 export const GotYouCoveredCard = (props) => {
   const { icon, title, paragraph } = props;
   return (
@@ -83,26 +62,6 @@ export const GotYouCoveredCard = (props) => {
           <Card.Text>{paragraph}</Card.Text>
         </Card.Body>
       </Card>
-    </>
-  );
-};
-export const GotYouCovered = (props) => {
-  return (
-    <>
-      <div className="container-fluid text-center px-5 pt-5 pb-3 mt-5">
-        <Row xs={1} md={2} className="g-0 justify-content-evenly mt-5">
-          {gotYouCoveredCardInfo.gotYouCoveredCardInfo.map((info) => {
-            return (
-              <Col
-                className="col-lg-4 col-md-4 col-sm-10 px-lg-5 px-md-4 px-sm-5 d-flex align-items-stretch"
-                key={info.id}
-              >
-                <GotYouCoveredCard {...info} />
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
     </>
   );
 };

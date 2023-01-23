@@ -185,6 +185,7 @@ export const TestimonialsCard = (props) => {
   return (
     <>
       <Carousel>
+        <h3 className="text-center mt-5">Testimonial</h3>
         <Carousel.Item slide={false}>
           <div className="row d-flex justify-content-center">
             <Card
