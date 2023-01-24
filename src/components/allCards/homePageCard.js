@@ -15,40 +15,34 @@ export const HowItWorksCard = (props) => {
   const { title, text } = props;
   return (
     <>
-      <div className="">
-        <div className="container-fluid WorksCard ">
-          <Card style={{ width: "20rem" }}>
-            <Row>
-              <Card.Body>
-                <CreateNewFolderIcon sx={{ fontSize: 40 }} />
-                <Card.Title>
-                  <h4> {title} </h4>
-                </Card.Title>
-                <Card.Text
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 300,
-                    lineHeight: "1.75rem",
-                    fontFamily: "Comfortaa",
-                  }}
-                >
-                  {text}
-                </Card.Text>
-                <Card.Link
-                  style={{
-                    fontFamily: "Montserrat" && "sans-serif",
-                    fontSize: "1rem",
-                    fontWeight: 600,
-                  }}
-                  href="#"
-                >
-                  Read More
-                </Card.Link>
-              </Card.Body>
-            </Row>
-          </Card>
-        </div>
-      </div>
+      <Card style={{ width: "22rem" }} className="my-3 mx-auto">
+        <Card.Body>
+          {/* <CreateNewFolderIcon sx={{ fontSize: 40 }} /> */}
+          <Card.Title>
+            <h4> {title} </h4>
+          </Card.Title>
+          <Card.Text
+          // style={{
+          //   fontSize: "1rem",
+          //   fontWeight: 300,
+          //   lineHeight: "1.75rem",
+          //   fontFamily: "Comfortaa",
+          // }}
+          >
+            {text}
+          </Card.Text>
+          <Card.Link
+            // style={{
+            //   fontFamily: "Montserrat" && "sans-serif",
+            //   fontSize: "1rem",
+            //   fontWeight: 600,
+            // }}
+            href="#"
+          >
+            Read More
+          </Card.Link>
+        </Card.Body>
+      </Card>
     </>
   );
 };

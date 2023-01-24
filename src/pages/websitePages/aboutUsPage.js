@@ -1,17 +1,12 @@
-import CounselorProfileForm from "../../components/Forms/UserProfileForm";
-import { TestimonialsCard } from "../../components/allCards/homePageCard";
-import { HowItWorks } from "../../components/allCards/homePageCard";
-import { WhyChooseUsCard } from "../../components/allCards/homePageCard";
-import PsychologicalAssessmentHero from "../../components/hero";
-const Testing = (props) => {
+import { NavSection } from "../../components/Navbar/guestNavbar";
+import { AboutUsHero } from "../../components/hero";
+
+const About = () => {
   return (
     <>
-      <PsychologicalAssessmentHero />
-      {/* <WhyChooseUsCard /> */}
-      {/* <CounselorProfileForm /> */}
-      {/* <TestimonialsCard /> */}
-      {/* <HowItWorks /> */}
+      <NavSection />
+      <AboutUsHero />
     </>
   );
 };
-export default Testing;
+export default About;

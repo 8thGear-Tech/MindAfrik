@@ -1,4 +1,4 @@
-// import aboutUsHeroImage from "public/assets/aboutUsHeroImage.png";
+import aboutUsHeroImage from "../assets/images/hero/aboutUsHeroImage.png";
 // HomePageHero
 // AboutUsHero
 // PsychologicalAssessmentHero
@@ -6,21 +6,21 @@ import AssessmentHero from "../../src/Image/AssesmmentHero.png";
 
 export const AboutUsHero = () => {
   return (
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-fluid aboutHeroColor">
+      <div className="row px-5 align-items-center">
         <div className="col-lg-7 col-md-7 col-sm-12">
-          <h1 className="aboutUsHeroText">
+          <h1 className="aboutUsHeroText text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
             rerum.
           </h1>
-          <p>
+          <p className="text-white">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
             similique atque laboriosam cum nostrum doloribus officiis magnam
             debitis Dolorem culpa dolor vel atque quam quidem exercitationem.
           </p>
         </div>
         <img
-          src="../../assets/images/admin-dashboard/aboutUsHeroImage.png"
+          src={aboutUsHeroImage}
           alt=""
           className="col-lg-5 col-md-5 col-sm-12"
         />

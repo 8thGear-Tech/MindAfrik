@@ -1,14 +1,15 @@
 @use "./reset";
 @use "./font" as *;
 @use "./components/allCards/PsychologicalAssessment" as *;
-@use "./pages/websitePages/underConstruction" as *;
+// @use "./pages/websitePages/underConstruction" as *;
 @use "../sassfiles/components/allCards/homePageCard" as *;
-<<<<<<< HEAD
 @use "./components/buttons/actionBtn" as *;
 @use "./components/allCards/dashBoardcards" as *;
 @use "./components/Hero/aboutUsHero" as *;
 @use "./components/navbar/dashBoardNavBar" as *;
 @use "./components/allCards/dashBoardcards" as *;
-=======
-@use "./components/Hero/psychologicalassessmentHero" as *;
->>>>>>> 0c5131fb706dfb014bf04cb12b227e8ea2dea5e0
+
+@use "./components/navbar/guestNavbar" as *;
+
+//pages
+@use "./pages/websitePages/aboutUsPage" as *;

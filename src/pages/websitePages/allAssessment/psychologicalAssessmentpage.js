@@ -28,7 +28,7 @@ const PsychologicalAssessment = () => {
 const GetStarted = () => {
   return (
     <>
-      <div className="container pt-5 px-4 mt-5">
+      <div className="container-fluid pt-5 px-5 mt-5">
         <div className=" row">
           <div className="col-lg-6 col-md-6 col-sm-12 ">
             <img src={psychologicalassessmentimage} />

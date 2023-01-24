@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Karla", Rubik;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -64,6 +64,93 @@ p {
 
 .gotYouCoveredCardBg {
   border-radius: 30px;
+}
+
+.ChooseCard {
+  align-content: center;
+  display: grid;
+  gap: 0.1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Card1 {
+  border: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  background-color: purple;
+  width: 300px;
+  height: 360px;
+}
+
+.whychooseus-card1 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.whychooseus-card2 {
+  grid-column-start: 2;
+  grid-row-end: 2;
+}
+
+.whychooseus-card3 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.whychooseus-card4 {
+  grid-row-start: 3;
+  grid-column-end: 3;
+}
+
+@media (min-width: 600px) {
+  .ChooseCard {
+    align-content: center;
+    display: grid;
+    gap: 0.1rem;
+  }
+  .Card1 {
+    border: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    background-color: purple;
+    width: 300px;
+    height: 360px;
+  }
+  .whychooseus-card1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .whychooseus-card2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .whychooseus-card3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .whychooseus-card4 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+}
+.CardTestimony {
+  border: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  background-color: purple;
+  width: 300px;
+  height: 360px;
 }
 
 .BookaSessionBtn {
@@ -226,6 +313,7 @@ p {
   font-weight: 500;
   color: #ffffff;
   width: 7.8rem;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .BookASessionNowBtn {
@@ -254,124 +342,100 @@ p {
   padding: 12px, 32px, 12px, 32px;
 }
 
-.navbar-light .navbar-toggler {
-  border-color: transparent !important;
+.BookaSessionBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 11.5rem;
 }
 
-.btn:focus {
-  outline: none;
-  box-shadow: none;
+.CheckStatusBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10.2rem;
 }
 
-.justifyNavItemsEnd {
-  justify-content: end !important;
+.RemoveNoteBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10.5rem;
 }
 
-.paragraphColor {
-  color: #000000;
-  font-weight: 600 !important;
+.EditNoteBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8.4rem;
 }
 
-.headerFontColor {
-  color: #08ba47;
+.ViewProfileBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 9.5rem;
 }
 
-.paragraphText {
-  font-size: 1rem;
-  font-weight: 300;
-  font-family: "Comfortaa", cursive;
+.EditProfileBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8.8rem;
 }
 
-.ChooseCard {
-  align-content: center;
-  display: grid;
-  gap: 0.1rem;
-  grid-template-columns: repeat(3, 1fr);
+.RemoveUserBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10.4rem;
 }
 
-.Card1 {
-  border: 5px;
-  box-sizing: border-box;
-  align-items: center;
-  text-align: center;
-  background-color: purple;
-  width: 300px;
-  height: 360px;
-}
-
-.whychooseus-card1 {
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-
-.whychooseus-card2 {
-  grid-column-start: 2;
-  grid-row-end: 2;
-}
-
-.whychooseus-card3 {
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-
-.whychooseus-card4 {
-  grid-row-start: 3;
-  grid-column-end: 3;
-}
-
-@media (min-width: 600px) {
-  .ChooseCard {
-    align-content: center;
-    display: grid;
-    gap: 0.1rem;
-  }
-  .Card1 {
-    border: 5px;
-    box-sizing: border-box;
-    align-items: center;
-    text-align: center;
-    background-color: purple;
-    width: 300px;
-    height: 360px;
-  }
-  .whychooseus-card1 {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-  }
-  .whychooseus-card2 {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-  }
-  .whychooseus-card3 {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-  }
-  .whychooseus-card4 {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-  }
-}
-.CardWork {
-  gap: 40px;
-  justify-content: space-between;
-}
-
-.CardTestimony {
-  border: 5px;
-  box-sizing: border-box;
-  align-items: center;
-  text-align: center;
-  background-color: purple;
-  width: 300px;
-  height: 360px;
+.AddUserBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 7.8rem;
 }
 
 .videoIcon {
@@ -429,8 +493,8 @@ p {
   font-size: 1rem;
 }
 
-.aboutUsHeroText {
-  margin-top: 100px;
+.aboutHeroColor {
+  background: linear-gradient(0deg, rgba(59, 192, 142, 0.1), rgba(59, 192, 142, 0.1)), radial-gradient(50% 45.66% at 50.5% 44.13%, rgba(9, 205, 30, 0.6) 0%, #107a57 95%), radial-gradient(50% 45.66% at 50.5% 44.13%, rgba(123, 99, 182, 0.951875) 14.58%, #8f67b3 91.15%, rgba(7, 72, 199, 0.67) 100%), linear-gradient(180deg, #09cd1e -1.52%, rgba(7, 72, 199, 0.67) 89.79%);
 }
 
 .SideNavItem {
@@ -438,5 +502,30 @@ p {
   font-weight: 700;
   font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
+}
+
+.LoginBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent !important;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.justifyNavItemsEnd {
+  justify-content: end !important;
 }
 /*# sourceMappingURL=styles.css.map */

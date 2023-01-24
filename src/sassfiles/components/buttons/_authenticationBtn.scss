@@ -1,0 +1,15 @@
+@use "../../colors" as *;
+@mixin Btns {
+  background: $btncolor;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: $btntextcolor;
+}
+.LoginBtn {
+  @include Btns;
+  width: 8rem;
+}

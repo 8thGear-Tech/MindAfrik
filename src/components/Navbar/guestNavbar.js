@@ -14,6 +14,8 @@ import { FacebookIcon } from "../../assets/icons/socialIcons";
 import { Instagramicon } from "../../assets/icons/socialIcons";
 import { LinkedInicon } from "../../assets/icons/socialIcons";
 import { Twittericon } from "../../assets/icons/socialIcons";
+import { LoginBtn } from "../Buttons/authenticationBtn";
+import { Login } from "@mui/icons-material";
 
 export const NavbarSection = () => {
   return (
@@ -51,7 +53,7 @@ export const NavbarSection = () => {
 
 export const NavSection = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
+    <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container fluid className="px-5">
         <Navbar.Brand href="#">
           <img
@@ -80,22 +82,22 @@ export const NavSection = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav> */}
-          <Nav>
-            <Nav.Link href="#deets" className="text-black mx-2">
+          <Nav className="d-flex align-items-center">
+            <Nav.Link href="/" className="text-black mx-2">
               Home
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black mx-2">
+            <Nav.Link href="/about" className="text-black mx-2">
               About Us
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black mx-2">
+            <Nav.Link href="/contact" className="text-black mx-2">
               Contact
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black mx-2">
-              Take a test
+            <Nav.Link href="/assessment" className="text-black mx-2">
+              Take a Test
             </Nav.Link>
-            {/* <div href="#memes" className="text-black">
-             Insert Login Button
-            </div> */}
+            <Nav.Link href="#memes" className="text-black mx-2">
+              <LoginBtn />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

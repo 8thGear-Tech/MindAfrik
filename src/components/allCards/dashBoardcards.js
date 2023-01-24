@@ -2,7 +2,6 @@ import Card from "react-bootstrap/Card";
 import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 import { SendBtn } from "../Buttons/actionBtn";
 import adminStats from "../../data/allCards/dashboardCards.json";
-import exploreCardHolder from "../../data/allCards/exploreCards.json";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
@@ -24,9 +23,9 @@ export const SingleExploreCard = (props) => {
   const { exploreParagraphtext, exploreIcon } = props;
   return (
     <>
-      <Card border="" style={{ width: "25rem" }} className="me-4">
+      <Card border="" style={{ width: "25rem" }} className="me-4 p-3 my-3">
         {" "}
-        <Card.Body>
+        <Card.Body className="d-flex">
           {" "}
           <Card.Text>{exploreParagraphtext}</Card.Text>
           <div className="">
@@ -36,34 +35,11 @@ export const SingleExploreCard = (props) => {
               style={{ maxHeight: "50px", maxWidth: "50px" }}
             />
           </div>
-          <div>
-            <button className="">{props.buttonText}</button>
-          </div>
         </Card.Body>
-      </Card>
-    </>
-  );
-};
-
-export const ExploreCard = () => {
-  return (
-    <>
-      <div className="">
-        <div className="row mx-2">
-          {exploreCardHolder.exploreCards.map((explore) => {
-            return (
-              <>
-                <div
-                  className="col-lg-4 col-md-4 col-sm-10 my-4"
-                  key={explore.id}
-                >
-                  <SingleExploreCard {...explore} />
-                </div>
-              </>
-            );
-          })}
+        <div className="d-flex justify-content-end">
+          <button className="">{props.buttonText}</button>
         </div>
-      </div>
+      </Card>
     </>
   );
 };

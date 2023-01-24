@@ -17,7 +17,7 @@ const CounsellorDashboardHomePage = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row d-flex justify-content-cente">
+        <div className="row d-flex justify-content-center">
           <div className="col-lg-3">
             <DashboardSideNav />
           </div>
