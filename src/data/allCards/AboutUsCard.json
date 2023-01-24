@@ -1,0 +1,22 @@
+{
+  "AdvisoryOverlay": [
+    {
+      "id": 1,
+      "image": "../../assets/images/advisoryboard1.png",
+      "name": "Asake Ladipo",
+      "position": "Business Developer."
+    },
+    {
+      "id": 2,
+      "image": "../../assets/images/advisoryboard2.png",
+      "name": "Trevoor Ladigun",
+      "position": "Business Developer."
+    },
+    {
+      "id": 3,
+      "image": "../../assets/images/advisoryboard3.png",
+      "name": "Ponnie Aina",
+      "position": "Business Developer."
+    }
+  ]
+}

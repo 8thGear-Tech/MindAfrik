@@ -1,0 +1,14 @@
+@use "../../colors" as *;
+@use "../../font" as *;
+
+@mixin CounselorForm {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 2px solid $terbgcolor;
+  background-color: $secbgcolor;
+}
+.form-control {
+  @include CounselorForm;
+}

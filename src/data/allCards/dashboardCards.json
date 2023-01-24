@@ -29,5 +29,25 @@
       " paragraphtext": "",
       "icon": "../../assets/images/admin-dashboard/stat-four.png"
     }
+  ],
+  "ValuesInfo": [
+    {
+      "id": 1,
+      "image": "../../assets/images/Core-Value.png",
+      "title": "Lorem Ipsum Aerde",
+      "text": "We strive to create office communities that are professional yet inviting so you can focus on your work and growing your business.We strive to create office communities that are professional yet inviting so you can focus on your work and growing your business."
+    },
+    {
+      "id": 2,
+      "image": "../../assets/images/Core-Value.png",
+      "title": "Lorem Ipsum Aerde",
+      "text": "We strive to create office communities that are professional yet inviting so you can focus on your work and growing your business.We strive to create office communities that are professional yet inviting so you can focus on your work and growing your business."
+    },
+    {
+      "id": 3,
+      "image": "../../assets/images/Core-Value.png",
+      "title": "Lorem Ipsum Aerde",
+      "text": "We strive to create office communities that are professional yet inviting so you can focus on your work and growing your business.We strive to create office communities that are professional yet inviting so you can focus on your work and growing your business."
+    }
   ]
 }

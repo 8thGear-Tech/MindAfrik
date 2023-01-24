@@ -16,7 +16,9 @@
 // DashboardButtons
 // BookASessionNowBtn
 // ScheduleASessionBtn
+
 // StartADiscussionBtn
+
 // StartChattingBtn
 //SaveBtn
 // ContinueBtn
@@ -113,5 +115,50 @@ export const AddUserBtn = () => {
         <Button className="AddUserBtn">Add User</Button>
       </a>
     </>
+  );
+};
+
+export const StartADiscussionBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="StartADiscussionBtn">Start A Discussion</Button>{" "}
+    </div>
+  );
+};
+
+export const StartChattingBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="StartChattingBtn">Start Chatting</Button>{" "}
+    </div>
+  );
+};
+
+export const SaveBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="SaveBtn">Save</Button>{" "}
+    </div>
+  );
+};
+export const ContinueBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="ContinueBtn">Continue</Button>{" "}
+    </div>
+  );
+};
+export const AddToCalendarBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="AddToCalendarBtn">Add To Calendar</Button>{" "}
+    </div>
+  );
+};
+export const SubmitBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="SubmitBtn">Submit</Button>{" "}
+    </div>
   );
 };

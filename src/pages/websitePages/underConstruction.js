@@ -10,11 +10,20 @@ import underconstructionhero from "../../assets/images/hero/underconstructionher
 //icons
 import { PhoneIcon } from "../../assets/icons/socialIcons";
 import { Mailicon } from "../../assets/icons/socialIcons";
+// cards
+// import { AdminStatisticsCard } from "../../components/allCards/dashBoardcards";
+// import { CoreValues } from "../../components/allCards/AboutUsCards";
+// import { AdvisoryBoardCards } from "../../components/allCards/AboutUsCards";
+// import { CounselorForm } from "../../components/Forms/AuthenticationForms";
+// import { Routes, Route } from "react-router-dom";
 
 const UnderConstruction = () => {
   return (
     <>
       <SectionOne />
+      {/* <CoreValues /> */}
+      {/* <AdvisoryBoardCards /> */}
+      {/* <CounselorForm /> */}
     </>
   );
 };
