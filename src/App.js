@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import UnderConstruction from "./pages/websitePages/underConstruction";
 // import { EvaluationCard } from "./components/allCards/PsychologicalAssessment";
-import Website from "./components/Forms/websiteForms";
+// import Website from "./components/Forms/websiteForms";
 import HeroSection from "./components/hero";
 import Testing from "./pages/websitePages/aboutUsPage";
 
@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Testing />} />
-        <Route path="testing" element={<Website />} />
+        {/* <Route path="testing" element={<Website />} /> */}
         <Route path="herosection" element={<HeroSection />} />
       </Routes>
     </BrowserRouter>
