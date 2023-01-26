@@ -162,3 +162,10 @@ export const SubmitBtn = () => {
     </div>
   );
 };
+export const GetStartedBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="GetStartedBtn">Get Started</Button>{" "}
+    </div>
+  );
+};
