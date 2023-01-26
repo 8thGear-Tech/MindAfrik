@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 //internal import
-import { DashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
+import { CounselleeDashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
 import { DashboardNavbar } from "../../../components/Navbar/dashBoardNavbar";
 
 import { SingleExploreCard } from "../../../components/allCards/dashBoardcards";
@@ -24,7 +24,7 @@ const CounselleeSession = () => {
       <div className="container-fluid">
         <div className="row d-flex justify-content-cente">
           <div className="col-lg-3">
-            <DashboardSideNav />
+            <CounselleeDashboardSideNav />
           </div>
           <div className="col-lg-9 col-md-12">
             <div className="col">

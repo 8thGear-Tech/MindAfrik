@@ -119,3 +119,19 @@
   @include Btns;
   width: 7.8rem;
 }
+.StartADiscussionBtn {
+  @include Btns;
+  width: 13rem;
+}
+.StartChattingBtn {
+  @include Btns;
+  width: 11.5rem;
+}
+.SaveBtn {
+  @include Btns;
+  width: 8.5rem;
+}
+.ContinueBtn {
+  @include Btns;
+  width: 11.5rem;
+}

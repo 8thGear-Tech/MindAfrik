@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import Card from "react-bootstrap/Card";
 import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 import { SendBtn } from "../Buttons/actionBtn";
@@ -117,15 +119,27 @@ export const AdminStatistics = () => {
 // };
 export const DashboardProfileCards = () => {
   return (
-    <div className="dashboardProfileCardsBorder ms-5 mt-5">
-      <div className="d-flex py-1 ps-3">
-        <img src={dashboardProfile_CardsImage} alt="" className="mt-2" />
+    <div className="dashboardProfileCardsBorder mt-5 px-3 py-2">
+      <div className="d-flex py-1">
         <div>
-          <ul className="dashboardProfileList mt-3">
-            <li>Username</li>
+          {" "}
+          <img
+            src={dashboardProfile_CardsImage}
+            alt=""
+            className=" mx-1"
+            // maxHeight="50px"
+            // maxWidth="50px"
+          />
+        </div>
+        <div className="my-auto mx-1">
+          <p className="p-0 m-0 text-white">Username</p>
+          <p className="p-0 m-0 text-white">Phone Number</p>
+          <p className="p-0 m-0 text-white">Email Address</p>
+          {/* <ul className="dashboardProfileList mt-3">
+            <li className="p">Username</li>
             <li className="py-1">Phone Number</li>
-            <li>Email Address</li>
-          </ul>
+            <li className="p">Email Address</li>
+          </ul> */}
         </div>
       </div>
     </div>

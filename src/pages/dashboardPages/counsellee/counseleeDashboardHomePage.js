@@ -4,13 +4,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 //internal import
-import { DashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
+import { CounselleeDashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
 import { DashboardNavbar } from "../../../components/Navbar/dashBoardNavbar";
 
 import { CounseleeDashboardCard } from "../../../components/allCards/dashBoardcards";
 import { SingleExploreCard } from "../../../components/allCards/dashBoardcards";
 
 import { ViewProfileBtn } from "../../../components/Buttons/actionBtn";
+import { BookASessionNowBtn } from "../../../components/Buttons/actionBtn";
 
 import exploreCardHolder from "../../../data/allCards/exploreCards.json";
 
@@ -24,7 +25,7 @@ const CounselleeDashboardHomePage = () => {
       <div className="container-fluid">
         <div className="row d-flex justify-content-cente">
           <div className="col-lg-3">
-            <DashboardSideNav />
+            <CounselleeDashboardSideNav />
           </div>
           <div className="col-lg-9 col-md-12">
             <div className="col">
@@ -125,6 +126,18 @@ export const ExploreCard = () => {
         </div>
       </div> */}
       <div className="container-fluid pb-3 mt-5">
+        <div className="row bgColor pt-4 px-4">
+          {" "}
+          <div className="col-lg-12 col-md- d-flex justify-content-between">
+            {" "}
+            <h4 className="text-white">You have 0 upcoming session</h4>
+            <div>
+              {" "}
+              <BookASessionNowBtn />
+            </div>
+          </div>
+        </div>
+
         <Row xs={1} md={2} className="g-0 justify-content-evenly mt-5">
           {exploreCardHolder.exploreCards.map((explore) => {
             return (
@@ -137,6 +150,14 @@ export const ExploreCard = () => {
             );
           })}
         </Row>
+        <div className="text-center py-5">
+          {" "}
+          <h4>Recent Activities</h4>
+          <p>
+            No activity yet. Book a session with a counsellor to start your
+            journey!
+          </p>
+        </div>
       </div>
     </>
   );

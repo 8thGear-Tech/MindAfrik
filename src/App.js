@@ -11,18 +11,23 @@ import UnderConstruction from "./pages/websitePages/underConstruction";
 import { Footer } from "./components/footer";
 import { DashboardNavbar } from "./components/Navbar/dashBoardNavbar";
 
+//admin
 import AdminDashboardCounselleesPage from "./pages/dashboardPages/admin/adminDashboardCounseleesPage";
 import AdminDashboardCounsellorsPage from "./pages/dashboardPages/admin/adminDashboardCounselorsPage";
 import AdminDashboardHomePage from "./pages/dashboardPages/admin/adminDashboardHomePage";
 import AdminDashboardNotificationPage from "./pages/dashboardPages/admin/adminDashboardNotificationPage";
 
-//Admin Dashboard Pages
+//Counsellor Dashboard Pages
 import CounsellorDashboardHomePage from "./pages/dashboardPages/counsellor/counselorsDashboardHomePage";
 import CounselorsDashboardCounseleesPage from "./pages/dashboardPages/counsellor/counselorsDashboardCounseleesPage";
 import CounsellorDashboardNotificationPage from "./pages/dashboardPages/counsellor/counselorsDashboardNotificationPage";
 import CounsellorProfile from "./pages/dashboardPages/counsellor/counselorsDashboardProfilePage";
+import CounsellorNote from "./pages/dashboardPages/counsellor/counselorsDashboardNotePage";
 
-//counselle
+//Authentication pages
+import CounselleeSignUp from "./pages/authenticationPages/counseleeSignUpPage";
+
+//counsellee
 import CounselleeDashboardHomePage from "./pages/dashboardPages/counsellee/counseleeDashboardHomePage";
 import CounselleeProfile from "./pages/dashboardPages/counsellee/counseleesDashboardProfilePage";
 import CounselleeSession from "./pages/dashboardPages/counsellee/counseleesDashboardSessionPage";
@@ -41,21 +46,38 @@ function App() {
           path="psychologicalAssessment"
           element={<PsychologicalAssessment />}
         />
+        {/* Admin Dashboard */}
+        <Route
+          path="adminDashboardHomePage"
+          element={<AdminDashboardHomePage />}
+        />
+        <Route
+          path="adminDashboardCounselleesPage"
+          element={<AdminDashboardCounselleesPage />}
+        />
+        <Route
+          path="adminDashboardCounsellerPage"
+          element={<AdminDashboardCounsellorsPage />}
+        />
+        <Route
+          path="adminDashboardNotificationPage"
+          element={<AdminDashboardNotificationPage />}
+        />
         {/* Counsellors Dashboard */}
         <Route
           path="counsellorDashboard"
           element={<CounsellorDashboardHomePage />}
         />
-
+        <Route path="counsellorProfile" element={<CounsellorProfile />} />
         <Route
           path="counsellorCounselleeList"
-          element={<CounsellorDashboardNotificationPage />}
+          element={<CounselorsDashboardCounseleesPage />}
         />
         <Route
           path="counsellorDashboardNotification"
           element={<CounsellorDashboardNotificationPage />}
         />
-        <Route path="counsellorProfile" element={<CounsellorProfile />} />
+        <Route path="counsellorNote" element={<CounsellorNote />} />
         {/* Counsellee Dashboard */}
         <Route
           path="counselleeDashboard"
@@ -67,7 +89,11 @@ function App() {
           path="counselleeNotification"
           element={<CounselleeNotification />}
         />
+        <Route path="counselleeSession" element={<CounselleeSession />} />
         <Route path="counselleeTest" element={<CounselleeTestPage />} />
+
+        {/* Authentication pages */}
+        <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
       </Routes>
     </BrowserRouter>
   );

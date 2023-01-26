@@ -1,7 +1,7 @@
 // external import
 import Table from "react-bootstrap/Table";
 
-import { DashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
+import { CounsellorDashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
 import { DashboardNavbar } from "../../../components/Navbar/dashBoardNavbar";
 
 //images
@@ -14,7 +14,7 @@ const CounsellorProfile = () => {
       <div className="container-fluid">
         <div className="row d-flex justify-content-cente">
           <div className="col-lg-3">
-            <DashboardSideNav />
+            <CounsellorDashboardSideNav />
           </div>
           <div className="col-lg-9 col-md-12">
             <div className="col">

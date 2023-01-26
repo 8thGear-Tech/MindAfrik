@@ -2,7 +2,7 @@
 import Table from "react-bootstrap/Table";
 
 //internal import
-import { DashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
+import { CounsellorDashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
 import { DashboardNavbar } from "../../../components/Navbar/dashBoardNavbar";
 
 import { CounselorsDashboardCard } from "../../../components/allCards/dashBoardcards";
@@ -19,7 +19,7 @@ const CounsellorDashboardHomePage = () => {
       <div className="container-fluid">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-3">
-            <DashboardSideNav />
+            <CounsellorDashboardSideNav />
           </div>
           <div className="col-lg-9 col-md-12">
             <div className="col">

@@ -16,7 +16,9 @@
 // DashboardButtons
 // BookASessionNowBtn
 // ScheduleASessionBtn
+
 // StartADiscussionBtn
+
 // StartChattingBtn
 //SaveBtn
 // ContinueBtn
@@ -196,6 +198,14 @@ export const SendBtn = () => {
   );
 };
 
+export const StartADiscussionBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="StartADiscussionBtn">Start A Discussion</Button>{" "}
+    </div>
+  );
+};
+
 export const BookNowBtn = () => {
   return (
     <div className="mt-2">
@@ -218,6 +228,14 @@ export const GetInTouchBtn = () => {
   );
 };
 
+export const StartChattingBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="StartChattingBtn">Start Chatting</Button>{" "}
+    </div>
+  );
+};
+
 export const SaveBtn = () => {
   return (
     <div className="mt-2">
@@ -236,6 +254,28 @@ export const StartYourAssessmentBtn = () => {
   return (
     <div className="mt-2">
       <Button className="startYourAssessmentBtn">Start Your Assessment</Button>{" "}
+      <Button className="SaveBtn">Save</Button>{" "}
+    </div>
+  );
+};
+export const ContinueBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="ContinueBtn">Continue</Button>{" "}
+    </div>
+  );
+};
+export const AddToCalendarBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="AddToCalendarBtn">Add To Calendar</Button>{" "}
+    </div>
+  );
+};
+export const SubmitBtn = () => {
+  return (
+    <div className="mt-2">
+      <Button className="SubmitBtn">Submit</Button>{" "}
     </div>
   );
 };

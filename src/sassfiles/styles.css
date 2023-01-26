@@ -438,6 +438,54 @@ p {
   width: 7.8rem;
 }
 
+.StartADiscussionBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 13rem;
+}
+
+.StartChattingBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 11.5rem;
+}
+
+.SaveBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8.5rem;
+}
+
+.ContinueBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 11.5rem;
+}
+
 .videoIcon {
   font-size: 45px !important;
 }
@@ -464,11 +512,8 @@ p {
 }
 
 .dashboardProfileCardsBorder {
-  border: 1px solid red;
-  max-width: 280px;
-  max-height: 130px;
+  border: 1px solid #fff;
   border-radius: 20px;
-  background-color: #08ba47;
 }
 
 .dashboardProfileCardsBorder img {
@@ -504,7 +549,36 @@ p {
   font-family: "Montserrat", sans-serif;
 }
 
+.sideNavButton {
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 2.5rem;
+}
+.sideNavButton:hover {
+  color: #058547;
+  background-color: #ffffff;
+}
+.sideNavButton:focus {
+  background-color: #ffffff;
+  color: #058547;
+}
+
 .LoginBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.SignUpBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 2.7rem;
@@ -527,5 +601,46 @@ p {
 
 .justifyNavItemsEnd {
   justify-content: end !important;
+}
+
+.formBg {
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(0.5px);
+  border-radius: 35px;
+}
+
+.contactBgColor {
+  background-color: rgba(129, 229, 140, 0.5);
+}
+
+.fontWeight {
+  font-weight: 700;
+}
+
+.placeholderRadius {
+  border: 1px solid #828282;
+  border-radius: 50px;
+  padding: 8px 20px;
+}
+
+.sectionOneBgColor {
+  background: rgba(129, 229, 140, 0.5);
+}
+
+.sectionTwoBgColor {
+  background: rgba(215, 232, 239, 0.3);
+}
+
+.bgColor {
+  height: 105px;
+  /* pry/60 */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(8, 186, 71, 0.6);
+  border-radius: 10px;
+}
+
+.bgColor {
+  background: rgba(129, 229, 140, 0.5);
+  border-radius: 10px;
+  height: 500px;
 }
 /*# sourceMappingURL=styles.css.map */
