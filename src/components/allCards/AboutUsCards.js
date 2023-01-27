@@ -100,10 +100,10 @@ export const TeamsCard = () => {
       <div className="px-3">
         {" "}
         <div className="container-fluid pt-3 px-5">
-          <div className="row">
-            <div className="col-lg-3 col-md-3 col-sm-12 text end">
+          <div className="row text-center">
+            <div className="col-lg-3 col-md-6 col-sm-12 text-center">
               <img src={danielcraig} width="250rem" />
-              <div className="text-center mt-2 mb-0 ">
+              <div className="text-center">
                 <h4>Daniel Craig</h4>
                 <p>Operational Manager</p>
               </div>
@@ -126,9 +126,9 @@ export const TeamsCard = () => {
         {" "}
         <div className="container pt-3 px-5">
           <div className="row">
-            <div className="col-lg-3 col-md-3 col-sm-12 text end">
-              <img src={judithfanika} width="250rem" />
-              <div className="text-center mt-2 mb-0 ">
+            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
+              <img src={judithfanika} width="230rem" />
+              <div className="text-center">
                 <h4>Judith Fanika</h4>
                 <p>Head of Operations</p>
               </div>
@@ -151,9 +151,9 @@ export const TeamsCard = () => {
         {" "}
         <div className="container pt-3 px-5">
           <div className="row">
-            <div className="col-lg-3 col-md-3 col-sm-12 text end">
+            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
               <img src={somieylofty} width="250rem" />
-              <div className="text-center mt-2 mb-0 ">
+              <div className="text-center">
                 <h4>Somiey Lofty</h4>
                 <p>Vice President & Development Officer</p>
               </div>
