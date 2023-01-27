@@ -95,6 +95,9 @@ function App() {
         {/* Authentication pages */}
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
       </Routes>
+      <footer>
+        <Footer />
+      </footer>
     </BrowserRouter>
   );
 }
