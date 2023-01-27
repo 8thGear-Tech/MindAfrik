@@ -4,6 +4,7 @@ import howItWorksDatas from "../../data/homePageCards.json";
 //components
 import { NavSection } from "../../components/Navbar/guestNavbar";
 import { HowItWorksCard } from "../../components/allCards/homePageCard";
+import { HomePageHero } from "../../components/hero";
 import { TestimonialsCard } from "../../components/allCards/homePageCard";
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 
@@ -21,6 +22,7 @@ import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jp
 const Home = () => (
   <>
     <NavSection />
+    <HomePageHero />
     <HowItWorks />
     {/* <WhyChooseUsCard /> */}
     {/* <TestimonialsCard /> */}

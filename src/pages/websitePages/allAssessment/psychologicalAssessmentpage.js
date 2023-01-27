@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 //internal import
-import { NavbarSection } from "../../../components/Navbar/guestNavbar";
+import { NavSection } from "../../../components/Navbar/guestNavbar";
 import { PsychologicalAssessmentHero } from "../../../components/hero";
 import { EvaluationCard } from "../../../components/allCards/PsychologicalAssessment";
 import { GotYouCoveredCard } from "../../../components/allCards/PsychologicalAssessment";
@@ -16,7 +16,7 @@ import psychologicalassessmentimage from "../../../assets/images/psychologicalas
 const PsychologicalAssessment = () => {
   return (
     <>
-      <NavbarSection />
+      <NavSection />
       <PsychologicalAssessmentHero />
       <GetStarted />
       <Evaluation />

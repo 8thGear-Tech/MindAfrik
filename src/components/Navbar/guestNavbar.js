@@ -92,7 +92,10 @@ export const NavSection = () => {
             <Nav.Link href="/contact" className="text-black mx-2">
               Contact
             </Nav.Link>
-            <Nav.Link href="/assessment" className="text-black mx-2">
+            <Nav.Link
+              href="/psychologicalAssessment"
+              className="text-black mx-2"
+            >
               Take a Test
             </Nav.Link>
             <Nav.Link href="#memes" className="text-black mx-2">

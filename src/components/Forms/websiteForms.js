@@ -44,128 +44,49 @@ export const AssesmentForm = () => {
 };
 
 export const ContactForm = () => {
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
-  const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const [userdetails, setUserDetails] = useState([]);
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    // setUser({ ...user });
-    setUser({ ...user, [name]: value });
-    console.log(name, value);
-  };
-  const [validated, setValidated] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    setValidated(true);
-    // setUser({ firstName: "", lastName: "", password: "", confirmPassword: "" });
-  };
-
   return (
     <>
-      <div className="">
-        <Form className="py-5">
-          <h3 className="text-center mb-4">Get In Touch</h3>
-          <Row className="mb-3 d-flex px-4">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridPassword">
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-          </Row>
-
-          <Form.Group className="mb-3 px-4" controlId="formGridAddress1">
-            <Form.Control placeholder="Email" />
-          </Form.Group>
-
-          <Form.Group className="mb-3 px-4" controlId="formGridAddress2">
-            <Form.Control placeholder="Type your message here" />
-          </Form.Group>
-          <div className="text-center">
-            {" "}
-            <SubmitBtn />
-          </div>
-        </Form>
-        {/* <Form onSubmit={handleSubmit}>
-              <h3 className="text-center my-4">CREATE ACCOUNT </h3>
-              <Form.Group
-                className="mb-3 formFieldWidth"
-                controlId="firstName"
-                // id="firstName"
-              >
+      <Form>
+        <Form.Group className="mb-3 py-2" controlId="formBasicName">
+          <Row>
+            <Col>
+              <Form.Group className="mb-3 py-2" controlId="formBasicFirstName">
+                {" "}
                 <Form.Control
-                  type="name"
                   placeholder="First Name"
-                  name="firstName"
-                  value={user.firstName}
-                  onChange={handleChange}
+                  className="placeholderRadius"
                 />
               </Form.Group>
-              <Form.Group
-                className="mb-3 formFieldWidth"
-                controlId="lastName"
-                // id="lastName"
-              >
+            </Col>
+            <Col>
+              <Form.Group className="mb-3 py-2" controlId="formBasicLastName">
+                {" "}
                 <Form.Control
-                  type="name"
                   placeholder="Last Name"
-                  name="lastName"
-                  value={user.lastName}
-                  // onChange={(e) => setLastName(e.target.value)}
-                  onChange={handleChange}
+                  className="placeholderRadius"
                 />
               </Form.Group>
-              <Form.Group
-                className="mb-3 formFieldWidth"
-                controlId="password"
-                // id="password"
-              >
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  value={user.password}
-                  // onChange={(e) => setPassword(e.target.value)}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group
-                className="mb-3 formFieldWidth"
-                controlId="confirmPassword"
-                // id="confirmPassword"
-              >
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm Password"
-                  name="confirmPassword"
-                  value={user.confirmPassword}
-                  // onChange={(e) => setConfirmPassword(e.target.value)}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <div className="text-center">
-                <Button variant="primary" type="submit">
-                  Create Account
-                </Button>
-              </div>
-            </Form> */}
+            </Col>
+          </Row>
+        </Form.Group>
+        <Form.Group className="mb-3 py-2" controlId="formBasicEmail">
+          <Form.Control
+            type="email"
+            className="placeholderRadius"
+            placeholder="Email"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlMessage">
+          <Form.Control
+            as="textarea"
+            rows={3}
+            className="placeholderRadius pt-4 pb-5"
+            placeholder="Message"
+          />
+        </Form.Group>
+      </Form>{" "}
+      <div className="my-3 text-center">
+        <SubmitBtn />
       </div>
     </>
   );

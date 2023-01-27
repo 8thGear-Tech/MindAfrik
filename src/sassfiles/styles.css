@@ -603,14 +603,59 @@ p {
   justify-content: end !important;
 }
 
+.HomePageHeroBgg::before {
+  content: "";
+  position: absolute;
+  background-color: #2e3133;
+  height: 70vh;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.HomePageHeroBg {
+  background: url(/src/assets/images/hero/homeheroBg.png);
+  background-size: cover;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 70vh;
+  width: 100%;
+}
+
+.HomePageHeroBg h2 {
+  position: relative;
+  line-height: 45px;
+}
+
+.HomePageHeroBg h3 {
+  position: relative;
+  line-height: 35px;
+}
+
+@media only screen and (max-width: 990px) {
+  .HomePageHeroBgg::before {
+    height: 22.5rem;
+  }
+  .HomePageHeroBg::before {
+    height: 22.5rem;
+  }
+}
 .formBg {
   background: rgba(255, 255, 255, 0.7);
   filter: blur(0.5px);
   border-radius: 35px;
 }
 
-.contactBgColor {
-  background-color: rgba(129, 229, 140, 0.5);
+.sectionTwoBgColor {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 35px;
+  height: 550px;
 }
 
 .fontWeight {

@@ -3,6 +3,11 @@ import aboutUsHeroImage from "../assets/images/hero/aboutUsHeroImage.png";
 // AboutUsHero
 // PsychologicalAssessmentHero
 import AssessmentHero from "../../src/Image/AssesmmentHero.png";
+import { NavbarSection } from "../components/Navbar/guestNavbar";
+
+import { GetStartedBtn } from "../components/Buttons/actionBtn";
+
+import homehero from "../assets/images/hero/homehero.png";
 
 export const AboutUsHero = () => {
   return (
@@ -94,3 +99,93 @@ export const PsychologicalAssessmentHero = () => {
     </>
   );
 };
+
+export const HomePageHero = () => {
+  return (
+    <>
+      <div className="container-fluid HomePageHeroBg d-flex align-items-center">
+        <div className="px-5 container-fluid HomePageHeroBgg d-flex py-5">
+          <div className="row align-items-center justify-content-center px-4 py-3">
+            <div className="col-lg-7 col-md-7 col-sm-12 pt-3">
+              <h1 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
+                <br />
+              </h1>
+              <h2 className=" d-xs-block d-sm-block d-md-block d-lg-none">
+                Employability Skills Training
+                <br />
+              </h2>
+              <p className="mt-3">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Molestias aperiam ex iusto ipsam cupiditate iure.
+              </p>
+              <div className="text-start mb-4">
+                {" "}
+                <GetStartedBtn />
+              </div>
+            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12">
+              <img
+                src={homehero}
+                className="d-block mx-lg-auto img-fluid"
+                alt=""
+                loading=""
+                width="500rem"
+              />
+            </div>
+          </div>
+          {/* <div className="px-3"> */}
+          {/* <div className="container pt-3 px-5"> */}
+          {/* <div className="row d-flex">
+            <div className="col-lg-6 col-md-6 col-sm-12 mt-5 align-item-center">
+              <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+              <br></br>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Molestias aperiam ex iusto ipsam cupiditate iure.
+              </p>
+              <div className="text-start mb-4">
+                {" "}
+                <GetStartedBtn />
+              </div>
+            </div>
+
+            <div className="col-lg-6 col-md-6 col-sm-12 ">
+              <img src={homehero} width="500rem" />
+            </div>
+          </div> */}
+          {/* </div> */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+// export const HomePageHero = () => {
+//   return (
+//     <>
+//       <div className="container-fluid HomePageHeroBg d-flex align-items-center">
+//         <div className="px-3 container-fluid HomePageHeroBgg d-flex pt-3 pb-4">
+//           <div className="row justify-content-center ">
+//             <div className="col-lg-6 col-md-6 col-sm-12 mt-5 align-item-center">
+//               <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+//               <br></br>
+//               <p>
+//                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+//                 Molestias aperiam ex iusto ipsam cupiditate iure.
+//               </p>
+//               <div className="text-start mb-4">
+//                 {" "}
+//                 <GetStartedBtn />
+//               </div>
+//             </div>
+
+//             <div className="col-lg-6 col-md-6 col-sm-12 text end">
+//               <img src={homehero} width="500rem" />
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };

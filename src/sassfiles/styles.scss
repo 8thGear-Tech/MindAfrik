@@ -12,6 +12,7 @@
 @use "./components/navbar/guestNavbar" as *;
 
 //pages
+@use "./pages/websitePages/homepage" as *;
 @use "./pages/websitePages/aboutUsPage" as *;
 @use "./pages/websitePages/contactUsPage" as *;
 

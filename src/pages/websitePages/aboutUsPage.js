@@ -1,5 +1,6 @@
 import { NavSection } from "../../components/Navbar/guestNavbar";
 import { AboutUsHero } from "../../components/hero";
+import { TeamCard } from "../../components/allCards/AboutUsCards";
 import { CoreValuesCards } from "../../components/allCards/AboutUsCards";
 import ValuesData from "../../data/allCards/dashboardCards.json";
 
@@ -8,6 +9,7 @@ const About = () => {
     <>
       <NavSection />
       <AboutUsHero />
+      <TeamCard />
       <CoreValues />
     </>
   );
