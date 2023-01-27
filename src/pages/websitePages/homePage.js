@@ -18,6 +18,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import howitworkssteps from "../../assets/images/home/howitworkssteps.png";
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
+import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 
 const Home = () => (
   <>
@@ -36,7 +37,10 @@ const HowItWorks = () => {
       <div className="container-fluid p-5 ">
         {" "}
         <h3 className="text-center">How It Works</h3>
-        {/* <img src={howitworkssteps} className="py-4 img-fluid mx-auto" /> */}
+        <img
+          src={howitworkssteps}
+          className="py-4 img-fluid mx-auto d-none d-lg-block d-md-none d-sm-none d-xs-none"
+        />
         <Row xs={1} md={2} className="g-0 justify-content-center mt-2">
           {howItWorksDatas.homepageData.map((Itworks) => {
             return (
@@ -218,19 +222,47 @@ const WhyChooseUsCard = () => {
 const Newsletter = () => {
   return (
     <>
-      {" "}
-      <div className="container py-3">
-        <div className="row d-flex justify-content-center g-0 align-items-center">
-          {/* <div className="card"> */}{" "}
+      <div className="container-fluid py-5 newsletterBg">
+        <div className="mt-2 p-5">
+          <div className="card-body d-flex justify-content-center">
+            <div className="bg-white rounded d-flex justify-content-center p-5 newletterShadow">
+              <div className="mx-5">
+                {" "}
+                <h4 className="">Subscribe to our Newsletter</h4>
+                <p className="">
+                  Join us as we give you update on our features
+                </p>
+              </div>
+
+              <div className="mx-5 d-flex align-items-center">
+                {" "}
+                <InputGroup className="mb-3" style={{ width: "22rem" }}>
+                  <InputGroup.Text>
+                    <MailOutlineOutlinedIcon />
+                  </InputGroup.Text>
+                  <Form.Control
+                    placeholder="Enter email here"
+                    aria-label="Email"
+                    aria-describedby="basic-addon2"
+                  />
+                  <SubscribeBtn />
+                </InputGroup>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>{" "}
+      {/* <div className="container-fluid py-5 newsletterBg">
+        <div className="row d-flex justify-content-center align-items-center bg-white w-75 py-5">
+        
           <div className="col-lg-6 col-md-6 col-sm-12">
-            {/* <div style={{ width: "18rem" }}> */}
-            {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+           
             <h4 className="">Subscribe to our Newsletter</h4>
             <p className="">Join us as we give you update on our features</p>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12">
             <InputGroup className="mb-3" style={{ width: "22rem" }}>
-              {/* <EmailOutlinedIcon /> */}
+           
               <Form.Control
                 placeholder="Enter email here"
                 aria-label="Email"
@@ -240,7 +272,7 @@ const Newsletter = () => {
             </InputGroup>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

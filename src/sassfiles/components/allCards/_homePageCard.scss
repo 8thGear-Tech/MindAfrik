@@ -4,18 +4,18 @@
 // .WorksCard {
 //   text-align: center;
 // }
-.ChooseCard {
-  align-content: center;
-  display: grid;
-  gap: 0.1rem;
-  grid-template-columns: repeat(3, 1fr);
-}
+// .ChooseCard {
+//   align-content: center;
+//   display: grid;
+//   gap: 0.1rem;
+//   grid-template-columns: repeat(3, 1fr);
+// }
 .Card1 {
   border: 5px;
   box-sizing: border-box;
   align-items: center;
   text-align: center;
-  background-color: purple;
+  background-color: yellowgreen;
   width: 300px;
   height: 360px;
 }
@@ -92,12 +92,23 @@
 // @media (min-width: 600px){
 
 // }
-// @media (min-width: 900px) {
+// .whychooseus-card2 {
+//   grid-column-start: 2;
+//   grid-row-end: 2;
+// }
+// .whychooseus-card3 {
+//   grid-column-start: 3;
+//   grid-row-start: 2;
+// }
+// .whychooseus-card4 {
+//   grid-row-start: 3;
+//   grid-column-end: 3;
+// }
+// @media (min-width: 600px) {
 //   .ChooseCard {
 //     align-content: center;
 //     display: grid;
-//     gap: 0.5rem;
-//     grid-template-columns: repeat(3, 1fr);
+//     gap: 0.1rem;
 //   }
 //   .Card1 {
 //     border: 5px;
@@ -107,13 +118,39 @@
 //     background-color: purple;
 //     width: 300px;
 //     height: 360px;
-//   }}
-// @media (min-width: 600px) {
-//   .CardWork {
-//     grid-template-columns: repeat(2, 1fr);
 //   }
-// .container {
-//   display: flex;
-//   flex-direction: row-reverse;
-//   flex-wrap: wrap;
+//   .whychooseus-card1 {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     display: grid;
+//     gap: 1rem;
+//   }
+//   .whychooseus-card2 {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     display: grid;
+//     gap: 1rem;
+//   }
+//   .whychooseus-card3 {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     display: grid;
+//     gap: 1rem;
+//   }
+//   .whychooseus-card4 {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     display: grid;
+//     gap: 1rem;
+//   }
+// }
+
+// .CardTestimony {
+//   border: 5px;
+//   box-sizing: border-box;
+//   align-items: center;
+//   text-align: center;
+//   background-color: purple;
+//   width: 300px;
+//   height: 360px;
 // }

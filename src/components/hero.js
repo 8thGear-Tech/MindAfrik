@@ -14,14 +14,19 @@ export const AboutUsHero = () => {
     <div className="container-fluid aboutHeroColor">
       <div className="row px-5 align-items-center">
         <div className="col-lg-7 col-md-7 col-sm-12">
-          <h1 className="aboutUsHeroText text-white">
+          <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-white pt-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
             rerum.
-          </h1>
+            <br />
+          </h2>
+          <h3 className=" d-xs-block d-sm-block d-md-block d-lg-none aboutUsHeroText text-white pt-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
+            rerum.
+            <br />
+          </h3>
           <p className="text-white">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
-            similique atque laboriosam cum nostrum doloribus officiis magnam
-            debitis Dolorem culpa dolor vel atque quam quidem exercitationem.
+            similique atque laboriosam.
           </p>
         </div>
         <img
@@ -78,10 +83,15 @@ export const AboutUsHero = () => {
 export const PsychologicalAssessmentHero = () => {
   return (
     <>
-      <div className="container pt-3 px-4">
+      <div className="container pt-3 px-5">
         <div className=" row">
-          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 align-items-center">
-            <h1>You don't feel good?</h1>
+          <div className="col-lg-6 col-md-12 col-sm-12 mt-5 align-items-center">
+            <h1 className=" d-none d-xl-block d-lg-block d-md-block d-sm-none d-xs-none">
+              You don't feel good?
+            </h1>
+            <h2 className="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+              You don't feel good?{" "}
+            </h2>
             <br></br>
             <h4>We can help you find yourself</h4>
             <br></br>
@@ -92,7 +102,7 @@ export const PsychologicalAssessmentHero = () => {
             </p>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 ">
-            <img src={AssessmentHero} />
+            <img src={AssessmentHero} className="mx-lg-auto img-fluid" />
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@
 @use "./pages/websitePages/homepage" as *;
 @use "./pages/websitePages/aboutUsPage" as *;
 @use "./pages/websitePages/contactUsPage" as *;
+@use "./pages/websitePages/assessment/PsychologicalAssessmentPage" as *;
 
 //admin dashboard
 @use "./pages/dashboardPages/admin/adminDashboardHomePage" as *;

@@ -12,7 +12,7 @@ export const Footer = () => {
       <div class="container-fluid justify-content-center">
         {/* row-cols-1 row-cols-sm-2 row-cols-md-5 */}
         <footer class="row pt-5 mt-5 justify-content-between">
-          <div class="col-lg-3 col-md-6  mb-3">
+          <div class="col-lg-3 col-md-12 mb-3">
             <a
               href="/"
               class="d-flex align-items-center mb-3 link-dark text-decoration-none"
@@ -27,7 +27,7 @@ export const Footer = () => {
 
           {/* <div class="col mb-3"></div> */}
 
-          <div class="col-lg-3 col-md-6  mb-3">
+          <div class="col-lg-3 col-md-3 mb-3">
             <h5>Connect</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
@@ -66,7 +66,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6  mb-3">
+          <div class="col-lg-3 col-md-3  mb-3">
             <h5>Legal Stuff</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
@@ -87,7 +87,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6  mb-3">
+          <div class="col-lg-3 col-md-3  mb-3">
             <h5>Useful links</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">

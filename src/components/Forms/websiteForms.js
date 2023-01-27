@@ -16,30 +16,55 @@ import Row from "react-bootstrap/Row";
 import { SubmitBtn } from "../Buttons/actionBtn";
 //images
 
+import Dropdown from "react-bootstrap/Dropdown";
+
 export const AssesmentForm = () => {
   return (
-    <>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+    <div className="container-fluid bgColor">
+      <h1 className="mt-5 d-flex justify-content-around">
+        {" "}
+        Anxiety and Depression Symptoms
+      </h1>
+      <h5 className="d-flex justify-content-around">
+        Over the last 2 weeks , how often have you been bothered by feeling
+        tired or having little energy?
+      </h5>
+      <div className="container d-flex justify-content-around">
+        <Dropdown.Menu show className="border-0">
+          <Dropdown.Item eventKey="1" className="border border-2 rounded-pill">
+            Not at all
+          </Dropdown.Item>
+          <Dropdown.Item
+            eventKey="2"
+            className="mt-2 w-100 border border-2 rounded-pill"
+            style={{ width: "20 rem" }}
+          >
+            Several days
+          </Dropdown.Item>
+          <Dropdown.Item
+            eventKey="3"
+            className=" mt-2 border border-2 rounded-pill"
+            style={{ width: "20 rem" }}
+          >
+            More than half days
+          </Dropdown.Item>
+          <Dropdown.Item
+            eventKey="4"
+            className="mt-2 border border-2 rounded-pill"
+            style={{ width: "20 rem" }}
+          >
+            Nearly every day
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </div>
+      {/* <br></br>
+      <br></br>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-    </>
+      <h5 className="d-flex justify-content-around">
+        Over the last 2 weeks , how often have you been bothered by feeling
+        tired or having little energy?
+      </h5> */}
+    </div>
   );
 };
 
