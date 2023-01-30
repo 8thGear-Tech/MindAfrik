@@ -34,20 +34,31 @@
 // RemoveUser
 // AddUser
 
+import { Link } from "react-router-dom";
 import { AssesmentForm } from "../Forms/websiteForms";
 
 import Button from "react-bootstrap/Button";
 
-export const BookaSessionBtn = () => {
+export const BookASessionBtn = () => {
   return (
     <>
-      <a href="https://bit.ly/MindafrikCounsellingSession" target="_blank">
+      <a href="/counsellorsDetails">
         {" "}
         <Button className="BookaSessionBtn">Book a Session</Button>
       </a>
     </>
   );
 };
+// export const BookaSessionBtn = () => {
+//   return (
+//     <>
+//       <a href="https://bit.ly/MindafrikCounsellingSession" target="_blank">
+//         {" "}
+//         <Button className="BookaSessionBtn">Book a Session</Button>
+//       </a>
+//     </>
+//   );
+// };
 //Opeyemi
 export const CheckStatusBtn = () => {
   return (
@@ -123,23 +134,23 @@ export const AddUserBtn = () => {
 export const TakeAssessmentBtn = () => {
   return (
     <>
-      <a href="" target="_blank">
+      <a href="/assessment" target="_blank">
         {" "}
         <Button className="TakeAssessmentBtn">Take Assessment </Button>
       </a>
     </>
   );
 };
-export const BookASessionBtn = () => {
-  return (
-    <>
-      <a href="" target="_blank">
-        {" "}
-        <Button className="BookASessionBtn">Book A Session</Button>
-      </a>
-    </>
-  );
-};
+// export const BookASessionBtn = () => {
+//   return (
+//     <>
+//       <a href="" target="_blank">
+//         {" "}
+//         <Button className="BookASessionBtn">Book A Session</Button>
+//       </a>
+//     </>
+//   );
+// };
 
 export const ContactBtn = () => {
   return (
@@ -282,14 +293,19 @@ export const AddToCalendarBtn = () => {
 export const SubmitBtn = () => {
   return (
     <div className="mt-2">
-      <Button className="SubmitBtn">Submit</Button>{" "}
+      <a href="/resultPage">
+        <Button className="SubmitBtn">Submit</Button>{" "}
+      </a>
     </div>
   );
 };
 export const GetStartedBtn = () => {
   return (
     <div className="mt-2">
-      <Button className="GetStartedBtn">Get Started</Button>{" "}
+      <Link to="/signInPage">
+        {" "}
+        <Button className="GetStartedBtn">Get Started</Button>
+      </Link>
     </div>
   );
 };

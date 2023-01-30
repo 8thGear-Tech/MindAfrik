@@ -16,6 +16,8 @@
 @use "./pages/websitePages/aboutUsPage" as *;
 @use "./pages/websitePages/contactUsPage" as *;
 @use "./pages/websitePages/assessment/PsychologicalAssessmentPage" as *;
+@use "./pages/websitePages/selectCounselorPage" as *;
+@use "./pages/websitePages/FAQpage" as *;
 
 //admin dashboard
 @use "./pages/dashboardPages/admin/adminDashboardHomePage" as *;
@@ -24,3 +26,7 @@
 @use "./pages/authenticationPages/counseleeSignUpPage" as *;
 @use "./pages/dashboardPages/counsellee/counseleesDashboardHomePage" as *;
 @use "./pages/dashboardPages/counsellee/counseleeDashboard-take-a-testPage" as *;
+
+// .offcanvas {
+//   transition: transform 1000ms ease-in-out;
+// }

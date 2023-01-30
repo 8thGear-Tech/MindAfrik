@@ -9,6 +9,7 @@
 // import Button from "react-bootstrap/Button";
 
 import { useState } from "react";
+import { NavSection } from "../Navbar/guestNavbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -20,51 +21,58 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 export const AssesmentForm = () => {
   return (
-    <div className="container-fluid bgColor">
-      <h1 className="mt-5 d-flex justify-content-around">
-        {" "}
-        Anxiety and Depression Symptoms
-      </h1>
-      <h5 className="d-flex justify-content-around">
-        Over the last 2 weeks , how often have you been bothered by feeling
-        tired or having little energy?
-      </h5>
-      <div className="container d-flex justify-content-around">
-        <Dropdown.Menu show className="border-0">
-          <Dropdown.Item eventKey="1" className="border border-2 rounded-pill">
-            Not at all
-          </Dropdown.Item>
-          <Dropdown.Item
-            eventKey="2"
-            className="mt-2 w-100 border border-2 rounded-pill"
-            style={{ width: "20 rem" }}
-          >
-            Several days
-          </Dropdown.Item>
-          <Dropdown.Item
-            eventKey="3"
-            className=" mt-2 border border-2 rounded-pill"
-            style={{ width: "20 rem" }}
-          >
-            More than half days
-          </Dropdown.Item>
-          <Dropdown.Item
-            eventKey="4"
-            className="mt-2 border border-2 rounded-pill"
-            style={{ width: "20 rem" }}
-          >
-            Nearly every day
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </div>
-      {/* <br></br>
+    <>
+      {" "}
+      <NavSection />
+      <div className="container-fluid bgColor">
+        <h1 className="mt-5 d-flex justify-content-around">
+          {" "}
+          Anxiety and Depression Symptoms
+        </h1>
+        <h5 className="d-flex justify-content-around">
+          Over the last 2 weeks , how often have you been bothered by feeling
+          tired or having little energy?
+        </h5>
+        <div className="container d-flex justify-content-around">
+          <Dropdown.Menu show className="border-0">
+            <Dropdown.Item
+              eventKey="1"
+              className="border border-2 rounded-pill"
+            >
+              Not at all
+            </Dropdown.Item>
+            <Dropdown.Item
+              eventKey="2"
+              className="mt-2 w-100 border border-2 rounded-pill"
+              style={{ width: "20 rem" }}
+            >
+              Several days
+            </Dropdown.Item>
+            <Dropdown.Item
+              eventKey="3"
+              className=" mt-2 border border-2 rounded-pill"
+              style={{ width: "20 rem" }}
+            >
+              More than half days
+            </Dropdown.Item>
+            <Dropdown.Item
+              eventKey="4"
+              className="mt-2 border border-2 rounded-pill"
+              style={{ width: "20 rem" }}
+            >
+              Nearly every day
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </div>
+        {/* <br></br>
       <br></br>
 
       <h5 className="d-flex justify-content-around">
         Over the last 2 weeks , how often have you been bothered by feeling
         tired or having little energy?
       </h5> */}
-    </div>
+      </div>
+    </>
   );
 };
 

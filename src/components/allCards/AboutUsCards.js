@@ -153,7 +153,6 @@ export const TeamCard = () => {
     <>
       <div className="container-fluid pt-3 px-lg-5">
         <h3 className="text-center py-4">Team</h3>
-        {/* <div className="row d-flex"> */}
         {teamData.teamData.map((team) => {
           return (
             <>
@@ -163,59 +162,31 @@ export const TeamCard = () => {
             </>
           );
         })}
-        {/* </div> */}
       </div>
-      {/* </div> */}
-      {/* <div className="px-3">
+    </>
+  );
+};
+
+export const AdvisoryBoardOnHoverCard = (props) => {
+  const { image, name, position, link } = props;
+  return (
+    <>
+      <div className="AdvisoryImage">
         {" "}
-        <div className="container pt-3 px-5">
-          <div className="row">
-            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
-              <img src={judithfanika} width="230rem" />
-              <div className="text-center">
-                <h4>Judith Fanika</h4>
-                <p>Head of Operations</p>
-              </div>
-            </div>
-            <div className="col-lg-9 col-md-9 col-sm-12 mt-5 align-item-center">
-              <p>
-                Daniel has over 5 years of Management and Operations experience,
-                including recent work as a strategy consultant for coworking
-                office operators. As Operator Relations Manager of the Americas
-                for the largest flexible office advisory firm globally, the
-                Instant Group, Rubin managed a portfolio of over 4,500 office
-                center partnerships representing hundreds of millions of dollars
-                in real estate value throughout North and South America
-              </p>
-            </div>
-          </div>
-        </div>
+        <img src={image} alt="" />
+        <h6 className="AdvisoryName">{name}</h6>
+        <h6 className="AdvisoryPosition">{position}</h6>
+        {/* <div className="AdvisoryLink">
+          <a
+            className="btn"
+            href={link}
+            role="button"
+            style={{ color: "#fff" }}
+          >
+            <LinkedInIcon />
+          </a>
+        </div> */}
       </div>
-      <div className="px-3">
-        {" "}
-        <div className="container pt-3 px-5">
-          <div className="row">
-            <div className="col-lg-3 col-md-3 col-sm-12 text-center">
-              <img src={somieylofty} width="250rem" />
-              <div className="text-center">
-                <h4>Somiey Lofty</h4>
-                <p>Vice President & Development Officer</p>
-              </div>
-            </div>
-            <div className="col-lg-9 col-md-9 col-sm-12 mt-5 align-item-center">
-              <p>
-                Daniel has over 5 years of Management and Operations experience,
-                including recent work as a strategy consultant for coworking
-                office operators. As Operator Relations Manager of the Americas
-                for the largest flexible office advisory firm globally, the
-                Instant Group, Rubin managed a portfolio of over 4,500 office
-                center partnerships representing hundreds of millions of dollars
-                in real estate value throughout North and South America
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };

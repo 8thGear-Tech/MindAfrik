@@ -24,37 +24,45 @@ const ContactPage = () => {
 const Contact = () => {
   return (
     <>
-      <Container fluid className="sectionOneBgColor">
+      <Container fluid className="sectionOneBgColor px-5">
         <Row
           className="d-flex justify-content-center"
           style={{ height: "100vh" }}
         >
           <Col className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center align-items-center py-5 d-none d-lg-block d-md-block d-sm-none d-xs-none">
-            <div className="py-5">
+            <div className="py-5 ">
               {" "}
               {/* <h3 className="">Welcome to</h3> */}
-              <img variant="top" src={mindafrikfulllogo} className="py-5" />
+              <img variant="top" src={mindafrikfulllogo} className="py-4" />
               <div className="">
                 {" "}
-                <Button variant="outline-success" className="my-2 d-block">
-                  <EmailOutlinedIcon />
+                <Button
+                  variant="outline-success"
+                  className="my-2 text-center w-50"
+                >
+                  <EmailOutlinedIcon className="" />
                   <span className="">Send an email</span>
                 </Button>
-                <Button variant="outline-success" className="my-2 d-block">
-                  <EmailOutlinedIcon />
+              </div>
+              <div className="">
+                {" "}
+                <Button variant="outline-success" className="my-2 w-50">
+                  <EmailOutlinedIcon className="" />
                   <span className="">Chat with Us</span>
                 </Button>
-                <Button variant="outline-success" className="my-2 d-block">
-                  <PhoneIcon />
+              </div>
+              <div>
+                <Button variant="outline-success" className="my-2 w-50">
+                  <PhoneIcon className="" />
                   <span className="">Call us (Toll-free)</span>
                 </Button>
               </div>
-              <div className="pt-3 d-flex">
+              <div className="pt-5 d-flex justify-content-center">
                 <div className="d-flex justify-content-center">
                   {" "}
                   <PhoneIcon />
                   <a href="tel:2349131862169" className="text-decoration-none">
-                    <p className="paragraphColor mx-3">+2349131862169</p>
+                    <p className="mx-3">+2349131862169</p>
                   </a>
                 </div>
                 <div className="d-flex justify-content-center">
@@ -63,7 +71,7 @@ const Contact = () => {
                     href="mailto:info@mindafrik.com"
                     className="text-decoration-none"
                   >
-                    <p className="paragraphColor mx-3">info@mindafrik.com</p>
+                    <p className="mx-3">info@mindafrik.com</p>
                   </a>
                 </div>
               </div>

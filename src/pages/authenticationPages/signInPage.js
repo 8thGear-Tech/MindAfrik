@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SignUpAsCounselleeForm } from "../../components/Forms/AuthenticationForms";
+import { SignInForm } from "../../components/Forms/AuthenticationForms";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,7 +8,7 @@ import KeyboardBackspaceOutlinedIcon from "@mui/icons-material/KeyboardBackspace
 //images
 import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
 
-const CounselleeSignUp = () => {
+const SignInPage = () => {
   return (
     <>
       <Container fluid className="">
@@ -27,8 +27,8 @@ const CounselleeSignUp = () => {
             <Link to="/" className="text-black">
               <KeyboardBackspaceOutlinedIcon />
             </Link>
-            <h4 className="text-center pb-3">Create An Account</h4>
-            <SignUpAsCounselleeForm />
+            {/* <h4 className="text-center pb-3">Sign In</h4> */}
+            <SignInForm />
           </Col>
         </Row>
       </Container>
@@ -36,4 +36,4 @@ const CounselleeSignUp = () => {
   );
 };
 
-export default CounselleeSignUp;
+export default SignInPage;

@@ -4,25 +4,36 @@
 //CounselleeBtn
 //CounsellorBtn
 
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 export const SignUpBtn = () => {
   return (
     <>
-      <a href="">
+      <Link to="/counsellorDashboard">
         {" "}
         <Button className="SignUpBtn">Sign Up</Button>
-      </a>
+      </Link>
     </>
   );
 };
 export const LoginBtn = () => {
   return (
     <>
-      <a href="">
+      <Link to="/signInPage">
         {" "}
         <Button className="LoginBtn">Login</Button>
-      </a>
+      </Link>
     </>
   );
 };
+// export const SignUpBtn = () => {
+//   return (
+//     <>
+//       <a href="">
+//         {" "}
+//         <Button className="SignUpBtn">Sign Up</Button>
+//       </a>
+//     </>
+//   );
+// };

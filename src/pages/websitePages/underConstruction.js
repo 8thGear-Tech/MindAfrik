@@ -2,7 +2,7 @@
 import { NavbarSection } from "../../components/Navbar/guestNavbar";
 
 //buttons
-import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
+// import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
 import { TakeAssessmentBtn } from "../../components/Buttons/actionBtn";
 import { BookASessionBtn } from "../../components/Buttons/actionBtn";
 import { ContactBtn } from "../../components/Buttons/actionBtn";
@@ -57,10 +57,10 @@ const UnderConstruction = () => {
                 <a href="take-a-testPage.js">Launching Our Site Soon!</a>
                 <a href="websiteForms.js">Our Site Soon!</a>
                 <a href="hero.js">Launching Site Soon!</a>
-                <BookaSessionBtn />
+                {/* <BookaSessionBtn /> */}
                 <howItWorksCard />
                 <TakeAssessmentBtn />
-                <BookASessionBtn />
+                {/* <BookASessionBtn /> */}
                 <ContactBtn />
                 <SubscribeBtn />
                 <BookASessionNowBtn />

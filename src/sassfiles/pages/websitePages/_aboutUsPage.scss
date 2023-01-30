@@ -1,1 +1,6 @@
 @use "../../components/Hero/aboutUsHero" as *;
+@use "../../components/allCards/AboutUsCards" as *;
+
+.advisoryBg {
+  background-color: #14815c;
+}

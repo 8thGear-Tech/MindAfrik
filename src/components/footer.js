@@ -43,22 +43,38 @@ export const Footer = () => {
               <div className="d-flex">
                 {" "}
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-muted">
+                  <a
+                    href="https://www.facebook.com/MindAfrik"
+                    target="_blank"
+                    class="nav-link p-0 text-muted"
+                  >
                     <FacebookIcon />
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-muted">
+                  <a
+                    href="/ https://instagram.com/mindafrik?igshid=YmMyMTA2M2Y="
+                    target="_blank"
+                    class="nav-link p-0 text-muted"
+                  >
                     <Instagramicon />
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-muted">
+                  <a
+                    href="https://www.linkedin.com/company/mindafrik/"
+                    target="_blank"
+                    class="nav-link p-0 text-muted"
+                  >
                     <LinkedInicon />
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-muted">
+                  <a
+                    href="https://twitter.com/mindafrik?s=20&t=wJssKKGPPBQ78zV-gvl6Rg "
+                    target="_blank"
+                    class="nav-link p-0 text-muted"
+                  >
                     <Twittericon />
                   </a>
                 </li>
@@ -70,18 +86,18 @@ export const Footer = () => {
             <h5>Legal Stuff</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a href="/disclaimer" class="nav-link p-0 text-muted">
                   Disclaimer
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a href="/privacyPolicy" class="nav-link p-0 text-muted">
                   Privacy Policy
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
-                  Term Of Service
+                <a href="/termsOfService" class="nav-link p-0 text-muted">
+                  Terms Of Service
                 </a>
               </li>
             </ul>
@@ -91,27 +107,30 @@ export const Footer = () => {
             <h5>Useful links</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a href="/" class="nav-link p-0 text-muted">
                   Home
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a href="/FAQ" class="nav-link p-0 text-muted">
                   FAQ
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a href="/about" class="nav-link p-0 text-muted">
                   About Us
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a href="/contact" class="nav-link p-0 text-muted">
                   Contact Us
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
+                <a
+                  href="/psychologicalAssessment"
+                  class="nav-link p-0 text-muted"
+                >
                   Take a test
                 </a>
               </li>
