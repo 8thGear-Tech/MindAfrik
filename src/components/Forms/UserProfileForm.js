@@ -1,8 +1,51 @@
+// Michael
+// counseleeProfileForm
+
+//Awelewa
+// counselorProfileForm
 // counseleeProfile
 // counselorsprofile
+
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { SaveBtn } from "../../components/Buttons/actionBtn";
+
+export const CounseleeProfileForm = () => {
+  return (
+    <>
+      <Form>
+        <Form.Group className="mb-3 py-2" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="name" className="placeholderRadius" />
+        </Form.Group>
+        <Form.Group className="mb-3 py-2" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" className=" placeholderRadius" />
+        </Form.Group>
+        <Form.Group className="mb-3 py-2" controlId="formBasicPhoneNumber">
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control type="number" className=" placeholderRadius" />
+        </Form.Group>
+        <Form.Group className="mb-3 py-2" controlId="formBasicNumber">
+          <Form.Label>Date of Birth</Form.Label>
+          <Form.Control type="number" className="placeholderRadius" />
+        </Form.Group>
+        <Form.Group className="mb-3 py-2" controlId="formBasicAddress">
+          <Form.Label>Address</Form.Label>
+          <Form.Control type="text" className="placeholderRadius" />
+        </Form.Group>
+        <Form.Group className="mb-3 py-2" controlId="formBasicNextofKin">
+          <Form.Label>Next of Kin</Form.Label>
+          <Form.Control type="text" className="placeholderRadius" />
+        </Form.Group>
+      </Form>{" "}
+      <div className="my-3 text-center">
+        <SaveBtn />
+      </div>
+    </>
+  );
+};
 
 const CounselorProfileForm = () => {
   const [firstname, setFirstName] = useState("");

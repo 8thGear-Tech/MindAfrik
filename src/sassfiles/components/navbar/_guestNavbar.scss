@@ -1,7 +1,13 @@
+@use "../buttons/authenticationBtn" as *;
+
 .navbar-light .navbar-toggler {
   border-color: transparent !important;
 }
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.justifyNavItemsEnd {
+  justify-content: end !important;
 }

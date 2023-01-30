@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Karla", Rubik;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -39,6 +39,12 @@ h5 {
   font-family: "Montserrat", sans-serif;
 }
 
+h6 {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
 p {
   font-size: 1rem;
   font-weight: 300;
@@ -47,16 +53,292 @@ p {
   font-family: "Comfortaa", cursive;
 }
 
-.cardShadow {
-  box-shadow: 4px 4px 7px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-  height: 10rem;
+.parent {
+  position: relative;
 }
 
-.hello {
+.evaluation-card {
   position: absolute;
-  height: 143px;
-  top: 220px;
+  top: 130px;
+  height: 71px;
+  width: 250px;
+  display: block;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  display: block;
+}
+
+.gotYouCoveredCardBg {
+  border-radius: 30px;
+}
+
+.Card1 {
+  border: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  background-color: yellowgreen;
+  width: 300px;
+  height: 360px;
+}
+
+.whychooseus-card1 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.whychooseus-card2 {
+  grid-column-start: 2;
+  grid-row-end: 2;
+}
+
+.whychooseus-card3 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.whychooseus-card4 {
+  grid-row-start: 3;
+  grid-column-end: 3;
+}
+
+@media (min-width: 600px) {
+  .ChooseCard {
+    align-content: center;
+    display: grid;
+    gap: 0.1rem;
+  }
+  .Card1 {
+    border: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    background-color: purple;
+    width: 300px;
+    height: 360px;
+  }
+  .whychooseus-card1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .whychooseus-card2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .whychooseus-card3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .whychooseus-card4 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+}
+.CardTestimony {
+  border: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  background-color: purple;
+  width: 300px;
+  height: 360px;
+}
+
+.BookaSessionBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 11.5rem;
+}
+
+.sendBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.bookNowBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 9rem;
+}
+
+.proceedBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.getInTouchBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10rem;
+}
+
+.saveBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.takeATestBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10rem;
+}
+
+.startYourAssessmentBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 20rem;
+}
+
+.TakeAssessmentBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 13rem;
+  padding: 12px, 32px, 12px, 32px;
+}
+
+.BookASessionBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 13rem;
+  padding: 12px, 32px;
+}
+
+.ContactBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10rem;
+}
+
+.SubscribeBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 7.8rem;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.BookASessionNowBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 15rem;
+  padding: 12px, 32px, 12px, 32px;
+}
+
+.ScheduleASessionBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 14rem;
+  padding: 12px, 32px, 12px, 32px;
 }
 
 .BookaSessionBtn {
@@ -155,7 +437,7 @@ p {
   width: 7.8rem;
 }
 
-.TakeAssessmentBtn {
+.StartADiscussionBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 2.7rem;
@@ -165,10 +447,9 @@ p {
   font-weight: 500;
   color: #ffffff;
   width: 13rem;
-  padding: 12px, 32px, 12px, 32px;
 }
 
-.BookASessionBtn {
+.StartChattingBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 2.7rem;
@@ -177,11 +458,10 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 13rem;
-  padding: 12px, 32px;
+  width: 11.5rem;
 }
 
-.ContactBtn {
+.SaveBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 2.7rem;
@@ -190,10 +470,10 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 10rem;
+  width: 8.5rem;
 }
 
-.SubscribeBtn {
+.ContinueBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 2.7rem;
@@ -202,10 +482,10 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 7.8rem;
+  width: 11.5rem;
 }
 
-.BookASessionNowBtn {
+.GetStartedBtn {
   background: #0060c6;
   border-radius: 10px;
   height: 2.7rem;
@@ -214,21 +494,111 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 15rem;
-  padding: 12px, 32px, 12px, 32px;
+  width: 9.5rem;
 }
 
-.ScheduleASessionBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 2.7rem;
-  font-size: 20px;
+.videoIcon {
+  font-size: 45px !important;
+}
+
+.scheduleASession {
+  margin-left: 190px;
+}
+.scheduleASession .cardShadow {
+  box-shadow: 4px 4px 7px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  height: 10rem;
+}
+.scheduleASession .hello {
+  position: absolute;
+  height: 143px;
+  top: 220px;
+}
+
+.dashboardProfileList {
+  list-style-type: none;
   font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
+}
+
+.dashboardProfileCardsBorder {
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.dashboardProfileCardsBorder img {
+  width: 100px;
+  height: 100px;
+}
+
+.counselorsDashboardCard img {
+  max-width: 400px;
+}
+
+.cardShadow {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.statFont {
+  font-size: 1.35rem;
+}
+
+.textMutedFont {
+  font-size: 1rem;
+}
+
+.aboutHeroColor {
+  background: linear-gradient(0deg, rgba(59, 192, 142, 0.1), rgba(59, 192, 142, 0.1)), radial-gradient(50% 45.66% at 50.5% 44.13%, rgba(9, 205, 30, 0.6) 0%, #107a57 95%), radial-gradient(50% 45.66% at 50.5% 44.13%, rgba(123, 99, 182, 0.951875) 14.58%, #8f67b3 91.15%, rgba(7, 72, 199, 0.67) 100%), linear-gradient(180deg, #09cd1e -1.52%, rgba(7, 72, 199, 0.67) 89.79%);
+}
+
+.SideNavItem {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sideNavButton {
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 14rem;
-  padding: 12px, 32px, 12px, 32px;
+  height: 2.5rem;
+}
+.sideNavButton:hover {
+  color: #058547;
+  background-color: #ffffff;
+}
+.sideNavButton:focus {
+  background-color: #ffffff;
+  color: #058547;
+}
+
+.LoginBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
+}
+
+.SignUpBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 2.7rem;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 8rem;
 }
 
 .navbar-light .navbar-toggler {
@@ -240,31 +610,238 @@ p {
   box-shadow: none;
 }
 
-.paragraphColor {
-  color: #000000;
-  font-weight: 600 !important;
+.justifyNavItemsEnd {
+  justify-content: end !important;
 }
 
-.headerFontColor {
-  color: #08ba47;
+.HomePageHeroBgg::before {
+  content: "";
+  position: absolute;
+  background-color: #2e3133;
+  height: 70vh;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
 }
 
-.paragraphText {
-  font-size: 1rem;
-  font-weight: 300;
-  font-family: "Comfortaa", cursive;
+.HomePageHeroBg {
+  background: url(/src/assets/images/hero/homeheroBg.png);
+  background-size: cover;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 70vh;
+  width: 100%;
 }
 
-.Card1 {
-  border: 5px;
-  box-sizing: border-box;
-  align-items: center;
-  text-align: center;
-  background-color: yellowgreen;
+.HomePageHeroBg h2 {
+  position: relative;
+  line-height: 45px;
+}
+
+.HomePageHeroBg h3 {
+  position: relative;
+  line-height: 35px;
+}
+
+@media only screen and (max-width: 990px) {
+  .HomePageHeroBgg::before {
+    height: 22.5rem;
+  }
+  .HomePageHeroBg::before {
+    height: 22.5rem;
+  }
+}
+@media only screen and (max-width: 765px) {
+  .HomePageHeroBg {
+    height: 140vh;
+  }
+}
+.newsletterBg {
+  background-color: #d7e8ef;
+}
+
+.newletterShadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+.AdvisoryImage {
+  overflow: hidden;
+  height: 300px;
   width: 300px;
-  height: 360px;
+  position: relative;
+  cursor: pointer;
+  margin: 0 15px;
+  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0px 50px;
 }
 
-.AssessmentPhoto {
-  height: auto;
-}/*# sourceMappingURL=styles.css.map */
+.AdvisoryImage:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-140%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0px 50px;
+  opacity: 0.8;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+.AdvisoryImage:hover:after {
+  transform: translate(-50%, -50%);
+}
+
+.AdvisoryImage:hover .AdvisoryIcon {
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.AdvisoryIcon {
+  position: absolute;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s;
+}
+
+.AdvisoryName {
+  position: absolute;
+  text-align: center;
+  line-height: 90%;
+  font-size: small;
+  font-weight: bold;
+  z-index: 2;
+  top: 35%;
+  left: 50%;
+  transform: translate(-2000px, -50%);
+  color: #fff;
+  transition: 0.8s;
+  transition-timing-function: ease-in;
+}
+
+.AdvisoryImage:hover .AdvisoryName {
+  transform: translate(-50%, -50%);
+  transition-timing-function: ease;
+}
+
+.AdvisoryPosition {
+  position: absolute;
+  text-align: center;
+  font-size: small;
+  z-index: 2;
+  top: 43%;
+  left: 50%;
+  transform: translate(-2000px, -50%);
+  color: #fff;
+  transition: 0.8s;
+  transition-timing-function: ease-in;
+}
+
+.AdvisoryImage:hover .AdvisoryPosition {
+  transform: translate(-50%, -50%);
+  transition-timing-function: ease;
+}
+
+.AdvisoryLink {
+  position: absolute;
+  text-align: center;
+  font-size: xx-small;
+  z-index: 2;
+  top: 92%;
+  left: 50%;
+  transform: translate(-2000px, -50%);
+  color: #fff;
+  transition: 0.8s;
+  transition-timing-function: ease-in;
+}
+
+.AdvisoryImage:hover .AdvisoryLink {
+  transform: translate(-50%, -50%);
+  transition-timing-function: ease;
+}
+
+.advisoryBg {
+  background-color: #14815c;
+}
+
+.formBg {
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(0.5px);
+  border-radius: 35px;
+}
+
+.sectionTwoBgColor {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 35px;
+  height: 550px;
+}
+
+.BgColor {
+  background: rgba(129, 229, 140, 0.5);
+}
+
+.gotYouCoveredBg {
+  background: rgba(129, 229, 140, 0.3);
+}
+
+.counsellorCardBorder {
+  border: 1px solid #000000;
+  border-radius: 30px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: none !important;
+  background-color: none !important;
+}
+
+.accordion-button:focus {
+  border-color: none !important;
+}
+
+.button.accordion-button::after {
+  background-image: url(/public/mindafrik.ico) !important;
+}
+
+.fontWeight {
+  font-weight: 700;
+}
+
+.placeholderRadius {
+  border: 1px solid #828282;
+  border-radius: 50px;
+  padding: 8px 20px;
+}
+
+.sectionOneBgColor {
+  background: rgba(129, 229, 140, 0.5);
+}
+
+.sectionTwooBgColor {
+  background: rgba(215, 232, 239, 0.3);
+}
+
+.bgColor {
+  height: 105px;
+  /* pry/60 */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(8, 186, 71, 0.6);
+  border-radius: 10px;
+}
+
+.bgColor {
+  background: rgba(129, 229, 140, 0.5);
+  border-radius: 10px;
+  height: 500px;
+}
+/*# sourceMappingURL=styles.css.map */
