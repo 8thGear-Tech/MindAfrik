@@ -11,7 +11,13 @@ import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jp
 import howItWorksDatas from "../../data/homePageCards.json";
 import TestionalCardDat from "../../data/allCards/Testimonials.json";
 import DataWhyChooseUs from "../../data/whychooseuscard.json";
+import testimonial from "../../data/homePageCards.json";
 import Container from "react-bootstrap/Container";
+
+//images
+import image1 from "../../assets/images/home/image1.png";
+import image2 from "../../assets/images/home/image2.png";
+import image3 from "../../assets/images/home/image3.png";
 
 export const HowItWorksCard = (props) => {
   const { title, text } = props;
@@ -311,6 +317,226 @@ export const WhyChooseUsCard = (props) => {
     </>
   );
 };
+
+export const WhyChooseUsCardNew = () => {
+  return (
+    <>
+      <div className="container-fluid px-4 pb-5 newsletterBg">
+        <div className="row justify-content-center">
+          <h3 className="text-center my-5">Why Choose Us</h3>
+
+          <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center justify-content-center">
+            {" "}
+            <div className="card mb-5">
+              <img
+                src={image1}
+                className="card-img-top p-5"
+                alt="..."
+                // style={{ maxWidth: "80%" }}
+              />
+              <div className="card-body">
+                <h5 className="card-title" style={{ color: "#00114C" }}>
+                  <b>Safe & Secure</b>
+                </h5>
+                <p className="card-text">
+                  Lorem ipsum dolor sconsectet adipiscing elit ut aliquam Lorem
+                  ipsum dolor sit amet, consectet adipiscing aliquam Lorem ipsum
+                  dolor sit amet, consectetur eliqueliadipiscing elit ut aliquam
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4">
+            {/* <div className="col d-lg-flex d-md-flex mb-5 "> */}
+            <div className="col">
+              <div className="card mb-5" style={{}}>
+                <img src={image2} className="card-img-top p-5" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title" style={{ color: "#00114C" }}>
+                    <b>Standardized Sessions</b>
+                  </h5>
+                  <p className="card-text">
+                    Lorem ipsum dolor sconsectet adipiscing elit ut aliquam
+                    Lorem ipsum dolor sit amet, consectet adipiscing aliquam
+                    Lorem ipsum dolor sit amet, consectetur eliqueliadipiscing
+                    elit ut aliquam
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card mb-5" style={{}}>
+                <img src={image2} className="card-img-top p-5" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title" style={{ color: "#00114C" }}>
+                    <b>Standardized Sessions</b>
+                  </h5>
+                  <p className="card-text">
+                    Lorem ipsum dolor sconsectet adipiscing elit ut aliquam
+                    Lorem ipsum dolor sit amet, consectet adipiscing aliquam
+                    Lorem ipsum dolor sit amet, consectetur eliqueliadipiscing
+                    elit ut aliquam
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* </div> */}
+          </div>
+          <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center ">
+            {" "}
+            <div className="card mb-5" style={{}}>
+              <div>
+                {" "}
+                <img src={image3} className="card-img-top p-5" alt="..." />
+              </div>
+
+              <div className="card-body">
+                <h5 className="card-title" style={{ color: "#00114C" }}>
+                  <b>Quality Counsellors</b>
+                </h5>
+                <p className="card-text">
+                  Lorem ipsum dolor sconsectet adipiscing elit ut aliquam Lorem
+                  ipsum dolor sit amet, consectet adipiscing aliquam Lorem ipsum
+                  dolor sit amet, consectetur eliqueliadipiscing elit ut aliquam
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="container-fluid p-5 mx-auto">
+        {" "}
+        <h3 className="text-center pb-4">Why Choose Us</h3>
+        <div className="card-group row justify-content-center">
+          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 pb-5">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button> */}
+        {/* </Card.Body>
+            </Card>
+          </div>
+          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 pb-5">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 pb-5">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div> */}
+        {/* <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 m-auto">
+            <div className="col d-lg-flex d-md-flex mb-5 ">
+              <div className="col"> */}
+        {/* <Card className="Card1" style={{ width: "20 rem" }}>
+                  <Card.Img
+                    src={CardIcon}
+                    className="ChooseImage pt-3"
+                    style={{
+                      maxHeight: "100px",
+                      maxWidth: "100px",
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title>
+                      <h4> title </h4>
+                    </Card.Title>
+                    <Card.Text
+                      style={{
+                        fontSize: "1rem",
+                        fontWeight: 300,
+                        lineHeight: "1.75rem",
+                        fontFamily: "Comfortaa",
+                      }}
+                    >
+                      HEllo
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+              <div className="col">
+                <Card className="Card1" style={{ width: "20 rem" }}>
+                  <Card.Img
+                    src={CardIcon}
+                    className="ChooseImage pt-3"
+                    style={{
+                      maxHeight: "100px",
+                      maxWidth: "100px",
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title>
+                      <h4> title </h4>
+                    </Card.Title>
+                    <Card.Text
+                      style={{
+                        fontSize: "1rem",
+                        fontWeight: 300,
+                        lineHeight: "1.75rem",
+                        fontFamily: "Comfortaa",
+                      }}
+                    >
+                      HEllo
+                    </Card.Text>
+                  </Card.Body>
+                </Card> */}
+        {/* </div>
+            </div>
+            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 pb-5"> */}
+        {/* <Card className="Card1" style={{ width: "20 rem" }}>
+                <Card.Img
+                  src={CardIcon}
+                  className="ChooseImage pt-3"
+                  style={{
+                    maxHeight: "100px",
+                    maxWidth: "100px",
+                  }}
+                />
+                <Card.Body>
+                  <Card.Title>
+                    <h4> title </h4>
+                  </Card.Title>
+                  <Card.Text
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 300,
+                      lineHeight: "1.75rem",
+                      fontFamily: "Comfortaa",
+                    }}
+                  >
+                    HEllo
+                  </Card.Text>
+                </Card.Body>
+              </Card> */}
+        {/* </div>
+          </div> */}
+      </div>
+      {/* </div> */}
+    </>
+  );
+};
 export const TestimonialsCard = (props) => {
   const { title, subtitle, text } = props;
   return (
@@ -488,5 +714,42 @@ export const Testimonials = () => {
         </div>
       </div>
     </>
+  );
+};
+
+const TestimonialsNewCard = (props) => {
+  const { name, location, testimonial } = props;
+  return (
+    <>
+      <div className="card p-3">
+        {" "}
+        <h5 className="">{name}</h5>
+        <h6 className="">{location}</h6>
+        <p className="">{testimonial}</p>
+      </div>
+    </>
+  );
+};
+
+export const TestimonialsNew = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row d-flex justify-content-center my-3">
+        <h3 className="text-center pt-5">Testimonials</h3>
+        <p className="text-center">
+          Don't take our word for it. See what Users are saying about us.
+        </p>
+        {testimonial.testimonials.map((testimonials) => {
+          return (
+            <div
+              className="col-sm-12 col-md-6 col-lg-4 mt-2 mb-5 px-lg-4 d-flex justify-content-center"
+              key={testimonials.id}
+            >
+              <TestimonialsNewCard {...testimonials}></TestimonialsNewCard>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };

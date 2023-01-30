@@ -114,7 +114,7 @@ export const HomePageHero = () => {
   return (
     <>
       <div className="container-fluid HomePageHeroBg d-flex align-items-center">
-        <div className="px-5 container-fluid HomePageHeroBgg d-flex py-5">
+        <div className="px-5 container-fluid HomePageHeroBgg d-flex">
           <div className="row align-items-center justify-content-center px-4 py-3">
             <div className="col-lg-7 col-md-7 col-sm-12 pt-3">
               <h1 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
@@ -122,7 +122,7 @@ export const HomePageHero = () => {
                 <br />
               </h1>
               <h2 className=" d-xs-block d-sm-block d-md-block d-lg-none">
-                Employability Skills Training
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
                 <br />
               </h2>
               <p className="mt-3">

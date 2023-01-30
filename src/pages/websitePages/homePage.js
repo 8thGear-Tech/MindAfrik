@@ -5,7 +5,9 @@ import howItWorksDatas from "../../data/homePageCards.json";
 import { NavSection } from "../../components/Navbar/guestNavbar";
 import { HowItWorksCard } from "../../components/allCards/homePageCard";
 import { HomePageHero } from "../../components/hero";
+import { WhyChooseUsCardNew } from "../../components/allCards/homePageCard";
 import { TestimonialsCard } from "../../components/allCards/homePageCard";
+import { TestimonialsNew } from "../../components/allCards/homePageCard";
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 
 import Card from "react-bootstrap/Card";
@@ -25,7 +27,9 @@ const Home = () => (
     <NavSection />
     <HomePageHero />
     <HowItWorks />
+    <WhyChooseUsCardNew />
     {/* <WhyChooseUsCard /> */}
+    <TestimonialsNew />
     {/* <TestimonialsCard /> */}
     <Newsletter />
   </>
@@ -223,30 +227,38 @@ const Newsletter = () => {
   return (
     <>
       <div className="container-fluid py-5 newsletterBg">
-        <div className="mt-2 p-5">
+        <div className="mt-2">
           <div className="card-body d-flex justify-content-center">
-            <div className="bg-white rounded d-flex justify-content-center p-5 newletterShadow">
-              <div className="mx-5">
+            <div className="bg-white rounded d-flex justify-content-center p-5 newletterShadow w-md-100 w-lg-100">
+              <div className="row">
                 {" "}
-                <h4 className="">Subscribe to our Newsletter</h4>
-                <p className="">
-                  Join us as we give you update on our features
-                </p>
-              </div>
-
-              <div className="mx-5 d-flex align-items-center">
-                {" "}
-                <InputGroup className="mb-3" style={{ width: "22rem" }}>
-                  <InputGroup.Text>
-                    <MailOutlineOutlinedIcon />
-                  </InputGroup.Text>
-                  <Form.Control
-                    placeholder="Enter email here"
-                    aria-label="Email"
-                    aria-describedby="basic-addon2"
-                  />
-                  <SubscribeBtn />
-                </InputGroup>
+                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                  {" "}
+                  <div className="mx-5">
+                    {" "}
+                    <h4 className="">Subscribe to our Newsletter</h4>
+                    <p className="">
+                      Join us as we give you update on our features
+                    </p>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                  {" "}
+                  <div className="mx-5 d-flex align-items-center">
+                    {" "}
+                    <InputGroup className="mb-3" style={{ width: "22rem" }}>
+                      <InputGroup.Text>
+                        <MailOutlineOutlinedIcon />
+                      </InputGroup.Text>
+                      <Form.Control
+                        placeholder="Enter email here"
+                        aria-label="Email"
+                        aria-describedby="basic-addon2"
+                      />
+                      <SubscribeBtn />
+                    </InputGroup>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

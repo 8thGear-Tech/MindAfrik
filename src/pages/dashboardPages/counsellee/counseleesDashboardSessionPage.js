@@ -51,7 +51,7 @@ const CounselleeSession = () => {
 const CounselleeSessionCard = () => {
   return (
     <div>
-      <div className="counselorsDashboardCard container-fluid">
+      <div className="counselorsDashboardCard container-fluid card w-75 px-5 mt-4 ">
         <div className="d-flex">
           <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3">
             <h3 className="pt-3">You have 0 upcoming sessions</h3>
@@ -64,7 +64,7 @@ const CounselleeSessionCard = () => {
       </div>{" "}
       <div className="d-flex justify-content-between">
         <a href="">Book a session Now</a>
-        <a href="">See Available counselors</a>
+        <a href="/counsellorsDetails">See available counselors</a>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 import { SendBtn } from "../Buttons/actionBtn";
+import { AddToCalendarBtn } from "../Buttons/actionBtn";
 import adminStats from "../../data/allCards/dashboardCards.json";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -168,13 +169,14 @@ export const CounseleeDashboardCard = () => {
 export const CounselorsDashboardCard = () => {
   return (
     <div>
-      <div className="counselorsDashboardCard container-fluid">
-        <div className="d-flex">
-          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3">
+      <div className="counselorsDashboardCard container-fluid card w-100">
+        <div className="d-flex align-items-center">
+          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3 text-center">
             <h3 className="pt-3">You have an upcoming appointment</h3>
             <p className="pt-2">Tomorrow, Dec 22, 2022</p>
+            <AddToCalendarBtn />
           </div>
-          <div className="">
+          <div className="col-lg-4">
             <img src={counsellorsdashboardimg} alt="" className="ms-2 mt-2" />
           </div>
         </div>

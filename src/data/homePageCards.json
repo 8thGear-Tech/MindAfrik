@@ -59,5 +59,25 @@
       "subtitle": "Location",
       "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
     }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Name",
+      "location": "Location",
+      "testimonial": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 2,
+      "name": "Name",
+      "location": "Location",
+      "testimonial": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 3,
+      "name": "Name",
+      "location": "Location",
+      "testimonial": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    }
   ]
 }

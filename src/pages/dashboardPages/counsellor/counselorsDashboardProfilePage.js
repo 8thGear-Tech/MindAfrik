@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 
 import { CounsellorDashboardSideNav } from "../../../components/Navbar/dashBoardNavbar";
 import { DashboardNavbar } from "../../../components/Navbar/dashBoardNavbar";
+import CounselorProfileForm from "../../../components/Forms/UserProfileForm";
 
 //images
 import MarkChatUnreadOutlinedIcon from "@mui/icons-material/MarkChatUnreadOutlined";
@@ -25,6 +26,14 @@ const CounsellorProfile = () => {
               <div className="">
                 <Profile />
               </div>
+              <div className="py-5 ps-5">
+                <h4 className="mb-5">Personal Information</h4>
+                <CounselorProfileForm />
+              </div>
+              {/* <div className="col-lg-6 py-5 ps-5">
+                <h4 className="text-center">Personal Information</h4>
+                <CounseleeProfileForm />
+              </div> */}
             </div>
           </div>{" "}
         </div>
@@ -36,9 +45,9 @@ const CounsellorProfile = () => {
 const Profile = () => {
   return (
     <>
-      <div className="w-50">
+      <div className="w-75">
         {" "}
-        <div className="card py-4 mt-4">
+        <div className="card py-4 mt-4 ">
           <div className="d-flex align-items-center justify-content-center justify-content-around">
             <img src={profile} alt="" className="" />
             <p>Hello, Peter Uche</p>

@@ -6,6 +6,7 @@ import { DashboardNavbar } from "../../../components/Navbar/dashBoardNavbar";
 
 //images
 import MarkChatUnreadOutlinedIcon from "@mui/icons-material/MarkChatUnreadOutlined";
+import { Button } from "react-bootstrap";
 
 const CounsellorDashboardNotificationPage = () => {
   return (
@@ -38,7 +39,14 @@ const RegisteredUsersList = () => {
       {" "}
       <div className="">
         <div className="d-flex">
-          <p className="mt-5">Notifications</p>
+          <div>
+            <h4 className="mt-5">
+              <b>Notifications</b>
+            </h4>
+          </div>
+          {/* <div className="">
+            <Button style={{ backgroundColor: "#08BA47" }}>2 New</Button>
+          </div> */}
         </div>{" "}
         <Table responsive>
           <tbody>
