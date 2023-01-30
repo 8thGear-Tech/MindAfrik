@@ -187,7 +187,7 @@ export const WhyChooseUsCard = (props) => {
                     fontFamily: "Comfortaa",
                   }}
                 >
-                  <p className="text-center">
+                  <p>
                     Lorem ipsum dolor sconsectet adipiscing elit ut aliquam
                     Lorem ipsum dolor sit amet, consectet adipiscing aliquam
                     Lorem ipsum dolor sit amet, consectetur eliqueliadipiscing

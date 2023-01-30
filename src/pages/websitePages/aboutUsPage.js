@@ -8,8 +8,8 @@ const Testing = (props) => {
   return (
     <>
       {/* <PsychologicalAssessmentHero /> */}
-      <WhyChooseUsCard />
-      {/* <CounselorProfileForm /> */}
+      {/* <WhyChooseUsCard /> */}
+      <CounselorProfileForm />
       {/* <Testimonials /> */}
       {/* <MenuDividersExample /> */}
       {/* <HowItWorks /> */}
