@@ -5,7 +5,10 @@ import aboutUsHeroImage from "../assets/images/hero/aboutUsHeroImage.png";
 import AssessmentHero from "../../src/Image/AssesmmentHero.png";
 import { NavbarSection } from "../components/Navbar/guestNavbar";
 
-import { GetStartedBtn } from "../components/Buttons/actionBtn";
+import {
+  GetStartedBtn,
+  BookASessionBtn,
+} from "../components/Buttons/actionBtn";
 
 import homehero from "../assets/images/hero/homehero.png";
 
@@ -131,7 +134,7 @@ export const HomePageHero = () => {
               </p>
               <div className="text-start mb-4">
                 {" "}
-                <GetStartedBtn />
+                <BookASessionBtn />
               </div>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12">

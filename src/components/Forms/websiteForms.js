@@ -71,7 +71,8 @@ export const AssesmentForm = () => {
         Over the last 2 weeks , how often have you been bothered by feeling
         tired or having little energy?
       </h5> */}
-      </div>
+      </div>{" "}
+      <SubmitBtn />
     </>
   );
 };

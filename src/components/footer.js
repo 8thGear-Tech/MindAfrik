@@ -32,7 +32,7 @@ export const Footer = () => {
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
                 <a href="#" class="nav-link p-0 text-muted">
-                  mindafrik@gmail.com
+                  info@mindafrik.com
                 </a>
               </li>
               <li class="nav-item mb-2">

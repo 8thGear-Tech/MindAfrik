@@ -35,7 +35,7 @@ export const SignInForm = () => {
           <Form.Control
             type="password"
             placeholder="Password"
-            className=" placeholderRadius"
+            className="placeholderRadius"
           />
         </Form.Group>
         <h6 className="text-muted text-end">

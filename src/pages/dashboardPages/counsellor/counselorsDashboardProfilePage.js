@@ -45,7 +45,7 @@ const CounsellorProfile = () => {
 const Profile = () => {
   return (
     <>
-      <div className="w-75">
+      <div className="w-75 justify-content-center">
         {" "}
         <div className="card py-4 mt-4 ">
           <div className="d-flex align-items-center justify-content-center justify-content-around">
