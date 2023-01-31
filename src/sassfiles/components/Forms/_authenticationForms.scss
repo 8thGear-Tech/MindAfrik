@@ -1,7 +1,7 @@
 @use "../../colors" as *;
 @use "../../font" as *;
 
-@mixin CounselorForm {
+.councellor {
   padding: 12px 20px;
   margin: 8px 0px;
   box-sizing: border-box;
@@ -10,5 +10,5 @@
   background-color: $secbgcolor;
 }
 .form-control {
-  @include CounselorForm;
+  @include councellor;
 }

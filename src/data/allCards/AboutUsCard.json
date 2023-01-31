@@ -2,21 +2,15 @@
   "AdvisoryOverlay": [
     {
       "id": 1,
-      "image": "../../assets/images/advisoryboard1.png",
-      "name": "Asake Ladipo",
-      "position": "Business Developer."
+      "image": "../../assets/images/asakeladipo.png"
     },
     {
       "id": 2,
-      "image": "../../assets/images/advisoryboard2.png",
-      "name": "Trevoor Ladigun",
-      "position": "Business Developer."
+      "image": "../../assets/images/trevoorladigun.png"
     },
     {
       "id": 3,
-      "image": "../../assets/images/advisoryboard3.png",
-      "name": "Ponnie Aina",
-      "position": "Business Developer."
+      "image": "../../assets/images/ponnieaina.png"
     }
   ]
 }

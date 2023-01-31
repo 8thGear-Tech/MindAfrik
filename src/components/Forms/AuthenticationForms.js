@@ -4,222 +4,177 @@
 // // SignUpAsCounseleeForm
 // //SubscribeToNewsletterForm
 
-// import React, { useState } from "react";
-// import { SubmitBtn } from "../../components/Buttons/actionBtn";
+import React, { useState } from "react";
+import { SubmitBtn } from "../../components/Buttons/actionBtn";
 
-// export const CounselorForm = () => {
-//   const [ values, setValues ] = useState( {
+export const CounselorForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmPassword] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [gender, setGender] = useState("");
+  const [birthdate, setBirthDate] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [people, setPeople] = useState([]);
 
-//     email:"",
-//     password:"",
-//     fullname:"",
-//     phonenumber:"",
-//     gender:"",
-//     birthdate:"",
-//     state:"",
-//     country:"",
-//   });
-//   {
-//     id: 1,
-//       name;"email",
-//       type; "text",
-//         placeholder;"email",
-//     },
-//   {
-//     id: 2,
-//       name; "password",
-//       type; "password",
-//         placeholder;"email",
-//     },
-//   {
-//     id: 3,
-//       name; "fullname",
-//       type; "text",
-//         placeholder;"fullname",
-//     },
-//   {
-//     id: 4,
-//       name; "phonenumber",
-//       type; "numbers",
-//         placeholder;"phonenumber",
-//     },
-//   {
-//     id: 5,
-//       name; "gender",
-//       type; "text",
-//         placeholder;"gender",
-//     },
-//   {
-//     id: 6,
-//       name; "birthdate",
-//       type; "text",
-//         placeholder;"birthdate",
-//     },
-//   {
-//     id: 7,
-//       name; "state",
-//       type; "text",
-//         placeholder;"state",
-//     },
-//   {
-//     id: 8,
-//       name; "country",
-//       type; "text",
-//         placeholder;"gender",
-//     };
+  const Handle = (e) => {
+    e.preventDefault();
+    if (
+      email &&
+      password &&
+      confirmpassword &&
+      fullname &&
+      phonenumber &&
+      gender &&
+      birthdate &&
+      state &&
+      country
+    ) {
+      const person = {
+        email,
+        password,
+        confirmpassword,
+        fullname,
+        phonenumber,
+        gender,
+        birthdate,
+        state,
+        country,
+      };
+      console.log(person);
+      setPeople((people) => {
+        return [...people, person];
+      });
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setFullname("");
+      setPhoneNumber("");
+      setGender("");
+      setBirthDate("");
+      setState("");
+      setCountry("");
+      setPeople("");
+    } else {
+      alert("empty values");
+    }
+  };
+  return (
+    <form className="w-50 mx-auto mt-5 text-dark councellor" onSubmit={Handle}>
+      <h4 className="h4 text-dark text-center">SignUp as a Counsellor</h4>
+      <h6 className="h6 text-dark text-start mb-3">Account Information</h6>
+      <div className="mb-3 ">
+        <input
+          type="text"
+          className="form-control border-dark"
+          id="exampleInputEmail"
+          aria-describedby="EmailHelp"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email address"
+          aria-errormessage="it should be a valid email"
+        />
+      </div>
 
-//   const Handle = (e) => {
-//     e.preventDefault();
-//     // if (
-//     //   email &&
-//     //   password &&
-//     //   confirmPassword &&
-//     //   fullName &&
-//     //   phoneNumber &&
-//     //   gender &&
-//     //   birthDate &&
-//     //   state &&
-//     //   country
-//     // ) {
-//       const person = {
-//         email,
-//         password,
-//         confirmPassword,
-//         fullName,
-//         phoneNumber,
-//         gender,
-//         birthDate,
-//         state,
-//         country,
-//       };
-//       console.log(person);
-//       setPeople((people) => {
-//         return [...people, person];
-//       });
-//       setEmail("");
-//       setPassword("");
-//       setConfirmPassword("");
-//       setFullName("");
-//       setPhoneNumber("");
-//       setGender("");
-//       setBirthDate("");
-//       setState("");
-//       setCountry("");
-//       setPeople("");
-//     } else {
-//       alert("empty values");
-//     }
-//   };
-//   return (
-//     <form className="w-50 mx-auto mt-5 text-dark" onSubmit={Handle}>
-//       <h3 className="h4 text-dark text-center">SignUp As A Councellor</h3>
-//       <div className="mb-3">
-//         <label for="exampleInputEmail" className="form-label"></label>
-//         <input
-//           type="text"
-//           placeholder="Email Address"
-//           className="form-control border-secondary"
-//           id="exampleInputEmail"
-//           aria-describedby="emailHelp"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//         />
-//       </div>
+      <div className="mb-3">
+        <input
+          type="password"
+          className="form-control border-dark"
+          id="exampleInputPassword"
+          aria-describedby="PasswordHelp"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          aria-errormessage="password should be 8-20 character and at least 1 letter and 1 special character"
+        />
+      </div>
 
-//       <div className="mb-3">
-//         <label for="exampleInputPassword" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Password"
-//           id="exampleInputPassword"
-//           aria-describedby="passwordHelp"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="exampleInputConfirmPassword" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Confirm Password"
-//           id="exampleInputConfirmPassword"
-//           aria-describedby="passwordHelp"
-//           value={password}
-//           onChange={(e) => setConfirmPassword(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="exampleInputFullName" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Full Name"
-//           id="exampleInputFullName"
-//           aria-describedby="fullNameHelp"
-//           value={fullName}
-//           onChange={(e) => setFullName(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="examplePhoneNumber" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Phone Number"
-//           id="exampleInputPhoneNumber"
-//           aria-describedby="phoneNumberHelp"
-//           value={phoneNumber}
-//           onChange={(e) => setPhoneNumber(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="exampleGender" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Gender"
-//           id="exampleInputGender"
-//           aria-describedby="genderHelp"
-//           value={gender}
-//           onChange={(e) => setGender(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="exampleBirthDate" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Date of Birth"
-//           id="exampleInputBirthDate"
-//           aria-describedby="birthDateHelp"
-//           value={birthDate}
-//           onChange={(e) => setBirthDate(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="exampleState" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="State"
-//           id="exampleInputState"
-//           aria-describedby="stateHelp"
-//           value={state}
-//           onChange={(e) => setState(e.target.value)}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label for="exampleCountry" className="form-label"></label>
-//         <input
-//           className="form-control border-secondary"
-//           placeholder="Country"
-//           id="exampleInputCountry"
-//           aria-describedby="countryHelp"
-//           value={country}
-//           onChange={(e) => setCountry(e.target.value)}
-//         />
-//       </div>
+      <div className="mb-3">
+        <input
+          type="password"
+          className="form-control border-dark"
+          id="exampleInputConfirmPassword"
+          value={confirmpassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          placeholder="Confirm password"
+          aria-errormessage="passwords dont match"
+        />
+      </div>
+      <h6 className="h6 text-dark text-start mb-3">Personal Information</h6>
 
-//       <div className="Container">
-//         <div className="text-center py-4 ">
-//           <SubmitBtn />
-//         </div>
-//       </div>
-//     </form>
-//   );
-// };
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control border-dark"
+          id="exampleInputFullname"
+          value={fullname}
+          onChange={(e) => setFullname(e.target.value)}
+          placeholder="Full name"
+        />
+      </div>
+
+      <div className="mb-3">
+        <input
+          type="integar"
+          className="form-control border-dark"
+          id="exampleInputPhoneNumber"
+          value={phonenumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          placeholder="Phone number"
+        />
+      </div>
+
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control border-dark"
+          id="exampleInputGender"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+          placeholder="Gender"
+        />
+      </div>
+
+      <div className="mb-3">
+        <input
+          type="date"
+          className="form-control border-dark"
+          id="exampleInputBirthDate"
+          value={birthdate}
+          onChange={(e) => setBirthDate(e.target.value)}
+          placeholder="Date of birth"
+        />
+      </div>
+
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control border-dark"
+          id="exampleInputState"
+          value={state}
+          onChange={(e) => setState(e.target.value)}
+          placeholder="State"
+        />
+      </div>
+
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control border-dark"
+          id="exampleInputCountry"
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
+          placeholder="Country"
+        />
+      </div>
+
+      <div className="Container">
+        <div className="text-center py-4 ">
+          <SubmitBtn />
+        </div>
+      </div>
+    </form>
+  );
+};

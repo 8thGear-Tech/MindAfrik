@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // import UnderConstruction from "./pages/websitePages/underConstruction";
 import HomePageHeroComponent from "./pages/websitePages/homePage";
+import AdvisoryTeamPic from "./pages/websitePages/aboutUsPage";
 // import { EvaluationCard } from "./components/allCards/PsychologicalAssessment";
 // import { AdminStatisticsCard } from "./components/allCards/dashBoardcards";
 import { CoreValues } from "./components/allCards/AboutUsCards";
+import { CounselorForm } from "./components/Forms/AuthenticationForms";
 
 import { TeamsCard } from "./components/allCards/AboutUsCards";
 import { StartADiscussionBtn } from "../src/components/Buttons/actionBtn";
@@ -19,10 +21,12 @@ function App() {
     <BrowserRouter>
       <CoreValues />
       <TeamsCard />
+      <CounselorForm />
 
       <Routes>
         {/* <Route path="/" element={<CoreValues />} /> */}
         <Route path="/" element={<HomePageHeroComponent />} />
+        <Route path="Advisory-Team-Pic" element={<AdvisoryTeamPic />} />
         {/* <Route path="/" element={<HomePageHeroComponent />} /> */}
         {/* <Route path="Adim-Dashboard-Card" element={<AdminStatisticsCard />} /> */}
         {/* <Route path="cards" element={<EvaluationCard />} /> */}

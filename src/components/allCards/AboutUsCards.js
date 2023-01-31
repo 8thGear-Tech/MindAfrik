@@ -5,6 +5,7 @@
 
 import Card from "react-bootstrap/Card";
 import ValuesData from "../../data/allCards/dashboardCards.json";
+import AdvisoryData from "../../data/allCards/AboutUsCard.json";
 
 import danielcraig from "../../assets/images/danielcraig.png";
 import judithfanika from "../../assets/images/judithfanika.png";
@@ -52,47 +53,19 @@ export const CoreValues = () => {
 
 // AdvisoryBoardCards
 
-// export const AdvisoryBoardCards = (props) => {
-//   const { name, position, image } = props;
-//   return (
-//     <Card>
-//       <Card.Img as={Image} src={image} fluid={true} alt="Card image" />
-//       <Card.ImgOverlay>
-//         <Card.Name> {name} </Card.Name>
-//         <Card.Position> {position} </Card.Position>
-//         <Img fluid={image} />
-//       </Card.ImgOverlay>
-//     </Card>
-//   );
-// };
-
-// <div className="cards" key={id}>
-//   <img src={image} className="w-25 mb-4" alt="..." />
-//   <h6 className="">{position}</h6>
-//   <div className="card-body">
-//     <p className="card-text mb-4">{text}</p>
-
-// </div>;
-
-// export const AdvisoryBoardCards = ( props ) =>
-// {
-//   const { name, position, image } = props;
-//   return (
-//     <Card className="bg-success text-white">
-//       <Card.Img
-//         src="image"
-//         alt="Card image"
-//       />
-//       <Card.ImgOverlay>
-//         <Card.Name>{ name }</Card.Name>
-//         <Card.Position>
-//           { position }
-//         </Card.Position>
-
-//         </a>
-//     </Card>
-//   );
-// };
+export const AdvisoryBoardCard = (props) => {
+  const { image } = props;
+  return (
+    // <div className="card-deck">
+    <div class="card  w-25 mx-auto">
+      <img src={image} class="card-img" alt="..." />
+      <div class="card-img-overlay">
+        {/* <h5 class="name">Card title</h5>
+        <p class="position">Last updated 3 mins ago</p> */}
+      </div>
+    </div>
+  );
+};
 
 export const TeamsCard = () => {
   return (
