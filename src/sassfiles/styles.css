@@ -143,11 +143,11 @@ p {
   }
 }
 .CardTestimony {
-  border: 5px;
+  border: 1px;
+  border-style: solid;
   box-sizing: border-box;
   align-items: center;
   text-align: center;
-  background-color: purple;
   width: 300px;
   height: 360px;
 }
@@ -782,6 +782,14 @@ p {
   border-radius: 35px;
 }
 
+.assessmentBg {
+  background: none !important;
+}
+
+.assessmentSelection {
+  background-color: white;
+}
+
 .sectionTwoBgColor {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 35px;
@@ -843,5 +851,4 @@ p {
   background: rgba(129, 229, 140, 0.5);
   border-radius: 10px;
   height: 500px;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

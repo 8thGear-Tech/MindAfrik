@@ -6,10 +6,12 @@ import Card from "react-bootstrap/Card";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
 import howItWorksDatas from "../../data/homePageCards.json";
-import TestionalCardDat from "../../data/allCards/Testimonials.json";
+// import testionalCardDat from "../../data/allCards/Testimonials.json";
+import TestimonalCardData from "../../data/allCards/Testimonials.json";
 import DataWhyChooseUs from "../../data/whychooseuscard.json";
 import Container from "react-bootstrap/Container";
 
@@ -311,140 +313,255 @@ export const WhyChooseUsCard = (props) => {
     </>
   );
 };
+
 export const TestimonialsCard = (props) => {
+  const [index, setIndex] = useState(0);
   const { title, subtitle, text } = props;
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
   return (
-    <>
-      <Carousel fade>
-        <Carousel.Item>
-          <div className="d-flex justify-content-center">
-            <Card
-              className="col-3 m-5 CardTestimony"
-              style={{
-                borderBottomLeftRadius: "3rem",
-                borderTopRightRadius: "3rem",
-                border: "10px",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <h4>{title}</h4>
-                </Card.Title>
-                <Card.Subtitle
-                  className="mb-2 text-muted"
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 300,
-                    lineHeight: "1.75rem",
-                    fontFamily: "Comfortaa",
-                  }}
-                >
-                  {subtitle}
-                </Card.Subtitle>
-                <Card.Text>{text}</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        </Carousel.Item>
-        {/* <Carousel.Item slide={false}>
-          <div className="d-flex justify-content-center">
-            <Card
-              className="col-3 m-5 CardTestimony"
-              style={{
-                borderBottomLeftRadius: " 3rem",
-                borderTopRightRadius: "3rem",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <h4>Usernmae</h4>
-                </Card.Title>
-                <Card.Subtitle
-                  className="mb-2 text-muted"
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 300,
-                    lineHeight: "1.75rem",
-                    fontFamily: "Comfortaa",
-                  }}
-                >
-                  Location
-                </Card.Subtitle>
-                <Card.Text>
-                  We provide access thousand of inspirational materials for
-                  healthy and stable mind. As Head of Operations.Daniel is
-                  responsible for working with franchisees on all aspects of
-                  marketing strategy including digital, public relations,
-                  website, etc
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="col-3 m-5 CardTestimony"
-              style={{
-                borderBottomLeftRadius: " 3rem",
-                borderTopRightRadius: "3rem",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <h4>Usename</h4>
-                </Card.Title>
-                <Card.Subtitle
-                  className="mb-2 text-muted"
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 300,
-                    lineHeight: "1.75rem",
-                    fontFamily: "Comfortaa",
-                  }}
-                >
-                  Location
-                </Card.Subtitle>
-                <Card.Text>
-                  We provide access thousand of inspirational materials for
-                  healthy and stable mind. As Head of Operations.Daniel is
-                  responsible for working with franchisees on all aspects of
-                  marketing strategy including digital, public relations,
-                  website, etc
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="col-3 m-5 CardTestimony"
-              style={{
-                borderBottomLeftRadius: " 3rem",
-                borderTopRightRadius: "3rem",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <h4>Username</h4>
-                </Card.Title>
-                <Card.Subtitle
-                  className="mb-2 text-muted"
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 300,
-                    lineHeight: "1.75rem",
-                    fontFamily: "Comfortaa",
-                  }}
-                >
-                  Location
-                </Card.Subtitle>
-                <Card.Text>
-                  We provide access thousand of inspirational materials for
-                  healthy and stable mind. As Head of Operations.Daniel is
-                  responsible for working with franchisees on all aspects of
-                  marketing strategy including digital, public relations,
-                  website, etc
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div> */}
-        {/* </Carousel.Item> */}
-      </Carousel>
-    </>
+    <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <div className="d-flex justify-content-center">
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="d-flex justify-content-center">
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="d-flex justify-content-center">
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            className="col-3 m-5 CardTestimony"
+            style={{
+              borderBottomLeftRadius: " 3rem",
+              borderTopRightRadius: "3rem",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h4>{title}</h4>
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: 300,
+                  lineHeight: "1.75rem",
+                  fontFamily: "Comfortaa",
+                }}
+              >
+                {subtitle}
+              </Card.Subtitle>
+              <Card.Text>{text}</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
@@ -476,7 +593,7 @@ export const Testimonials = () => {
     <>
       <div className="container-fluid">
         <div className="row justify-content-around">
-          {TestionalCardDat.testimonialsData.map((testimony) => {
+          {TestimonalCardData.testimonialsData.map((testimony) => {
             return (
               <>
                 <div className="col-lg-3 col-md-3 col-sm-3" key={testimony.id}>
