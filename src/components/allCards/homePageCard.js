@@ -323,8 +323,15 @@ export const WhyChooseUsCardNew = () => {
     <>
       <div className="container-fluid px-4 pb-5 newsletterBg">
         <div className="row justify-content-center">
-          <h3 className="text-center my-5">Why Choose Us</h3>
-
+          <h3 className="text-center mt-5">Why Choose Us</h3>
+          <p className="px-5 pb-5 text-center">
+            At Mindafrik, we understand that seeking therapy can be a big step,
+            and finding the right therapist can make all the difference. That's
+            why we offer a range of services and a team of experienced and
+            compassionate therapists to help you on your journey toward mental
+            wellness. Here are just a few reasons why you should choose us for
+            your therapy needs:
+          </p>
           <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center justify-content-center">
             {" "}
             <div className="card mb-5">
@@ -336,12 +343,14 @@ export const WhyChooseUsCardNew = () => {
               />
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#00114C" }}>
-                  <b>Safe & Secure</b>
+                  <b>Experienced and qualified therapists</b>
                 </h5>
                 <p className="card-text">
-                  Lorem ipsum dolor sconsectet adipiscing elit ut aliquam Lorem
-                  ipsum dolor sit amet, consectet adipiscing aliquam Lorem ipsum
-                  dolor sit amet, consectetur eliqueliadipiscing elit ut aliquam
+                  Our therapists are licensed, experienced and dedicated to
+                  helping you achieve your therapy goals. They use
+                  evidence-based approaches to address a range of issues,
+                  including anxiety, depression, relationship problems, and
+                  more.
                 </p>
               </div>
             </div>
@@ -354,13 +363,13 @@ export const WhyChooseUsCardNew = () => {
                 <img src={image2} className="card-img-top p-5" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title" style={{ color: "#00114C" }}>
-                    <b>Standardized Sessions</b>
+                    <b>Personalised treatment plans</b>
                   </h5>
                   <p className="card-text">
-                    Lorem ipsum dolor sconsectet adipiscing elit ut aliquam
-                    Lorem ipsum dolor sit amet, consectet adipiscing aliquam
-                    Lorem ipsum dolor sit amet, consectetur eliqueliadipiscing
-                    elit ut aliquam
+                    We believe that every person's journey to mental wellness is
+                    unique, and so is our approach. Our therapists will work
+                    with you to create a personalised treatment plan that
+                    addresses your specific needs and goals
                   </p>
                 </div>
               </div>
@@ -370,13 +379,13 @@ export const WhyChooseUsCardNew = () => {
                 <img src={image2} className="card-img-top p-5" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title" style={{ color: "#00114C" }}>
-                    <b>Standardized Sessions</b>
+                    <b>Flexible scheduling</b>
                   </h5>
                   <p className="card-text">
-                    Lorem ipsum dolor sconsectet adipiscing elit ut aliquam
-                    Lorem ipsum dolor sit amet, consectet adipiscing aliquam
-                    Lorem ipsum dolor sit amet, consectetur eliqueliadipiscing
-                    elit ut aliquam
+                    We understand that life can be hectic, which is why we offer
+                    flexible scheduling options to accommodate your busy
+                    schedule. You can book appointments online, and we also
+                    offer evening and weekend sessions.
                   </p>
                 </div>
               </div>
@@ -393,12 +402,13 @@ export const WhyChooseUsCardNew = () => {
 
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#00114C" }}>
-                  <b>Quality Counsellors</b>
+                  <b>Convenient online therapy</b>
                 </h5>
                 <p className="card-text">
-                  Lorem ipsum dolor sconsectet adipiscing elit ut aliquam Lorem
-                  ipsum dolor sit amet, consectet adipiscing aliquam Lorem ipsum
-                  dolor sit amet, consectetur eliqueliadipiscing elit ut aliquam
+                  In addition to in-person therapy, we offer online therapy
+                  sessions so you can receive the support you need from the
+                  comfort of your own home. Our secure platform ensures that
+                  your information remains confidential.
                 </p>
               </div>
             </div>

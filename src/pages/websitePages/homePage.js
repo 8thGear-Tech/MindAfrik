@@ -1,5 +1,6 @@
 //data
-import howItWorksDatas from "../../data/homePageCards.json";
+import howItWorksData from "../../data/homePageCards.json";
+import howItWorksDataTwo from "../../data/homePageCards.json";
 
 //components
 import { NavSection } from "../../components/Navbar/guestNavbar";
@@ -18,7 +19,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 //images
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import howitworkssteps from "../../assets/images/home/howitworkssteps.png";
+import howitworksstepsone from "../../assets/images/home/howitworksstepsone.png";
+import howitworksstepstwo from "../../assets/images/home/howitworksstepstwo.png";
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 
@@ -26,27 +28,28 @@ const Home = () => (
   <>
     <NavSection />
     <HomePageHero />
-    <HowItWorks />
+    <HowItWorksOne />
+    <HowItWorksTwo />
     <WhyChooseUsCardNew />
     {/* <WhyChooseUsCard /> */}
     <TestimonialsNew />
     {/* <TestimonialsCard /> */}
-    <Newsletter />
+    {/* <Newsletter /> */}
   </>
 );
 
-const HowItWorks = () => {
+const HowItWorksOne = () => {
   return (
     <>
       <div className="container-fluid p-5 ">
         {" "}
         <h3 className="text-center">How It Works</h3>
         <img
-          src={howitworkssteps}
+          src={howitworksstepsone}
           className="py-4 img-fluid mx-auto d-none d-lg-block d-md-none d-sm-none d-xs-none"
         />
         <Row xs={1} md={2} className="g-0 justify-content-center mt-2">
-          {howItWorksDatas.homepageData.map((Itworks) => {
+          {howItWorksData.homepageData.map((Itworks) => {
             return (
               <Col
                 className="col-lg-4 col-md-6 col-sm-10 px-lg-3 px-md-4 px-sm-5 d-flex align-items-stretch"
@@ -89,6 +92,31 @@ const HowItWorks = () => {
           })}
         </div>
       </div> */}
+    </>
+  );
+};
+const HowItWorksTwo = () => {
+  return (
+    <>
+      <div className="container-fluid p-5">
+        {" "}
+        <img
+          src={howitworksstepstwo}
+          className="px-4 img-fluid mx-auto d-none d-lg-block d-md-none d-sm-none d-xs-none"
+        />
+        <Row xs={1} md={2} className="g-0 justify-content-center mt-2">
+          {howItWorksDataTwo.homepageDataTwo.map((Itworks) => {
+            return (
+              <Col
+                className="col-lg-4 col-md-6 col-sm-10 px-lg-3 px-md-4 px-sm-5 d-flex align-items-stretch"
+                key={Itworks.id}
+              >
+                <HowItWorksCard {...Itworks} />
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
     </>
   );
 };

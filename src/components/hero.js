@@ -121,16 +121,19 @@ export const HomePageHero = () => {
           <div className="row align-items-center justify-content-center px-4 py-3">
             <div className="col-lg-7 col-md-7 col-sm-12 pt-3">
               <h1 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
-                Lorem ipsum, dolor sit amet consectetur adipisicing.
+                Welcome! Our specialties include individual, couples, and group
+                sessions.
                 <br />
               </h1>
               <h2 className=" d-xs-block d-sm-block d-md-block d-lg-none">
-                Lorem ipsum, dolor sit amet consectetur adipisicing.
+                Welcome! Our specialties include individual, couples, and group
+                sessions.
                 <br />
               </h2>
               <p className="mt-3">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Molestias aperiam ex iusto ipsam cupiditate iure.
+                Our goal is to empower you with the tools and insights you need
+                to live a fulfilling life, and we work with you every step of
+                the way to help you achieve your goals.
               </p>
               <div className="text-start mb-4">
                 {" "}
@@ -150,23 +153,23 @@ export const HomePageHero = () => {
           {/* <div className="px-3"> */}
           {/* <div className="container pt-3 px-5"> */}
           {/* <div className="row d-flex">
-            <div className="col-lg-6 col-md-6 col-sm-12 mt-5 align-item-center">
-              <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
-              <br></br>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Molestias aperiam ex iusto ipsam cupiditate iure.
-              </p>
-              <div className="text-start mb-4">
-                {" "}
-                <GetStartedBtn />
+              <div className="col-lg-6 col-md-6 col-sm-12 mt-5 align-item-center">
+                <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+                <br></br>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestias aperiam ex iusto ipsam cupiditate iure.
+                </p>
+                <div className="text-start mb-4">
+                  {" "}
+                  <GetStartedBtn />
+                </div>
               </div>
-            </div>
 
-            <div className="col-lg-6 col-md-6 col-sm-12 ">
-              <img src={homehero} width="500rem" />
-            </div>
-          </div> */}
+              <div className="col-lg-6 col-md-6 col-sm-12 ">
+                <img src={homehero} width="500rem" />
+              </div>
+            </div> */}
           {/* </div> */}
         </div>
       </div>
