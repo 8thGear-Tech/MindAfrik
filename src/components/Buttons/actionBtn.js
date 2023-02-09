@@ -279,7 +279,9 @@ export const StartYourAssessmentBtn = () => {
 export const ContinueBtn = () => {
   return (
     <div className="mt-2">
-      <Button className="ContinueBtn">Continue</Button>{" "}
+      <Link to="/psychologicalAssessment">
+        <Button className="ContinueBtn">Continue</Button>
+      </Link>
     </div>
   );
 };

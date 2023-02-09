@@ -1,12 +1,15 @@
 //data
-import howItWorksDatas from "../../data/homePageCards.json";
+import howItWorksData from "../../data/homePageCards.json";
+import howItWorksDataTwo from "../../data/homePageCards.json";
 
 //components
 import { NavSection } from "../../components/Navbar/guestNavbar";
 import { HowItWorksCard } from "../../components/allCards/homePageCard";
 import { HomePageHero } from "../../components/hero";
+import { WhyChooseUsCardNew } from "../../components/allCards/homePageCard";
 import { TestimonialsCard } from "../../components/allCards/homePageCard";
 
+import { TestimonialsNew } from "../../components/allCards/homePageCard";
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 import { Testimonials } from "../../components/allCards/homePageCard";
 
@@ -18,7 +21,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 //images
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import howitworkssteps from "../../assets/images/home/howitworkssteps.png";
+import howitworksstepsone from "../../assets/images/home/howitworksstepsone.png";
+import howitworksstepstwo from "../../assets/images/home/howitworksstepstwo.png";
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 
@@ -28,25 +32,30 @@ const Home = () => (
     <HomePageHero />
     <HowItWorks />
     <Testimonials />
+    <HowItWorksOne />
+    <HowItWorksTwo />
+    <WhyChooseUsCardNew />
     {/* <WhyChooseUsCard /> */}
+    <TestimonialsNew />
     {/* <TestimonialsCard /> */}
 
     <Newsletter />
+    {/* <Newsletter /> */}
   </>
 );
 
-const HowItWorks = () => {
+const HowItWorksOne = () => {
   return (
     <>
       <div className="container-fluid p-5 ">
         {" "}
         <h3 className="text-center">How It Works</h3>
         <img
-          src={howitworkssteps}
+          src={howitworksstepsone}
           className="py-4 img-fluid mx-auto d-none d-lg-block d-md-none d-sm-none d-xs-none"
         />
         <Row xs={1} md={2} className="g-0 justify-content-center mt-2">
-          {howItWorksDatas.homepageData.map((Itworks) => {
+          {howItWorksData.homepageData.map((Itworks) => {
             return (
               <Col
                 className="col-lg-4 col-md-6 col-sm-10 px-lg-3 px-md-4 px-sm-5 d-flex align-items-stretch"
@@ -89,6 +98,31 @@ const HowItWorks = () => {
           })}
         </div>
       </div> */}
+    </>
+  );
+};
+const HowItWorksTwo = () => {
+  return (
+    <>
+      <div className="container-fluid p-5">
+        {" "}
+        <img
+          src={howitworksstepstwo}
+          className="px-4 img-fluid mx-auto d-none d-lg-block d-md-none d-sm-none d-xs-none"
+        />
+        <Row xs={1} md={2} className="g-0 justify-content-center mt-2">
+          {howItWorksDataTwo.homepageDataTwo.map((Itworks) => {
+            return (
+              <Col
+                className="col-lg-4 col-md-6 col-sm-10 px-lg-3 px-md-4 px-sm-5 d-flex align-items-stretch"
+                key={Itworks.id}
+              >
+                <HowItWorksCard {...Itworks} />
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
     </>
   );
 };
@@ -227,30 +261,38 @@ const Newsletter = () => {
   return (
     <>
       <div className="container-fluid py-5 newsletterBg">
-        <div className="mt-2 p-5">
+        <div className="mt-2">
           <div className="card-body d-flex justify-content-center">
-            <div className="bg-white rounded d-flex justify-content-center p-5 newletterShadow">
-              <div className="mx-5">
+            <div className="bg-white rounded d-flex justify-content-center p-5 newletterShadow w-md-100 w-lg-100">
+              <div className="row">
                 {" "}
-                <h4 className="">Subscribe to our Newsletter</h4>
-                <p className="">
-                  Join us as we give you update on our features
-                </p>
-              </div>
-
-              <div className="mx-5 d-flex align-items-center">
-                {" "}
-                <InputGroup className="mb-3" style={{ width: "22rem" }}>
-                  <InputGroup.Text>
-                    <MailOutlineOutlinedIcon />
-                  </InputGroup.Text>
-                  <Form.Control
-                    placeholder="Enter email here"
-                    aria-label="Email"
-                    aria-describedby="basic-addon2"
-                  />
-                  <SubscribeBtn />
-                </InputGroup>
+                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                  {" "}
+                  <div className="mx-5">
+                    {" "}
+                    <h4 className="">Subscribe to our Newsletter</h4>
+                    <p className="">
+                      Join us as we give you update on our features
+                    </p>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                  {" "}
+                  <div className="mx-5 d-flex align-items-center">
+                    {" "}
+                    <InputGroup className="mb-3" style={{ width: "22rem" }}>
+                      <InputGroup.Text>
+                        <MailOutlineOutlinedIcon />
+                      </InputGroup.Text>
+                      <Form.Control
+                        placeholder="Enter email here"
+                        aria-label="Email"
+                        aria-describedby="basic-addon2"
+                      />
+                      <SubscribeBtn />
+                    </InputGroup>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

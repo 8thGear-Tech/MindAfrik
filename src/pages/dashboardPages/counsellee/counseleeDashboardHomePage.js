@@ -124,21 +124,41 @@ export const ExploreCard = () => {
             );
           })}
         </div>
-      </div> */}
-      <div className="container-fluid pb-3 mt-5">
-        <div className="row bgColor pt-4 px-4">
+      </div> */}{" "}
+      {/* <div className="bgGreenColor rounded p3 ">
+        <div className="row">
           {" "}
-          <div className="col-lg-12 col-md- d-flex justify-content-between">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             {" "}
+            <div className="">{" "}
             <h4 className="text-white">You have 0 upcoming session</h4>
-            <div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            {" "}
+            <div className="d-flex">
               {" "}
               <BookASessionNowBtn />
             </div>
           </div>
         </div>
-
-        <Row xs={1} md={2} className="g-0 justify-content-evenly mt-5">
+      </div> */}
+      <div className="row bgGreenColor py-4 px-4 d-flex align-items-center">
+        {" "}
+        <div className="col-lg-12  col-md- d-flex justify-content-between">
+          {" "}
+          <h4 className="text-white">You have 0 upcoming session</h4>
+          <div>
+            {" "}
+            <BookASessionNowBtn />
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid pb-3 mt-5">
+        {/* <a href=""> */}
+        <h4 className="text-black">Explore</h4>
+        {/* </a> */}
+        <Row xs={1} md={2} className="g-0 justify-content-evenly mt-3">
           {exploreCardHolder.exploreCards.map((explore) => {
             return (
               <Col

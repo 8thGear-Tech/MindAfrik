@@ -184,7 +184,7 @@ const CounselorProfileForm = () => {
               />
             </Form.Group>
           </div>
-          <div className="align-item m-5 ">
+          <div className="col-lg-6 align-item text-center mt-3">
             <Button variant="primary" type="submit">
               Submit
             </Button>

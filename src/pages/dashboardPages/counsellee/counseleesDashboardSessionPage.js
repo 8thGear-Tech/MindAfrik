@@ -51,11 +51,25 @@ const CounselleeSession = () => {
 const CounselleeSessionCard = () => {
   return (
     <div>
-      <div className="counselorsDashboardCard container-fluid">
+      <div className="counselorsDashboardCard container px-5">
+        <div className="row d-flex juatify-content-center align-items-center">
+          <div className="col-lg-7 col-md-12 col-sm-12 mt-5 align-items-center text-center">
+            <h3 className="pt-3">You have 0 upcoming sessions</h3>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12">
+            <img src={counsellorsdashboardimg} alt="" className="ms-2 mt-2" />
+          </div>
+          <div className="d-flex justify-content-between">
+            <a href="">Book a session Now</a>
+            <a href="/counsellorsDetails">See available counselors</a>
+          </div>
+        </div>
+      </div>
+      {/* <div className="counselorsDashboardCard container-fluid card w-75 px-5 mt-4 ">
         <div className="d-flex">
           <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3">
             <h3 className="pt-3">You have 0 upcoming sessions</h3>
-            {/* <p className="pt-2">Tomorrow, Dec 22, 2022</p> */}
+            <p className="pt-2">Tomorrow, Dec 22, 2022</p>
           </div>
           <div className="">
             <img src={counsellorsdashboardimg} alt="" className="ms-2 mt-2" />
@@ -64,8 +78,8 @@ const CounselleeSessionCard = () => {
       </div>{" "}
       <div className="d-flex justify-content-between">
         <a href="">Book a session Now</a>
-        <a href="">See Available counselors</a>
-      </div>
+        <a href="/counsellorsDetails">See available counselors</a>
+      </div> */}
     </div>
   );
 };
@@ -75,13 +89,15 @@ const Sessions = () => {
     <>
       <div className="d-flex justify-content-center justify-content-around text-center py-5">
         {" "}
-        <div>
-          <h4>Completed Sessions</h4>
-          <p>No sessions available for this category.</p>
-        </div>
-        <div>
-          <h4>Upcoming Sessions</h4>
-          <p>No sessions available for this category.</p>
+        <div className="row">
+          <div className="col-lg-6 col-md-6 col-sm-12">
+            <h4>Completed Sessions</h4>
+            <p>No sessions available for this category.</p>
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12">
+            <h4>Upcoming Sessions</h4>
+            <p>No sessions available for this category.</p>
+          </div>
         </div>
       </div>
     </>

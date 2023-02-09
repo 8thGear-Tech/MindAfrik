@@ -12,7 +12,7 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 // internal import
-import { DashboardProfileCards } from "../allCards/dashBoardcards";
+import {  } from "../allCards/dashBoardcards";
 import admin from "../../data/dashboardNavbar.json";
 import counsellor from "../../data/dashboardNavbar.json";
 import counsellee from "../../data/dashboardNavbar.json";
@@ -98,7 +98,7 @@ const SmallShowExample = ({ name, ...props }) => {
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <DashboardProfileCards />
+            < />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -218,7 +218,7 @@ const BigShowExample = ({ name, ...props }) => {
       >
         <Offcanvas.Header>
           <Offcanvas.Title>
-            <DashboardProfileCards />
+            < />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="">
@@ -305,7 +305,7 @@ const CounsellorSmallShowExample = ({ name, ...props }) => {
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <DashboardProfileCards />
+            < />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -370,7 +370,7 @@ const CounsellorBigShowExample = ({ name, ...props }) => {
       >
         <Offcanvas.Header>
           <Offcanvas.Title>
-            <DashboardProfileCards />
+            < />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="">
@@ -456,7 +456,7 @@ const CounselleeSmallShowExample = ({ name, ...props }) => {
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <DashboardProfileCards />
+            < />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -521,7 +521,7 @@ const CounselleeBigShowExample = ({ name, ...props }) => {
       >
         <Offcanvas.Header>
           <Offcanvas.Title>
-            <DashboardProfileCards />
+            < />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="">

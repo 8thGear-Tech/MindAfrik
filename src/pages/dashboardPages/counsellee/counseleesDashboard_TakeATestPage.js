@@ -49,10 +49,10 @@ const CounselleeTestPage = () => {
 const CounselleeTestCard = () => {
   return (
     <div>
-      <div className="counselorsDashboardCard container-fluid bgColor">
-        <div className="d-flex justify-content-center align-items-center">
+      <div className="counselorsDashboardCard container-fluid bgColor mt-5">
+        <div className="d-flex justify-content-center align-items-center py-5">
           {" "}
-          <div className="col-lg-6 col-md-6 col-sm-12 mt-5">
+          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 ">
             <img src={counselleetestdashboardimg} alt="" className="ms-2" />
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 mt-5 text-center">

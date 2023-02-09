@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 import { SendBtn } from "../Buttons/actionBtn";
+import { AddToCalendarBtn } from "../Buttons/actionBtn";
 import adminStats from "../../data/allCards/dashboardCards.json";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -149,7 +150,20 @@ export const DashboardProfileCards = () => {
 export const CounseleeDashboardCard = () => {
   return (
     <div>
-      <div className="counselorsDashboardCard container-fluid">
+      <div className="counselorsDashboardCard container px-5">
+        <div className="row d-flex juatify-content-center align-items-center">
+          <div className="col-lg-7 col-md-12 col-sm-12 mt-5 align-items-center text-center">
+            <h3 className="">Welcome, Peter Uche</h3>
+            <p className="">
+              “Not until we are lost do we begin to understand ourselves”
+            </p>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12">
+            <img src={counselleeDashboardImage} alt="" className="ms-5 mt-2" />
+          </div>
+        </div>
+      </div>
+      {/* <div className="counselorsDashboardCard container-fluid">
         <div className="d-flex">
           <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3 ">
             <h3 className="pt-3">Welcome, Peter Uche</h3>
@@ -161,25 +175,40 @@ export const CounseleeDashboardCard = () => {
             <img src={counselleeDashboardImage} alt="" className="ms-2 mt-2" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
 export const CounselorsDashboardCard = () => {
   return (
-    <div>
-      <div className="counselorsDashboardCard container-fluid">
-        <div className="d-flex">
-          <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3">
+    <>
+      <div className="counselorsDashboardCard container px-5">
+        <div className="row d-flex juatify-content-center align-items-center">
+          <div className="col-lg-7 col-md-12 col-sm-12 mt-5 align-items-center text-center">
             <h3 className="pt-3">You have an upcoming appointment</h3>
             <p className="pt-2">Tomorrow, Dec 22, 2022</p>
+            <AddToCalendarBtn />
           </div>
-          <div className="">
+          <div className="col-lg-4 col-md-6 col-sm-12 ">
             <img src={counsellorsdashboardimg} alt="" className="ms-2 mt-2" />
           </div>
         </div>
       </div>
-    </div>
+      <div>
+        {/* <div className="counselorsDashboardCard container-fluid">
+          <div className="d-flex align-items-center">
+            <div className="col-lg-6 col-md-6 col-sm-12 mt-5 pt-3 text-center">
+              <h3 className="pt-3">You have an upcoming appointment</h3>
+              <p className="pt-2">Tomorrow, Dec 22, 2022</p>
+              <AddToCalendarBtn />
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <img src={counsellorsdashboardimg} alt="" className="ms-2 mt-2" />
+            </div>
+          </div>
+        </div> */}
+      </div>
+    </>
   );
 };
 

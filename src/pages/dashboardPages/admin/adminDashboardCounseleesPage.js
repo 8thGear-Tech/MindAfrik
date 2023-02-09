@@ -38,7 +38,7 @@ const RegisteredUsersList = () => {
       {" "}
       <div className="">
         <div className="d-flex justify-content-between">
-          <p className="">Registered Counsellees List</p>
+          <p className="mt-5">Registered Counsellees List</p>
           <p>Sort by</p>
         </div>{" "}
         <Table striped responsive>

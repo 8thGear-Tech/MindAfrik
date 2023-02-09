@@ -48,10 +48,64 @@ export const NavbarSection = () => {
       </Navbar>
     </>
   );
-  // <p>Hello</p>;
+};
+export const NavSection = () => {
+  return (
+    <>
+      <Navbar expand="lg">
+        <Container fluid>
+          <Navbar.Brand href="#">
+            <img
+              src={mindafrikfulllogo}
+              className="d-inline-block align-top"
+              alt="MindAfrik logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle
+            aria-controls="navbarScroll"
+            className="navbar-toggler btn"
+          />
+          <Navbar.Collapse
+            id="responsive-navbar-nav"
+            className="justifyNavItemsEnd"
+          >
+            <Nav className="d-flex align-items-center">
+              <Nav.Link href="/" className="text-black mx-2">
+                Home
+              </Nav.Link>
+              <Nav.Link href="/about" className="text-black mx-2">
+                About Us
+              </Nav.Link>
+              <Nav.Link href="/contact" className="text-black mx-2">
+                Contact
+              </Nav.Link>
+              <Nav.Link
+                href="/psychologicalAssessment"
+                className="text-black mx-2"
+              >
+                Take a Test
+              </Nav.Link>
+              {/* <Nav.Link href="#memes" className="text-black mx-2">
+              <LoginBtn />
+            </Nav.Link> */}
+            </Nav>
+            {/* <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form> */}
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
+  );
 };
 
-export const NavSection = () => {
+export const NavvSection = () => {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container fluid className="px-5">
@@ -62,7 +116,12 @@ export const NavSection = () => {
             alt="MindAfrik logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" /> */}
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        <Navbar.Toggle
+          className="navbar-toggler btn"
+          aria-controls="navbarScroll"
+        />
         <Navbar.Collapse
           id="responsive-navbar-nav"
           className="justifyNavItemsEnd"
@@ -98,9 +157,9 @@ export const NavSection = () => {
             >
               Take a Test
             </Nav.Link>
-            <Nav.Link href="#memes" className="text-black mx-2">
+            {/* <Nav.Link href="#memes" className="text-black mx-2">
               <LoginBtn />
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

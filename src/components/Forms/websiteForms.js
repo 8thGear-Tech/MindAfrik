@@ -65,41 +65,15 @@ export const AssesmentForm = (props) => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </div>
-        {/* <div className="container-fluid mt-5">
-          <h5 className="text-center">
-            Over the last 2 weeks , how often have you been bothered by feeling
-            tired or having little energy?
-          </h5>
-          <div className="container-fluid d-flex justify-content-around">
-            <Dropdown.Menu show className="border-0 w-75 assessmentBg">
-              <Dropdown.Item
-                eventKey="1"
-                className="border border-2 rounded-pill assessmentSelection"
-              >
-                Not at all
-              </Dropdown.Item>
-              <Dropdown.Item
-                eventKey="2"
-                className="mt-2 border border-2 rounded-pill assessmentSelection"
-              >
-                Several days
-              </Dropdown.Item>
-              <Dropdown.Item
-                eventKey="3"
-                className=" mt-2 border border-2 rounded-pill assessmentSelection"
-              >
-                More than half days
-              </Dropdown.Item>
-              <Dropdown.Item
-                eventKey="4"
-                className="mt-2 border border-2 rounded-pill assessmentSelection"
-              >
-                Nearly every day
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </div>
-        </div> */}
-      </div>
+        {/* <br></br>
+      <br></br>
+
+      <h5 className="d-flex justify-content-around">
+        Over the last 2 weeks , how often have you been bothered by feeling
+        tired or having little energy?
+      </h5> */}
+      </div>{" "}
+      <SubmitBtn />
     </>
   );
 };
