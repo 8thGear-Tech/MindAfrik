@@ -81,11 +81,12 @@
 //   justify-content: space-between;
 // }
 .CardTestimony {
-  border: 5px;
+  border: 1px;
+  border-style: solid;
   box-sizing: border-box;
   align-items: center;
   text-align: center;
-  background-color: purple;
+  // background-color: purple;
   width: 300px;
   height: 360px;
 }

@@ -35,14 +35,18 @@ const GetStarted = () => {
             <img src={psychologicalassessmentimage} />
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 mt-5 align-items-center">
-            <h1>You don't feel good?</h1>
-            <br></br>
-            <h4>We can help you find yourself</h4>
-            <br></br>
+            <h1>Let’s get started!</h1>
+            {/* <h4>We can help you find yourself</h4> */}
+            <br />
+            <br />
             <p>
-              Mental test is self care and development for healthy connection
-              between your soul and body. Mental test is self care and
-              development for healthy connection between your soul and body.
+              Please answer the following questions as honestly as possible.
+              After completing the test, you will receive a report indicating
+              the severity of your symptoms and suggestions for the next steps.
+              Please note that this is not a substitute for a full diagnostic
+              assessment by a licensed mental health professional. If you have
+              any concerns about your mental health, we encourage you to reach
+              out to us for an appointment.
             </p>{" "}
             <StartYourAssessmentBtn />
           </div>

@@ -61,19 +61,33 @@ const Contact = () => {
                 <div className="d-flex justify-content-center">
                   {" "}
                   <PhoneIcon />
-                  <a href="tel:2349131862169" className="text-decoration-none">
-                    <p className="mx-3">+2349131862169</p>
+                  <a href="tel:2348134762115" className="text-decoration-none">
+                    <p className="mx-3">+2348134762115</p>
                   </a>
                 </div>
                 <div className="d-flex justify-content-center">
                   <Mailicon />{" "}
                   <a
-                    href="mailto:info@mindafrik.com"
+                    href="mailto:support@mindafrik.com"
                     className="text-decoration-none"
                   >
-                    <p className="mx-3">info@mindafrik.com</p>
+                    <p className="mx-3">support@mindafrik.com </p>
                   </a>
                 </div>
+              </div>
+              <div className="d-flex justify-content-center">
+                <p className="mx-3">
+                  <b>Address</b>: 11b, Collins Onabule crescent, Diamond Estate,
+                  Magodo, Lagos, Nigeria.
+                </p>
+              </div>
+              <div className="d-flex justify-content-center">
+                <p className="mx-3">
+                  <b>Office Hours</b>: Mondays - Fridays (10am - 4pm)
+                </p>
+              </div>
+              <div className="d-flex justify-content-center">
+                <p className="mx-3">We look forward to hearing from you!</p>
               </div>
             </div>
           </Col>

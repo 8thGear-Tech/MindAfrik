@@ -18,18 +18,17 @@ export const AboutUsHero = () => {
       <div className="row px-5 align-items-center">
         <div className="col-lg-7 col-md-7 col-sm-12">
           <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-white pt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-            rerum.
+            Africa's leading supportive listening and counselling venture.
             <br />
           </h2>
           <h3 className=" d-xs-block d-sm-block d-md-block d-lg-none aboutUsHeroText text-white pt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-            rerum.
+            Africa's leading supportive listening and counselling venture.
             <br />
           </h3>
           <p className="text-white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
-            similique atque laboriosam.
+            We provide a safe and non-judgmental environment in professional
+            therapy/counselling in relationship, marriage, family counselling,
+            Trauma Informed Care Mental health and Stress Management
           </p>
         </div>
         <img
@@ -90,18 +89,17 @@ export const PsychologicalAssessmentHero = () => {
         <div className=" row">
           <div className="col-lg-6 col-md-12 col-sm-12 mt-5 align-items-center">
             <h1 className=" d-none d-xl-block d-lg-block d-md-block d-sm-none d-xs-none">
-              You don't feel good?
+              Welcome Here!
             </h1>
             <h2 className="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
-              You don't feel good?{" "}
+              Welcome Here!
             </h2>
-            <br></br>
             <h4>We can help you find yourself</h4>
-            <br></br>
             <p>
-              Mental test is self care and development for healthy connection
-              between your soul and body. Mental test is self care and
-              development for healthy connection between your soul and body.
+              You can take a quick self-assessment to gauge your mental health
+              and well-being. Our tests are designed to provide you with an
+              initial indication of your symptoms and can help you determine if
+              it's time to seek professional help.
             </p>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 ">
@@ -120,11 +118,11 @@ export const HomePageHero = () => {
         <div className="px-5 container-fluid HomePageHeroBgg d-flex">
           <div className="row align-items-center justify-content-center px-4 py-3">
             <div className="col-lg-7 col-md-7 col-sm-12 pt-3">
-              <h1 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
+              <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
                 Welcome! Our specialties include individual, couples, and group
                 sessions.
                 <br />
-              </h1>
+              </h2>
               <h2 className=" d-xs-block d-sm-block d-md-block d-lg-none">
                 Welcome! Our specialties include individual, couples, and group
                 sessions.

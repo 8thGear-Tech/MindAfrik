@@ -29,25 +29,19 @@
     {
       "id": 2,
       "image": "../../assets/images/cards/stressevaluation.png",
-      "title": "Anxiety Evaluation",
+      "title": "Depression Evaluation",
       "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. "
     },
     {
       "id": 3,
       "image": "../../assets/images/cards/stressevaluation.png",
-      "title": "Depression Evaluation",
-      "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. "
-    },
-    {
-      "id": 4,
-      "image": "../../assets/images/cards/stressevaluation.png",
-      "title": "Self Confidence Evaluation",
+      "title": "Trauma Evaluation",
       "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla."
     },
     {
       "id": 5,
       "image": "../../assets/images/cards/stressevaluation.png",
-      "title": "Martial Discord Evaluation",
+      "title": "Relationship/Marriage Evaluation",
       "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla."
     }
   ]
