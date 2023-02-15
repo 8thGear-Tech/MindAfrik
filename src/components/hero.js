@@ -11,31 +11,30 @@ import {
 } from "../components/Buttons/actionBtn";
 
 import homehero from "../assets/images/hero/homehero.png";
+import homeheroone from "../assets/images/hero/homeheroone.png";
+import aboutushero from "../assets/images/hero/aboutushero.jpg";
+import homeheroon from "../assets/images/hero/homeheroon.jpg";
 
 export const AboutUsHero = () => {
   return (
-    <div className="container-fluid aboutHeroColor">
-      <div className="row px-5 align-items-center">
+    <div className="container-fluid aboutHeroColor py-3">
+      <div className="row px-5 align-items-center py-5">
         <div className="col-lg-7 col-md-7 col-sm-12">
-          <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-white pt-5">
+          <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-black pt-5">
             Africa's leading supportive listening and counselling venture.
             <br />
           </h2>
-          <h3 className=" d-xs-block d-sm-block d-md-block d-lg-none aboutUsHeroText text-white pt-5">
+          <h3 className=" d-xs-block d-sm-block d-md-block d-lg-none aboutUsHeroText text-black pt-5">
             Africa's leading supportive listening and counselling venture.
             <br />
           </h3>
-          <p className="text-white">
+          <p className="text-black">
             We provide a safe and non-judgmental environment in professional
             therapy/counselling in relationship, marriage, family counselling,
             Trauma Informed Care Mental health and Stress Management
           </p>
         </div>
-        <img
-          src={aboutUsHeroImage}
-          alt=""
-          className="col-lg-5 col-md-5 col-sm-12"
-        />
+        <img src={aboutushero} alt="" className="col-lg-5 col-md-5 col-sm-12" />
       </div>
     </div>
   );
@@ -117,17 +116,17 @@ export const HomePageHero = () => {
       <div className="container-fluid HomePageHeroBg d-flex align-items-center">
         <div className="px-5 container-fluid HomePageHeroBgg d-flex">
           <div className="row align-items-center justify-content-center px-4 py-3">
-            <div className="col-lg-7 col-md-7 col-sm-12 pt-3">
-              <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
+            <div className="col-lg-6 col-md-6 col-sm-12 pt-3">
+              <h3 className="d-none d-lg-block d-md-none d-sm-none d-xs-none">
                 Welcome! Our specialties include individual, couples, and group
                 sessions.
                 <br />
-              </h2>
-              <h2 className=" d-xs-block d-sm-block d-md-block d-lg-none">
+              </h3>
+              <h4 className=" d-xs-block d-sm-block d-md-block d-lg-none">
                 Welcome! Our specialties include individual, couples, and group
                 sessions.
                 <br />
-              </h2>
+              </h4>
               <p className="mt-3">
                 Our goal is to empower you with the tools and insights you need
                 to live a fulfilling life, and we work with you every step of
@@ -138,9 +137,10 @@ export const HomePageHero = () => {
                 <BookASessionBtn />
               </div>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12">
+            <div className="col-lg-6 col-md-6 col-sm-12">
               <img
-                src={homehero}
+                src={homeheroone}
+                // src={homeheroon}
                 className="d-block mx-lg-auto img-fluid"
                 alt=""
                 loading=""

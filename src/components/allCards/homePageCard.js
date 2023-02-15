@@ -22,12 +22,13 @@ import image2 from "../../assets/images/home/image2.png";
 import image3 from "../../assets/images/home/image3.png";
 
 export const HowItWorksCard = (props) => {
-  const { title, text } = props;
+  const { icon, title, text } = props;
   return (
     <>
       <Card style={{ width: "22rem" }} className="my-3 mx-auto">
-        <Card.Body>
+        <Card.Body className="text-center">
           {/* <CreateNewFolderIcon sx={{ fontSize: 40 }} /> */}
+          <img src={icon} className="img-fluid w-25 m-3" />
           <Card.Title>
             <h4> {title} </h4>
           </Card.Title>

@@ -3,21 +3,22 @@
 // }
 
 .aboutHeroColor {
-  background: linear-gradient(
-      0deg,
-      rgba(59, 192, 142, 0.1),
-      rgba(59, 192, 142, 0.1)
-    ),
-    radial-gradient(
-      50% 45.66% at 50.5% 44.13%,
-      rgba(9, 205, 30, 0.6) 0%,
-      #107a57 95%
-    ),
-    radial-gradient(
-      50% 45.66% at 50.5% 44.13%,
-      rgba(123, 99, 182, 0.951875) 14.58%,
-      #8f67b3 91.15%,
-      rgba(7, 72, 199, 0.67) 100%
-    ),
-    linear-gradient(180deg, #09cd1e -1.52%, rgba(7, 72, 199, 0.67) 89.79%);
+  // background: linear-gradient(
+  //     0deg,
+  //     rgba(59, 192, 142, 0.1),
+  //     rgba(59, 192, 142, 0.1)
+  //   ),
+  //   radial-gradient(
+  //     50% 45.66% at 50.5% 44.13%,
+  //     rgba(9, 205, 30, 0.6) 0%,
+  //     #107a57 95%
+  //   ),
+  //   radial-gradient(
+  //     50% 45.66% at 50.5% 44.13%,
+  //     rgba(123, 99, 182, 0.951875) 14.58%,
+  //     #8f67b3 91.15%,
+  //     rgba(7, 72, 199, 0.67) 100%
+  //   ),
+  //   linear-gradient(180deg, #09cd1e -1.52%, rgba(7, 72, 199, 0.67) 89.79%);
+  background: rgba(8, 186, 71, 0.1);
 }

@@ -2,16 +2,19 @@
   "homepageData": [
     {
       "id": 1,
+      "icon": "../assets/icons/howitworks/createaccount.png",
       "title": "Sign up",
       "text": "Create a free account on our website by providing your contact information to start your journey to better mental health today."
     },
     {
       "id": 2,
+      "icon": "../assets/icons/howitworks/takeanassessment.png",
       "title": "Take our Assessment test",
       "text": "Answer our free assessment questions to know your mental health state from a counsellor/ therapist's point of view, allowing us to achieve a customised service with you."
     },
     {
       "id": 3,
+      "icon": "../assets/icons/howitworks/searchtherapist.png",
       "title": "Search for a therapist",
       "text": "Browse through our network of licensed therapists, based on your location, language, and specialty. You can view the therapist's profile, ratings, and availability."
     }
@@ -25,6 +28,7 @@
     {
       "id": 5,
       "title": "Start therapy",
+      "icon": "../assets/icons/howitworks/startyourtherapy.png",
       "text": "On the day and time of your session, log into your account and join the video call with your therapist. You can use a computer, tablet, or smartphone with a webcam and a stable internet connection. If you have scheduled a face to face meeting, you get to the venue on time; be there at least 10-15 mins before your session begins. All our therapy sessions are encrypted and secure, ensuring the privacy and confidentiality of your communication with your therapist."
     },
     {
