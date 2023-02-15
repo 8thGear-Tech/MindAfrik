@@ -843,39 +843,39 @@ export const Testimonials = () => {
   );
 };
 
-const TestimonialsNewCard = (props) => {
-  const { name, location, testimonial } = props;
-  return (
-    <>
-      <div className="card p-3">
-        {" "}
-        <h5 className="">{name}</h5>
-        <h6 className="">{location}</h6>
-        <p className="">{testimonial}</p>
-      </div>
-    </>
-  );
-};
+// const TestimonialsNewCard = (props) => {
+//   const { name, location, testimonial } = props;
+//   return (
+//     <>
+//       <div className="card p-3">
+//         {" "}
+//         <h5 className="">{name}</h5>
+//         <h6 className="">{location}</h6>
+//         <p className="">{testimonial}</p>
+//       </div>
+//     </>
+//   );
+// };
 
-export const TestimonialsNew = () => {
-  return (
-    <div className="container-fluid">
-      <div className="row d-flex justify-content-center my-3">
-        <h3 className="text-center pt-5">Testimonials</h3>
-        <p className="text-center">
-          Don't take our word for it. See what Users are saying about us.
-        </p>
-        {testimonial.testimonials.map((testimonials) => {
-          return (
-            <div
-              className="col-sm-12 col-md-6 col-lg-4 mt-2 mb-5 px-lg-4 d-flex justify-content-center"
-              key={testimonials.id}
-            >
-              <TestimonialsNewCard {...testimonials}></TestimonialsNewCard>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+// export const TestimonialsNew = () => {
+//   return (
+//     <div className="container-fluid">
+//       <div className="row d-flex justify-content-center my-3">
+//         <h3 className="text-center pt-5">Testimonials</h3>
+//         <p className="text-center">
+//           Don't take our word for it. See what Users are saying about us.
+//         </p>
+//         {testimonial.testimonials.map((testimonials) => {
+//           return (
+//             <div
+//               className="col-sm-12 col-md-6 col-lg-4 mt-2 mb-5 px-lg-4 d-flex justify-content-center"
+//               key={testimonials.id}
+//             >
+//               <TestimonialsNewCard {...testimonials}></TestimonialsNewCard>
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// };

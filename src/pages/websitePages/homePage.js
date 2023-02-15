@@ -7,9 +7,9 @@ import { NavSection } from "../../components/Navbar/guestNavbar";
 import { HowItWorksCard } from "../../components/allCards/homePageCard";
 import { HomePageHero } from "../../components/hero";
 import { WhyChooseUsCardNew } from "../../components/allCards/homePageCard";
-import { TestimonialsCard } from "../../components/allCards/homePageCard";
+// import { TestimonialsCard } from "../../components/allCards/homePageCard";
+// import { TestimonialsNew } from "../../components/allCards/homePageCard";
 
-import { TestimonialsNew } from "../../components/allCards/homePageCard";
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 import { Testimonials } from "../../components/allCards/homePageCard";
 
@@ -30,16 +30,13 @@ const Home = () => (
   <>
     <NavSection />
     <HomePageHero />
-    <HowItWorks />
-    <Testimonials />
     <HowItWorksOne />
     <HowItWorksTwo />
     <WhyChooseUsCardNew />
+    <Testimonials />
     {/* <WhyChooseUsCard /> */}
-    <TestimonialsNew />
+    {/* <TestimonialsNew /> */}
     {/* <TestimonialsCard /> */}
-
-    <Newsletter />
     {/* <Newsletter /> */}
   </>
 );
