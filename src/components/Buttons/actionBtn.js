@@ -292,10 +292,19 @@ export const AddToCalendarBtn = () => {
     </div>
   );
 };
-export const SubmitBtn = () => {
+export const SubmitTestBtn = () => {
   return (
     <div className="mt-2">
       <a href="/resultPage">
+        <Button className="SubmitBtn">Submit</Button>{" "}
+      </a>
+    </div>
+  );
+};
+export const SubmitBtn = () => {
+  return (
+    <div className="mt-2">
+      <a href="#">
         <Button className="SubmitBtn">Submit</Button>{" "}
       </a>
     </div>

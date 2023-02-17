@@ -595,6 +595,97 @@ export const TestimonialsCard = (props) => {
   };
 
   return (
+    <Carousel>
+      <Carousel.Item>
+        <Card
+          className="col-3 m-5 CardTestimony"
+          style={{
+            borderBottomLeftRadius: " 3rem",
+            borderTopRightRadius: "3rem",
+          }}
+        >
+          <Card.Body>
+            <Card.Title>
+              <h4>{title}</h4>
+            </Card.Title>
+            <Card.Subtitle
+              className="mb-2 text-muted"
+              style={{
+                fontSize: "1rem",
+                fontWeight: 300,
+                lineHeight: "1.75rem",
+                fontFamily: "Comfortaa",
+              }}
+            >
+              {subtitle}
+            </Card.Subtitle>
+            <Card.Text>{text}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Card
+          className="col-3 m-5 CardTestimony"
+          style={{
+            borderBottomLeftRadius: " 3rem",
+            borderTopRightRadius: "3rem",
+          }}
+        >
+          <Card.Body>
+            <Card.Title>
+              <h4>{title}</h4>
+            </Card.Title>
+            <Card.Subtitle
+              className="mb-2 text-muted"
+              style={{
+                fontSize: "1rem",
+                fontWeight: 300,
+                lineHeight: "1.75rem",
+                fontFamily: "Comfortaa",
+              }}
+            >
+              {subtitle}
+            </Card.Subtitle>
+            <Card.Text>{text}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Card
+          className="col-3 m-5 CardTestimony"
+          style={{
+            borderBottomLeftRadius: " 3rem",
+            borderTopRightRadius: "3rem",
+          }}
+        >
+          <Card.Body>
+            <Card.Title>
+              <h4>{title}</h4>
+            </Card.Title>
+            <Card.Subtitle
+              className="mb-2 text-muted"
+              style={{
+                fontSize: "1rem",
+                fontWeight: 300,
+                lineHeight: "1.75rem",
+                fontFamily: "Comfortaa",
+              }}
+            >
+              {subtitle}
+            </Card.Subtitle>
+            <Card.Text>{text}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Carousel.Item>
+
+      {/* const [index, setIndex] = useState(0);
+  const { title, subtitle, text } = props;
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <div className="d-flex justify-content-center">
@@ -832,7 +923,7 @@ export const TestimonialsCard = (props) => {
             </Card.Body>
           </Card>
         </div>
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
   );
 };

@@ -42,7 +42,7 @@ import faQAndA from "../data/components/faq.json";
 export const FAQ = () => {
   return (
     <>
-      <div className="container-fluid sectionOneBgColor px-5">
+      <div className="container-fluid sectionOneBgColor px-4">
         <div className="row py-5">
           {" "}
           <h3 className="text-center mb-5">Frequently Asked Questions</h3>
