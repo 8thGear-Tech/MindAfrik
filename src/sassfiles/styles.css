@@ -553,30 +553,6 @@ p {
   background: linear-gradient(0deg, rgba(59, 192, 142, 0.1), rgba(59, 192, 142, 0.1)), radial-gradient(50% 45.66% at 50.5% 44.13%, rgba(9, 205, 30, 0.6) 0%, #107a57 95%), radial-gradient(50% 45.66% at 50.5% 44.13%, rgba(123, 99, 182, 0.951875) 14.58%, #8f67b3 91.15%, rgba(7, 72, 199, 0.67) 100%), linear-gradient(180deg, #09cd1e -1.52%, rgba(7, 72, 199, 0.67) 89.79%);
 }
 
-.SideNavItem {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.2rem;
-  font-family: "Montserrat", sans-serif;
-}
-
-.sideNavButton {
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 14rem;
-  height: 2.5rem;
-}
-.sideNavButton:hover {
-  color: #058547;
-  background-color: #ffffff;
-}
-.sideNavButton:focus {
-  background-color: #ffffff;
-  color: #058547;
-}
-
 .LoginBtn {
   background: #0060c6;
   border-radius: 10px;
@@ -790,6 +766,17 @@ p {
   background-color: white;
 }
 
+.assessmentBgColor {
+  background: rgba(129, 229, 140, 0.5);
+  border-radius: 10px;
+  height: 2000px;
+}
+
+@media only screen and (max-width: 765px) {
+  .assessmentBgColor {
+    height: 2200px;
+  }
+}
 .sectionTwoBgColor {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 35px;
@@ -856,5 +843,4 @@ p {
   background: rgba(129, 229, 140, 0.5);
   border-radius: 10px;
   height: 500px;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

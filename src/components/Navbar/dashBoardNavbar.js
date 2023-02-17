@@ -12,7 +12,7 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 // internal import
-import {  } from "../allCards/dashBoardcards";
+import {} from "../allCards/dashBoardcards";
 import admin from "../../data/dashboardNavbar.json";
 import counsellor from "../../data/dashboardNavbar.json";
 import counsellee from "../../data/dashboardNavbar.json";
@@ -97,9 +97,7 @@ const SmallShowExample = ({ name, ...props }) => {
         }}
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
-            < />
-          </Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="d-flex justify-content-between flex-column">
@@ -217,9 +215,7 @@ const BigShowExample = ({ name, ...props }) => {
         }}
       >
         <Offcanvas.Header>
-          <Offcanvas.Title>
-            < />
-          </Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="">
           {admin.admin.map((navbar) => {
@@ -304,9 +300,7 @@ const CounsellorSmallShowExample = ({ name, ...props }) => {
         }}
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
-            < />
-          </Offcanvas.Title>
+          <Offcanvas.Title>ss</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="d-flex justify-content-between flex-column">
@@ -369,9 +363,7 @@ const CounsellorBigShowExample = ({ name, ...props }) => {
         }}
       >
         <Offcanvas.Header>
-          <Offcanvas.Title>
-            < />
-          </Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="">
           {counsellor.counsellor.map((navbar) => {
@@ -407,7 +399,7 @@ const CounsellorSmallShow = () => {
     </>
   );
 };
-//counsellee dashboard
+// //counsellee dashboard
 
 export const CounselleeDashboardSideNav = () => {
   return (
@@ -455,9 +447,7 @@ const CounselleeSmallShowExample = ({ name, ...props }) => {
         }}
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
-            < />
-          </Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="d-flex justify-content-between flex-column">
@@ -520,9 +510,7 @@ const CounselleeBigShowExample = ({ name, ...props }) => {
         }}
       >
         <Offcanvas.Header>
-          <Offcanvas.Title>
-            < />
-          </Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="">
           {counsellee.counsellee.map((navbar) => {
