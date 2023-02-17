@@ -29,7 +29,7 @@ export const AssesmentForm = (props) => {
       <NavSection />
       <Container fluid>
         {" "}
-        <div className="container-fluid assessmentBgColor pt-3">
+        <div className="container-fluid assessmentBgColor pt-5">
           <h1 className="text-center d-none d-xl-block d-lg-block d-md-block d-sm-none d-xs-none">
             Anxiety and Depression Symptoms
           </h1>
@@ -238,20 +238,19 @@ export const AssesmentForm = (props) => {
               </Dropdown.Menu>
             </div>
           </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <div className="my-3 text-center">
-            <SubmitBtn />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div className="text-center">
+            {" "}
+            <SubmitTestBtn />
           </div>
         </div>
-        {/* <SubmitTestBtn /> */}
       </Container>
     </>
   );
