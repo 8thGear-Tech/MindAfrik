@@ -85,7 +85,7 @@ export const Team = (props) => {
     <>
       {/* <div className="px-3"> */}{" "}
       <div className="col-lg-3 col-md-3 col-sm-12 text-center">
-        <img src={image} c />
+        <img src={image} className="img-fluid" />
         <div className="text-center mt-3">
           <h4>{name}</h4>
           <p>{role}</p>
