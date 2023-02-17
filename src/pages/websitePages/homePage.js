@@ -8,8 +8,9 @@ import { HowItWorksCard } from "../../components/allCards/homePageCard";
 import { HomePageHero } from "../../components/hero";
 import { WhyChooseUsCardNew } from "../../components/allCards/homePageCard";
 import { TestimonialCarousel } from "../../components/allCards/homePageCard";
+import { TestimonialCarouselTwo } from "../../components/allCards/homePageCard";
 // import { TestimonialsCard } from "../../components/allCards/homePageCard";
-// import { TestimonialsNew } from "../../components/allCards/homePageCard";
+import { TestimonialsNew } from "../../components/allCards/homePageCard";
 
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 import { Testimonials } from "../../components/allCards/homePageCard";
@@ -34,10 +35,11 @@ const Home = () => (
     <HowItWorksOne />
     <HowItWorksTwo />
     <WhyChooseUsCardNew />
-    <Testimonials />
-    <TestimonialCarousel />
+    {/* <Testimonials /> */}
+    {/* <TestimonialCarousel /> */}
+    {/* <TestimonialCarouselTwo /> */}
     {/* <WhyChooseUsCard /> */}
-    {/* <TestimonialsNew /> */}
+    <TestimonialsNew />
     {/* <TestimonialsCard /> */}
     {/* <Newsletter /> */}
   </>

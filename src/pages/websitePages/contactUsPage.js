@@ -24,7 +24,7 @@ const ContactPage = () => {
 const Contact = () => {
   return (
     <>
-      <Container fluid className="sectionOneBgColor px-5">
+      <Container fluid className="sectionOneBgColor px-4">
         <Row
           className="d-flex justify-content-center"
           style={{ height: "100vh" }}
@@ -91,7 +91,7 @@ const Contact = () => {
               </div>
             </div>
           </Col>
-          <Col className="col-lg-6 col-md-6 col-sm-12 col-xs-12 sectionTwoBgColor p-5 my-5">
+          <Col className="col-lg-6 col-md-6 col-sm-12 col-xs-12 sectionTwoBgColor py-5 px-3 my-5">
             <h3 className="text-center pb-3">Get In Touch</h3>
             <ContactForm />
           </Col>

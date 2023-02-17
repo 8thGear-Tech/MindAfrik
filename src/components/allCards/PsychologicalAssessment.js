@@ -17,9 +17,9 @@ export const EvaluationCard = (props) => {
   return (
     <>
       {/* <Row xs={1} lg={2} md={1} className="g-0"> */}
-      <Row xs={1} md={2} className="g-0 mt-5">
-        <Col className="col-lg-6 ">
-          <div className="w-75 px-lg-5">
+      <Row xs={1} md={2} className="g-0 mt-5 d-flex justify-content-evenly">
+        <Col className="col-lg-6 col-md-4">
+          <div className="px-lg-5">
             <Card.Img variant="top" className="parent" src={image} />
             <Card.Body className="">
               <h4 className="text-center pt-3">{title}</h4>
@@ -31,7 +31,7 @@ export const EvaluationCard = (props) => {
             </Card.Body>
           </div>
         </Col>
-        <Col className="col-lg-6 d-flex align-items-center">
+        <Col className="col-lg-6 col-md-7 d-flex align-items-center">
           {/* <div className="w-100"> */}
           {/* <Card.Img variant="top" className="parent" src={image} /> */}
           <Card.Body className="">

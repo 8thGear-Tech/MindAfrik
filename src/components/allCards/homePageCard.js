@@ -18,7 +18,10 @@ import testimonial from "../../data/homePageCards.json";
 import Container from "react-bootstrap/Container";
 
 //images
-import image1 from "../../assets/images/home/image1.png";
+import personalisedplan from "../../assets/images/home/personalisedplan.png";
+import experiencedcounsellors from "../../assets/images/home/experiencedcounsellors.jpg";
+import flexible from "../../assets/images/home/flexible.jpg";
+import onlinebooking from "../../assets/images/home/onlinebooking.png";
 import image2 from "../../assets/images/home/image2.png";
 import image3 from "../../assets/images/home/image3.png";
 
@@ -340,21 +343,18 @@ export const WhyChooseUsCardNew = () => {
             {" "}
             <div className="card mb-5">
               <img
-                src={image1}
-                className="card-img-top p-5"
+                src={experiencedcounsellors}
+                className="card-img-center p-5 mx-auto"
                 alt="..."
-                // style={{ maxWidth: "80%" }}
+                style={{ width: "60%" }}
               />
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#00114C" }}>
                   <b>Experienced and qualified therapists</b>
                 </h5>
                 <p className="card-text">
-                  Our therapists are licensed, experienced and dedicated to
-                  helping you achieve your therapy goals. They use
-                  evidence-based approaches to address a range of issues,
-                  including anxiety, depression, relationship problems, and
-                  more.
+                  Our therapists are licensed, experienced and dedicated use
+                  evidence-based approaches to address a range of issues.
                 </p>
               </div>
             </div>
@@ -363,60 +363,95 @@ export const WhyChooseUsCardNew = () => {
           <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4">
             {/* <div className="col d-lg-flex d-md-flex mb-5 "> */}
             <div className="col">
-              <div className="card mb-5" style={{}}>
-                <img src={image2} className="card-img-top p-5" alt="..." />
+              <div className="card mb-5">
+                <img
+                  src={personalisedplan}
+                  className="card-img-top p-5 mx-auto"
+                  alt="..."
+                  style={{ width: "60%" }}
+                />
                 <div className="card-body">
                   <h5 className="card-title" style={{ color: "#00114C" }}>
                     <b>Personalised treatment plans</b>
                   </h5>
                   <p className="card-text">
-                    We believe that every person's journey to mental wellness is
-                    unique, and so is our approach. Our therapists will work
-                    with you to create a personalised treatment plan that
-                    addresses your specific needs and goals
+                    Your journey to mental wellness is unique, and so is our
+                    approach. Our therapists create a personalised treatment
+                    plan that addresses each specific needs and goals of our
+                    clients.
                   </p>
                 </div>
               </div>
             </div>
             <div className="col">
               <div className="card mb-5" style={{}}>
-                <img src={image2} className="card-img-top p-5" alt="..." />
+                <img
+                  src={flexible}
+                  className="card-img-top p-5 mx-auto"
+                  alt="..."
+                  style={{ width: "70%" }}
+                />
                 <div className="card-body">
                   <h5 className="card-title" style={{ color: "#00114C" }}>
                     <b>Flexible scheduling</b>
                   </h5>
                   <p className="card-text">
-                    We understand that life can be hectic, which is why we offer
-                    flexible scheduling options to accommodate your busy
-                    schedule. You can book appointments online, and we also
-                    offer evening and weekend sessions.
+                    Because life can be hectic, we have crafted flexible
+                    scheduling options to accommodate your busy schedule. In
+                    addition to in-person therapy, we offer online sessions from
+                    the comfort of your own home.
                   </p>
                 </div>
               </div>
             </div>
             {/* </div> */}
           </div>
-          <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center ">
+          <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center justify-content-center">
             {" "}
-            <div className="card mb-5" style={{}}>
-              <div>
-                {" "}
-                <img src={image3} className="card-img-top p-5" alt="..." />
-              </div>
-
+            <div className="card mb-5">
+              <img
+                src={onlinebooking}
+                className="card-img-center p-5 mx-auto"
+                alt="..."
+                style={{ width: "60%" }}
+              />
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#00114C" }}>
-                  <b>Convenient online therapy</b>
+                  <b>Accessible & easy online booking</b>
                 </h5>
                 <p className="card-text">
-                  In addition to in-person therapy, we offer online therapy
-                  sessions so you can receive the support you need from the
-                  comfort of your own home. Our secure platform ensures that
-                  your information remains confidential.
+                  We offer free active listening sessions and cost-effective
+                  therapy services, convenient and available online bookings,
+                  24/7.
                 </p>
               </div>
             </div>
           </div>
+          {/* <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center ">
+            {" "}
+            <div className="card mb-5 mx-auto">
+              <div>
+                {" "}
+                <img
+                  src={onlinebooking}
+                  className="card-img-top p-5"
+                  alt="..."
+                  style={{ width: "60%" }}
+                />
+              </div>
+
+              <div className="card-body">
+                <h5 className="card-title" style={{ color: "#00114C" }}>
+                  <b>Accessible & easy online booking</b>
+                </h5>
+                <p className="card-text">
+                  We offer free active listening sessions and cost-effective
+                  therapy services, convenient and available online bookings,
+                  24/7.
+                </p>
+              </div>
+            </div>
+          </div> */}
         </div>
         {/* <div className="container-fluid p-5 mx-auto">
         {" "}
@@ -845,85 +880,230 @@ export const Testimonials = () => {
   );
 };
 
-// const TestimonialsNewCard = (props) => {
-//   const { name, location, testimonial } = props;
-//   return (
-//     <>
-//       <div className="card p-3">
-//         {" "}
-//         <h5 className="">{name}</h5>
-//         <h6 className="">{location}</h6>
-//         <p className="">{testimonial}</p>
-//       </div>
-//     </>
-//   );
-// };
+const TestimonialsNewCard = (props) => {
+  const { name, location, testimonial } = props;
+  return (
+    <>
+      <div className="card p-3">
+        {" "}
+        <h5 className="">{name}</h5>
+        <h6 className="">{location}</h6>
+        <p className="">{testimonial}</p>
+      </div>
+    </>
+  );
+};
 
-// export const TestimonialsNew = () => {
-//   return (
-//     <div className="container-fluid">
-//       <div className="row d-flex justify-content-center my-3">
-//         <h3 className="text-center pt-5">Testimonials</h3>
-//         <p className="text-center">
-//           Don't take our word for it. See what Users are saying about us.
-//         </p>
-//         {testimonial.testimonials.map((testimonials) => {
-//           return (
-//             <div
-//               className="col-sm-12 col-md-6 col-lg-4 mt-2 mb-5 px-lg-4 d-flex justify-content-center"
-//               key={testimonials.id}
-//             >
-//               <TestimonialsNewCard {...testimonials}></TestimonialsNewCard>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// };
+export const TestimonialsNew = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row d-flex justify-content-center my-3">
+        <h3 className="text-center pt-5">Testimonials</h3>
+        <p className="text-center">
+          Don't take our word for it. See what users are saying about us.
+        </p>
+        {testimonial.testimonials.map((testimonials) => {
+          return (
+            <div
+              className="col-sm-12 col-md-6 col-lg-4 mt-2 mb-5 px-lg-4 d-flex justify-content-center"
+              key={testimonials.id}
+            >
+              <TestimonialsNewCard {...testimonials}></TestimonialsNewCard>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export const TestimonialCarouselTwo = () => {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <Carousel activeIndex={index} onSelect={handleSelect}>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="holder.js/800x400?text=First slide&bg=373940"
+                  alt="First slide"
+                />
+                <div className="row">
+                  <div className="col-lg-4">
+                    <Carousel.Caption>
+                      <h3>First slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </div>
+                  <div className="col-lg-4">
+                    <Carousel.Caption>
+                      <h3>Second slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </div>
+                  <div className="col-lg-4">
+                    <Carousel.Caption>
+                      <h3>Third slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="holder.js/800x400?text=First slide&bg=373940"
+                  alt="First slide"
+                />
+                <div className="row">
+                  <div className="col-lg-4">
+                    <Carousel.Caption>
+                      <h3>First slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </div>
+                  <div className="col-lg-4">
+                    <Carousel.Caption>
+                      <h3>Second slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </div>
+                  <div className="col-lg-4">
+                    <Carousel.Caption>
+                      <h3>Third slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </Carousel.Item>
+            </Carousel>{" "}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export const TestimonialCarousel = () => {
   return (
     <>
-      <Carousel>
-        <Carousel.Item>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+      <Carousel className="carousel-inner">
+        <Carousel.Item className="carousel-item">
+          <div className="card-wrapper">
+            <Card className="carousel-card">
+              {/* <Card style={{ width: "18rem" }}> */}
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
         </Carousel.Item>
-        <Carousel.Item>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+        <Carousel.Item className="carousel-item">
+          <div className="card-wrapper">
+            <Card className="carousel-card">
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title2</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
         </Carousel.Item>
-        <Carousel.Item>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+        <Carousel.Item className="carousel-item">
+          <div className="card-wrapper">
+            <Card className="carousel-card">
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item className="carousel-item">
+          <div className="card-wrapper">
+            <Card className="carousel-card">
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Car</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item className="carousel-item">
+          <div className="card-wrapper">
+            <Card className="carousel-card">
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card T</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item className="carousel-item">
+          <div className="card-wrapper">
+            <Card className="carousel-card">
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
         </Carousel.Item>
       </Carousel>
     </>

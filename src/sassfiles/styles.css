@@ -628,6 +628,7 @@ p {
 }
 
 .HomePageHeroBg {
+  background: url(/src/assets/images/hero/homeheroBg.png);
   background-size: cover;
   position: relative;
   top: 0px;

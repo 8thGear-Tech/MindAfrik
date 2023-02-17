@@ -22,19 +22,22 @@
   "homepageDataTwo": [
     {
       "id": 4,
+      "icon": "../assets/icons/howitworks/bookasession.png",
+
       "title": "Book a session",
-      "text": "Select a convenient time slot and book your first session with the therapist of your choice. Our platform is designed to make therapy accessible and convenient for everyone, anywhere, at any time. Whether you have a busy schedule, a preference for remote care, or a need for a specific therapist, we have got you covered. "
+      "text": "Select a convenient time slot and book your first session with the therapist of your choice; in the most accessible and convenient way for everyone, anywhere, at any time."
     },
     {
       "id": 5,
       "title": "Start therapy",
       "icon": "../assets/icons/howitworks/startyourtherapy.png",
-      "text": "On the day and time of your session, log into your account and join the video call with your therapist. You can use a computer, tablet, or smartphone with a webcam and a stable internet connection. If you have scheduled a face to face meeting, you get to the venue on time; be there at least 10-15 mins before your session begins. All our therapy sessions are encrypted and secure, ensuring the privacy and confidentiality of your communication with your therapist."
+      "text": "Log into your account to join the video call with your therapist.  For in- office meetings, arrive 10-15 mins before your session. All sessions are encrypted and secure for privacy and confidentiality."
     },
     {
       "id": 6,
       "title": "Continue therapy",
-      "text": "After your first session, you can book and attend as many sessions as you need, with the same or a different therapist. You can also access your session history and billing information from your account.Start your journey to better mental health today."
+      "icon": "../assets/icons/howitworks/continuetherapy.png",
+      "text": " Book and attend as many sessions as needed with different therapists after your very first session.Start your journey to better mental health today."
     }
   ],
 
@@ -85,20 +88,17 @@
     {
       "id": 1,
       "name": "Name",
-      "location": "Location",
-      "testimonial": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+      "testimonial": "I was hesitant to try therapy, but my experience with Mindafrik has been life-changing. Their empathy and understanding has helped me work through my struggles and find peace within myself. I highly recommend [therapist's name] to anyone looking for support and growth."
     },
     {
       "id": 2,
       "name": "Name",
-      "location": "Location",
-      "testimonial": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+      "testimonial": "I've been seeing a therapist on Mindafrik for several months now and I can honestly say it's been a game-changer. Their approach is unique and tailored to my individual needs, and I've seen significant improvement in my mental health. I couldn't be happier with my experience."
     },
     {
       "id": 3,
       "name": "Name",
-      "location": "Location",
-      "testimonial": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+      "testimonial": "I've been to several therapists in the past but never felt like I truly connected with them until I started seeing therapists at Mindafrik]. They have a way of making me feel heard and understood, and I appreciate the non-judgmental space they provide. I'm grateful for their guidance and support."
     }
   ]
 }
