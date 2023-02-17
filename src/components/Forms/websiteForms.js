@@ -238,6 +238,18 @@ export const AssesmentForm = (props) => {
               </Dropdown.Menu>
             </div>
           </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <div className="my-3 text-center">
+            <SubmitBtn />
+          </div>
         </div>
         {/* <SubmitTestBtn /> */}
       </Container>
