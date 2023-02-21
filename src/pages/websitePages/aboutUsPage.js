@@ -4,7 +4,7 @@ import { TeamCard } from "../../components/allCards/AboutUsCards";
 import { AdvisoryBoardOnHoverCard } from "../../components/allCards/AboutUsCards";
 import { CoreValuesCards } from "../../components/allCards/AboutUsCards";
 import Info from "../../data/allCards/AboutUsCard.json";
-import ValuesData from "../../data/allCards/dashboardCards.json";
+import ValuesData from "../../data/allCards/AboutUsCard.json";
 
 const About = () => {
   return (
@@ -49,7 +49,7 @@ const AdvisoryTeamPic = () => {
 const CoreValues = () => {
   return (
     <div className="container-fluid mt-5 mb-5">
-      <h3 className="text-center mt-3 mb-4">Core Values</h3>
+      <h3 className="text-center mt-3 mb-5">Core Values</h3>
       <div className="row d-flex text-center justify-content-center">
         {ValuesData.ValuesInfo.map((card) => {
           return (

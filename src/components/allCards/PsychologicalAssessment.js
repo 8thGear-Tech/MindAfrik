@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 //internal import
+import { TakeAssessmentBtn } from "../Buttons/actionBtn";
 
 // images
 import stressevaluation from "../../assets/images/stress-evaluation.png";
@@ -27,19 +28,19 @@ export const EvaluationCard = (props) => {
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
-              </Card.Text> */}
+              </Card.Text> */}{" "}
             </Card.Body>
           </div>
         </Col>
-        <Col className="col-lg-6 col-md-7 d-flex align-items-center">
+        <Col className="col-lg-6 col-md-7 align-items-center my-auto">
           {/* <div className="w-100"> */}
           {/* <Card.Img variant="top" className="parent" src={image} /> */}
-          <Card.Body className="">
-            <h4 className=" pt-3">{title}</h4>
+          <Card.Body className="align-items-center">
+            <h4 className="">{title}</h4>
             <Card.Text>{paragraph}</Card.Text>
-          </Card.Body>
-          {/* </div> */}
-        </Col>
+          </Card.Body>{" "}
+          {/* </div> */} <TakeAssessmentBtn />
+        </Col>{" "}
       </Row>
     </>
   );
@@ -50,11 +51,17 @@ export const GotYouCoveredCard = (props) => {
   return (
     <>
       <Card className="mb-5 py-5 gotYouCoveredCardBg">
+        {/* <img
+          src={experiencedcounsellors}
+          className="card-img-center p-5 mx-auto"
+          alt="..."
+        /> */}
         <Card.Img
           variant="top"
           src={icon}
-          className="mx-auto"
-          style={{ maxWidth: "70%", maxHeight: "70%" }}
+          style={{ width: "60%" }}
+          className="mx-auto p-5"
+          // style={{ maxWidth: "70%", maxHeight: "70%" }}
           alt=""
         />
         <Card.Body className="text-center">
