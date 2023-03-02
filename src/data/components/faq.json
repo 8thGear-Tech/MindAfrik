@@ -3,14 +3,65 @@
     {
       "id": 1,
       "eventkey": "0",
-      "question": "Sign up",
-      "answer": "Create a free account on our website by providing your contact information to start your journey to better mental health today."
+      "question": "What is therapy and how does it work?",
+      "answer": "Therapy is a process of talking with a trained mental health professional to address emotional or psychological difficulties. It works by providing a safe and supportive space for individuals to explore their thoughts, feelings, and experiences. The goal is to help individuals gain insight, learn coping skills, and improve their overall well-being. At Mindafrik, We assist in the ways and manners that  people view their mental health and help them tackle life’s challenges by providing accessible, confidential and qualitative care."
     },
     {
-      "id": 1,
+      "id": 2,
       "eventkey": "1",
-      "question": "Sign up",
-      "answer": "Create a free account on our website by providing your contact information to start your journey to better mental health today."
+      "question": "How often will I need to attend therapy sessions?",
+      "answer": "The frequency of therapy sessions can vary depending on individual needs and goals. Some people attend therapy once a week, while others may only need a few sessions. When you subscribe with Mindafrik, your therapist can discuss a treatment plan with you."
+    },
+
+    {
+      "id": 3,
+      "eventkey": "2",
+      "question": "What can therapy help with?",
+      "answer": "Therapy can help with a wide range of issues, including but not limited to: depression, anxiety, relationship problems, stress, trauma, grief, addiction, and self-esteem. "
+    },
+    {
+      "id": 4,
+      "eventkey": "3",
+      "question": "How long does therapy usually last?",
+      "answer": "The length of therapy varies depending on the individual and their specific needs. Some individuals may only need a few sessions, while others may benefit from ongoing therapy."
+    },
+    {
+      "id": 5,
+      "eventkey": "4",
+      "question": "What is the difference between individual therapy and group therapy?",
+      "answer": "Therapy can help with a wide range of issues, including but not limited to: depression, anxiety, relationship problems, stress, trauma, grief, addiction, and self-esteem. "
+    },
+
+    {
+      "id": 6,
+      "eventkey": "5",
+      "question": "How much does therapy cost?",
+      "answer": "The cost of therapy varies depending on the therapist's experience, location, and the type of therapy being provided. The cost of therapy through MindAfrik,depends on the mode(physical / e-therapy) you want to opt for. We also check if it is on individual, couple or group booking. Kindly find our rate card HERE.(the here button should lead them to our rate card)."
+    },
+    {
+      "id": 7,
+      "eventkey": "8",
+      "question": "What should I look for in a therapist?",
+      "answer": "When searching for a therapist, it's important to look for someone who is licensed and has experience in the specific issues you're seeking help with. It's also important to look for a therapist who has a good reputation, is a good listener, and makes you feel comfortable."
+    },
+    {
+      "id": 8,
+      "eventkey": "9",
+      "question": "How do I prepare for my first therapy session?",
+      "answer": "Preparing for your first therapy session involves thinking about what you'd like to discuss and what your goals for therapy are. It's also helpful to write down any specific questions you have for your therapist."
+    },
+
+    {
+      "id": 9,
+      "eventkey": "10",
+      "question": "Is therapy confidential?",
+      "answer": "In general, therapy is confidential, meaning that the information you share with your therapist is protected by privacy laws. However, there are certain exceptions, such as if you disclose intentions to harm yourself or others. In general consideration, at MindAfrik, we ensure your information is kept highly confidential and secured.You can express yourself freely with full trust and openness. MindAfrik provides you the platform for you to be your own trueself without mask and fear of being judged."
+    },
+    {
+      "id": 10,
+      "eventkey": "11",
+      "question": "Can therapy be done online or over the phone?",
+      "answer": "Yes, therapy can be done online or over the phone through teletherapy. This can be a convenient option for individuals who have trouble accessing in-person therapy or prefer to have therapy from the comfort of their own home."
     }
   ]
 }
