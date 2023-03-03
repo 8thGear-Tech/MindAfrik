@@ -130,6 +130,9 @@ export const HomePageHero = () => {
             therapy/counselling in relationship, marriage, family counselling,
             Trauma Informed Care Mental health and Stress Management
           </p>
+          <div className="text-start mb-4">
+            <BookASessionBtn />
+          </div>
         </div>
         <img src={homehero} alt="" className="col-lg-5 col-md-5 col-sm-12" />
       </div>

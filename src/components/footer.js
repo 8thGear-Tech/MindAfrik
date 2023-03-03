@@ -11,7 +11,7 @@ export const Footer = () => {
     <>
       <div class="container-fluid justify-content-center">
         {/* row-cols-1 row-cols-sm-2 row-cols-md-5 */}
-        <footer class="row pt-5 mt-5 d-flex justify-content-between">
+        <footer class="row pt-5 mt-5 d-flex   justify-content-between">
           <div class="col-lg-3 col-md-12 col-sm-6 col-xs-6 mb-3">
             <a
               href="/"

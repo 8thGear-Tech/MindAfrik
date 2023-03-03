@@ -21,13 +21,13 @@ const Counsellors = (props) => {
   return (
     <>
       <div className="counsellorCardBorder w-50 py-4 mx-auto">
-        <div className="d-flex justify-content-center justify-content-evenly">
+        <div className="d-flex justify-content-center justify-content-evenly align-items-center">
           <div className="col-lg-6">
             {" "}
             <img src={image} alt="" className="" />
           </div>
 
-          <div className="col-lg-4">
+          <div className="col-lg-5">
             <h3 className="pt-3">{name}</h3>
             <p className="pt-2">{qualification}</p>
             <p className="pt-2">{role}</p>

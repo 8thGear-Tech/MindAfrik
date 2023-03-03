@@ -8,6 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 //internal import
 import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
+import { BookASessionBtn } from "../Buttons/actionBtn";
 
 //icons
 import { FacebookIcon } from "../../assets/icons/socialIcons";
@@ -79,12 +80,15 @@ export const NavSection = () => {
               <Nav.Link href="/contact" className="text-black mx-2">
                 Contact
               </Nav.Link>
-              <Nav.Link
+              <div className="">
+                <BookASessionBtn />
+              </div>
+              {/* <Nav.Link
                 href="/psychologicalAssessment"
                 className="text-black mx-2"
               >
                 Take a Test
-              </Nav.Link>
+              </Nav.Link> */}
               {/* <Nav.Link href="#memes" className="text-black mx-2">
               <LoginBtn />
             </Nav.Link> */}

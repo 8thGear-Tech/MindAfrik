@@ -11,6 +11,7 @@ import { TestimonialCarousel } from "../../components/allCards/homePageCard";
 import { TestimonialCarouselTwo } from "../../components/allCards/homePageCard";
 // import { TestimonialsCard } from "../../components/allCards/homePageCard";
 import { TestimonialsNew } from "../../components/allCards/homePageCard";
+import { BookASessionBtn } from "../../components/Buttons/actionBtn";
 
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 import { Testimonials } from "../../components/allCards/homePageCard";
@@ -123,6 +124,9 @@ const HowItWorksTwo = () => {
             );
           })}
         </Row>
+        <div className="text-center mt-4">
+          <BookASessionBtn />
+        </div>
       </div>
     </>
   );
