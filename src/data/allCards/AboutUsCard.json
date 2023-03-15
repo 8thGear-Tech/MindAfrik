@@ -2,35 +2,47 @@
   "advisoryimage": [
     {
       "id": 1,
-      "image": "../../assets/images/advisoryboard1.png"
-    },
-    {
-      "id": 2,
-      "image": "../../assets/images/advisoryboard2.png"
-    },
-    {
-      "id": 3,
-      "image": "../../assets/images/advisoryboard3.png"
+      "image": "../../assets/images/advisoryboard/mrbode.png"
     }
   ],
   "FirstHoverCard": [
     {
       "id": 1,
-      "image": "../../assets/images/advisoryboard1.png",
-      "name": "Asake Ladipo",
-      "position": "Business Developer."
+      "image": "../../assets/images/advisoryboard/mrbode.png",
+      "name": "Olabode Daramola",
+      "position": "Clinical Therapy, ADHD"
+    }
+  ],
+  "ValuesInfo": [
+    {
+      "id": 1,
+      "image": "../../assets/images/corevalues/empathy.png",
+      "title": "Empathy and Compassion",
+      "text": "We believe in creating a warm and supportive environment where clients feel heard and understood. We approach our clients with compassion and non-judgment, helping them navigate challenges and find solutions that work for them."
     },
     {
       "id": 2,
-      "image": "../../assets/images/advisoryboard2.png",
-      "name": "Trevoor Ladigun",
-      "position": "Business Developer."
+      "image": "../../assets/images/corevalues/confidentiality.png",
+      "title": "Confidentiality",
+      "text": "We respect the privacy of our clients and ensure that all information shared in therapy sessions remains confidential."
     },
     {
       "id": 3,
-      "image": "../../assets/images/advisoryboard3.png",
-      "name": "Ponnie Aina",
-      "position": "Business Developer."
+      "image": "../../assets/images/corevalues/evidencebased.png",
+      "title": "Evidence-based practices",
+      "text": "We believe in using proven, effective methods to help clients achieve their goals and lead fulfilling lives."
+    },
+    {
+      "id": 4,
+      "image": "../../assets/images/corevalues/collaboration.png",
+      "title": "Collaboration and Inclusiveness",
+      "text": "We work closely with clients to help them set and achieve their goals, recognizing that the best outcomes come from a collaborative approach. We value diversity and strive to create an inclusive environment that is welcoming to all, regardless of race, ethnicity, gender, sexual orientation, or other personal characteristics."
+    },
+    {
+      "id": 5,
+      "image": "../../assets/images/corevalues/continuouslearning.png",
+      "title": "Empowerment and Continuous learning",
+      "text": "Our goal is to empower clients to take control of their lives and make positive changes, building resilience and confidence. We also believe in staying up-to-date with the latest research and techniques in therapy, and constantly strive to improve our skills and knowledge."
     }
   ]
 }

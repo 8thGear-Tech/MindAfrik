@@ -7,8 +7,11 @@ import { NavSection } from "../../components/Navbar/guestNavbar";
 import { HowItWorksCard } from "../../components/allCards/homePageCard";
 import { HomePageHero } from "../../components/hero";
 import { WhyChooseUsCardNew } from "../../components/allCards/homePageCard";
+import { TestimonialCarousel } from "../../components/allCards/homePageCard";
+import { TestimonialCarouselTwo } from "../../components/allCards/homePageCard";
 // import { TestimonialsCard } from "../../components/allCards/homePageCard";
-// import { TestimonialsNew } from "../../components/allCards/homePageCard";
+import { TestimonialsNew } from "../../components/allCards/homePageCard";
+import { BookASessionBtn } from "../../components/Buttons/actionBtn";
 
 import { SubscribeBtn } from "../../components/Buttons/actionBtn";
 import { Testimonials } from "../../components/allCards/homePageCard";
@@ -33,9 +36,11 @@ const Home = () => (
     <HowItWorksOne />
     <HowItWorksTwo />
     <WhyChooseUsCardNew />
-    <Testimonials />
+    {/* <Testimonials /> */}
+    {/* <TestimonialCarousel /> */}
+    {/* <TestimonialCarouselTwo /> */}
     {/* <WhyChooseUsCard /> */}
-    {/* <TestimonialsNew /> */}
+    <TestimonialsNew />
     {/* <TestimonialsCard /> */}
     {/* <Newsletter /> */}
   </>
@@ -119,6 +124,9 @@ const HowItWorksTwo = () => {
             );
           })}
         </Row>
+        <div className="text-center mt-4">
+          <BookASessionBtn />
+        </div>
       </div>
     </>
   );

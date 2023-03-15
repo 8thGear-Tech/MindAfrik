@@ -7,22 +7,6 @@
       "qualification": "PH.D Psychology",
       "role": " Clinical Therapy, ADHD",
       "price": "Price: $50/hr"
-    },
-    {
-      "id": 2,
-      "image": "../../assets/images/counsellors/counsellorimage.png",
-      "name": "Mary Thomas",
-      "qualification": "PH.D Psychology",
-      "role": "Clinical Psychologist",
-      "price": "Price: $50/hr"
-    },
-    {
-      "id": 3,
-      "image": "../../assets/images/counsellors/counsellorimage.png",
-      "name": "Mary Thomas",
-      "qualification": "PH.D Psychology",
-      "role": "Clinical Psychologist",
-      "price": "Price: $50/hr"
     }
   ]
 }
