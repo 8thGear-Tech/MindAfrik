@@ -1,0 +1,11 @@
+.accordion-button:not(.collapsed) {
+  color: none !important;
+  background-color: none !important;
+}
+
+.accordion-button:focus {
+  border-color: none !important;
+}
+.button.accordion-button::after {
+  background-image: url(/public/mindafrik.ico) !important;
+}

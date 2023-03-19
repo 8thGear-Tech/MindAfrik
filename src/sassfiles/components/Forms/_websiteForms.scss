@@ -1,0 +1,22 @@
+.formBg {
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(0.5px);
+  border-radius: 35px;
+}
+.assessmentBg {
+  background: none !important;
+}
+.assessmentSelection {
+  background-color: white;
+}
+.assessmentBgColor {
+  background: rgba(129, 229, 140, 0.5);
+  border-radius: 10px;
+  //   width: 1031px;
+  height: 1500px;
+}
+@media only screen and (max-width: 765px) {
+  .assessmentBgColor {
+    height: 2200px;
+  }
+}

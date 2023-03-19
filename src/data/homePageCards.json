@@ -1,0 +1,104 @@
+{
+  "homepageData": [
+    {
+      "id": 1,
+      "icon": "../assets/icons/howitworks/createaccount.png",
+      "title": "Sign up",
+      "text": "Create a free account on our website by providing your contact information to start your journey to better mental health today."
+    },
+    {
+      "id": 2,
+      "icon": "../assets/icons/howitworks/takeanassessment.png",
+      "title": "Take our Assessment test",
+      "text": "Answer our free assessment questions to know your mental health state from a counsellor/ therapist's point of view, allowing us to achieve a customised service with you."
+    },
+    {
+      "id": 3,
+      "icon": "../assets/icons/howitworks/searchtherapist.png",
+      "title": "Search for a therapist",
+      "text": "Browse through our network of licensed therapists, based on your location, language, and specialty. You can view the therapist's profile, ratings, and availability."
+    }
+  ],
+  "homepageDataTwo": [
+    {
+      "id": 4,
+      "icon": "../assets/icons/howitworks/bookasession.png",
+
+      "title": "Book a session",
+      "text": "Select a convenient time slot and book your first session with the therapist of your choice; in the most accessible and convenient way for everyone, anywhere, at any time."
+    },
+    {
+      "id": 5,
+      "title": "Start therapy",
+      "icon": "../assets/icons/howitworks/startyourtherapy.png",
+      "text": "Log into your account to join the video call with your therapist.  For in- office meetings, arrive 10-15 mins before your session. All sessions are encrypted and secure for privacy and confidentiality."
+    },
+    {
+      "id": 6,
+      "title": "Continue therapy",
+      "icon": "../assets/icons/howitworks/continuetherapy.png",
+      "text": " Book and attend as many sessions as needed with different therapists after your very first session.Start your journey to better mental health today."
+    }
+  ],
+
+  "whyChooseUsData": [
+    {
+      "id": 1,
+      "title": "Safe  & Secure",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 2,
+      "title": "Standardized Sessions",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 3,
+      "title": "Quality Counsellors",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
+    },
+    {
+      "id": 4,
+      "title": "Quality Psychologists",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
+    }
+  ],
+
+  "testimonialsData": [
+    {
+      "id": 1,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 2,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc."
+    },
+    {
+      "id": 3,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "We provide access thousand of inspirational materials for healthy and stable mind. As Head of Operations.Daniel is responsible for working with franchisees on all aspects of marketing strategy including digital, public relations, website, etc"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Name",
+      "testimonial": "I was hesitant to try therapy, but my experience with Mindafrik has been life-changing. Their empathy and understanding has helped me work through my struggles and find peace within myself. I highly recommend [therapist's name] to anyone looking for support and growth."
+    },
+    {
+      "id": 2,
+      "name": "Name",
+      "testimonial": "I've been seeing a therapist on Mindafrik for several months now and I can honestly say it's been a game-changer. Their approach is unique and tailored to my individual needs, and I've seen significant improvement in my mental health. I couldn't be happier with my experience."
+    },
+    {
+      "id": 3,
+      "name": "Name",
+      "testimonial": "I've been to several therapists in the past but never felt like I truly connected with them until I started seeing therapists at Mindafrik]. They have a way of making me feel heard and understood, and I appreciate the non-judgmental space they provide. I'm grateful for their guidance and support."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "counsellorList": [
+    {
+      "id": 1,
+      "image": "../../assets/images/counsellors/counsellorimage.png",
+      "name": "Olabode Daramola",
+      "qualification": "PH.D Psychology",
+      "role": " Clinical Therapy, ADHD",
+      "price": "Price: $50/hr"
+    }
+  ]
+}

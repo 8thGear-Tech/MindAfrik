@@ -1,0 +1,23 @@
+{
+  "testimonialsData": [
+    {
+      "id": 1,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "I was hesitant to try therapy, but my experience with Mindafrik has been life-changing. Their empathy and understanding has helped me work through my struggles and find peace within myself. I highly recommend [therapist's name] to anyone looking for support and growth."
+    },
+
+    {
+      "id": 2,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "I've been seeing a therapist on Mindafrik for several months now and I can honestly say it's been a game-changer. Their approach is unique and tailored to my individual needs, and I've seen significant improvement in my mental health. I couldn't be happier with my experience"
+    },
+    {
+      "id": 3,
+      "title": "UserName",
+      "subtitle": "Location",
+      "text": "I've been to several therapists in the past but never felt like I truly connected with them until I started seeing therapists at Mindafrik]. They have a way of making me feel heard and understood, and I appreciate the non-judgmental space they provide. I'm grateful for their guidance and support"
+    }
+  ]
+}

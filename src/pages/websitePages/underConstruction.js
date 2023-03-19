@@ -2,24 +2,27 @@
 import { NavbarSection } from "../../components/Navbar/guestNavbar";
 
 //buttons
-import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
-
+// import { BookaSessionBtn } from "../../components/Buttons/actionBtn";
+import { TakeAssessmentBtn } from "../../components/Buttons/actionBtn";
+import { BookASessionBtn } from "../../components/Buttons/actionBtn";
+import { ContactBtn } from "../../components/Buttons/actionBtn";
+import { SubscribeBtn } from "../../components/Buttons/actionBtn";
+import { BookASessionNowBtn } from "../../components/Buttons/actionBtn";
+import { ScheduleASessionBtn } from "../../components/Buttons/actionBtn";
 //images
 import underconstructionhero from "../../assets/images/hero/underconstructionhero.png";
 
 //icons
 import { PhoneIcon } from "../../assets/icons/socialIcons";
 import { Mailicon } from "../../assets/icons/socialIcons";
+// cards
+// import { AdminStatisticsCard } from "../../components/allCards/dashBoardcards";
+// import { CoreValues } from "../../components/allCards/AboutUsCards";
+// import { AdvisoryBoardCards } from "../../components/allCards/AboutUsCards";
+// import { CounselorForm } from "../../components/Forms/AuthenticationForms";
+// import { Routes, Route } from "react-router-dom";
 
 const UnderConstruction = () => {
-  return (
-    <>
-      <SectionOne />
-    </>
-  );
-};
-
-const SectionOne = () => {
   return (
     <>
       <div className="px-3">
@@ -51,7 +54,17 @@ const SectionOne = () => {
                 </ul>
               </div>
               <div className="text-center mb-4">
-                <BookaSessionBtn />
+                <a href="take-a-testPage.js">Launching Our Site Soon!</a>
+                <a href="websiteForms.js">Our Site Soon!</a>
+                <a href="hero.js">Launching Site Soon!</a>
+                {/* <BookaSessionBtn /> */}
+                <howItWorksCard />
+                <TakeAssessmentBtn />
+                {/* <BookASessionBtn /> */}
+                <ContactBtn />
+                <SubscribeBtn />
+                <BookASessionNowBtn />
+                <ScheduleASessionBtn />
               </div>
             </div>
             <div className="col-lg-5 col-md-12 col-sm-10 mb-5">
@@ -83,6 +96,7 @@ const SectionOne = () => {
           </div>
         </div>
       </div>
+      //{" "}
     </>
   );
 };

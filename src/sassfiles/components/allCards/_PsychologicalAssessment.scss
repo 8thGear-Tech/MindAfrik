@@ -1,0 +1,27 @@
+@use "../../colors" as *;
+
+.parent {
+  position: relative;
+  // height: 200px;
+  // width: 250px;
+}
+.evaluation-card {
+  position: absolute;
+  // width: 25%;
+  // height: 91px;
+  // //   left: 113px;
+  // right: 1030px;
+  top: 130px;
+  height: 71px;
+  width: 250px;
+  display: block;
+  // z-index: 999;
+  background: rgba(0, 0, 0, 0.9);
+  color: $btntextcolor;
+  display: block;
+}
+
+.gotYouCoveredCardBg {
+  border-radius: 30px;
+  // border: none;
+}

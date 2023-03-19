@@ -1,4 +1,32 @@
 @use "./reset";
 @use "./font" as *;
+@use "./components/allCards/PsychologicalAssessment" as *;
+// @use "./pages/websitePages/underConstruction" as *;
+@use "../sassfiles/components/allCards/homePageCard" as *;
+@use "./components/buttons/actionBtn" as *;
 @use "./components/allCards/dashBoardcards" as *;
-@use "./pages/websitePages/underConstruction" as *;
+@use "./components/Hero/aboutUsHero" as *;
+@use "./components/navbar/dashBoardNavBar" as *;
+@use "./components/allCards/dashBoardcards" as *;
+
+@use "./components/navbar/guestNavbar" as *;
+
+//pages
+@use "./pages/websitePages/homepage" as *;
+@use "./pages/websitePages/aboutUsPage" as *;
+@use "./pages/websitePages/contactUsPage" as *;
+@use "./pages/websitePages/assessment/PsychologicalAssessmentPage" as *;
+@use "./pages/websitePages/selectCounselorPage" as *;
+@use "./pages/websitePages/FAQpage" as *;
+
+//admin dashboard
+@use "./pages/dashboardPages/admin/adminDashboardHomePage" as *;
+
+//signup
+@use "./pages/authenticationPages/counseleeSignUpPage" as *;
+@use "./pages/dashboardPages/counsellee/counseleesDashboardHomePage" as *;
+@use "./pages/dashboardPages/counsellee/counseleeDashboard-take-a-testPage" as *;
+
+// .offcanvas {
+//   transition: transform 1000ms ease-in-out;
+// }

@@ -1,0 +1,93 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "pageroute": "/adminDashboardHomePage",
+      "dashboard": "My Dashboard"
+    },
+    {
+      "id": 2,
+      "pageroute": "/adminDashboardCounselleesPage",
+      "dashboard": "Users"
+    },
+    {
+      "id": 3,
+      "pageroute": "/adminDashboardCounsellerPage",
+      "dashboard": "Counsellors"
+    },
+    {
+      "id": 4,
+      "pageroute": "/adminDashboardNotificationPage",
+      "dashboard": "Notification"
+    },
+    {
+      "id": 5,
+      "pageroute": "/",
+      "dashboard": "Logout"
+    }
+  ],
+  "counsellor": [
+    {
+      "id": 1,
+      "pageroute": "/counsellorDashboard",
+      "dashboard": "My Dashboard"
+    },
+    {
+      "id": 2,
+      "pageroute": "/counsellorProfile",
+      "dashboard": "My Profile"
+    },
+    {
+      "id": 3,
+      "pageroute": "/counsellorCounselleeList",
+      "dashboard": "Counselee"
+    },
+    {
+      "id": 4,
+      "pageroute": "/counsellorDashboardNotification",
+      "dashboard": "Notification"
+    },
+    {
+      "id": 5,
+      "pageroute": "/counsellorNote",
+      "dashboard": "Note"
+    },
+    {
+      "id": 6,
+      "pageroute": "/",
+      "dashboard": "Logout"
+    }
+  ],
+  "counsellee": [
+    {
+      "id": 1,
+      "pageroute": "/counselleeDashboard",
+      "dashboard": "My Dashboard"
+    },
+    {
+      "id": 2,
+      "pageroute": "/counselleeProfile",
+      "dashboard": "My Profile"
+    },
+    {
+      "id": 3,
+      "pageroute": "/counselleeSession",
+      "dashboard": "Session"
+    },
+    {
+      "id": 4,
+      "pageroute": "/counselleeTest",
+      "dashboard": "Take a test"
+    },
+    {
+      "id": 5,
+      "pageroute": "/counselleeNotification",
+      "dashboard": "Notification"
+    },
+    {
+      "id": 6,
+      "pageroute": "/",
+      "dashboard": "Logout"
+    }
+  ]
+}

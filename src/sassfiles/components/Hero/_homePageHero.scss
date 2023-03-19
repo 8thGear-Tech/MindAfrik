@@ -1,0 +1,47 @@
+.HomePageHeroBgg::before {
+  content: "";
+  position: absolute;
+  background-color: #2e3133;
+  height: 70vh;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.HomePageHeroBg {
+  background: url(/src/assets/images/hero/homeheroBg.png);
+  background-size: cover;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 70vh;
+  width: 100%;
+}
+
+.HomePageHeroBg h2 {
+  position: relative;
+  line-height: 45px;
+}
+.HomePageHeroBg h3 {
+  position: relative;
+  line-height: 35px;
+}
+
+@media only screen and (max-width: 990px) {
+  .HomePageHeroBgg::before {
+    height: 30rem;
+  }
+  .HomePageHeroBg::before {
+    height: 30rem;
+  }
+}
+@media only screen and (max-width: 765px) {
+  .HomePageHeroBg {
+    height: 140vh;
+  }
+}
