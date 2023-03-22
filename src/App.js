@@ -48,6 +48,7 @@ import CounselleeProfile from "./pages/dashboardPages/counsellee/counseleesDashb
 import CounselleeSession from "./pages/dashboardPages/counsellee/counseleesDashboardSessionPage";
 import CounselleeNotification from "./pages/dashboardPages/counsellee/counseleesDashboardNotificationPage";
 import CounselleeTestPage from "./pages/dashboardPages/counsellee/counseleesDashboard_TakeATestPage";
+import { NavbarSection } from "./components/Navbar/guestNavbar";
 
 function App() {
   return (
@@ -126,6 +127,7 @@ function App() {
         <Route path="signInPage" element={<SignInPage />} />
         <Route path="forgotPasswordPage" element={<ForgotPasswordPage />} />
       </Routes>
+
       <footer>
         <Footer />
       </footer>

@@ -22,8 +22,12 @@ import personalisedplan from "../../assets/images/home/personalisedplan.png";
 import experiencedcounsellors from "../../assets/images/home/experiencedcounsellors.jpg";
 import flexible from "../../assets/images/home/flexible.jpg";
 import onlinebooking from "../../assets/images/home/onlinebooking.png";
+import schedule from "../../assets/images/home/schedule.png";
+import experience from "../../assets/images/home/personalisedplan2.png";
+import schedule2 from "../../assets/images/home/schedule2.png";
 import image2 from "../../assets/images/home/image2.png";
 import image3 from "../../assets/images/home/image3.png";
+import { BookASessionBtn } from "../Buttons/actionBtn";
 
 export const HowItWorksCard = (props) => {
   const { icon, title, text } = props;
@@ -365,7 +369,7 @@ export const WhyChooseUsCardNew = () => {
             <div className="col">
               <div className="card mb-5">
                 <img
-                  src={personalisedplan}
+                  src={experience}
                   className="card-img-top p-5 mx-auto"
                   alt="..."
                   style={{ width: "60%" }}
@@ -386,7 +390,7 @@ export const WhyChooseUsCardNew = () => {
             <div className="col">
               <div className="card mb-5" style={{}}>
                 <img
-                  src={flexible}
+                  src={schedule2}
                   className="card-img-top p-5 mx-auto"
                   alt="..."
                   style={{ width: "70%" }}
@@ -427,6 +431,10 @@ export const WhyChooseUsCardNew = () => {
               </div>
             </div>
           </div>
+          <div className="text-center">
+            <BookASessionBtn />
+          </div>
+
           {/* <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center ">
             {" "}
             <div className="card mb-5 mx-auto">

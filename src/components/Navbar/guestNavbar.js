@@ -71,13 +71,13 @@ export const NavSection = () => {
             className="justifyNavItemsEnd"
           >
             <Nav className="d-flex align-items-center">
-              <Nav.Link href="/" className="text-black mx-2">
+              <Nav.Link href="/" className="text-black mx-2 homeLink">
                 Home
               </Nav.Link>
-              <Nav.Link href="/about" className="text-black mx-2">
+              <Nav.Link href="/about" className="text-black mx-2 homeLink">
                 About Us
               </Nav.Link>
-              <Nav.Link href="/contact" className="text-black mx-2">
+              <Nav.Link href="/contact" className="text-black mx-2 homeLink">
                 Contact
               </Nav.Link>
               <div className="">

@@ -590,6 +590,15 @@ p {
   justify-content: end !important;
 }
 
+.homeLink:hover {
+  color: green !important;
+}
+
+.homeLink:focus {
+  color: #08cd1d !important;
+  font-weight: bold;
+}
+
 .HomePageHeroBgg::before {
   content: "";
   position: absolute;

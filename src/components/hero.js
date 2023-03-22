@@ -115,7 +115,12 @@ export const PsychologicalAssessmentHero = () => {
 export const HomePageHero = () => {
   return (
     <div className="container-fluid aboutHeroColor">
-      <div className="row px-3 align-items-center">
+      <div
+        className="row px-3 align-items-center"
+        style={{
+          margin: "1rem",
+        }}
+      >
         <div className="col-lg-7 col-md-7 col-sm-12">
           <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-black pt-5">
             Africa's leading supportive listening and counselling venture.
