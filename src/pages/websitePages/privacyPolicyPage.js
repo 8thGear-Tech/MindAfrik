@@ -22,7 +22,7 @@ export const PrivacyPolicy = () => {
         <NavSection />{" "}
         <div className="container">
           <div className="row pb-5 pt-2 mb-5">
-            <div className="justify-content-end ">
+            <div className="justify-content-end">
               <h3 className="">Privacy Policy</h3>
               <p className="">
                 Mindafrik is committed to protecting the privacy and security of

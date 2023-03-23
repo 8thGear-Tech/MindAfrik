@@ -48,6 +48,14 @@ export const CounseleeProfileForm = () => {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
     } else {
+      setForm({
+        name: "",
+        email: "",
+        number: "",
+        dob: "",
+        address: "",
+        nextOfKin: "",
+      });
       console.log("form submitted");
 
       console.log(form);

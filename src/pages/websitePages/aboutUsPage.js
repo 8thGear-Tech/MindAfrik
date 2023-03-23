@@ -10,6 +10,7 @@ const About = () => {
   return (
     <>
       {/* <PsychologicalAssessmentHero /> */}
+
       {/* <WhyChooseUsCard /> */}
       {/* <CounselorProfileForm /> */}
       {/* <Testimonials /> */}

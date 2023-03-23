@@ -132,8 +132,12 @@ export const HomePageHero = () => {
           </h3>
           <p className="text-black">
             We provide a safe and non-judgmental environment in professional
-            therapy/counselling in relationship, marriage, family counselling,
-            Trauma Informed Care Mental health and Stress Management
+            therapy/counselling in{" "}
+            <strong>
+              {" "}
+              relationship, marriage, family counselling, Trauma{" "}
+            </strong>{" "}
+            Informed Care Mental health and Stress Management
           </p>
           <div className="text-start mb-4">
             <BookASessionBtn />
