@@ -42,7 +42,7 @@ const Home = () => (
     {/* <WhyChooseUsCard /> */}
     <TestimonialsNew />
     {/* <TestimonialsCard /> */}
-    {/* <Newsletter /> */}
+    <Newsletter />
   </>
 );
 
