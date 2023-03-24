@@ -145,6 +145,10 @@ export const TakeAssessmentBtn = () => {
         {" "}
         <Button className="TakeAssessmentBtn">Take Assessment </Button>
       </a>
+      <a href="/psychologicalAssessment" target="_blank">
+        {" "}
+        <Button className="TakeAssessmentBtn">Take Assessment </Button>
+      </a>
       {/* <a href="/assessment" target="_blank">
         {" "}
         <Button className="TakeAssessmentBtn">Take Assessment </Button>
