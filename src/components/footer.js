@@ -122,7 +122,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="/contact" class="nav-link p-0 text-muted">
+                <a href="/" class="nav-link p-0 text-muted">
                   Contact Us
                 </a>
               </li>

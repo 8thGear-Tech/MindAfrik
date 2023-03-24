@@ -77,7 +77,7 @@ export const NavSection = () => {
               <Nav.Link href="/about" className="text-black mx-2">
                 About Us
               </Nav.Link>
-              <Nav.Link href="/contact" className="text-black mx-2">
+              <Nav.Link href="/" className="text-black mx-2">
                 Contact
               </Nav.Link>
               <div className="">

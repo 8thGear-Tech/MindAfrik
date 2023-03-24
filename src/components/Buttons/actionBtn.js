@@ -42,10 +42,17 @@ import Button from "react-bootstrap/Button";
 export const BookASessionBtn = () => {
   return (
     <>
-      <a href="/counsellorsDetails">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc02gsz28SwYWwPIQoj7iIry4XY9W0hxyCqioQiXeVxjNZFkw/viewform"
+        target="_blank"
+      >
         {" "}
         <Button className="BookaSessionBtn">Book a Session</Button>
       </a>
+      {/* <a href="/counsellorsDetails">
+        {" "}
+        <Button className="BookaSessionBtn">Book a Session</Button>
+      </a> */}
     </>
   );
 };
@@ -134,10 +141,14 @@ export const AddUserBtn = () => {
 export const TakeAssessmentBtn = () => {
   return (
     <>
-      <a href="/assessment" target="_blank">
+      <a href="/psychologicalAssessment" target="_blank">
         {" "}
         <Button className="TakeAssessmentBtn">Take Assessment </Button>
       </a>
+      {/* <a href="/assessment" target="_blank">
+        {" "}
+        <Button className="TakeAssessmentBtn">Take Assessment </Button>
+      </a> */}
     </>
   );
 };
@@ -266,12 +277,18 @@ export const TakeATestBtn = () => {
 export const StartYourAssessmentBtn = () => {
   return (
     <div className="mt-2">
-      <a href="/assessment">
+      <a href="/psychologicalAssessment">
         {" "}
         <Button className="startYourAssessmentBtn">
           Start Your Assessment
         </Button>
       </a>{" "}
+      {/* <a href="/assessment">
+        {" "}
+        <Button className="startYourAssessmentBtn">
+          Start Your Assessment
+        </Button>
+      </a>{" "} */}
       {/* <Button className="SaveBtn">Save</Button>{" "} */}
     </div>
   );
