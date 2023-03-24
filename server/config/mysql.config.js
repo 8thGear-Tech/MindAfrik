@@ -1,9 +1,7 @@
 import mysql from "mysql2";
 import dotenv from "dotenv";
 
-dotenv.config();
-
-// DB_PASSWORD = "mysqltoken#008";
+dotenv.config({ path: "./configenv.env" });
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,

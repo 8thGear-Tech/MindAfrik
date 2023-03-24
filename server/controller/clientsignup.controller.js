@@ -100,7 +100,7 @@ export const getClient = (req, res) => {
     }
   });
 };
-export const UpdateClient = (req, res) => {
+export const updateClient = (req, res) => {
   log.info(`${req.method} ${req.originalurl}, fetching client`);
   db.query(QUERY.SELECT_CLIENT, [req.params.id], (err, result) => {
     if (!result[0]) {
@@ -115,18 +115,62 @@ export const UpdateClient = (req, res) => {
         );
     } else {
       log.info(`${req.method} ${req.originalurl}, updating client`);
-      db.query(QUERY.SELECT_CLIENT, [req.params.id], (err, result) => {
-        res
-          .status(HttpStatus.OK.code)
-          .send(
-            new Response(
-              HttpStatus.OK.code,
-              HttpStatus.OK.status,
-              `Client retrieved`,
-              result[0]
-            )
-          );
-      });
+      db.query(
+        QUERY.UPDATE_CLIENT,
+        [...Object.values(req.body), req.params.id],
+        (err, result) => {
+          if (!err) {
+            res
+              .status(HttpStatus.OK.code)
+              .send(
+                new Response(
+                  HttpStatus.OK.code,
+                  HttpStatus.OK.status,
+                  `Client updated`,
+                  { id: req.params.id, ...req.body }
+                )
+              );
+          } else {
+            log.err(err.message);
+            res
+              .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
+              .send(
+                new Response(
+                  HttpStatus.INTERNAL_SERVER_ERROR.code,
+                  HttpStatus.INTERNAL_SERVER_ERROR.status,
+                  `Error occured`
+                )
+              );
+          }
+        }
+      );
+    }
+  });
+};
+export const deleteClient = (req, res) => {
+  log.info(`${req.method} ${req.originalurl}, deleting client`);
+  db.query(QUERY.DELETE_CLIENT, [req.params.id], (err, result) => {
+    if (result.affectedRows > 0) {
+      res
+        .status(HttpStatus.OK.code)
+        .send(
+          new Response(
+            HttpStatus.OK.code,
+            HttpStatus.OK.status,
+            `Client deleted`,
+            result[0]
+          )
+        );
+    } else {
+      res
+        .status(HttpStatus.NOT_FOUND.code)
+        .send(
+          new Response(
+            HttpStatus.NOT_FOUND.code,
+            HttpStatus.NOT_FOUND.status,
+            `Client by Id ${req.params.id} was not found`
+          )
+        );
     }
   });
 };
