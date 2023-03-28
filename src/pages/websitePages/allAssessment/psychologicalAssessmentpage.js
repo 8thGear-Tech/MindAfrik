@@ -29,30 +29,32 @@ const PsychologicalAssessment = () => {
 const GetStarted = () => {
   return (
     <>
-      <div className="container-fluid pt-2 px-4 BgColor mt-5">
-        <div className="row py-5 px-3">
-          <div className="col-lg-5 col-md-6 col-sm-12 ">
-            <img
-              src={psychologicalassessmentimage}
-              className="mx-lg-auto img-fluid"
-            />
-          </div>
-          <div className="col-lg-7 col-md-12 col-sm-12 mt-5 align-items-center">
-            <h1>Let’s get started!</h1>
-            {/* <h2 className="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+      <div className="BgColor">
+        <div className="container pt-2 px-4 mt-3">
+          <div className="row py-5 px-3 ">
+            <div className="col-lg-6 col-md-6 col-sm-12 mt-2  ">
+              <img
+                src={psychologicalassessmentimage}
+                className="mx-lg-auto img-fluid"
+              />
+            </div>
+            <div className="col-lg-6 col-md-12 col-sm-12 mt-2 align-items-center">
+              <h1>Let’s get started!</h1>
+              {/* <h2 className="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
               Welcome Here!
             </h2> */}
-            {/* <h4>We can help you find yourself</h4> */}
-            <p>
-              Please answer the following questions as honestly as possible.
-              After completing the test, you will receive a report indicating
-              the severity of your symptoms and suggestions for the next steps.
-              Please note that this is not a substitute for a full diagnostic
-              assessment by a licensed mental health professional. If you have
-              any concerns about your mental health, we encourage you to reach
-              out to us for an appointment.
-            </p>{" "}
-            <StartYourAssessmentBtn />
+              {/* <h4>We can help you find yourself</h4> */}
+              <p>
+                Please answer the following questions as honestly as possible.
+                After completing the test, you will receive a report indicating
+                the severity of your symptoms and suggestions for the next
+                steps. Please note that this is not a substitute for a full
+                diagnostic assessment by a licensed mental health professional.
+                If you have any concerns about your mental health, we encourage
+                you to reach out to us for an appointment.
+              </p>{" "}
+              <StartYourAssessmentBtn />
+            </div>
           </div>
         </div>
       </div>
