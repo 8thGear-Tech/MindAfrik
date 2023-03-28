@@ -116,7 +116,7 @@ export const HomePageHero = () => {
   return (
     <div className="container-fluid aboutHeroColor">
       <div
-        className="row px-3 align-items-center"
+        className="row px-2 align-items-center"
         style={{
           margin: "1rem",
         }}
