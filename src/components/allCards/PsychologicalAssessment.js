@@ -39,7 +39,8 @@ export const EvaluationCard = (props) => {
             <h4 className="">{title}</h4>
             <Card.Text>{paragraph}</Card.Text>
           </Card.Body>{" "}
-          {/* </div> */} <TakeAssessmentBtn />
+          {/* </div> */}
+          {/* <TakeAssessmentBtn /> */}
         </Col>{" "}
       </Row>
     </>
