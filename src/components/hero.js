@@ -27,11 +27,6 @@ export const AboutUsHero = () => {
             sessions.
             <br />
           </h2>
-          <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-black pt-5">
-            Welcome! Our specialties include individual, couples, and group
-            sessions.
-            <br />
-          </h2>
           <h3 className=" d-xs-block d-sm-block d-md-block d-lg-none aboutUsHeroText text-black pt-5">
             Welcome! Our specialties include individual, couples, and group
             sessions.
