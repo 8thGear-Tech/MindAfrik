@@ -77,12 +77,12 @@ export const NavSection = () => {
               <Nav.Link href="/about" className="text-black mx-2 homeLink">
                 About Us
               </Nav.Link>
-              <Nav.Link
+              {/* <Nav.Link
                 href="/psychologicalAssessment"
                 className="text-black mx-2"
               >
                 Take a Test
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link href="/" className="text-black mx-2">
                 Contact
               </Nav.Link>
