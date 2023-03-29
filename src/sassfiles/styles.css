@@ -553,6 +553,30 @@ p {
   background: rgba(8, 186, 71, 0.1);
 }
 
+.SideNavItem {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sideNavButton {
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 2.5rem;
+}
+.sideNavButton:hover {
+  color: #058547;
+  background-color: #ffffff;
+}
+.sideNavButton:focus {
+  background-color: #ffffff;
+  color: #058547;
+}
+
 .LoginBtn {
   background: #0060c6;
   border-radius: 10px;
