@@ -23,26 +23,22 @@
     {
       "id": 1,
       "image": "../../assets/images/cards/stressevaluation.jpg",
-      "title": " Stress Evaluation",
-      "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque.."
+      "title": " Stress Evaluation"
     },
     {
       "id": 2,
       "image": "../../assets/images/cards/depression.jpg",
-      "title": "Depression Evaluation",
-      "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque.."
+      "title": "Depression Evaluation"
     },
     {
       "id": 3,
       "image": "../../assets/images/cards/stressevaluation.jpg",
-      "title": "Trauma Evaluation",
-      "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque."
+      "title": "Trauma Evaluation"
     },
     {
       "id": 5,
       "image": "../../assets/images/cards/relationship.jpg",
-      "title": "Relationship/Marriage Evaluation",
-      "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla. Ornare sed vulputate neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus dictum amet convallis in maecenas eget nulla."
+      "title": "Relationship/Marriage Evaluation"
     }
   ]
 }

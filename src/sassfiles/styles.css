@@ -261,7 +261,7 @@ p {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  width: 20rem;
+  width: 16rem;
 }
 
 .TakeAssessmentBtn {
@@ -884,4 +884,5 @@ p {
   background: rgba(129, 229, 140, 0.5);
   border-radius: 10px;
   height: 500px;
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */

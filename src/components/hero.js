@@ -2,7 +2,9 @@ import aboutUsHeroImage from "../assets/images/hero/aboutUsHeroImage.png";
 // HomePageHero
 // AboutUsHero
 // PsychologicalAssessmentHero
-import AssessmentHero from "../../src/Image/AssesmmentHero.png";
+// import AssessmentHero from "../../src/Image/AssesmmentHero.png";
+import AssessmentHero from "../assets/images/hero/testhero.png";
+
 import { NavbarSection } from "../components/Navbar/guestNavbar";
 
 import {
@@ -89,7 +91,7 @@ export const PsychologicalAssessmentHero = () => {
       <div className="container pt-2 px-4">
         <div className="row">
           <div className="col-lg-6 col-md-12 col-sm-12 mt-5 align-items-center">
-            <h1 className=" d-none d-xl-block d-lg-block d-md-block d-sm-none d-xs-none">
+            <h1 className=" d-none d-xl-block d-lg-block d-md-block d-sm-none d-xs-none pt-5 mt-3">
               Welcome Here!
             </h1>
             <h2 className="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">

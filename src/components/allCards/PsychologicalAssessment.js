@@ -23,7 +23,7 @@ export const EvaluationCard = (props) => {
           <div className="px-lg-5">
             <Card.Img variant="top" className="parent" src={image} />
             <Card.Body className="">
-              <h4 className="text-center pt-3">{title}</h4>
+              {/* <h4 className="text-center pt-3">{title}</h4> */}
               {/* <Card.Text>
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit

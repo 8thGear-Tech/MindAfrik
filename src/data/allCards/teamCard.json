@@ -2,20 +2,21 @@
   "teamData": [
     {
       "id": 1,
-      "image": "../../assets/images/team/Ruth2.png",
+      "image": "../../assets/images/team/Ruth2 (2).png",
       "name": " RUTH IJERE",
       "role": "CEO AND CO-FOUNDER",
       "about": "As co-founder and CEO of Mindafrik, Ruth Ijere is a visionary leader in the mental health industry. With a deep understanding of the challenges that people face when seeking therapy, Ruth together with her team has created a platform that is making a real difference. Under Ruth's leadership, our team is committed to providing a high-quality, convenient and accessible therapy service that is helping people to overcome their challenges and live happier, healthier lives."
     },
     {
       "id": 2,
+      "image": "../../assets/images/team/Enor.png",
       "name": " ENOR AGOFURE ",
       "role": "CPO AND CO-FOUNDER",
       "about": "Miss Enor Agofure is a tech lawyer with over five years experience in the legal profession. A digital marketer, social media manager, Co-founder and the Chief Public Officer of Mindafrik."
     },
     {
       "id": 3,
-      "image": "../../assets/images/team/edward.png",
+      "image": "../../assets/images/team/edward 1.png",
       "name": "EDWARD AZUBUIKE",
       "role": "CTO AND CO-FOUNDER",
       "about": "Edward Azubuike is a Nigerian entrepreneur and technologist who co-founded MindAfrik, a mental health platform that leverages technology to improve access to mental health resources in Africa. As the CTO, Edward and team has been instrumental in developing the platform's innovative features, which include personalized therapy plans,Flexible scheduling, and a virtual community where users can connect with mental health professionals and peers."

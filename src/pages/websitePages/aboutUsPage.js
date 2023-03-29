@@ -14,6 +14,7 @@ const About = () => {
       {/* <WhyChooseUsCard /> */}
       {/* <CounselorProfileForm /> */}
       {/* <Testimonials /> */}
+
       {/* <MenuDividersExample /> */}
       {/* <HowItWorks /> */}
       <NavSection />
