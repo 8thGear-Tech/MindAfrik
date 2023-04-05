@@ -64,4 +64,6 @@ const CoreValues = () => {
     </div>
   );
 };
+
+
 export default About;

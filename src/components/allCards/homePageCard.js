@@ -983,7 +983,7 @@ const TestimonialsNewCard = (props) => {
   const { name, location, testimonial } = props;
   return (
     <>
-      <div className="card p-3">
+      <div className="card p-3 testimonialBoxShadow">
         {" "}
         <h5 className="">{name}</h5>
         <h6 className="">{location}</h6>
