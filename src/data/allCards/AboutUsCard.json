@@ -22,13 +22,13 @@
     },
     {
       "id": 2,
-      "image": "../../assets/images/corevalues/confidential.png",
+      "image": "../../assets/images/corevalues/confidential.PNG",
       "title": "Confidentiality",
       "text": "We respect the privacy of our clients and ensure that all information shared in therapy sessions remains confidential."
     },
     {
       "id": 3,
-      "image": "../../assets/images/corevalues/evident.png",
+      "image": "../../assets/images/corevalues/evident.PNG",
       "title": "Evidence-based practices",
       "text": "We believe in using proven, effective methods to help clients achieve their goals and lead fulfilling lives."
     },

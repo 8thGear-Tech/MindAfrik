@@ -33,7 +33,10 @@ export const HowItWorksCard = (props) => {
   const { icon, title, text } = props;
   return (
     <>
-      <Card style={{ width: "22rem" }} className="my-3 mx-auto">
+      <Card
+        style={{ width: "22rem" }}
+        className="my-3 mx-auto testimonialBoxShadow"
+      >
         <Card.Body className="text-center">
           {/* <CreateNewFolderIcon sx={{ fontSize: 40 }} /> */}
           <img src={icon} className="img-fluid w-25 m-3" />
@@ -345,7 +348,7 @@ export const WhyChooseUsCardNew = () => {
           </p>
           <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center justify-content-center">
             {" "}
-            <div className="card mb-5">
+            <div className="card mb-5 testimonialBoxShadow">
               <img
                 src={experiencedcounsellors}
                 className="card-img-center p-5 mx-auto"
@@ -367,7 +370,7 @@ export const WhyChooseUsCardNew = () => {
           <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4">
             {/* <div className="col d-lg-flex d-md-flex mb-5 "> */}
             <div className="col">
-              <div className="card mb-5">
+              <div className="card mb-5 testimonialBoxShadow">
                 <img
                   src={experience}
                   className="card-img-top p-5 mx-auto"
@@ -388,7 +391,7 @@ export const WhyChooseUsCardNew = () => {
               </div>
             </div>
             <div className="col">
-              <div className="card mb-5" style={{}}>
+              <div className="card mb-5 testimonialBoxShadow" style={{}}>
                 <img
                   src={schedule2}
                   className="card-img-top p-5 mx-auto"
@@ -412,7 +415,7 @@ export const WhyChooseUsCardNew = () => {
           </div>
           <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center justify-content-center">
             {" "}
-            <div className="card mb-5">
+            <div className="card mb-5 testimonialBoxShadow">
               <img
                 src={onlinebooking}
                 className="card-img-center p-5 mx-auto"
