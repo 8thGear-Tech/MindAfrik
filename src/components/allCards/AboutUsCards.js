@@ -171,22 +171,37 @@ export const AdvisoryBoardOnHoverCard = (props) => {
   const { image, name, position, link } = props;
   return (
     <>
-      <div className="AdvisoryImage">
-        {" "}
-        <img src={image} alt="" />
-        <h6 className="AdvisoryName">{name}</h6>
-        <h6 className="AdvisoryPosition">{position}</h6>
-        {/* <div className="AdvisoryLink">
-          <a
-            className="btn"
-            href={link}
-            role="button"
-            style={{ color: "#fff" }}
-          >
-            <LinkedInIcon />
-          </a>
-        </div> */}
-      </div>
+      <Card style={{ width: "18rem" }} className="advisoryCard">
+        <Card.Img variant="top" src={image} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>{position}</Card.Text>
+          {/* <Button variant="primary">Go somewhere</Button> */}
+        </Card.Body>
+      </Card>
     </>
   );
 };
+// export const AdvisoryBoardOnHoverCard = (props) => {
+//   const { image, name, position, link } = props;
+//   return (
+//     <>
+//       <div className="AdvisoryImage">
+//         {" "}
+//         <img src={image} alt="" />
+//         <h6 className="AdvisoryName">{name}</h6>
+//         <h6 className="AdvisoryPosition">{position}</h6>
+//         {/* <div className="AdvisoryLink">
+//           <a
+//             className="btn"
+//             href={link}
+//             role="button"
+//             style={{ color: "#fff" }}
+//           >
+//             <LinkedInIcon />
+//           </a>
+//         </div> */}
+//       </div>
+//     </>
+//   );
+// };

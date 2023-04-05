@@ -785,6 +785,10 @@ p {
   transition-timing-function: ease;
 }
 
+.advisoryCard {
+  border-radius: 0px 40px;
+}
+
 .advisoryBg {
   background-color: #14815c;
 }
