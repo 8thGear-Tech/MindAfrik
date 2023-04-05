@@ -15,7 +15,11 @@ export const CoreValuesCards = (props) => {
   const { image, title, text, id } = props;
   return (
     <>
-      <Card border="light" style={{ width: "22rem" }} className="mx-auto">
+      <Card
+        border="light"
+        style={{ width: "22rem" }}
+        className="mx-auto mb-5 py-5 testimonialBoxShadow"
+      >
         {/* <div className="dflex item-center ms-4 me-4 my-auto mt-4 justify-content-center"> */}
         {""}
         <Card.Img
@@ -171,7 +175,10 @@ export const AdvisoryBoardOnHoverCard = (props) => {
   const { image, name, position, link } = props;
   return (
     <>
-      <Card style={{ width: "18rem" }} className="advisoryCard">
+      <Card
+        style={{ width: "18rem" }}
+        className="advisoryCard testimonialBoxShadow"
+      >
         <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
