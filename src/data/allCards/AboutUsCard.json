@@ -18,31 +18,25 @@
       "id": 1,
       "image": "../../assets/images/corevalues/Empathy2.png",
       "title": "Empathy and Compassion",
-      "text": "We believe in creating a warm and supportive environment where clients feel heard and understood. We approach our clients with compassion and non-judgment, helping them navigate challenges and find solutions that work for them."
+      "text": "We prioritise understanding and caring for our clients' emotional experiences and staff’s wellbeing."
     },
     {
       "id": 2,
-      "image": "../../assets/images/corevalues/confidential.PNG",
-      "title": "Confidentiality",
-      "text": "We respect the privacy of our clients and ensure that all information shared in therapy sessions remains confidential."
+      "image": "../../assets/images/corevalues/evident.PNG",
+      "title": "Continuous learning",
+      "text": "We believe in staying up-to-date with the latest research, techniques and solutions in mental health and business, and constantly strive to improve our skills and knowledge."
     },
     {
       "id": 3,
-      "image": "../../assets/images/corevalues/evident.PNG",
-      "title": "Evidence-based practices",
-      "text": "We believe in using proven, effective methods to help clients achieve their goals and lead fulfilling lives."
+      "image": "../../assets/images/corevalues/Collaboration2.png",
+      "title": "Collaboration and Inclusiveness",
+      "text": "We value teamwork and diversity, and strive to create an inclusive environment that is welcoming."
     },
     {
       "id": 4,
-      "image": "../../assets/images/corevalues/Collaboration2.png",
-      "title": "Collaboration and Inclusiveness",
-      "text": "We work closely with clients to help them set and achieve their goals, recognizing that the best outcomes come from a collaborative approach. We value diversity and strive to create an inclusive environment that is welcoming to all, regardless of race, ethnicity, gender, sexual orientation, or other personal characteristics."
-    },
-    {
-      "id": 5,
       "image": "../../assets/images/corevalues/Rocket.jpg",
-      "title": "Empowerment and Continuous learning",
-      "text": "Our goal is to empower clients to take control of their lives and make positive changes, building resilience and confidence. We also believe in staying up-to-date with the latest research and techniques in therapy, and constantly strive to improve our skills and knowledge."
+      "title": "Empowerment",
+      "text": "We value and encourage personal growth, education as well as the development of  lifelong skills for staff and clients."
     }
   ]
 }

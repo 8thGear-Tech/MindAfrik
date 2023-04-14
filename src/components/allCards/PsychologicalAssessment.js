@@ -36,7 +36,7 @@ export const EvaluationCard = (props) => {
           {/* <div className="w-100"> */}
           {/* <Card.Img variant="top" className="parent" src={image} /> */}
           <Card.Body className="align-items-center">
-            <h4 className="">{title}</h4>
+            <h4 className="my-3">{title}</h4>
             <Card.Text>{paragraph}</Card.Text>
           </Card.Body>{" "}
           {/* </div> */}

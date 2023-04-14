@@ -23,22 +23,26 @@
     {
       "id": 1,
       "image": "../../assets/images/cards/stressevaluation.jpg",
-      "title": " Stress Evaluation"
+      "title": " Stress Evaluation",
+      "paragraph": "Stress is a natural part of life, but when it becomes chronic, it can take a toll on your physical and mental health. Our stress and Anxiety assessment can help you identify the sources of your stress and develop a personalized plan for managing it."
     },
     {
       "id": 2,
       "image": "../../assets/images/cards/depression.jpg",
-      "title": "Depression Evaluation"
+      "title": "Depression Evaluation",
+      "paragraph": "Depression is a common mental health condition that can cause feelings of sadness, hopelessness, and worthlessness. Our depression assessment can help you understand the severity of your symptoms and identify effective treatment options, such as therapy or medication."
     },
     {
       "id": 3,
-      "image": "../../assets/images/cards/stressevaluation.jpg",
-      "title": "Trauma Evaluation"
+      "image": "../../assets/images/cards/trauma.jpg",
+      "title": "Trauma Evaluation",
+      "paragraph": "If you've experienced a traumatic event, it's normal to feel overwhelmed, anxious, or disconnected. Our trauma assessment can help you understand how your experiences are impacting your mental health and identify effective coping strategies."
     },
     {
-      "id": 5,
+      "id": 4,
       "image": "../../assets/images/cards/relationship.jpg",
-      "title": "Relationship/Marriage Evaluation"
+      "title": "Relationship/Marriage Evaluation",
+      "paragraph": "Relationships can be a source of joy and fulfillment, but they can also be challenging. Our relationship and marriage assessment can help you understand the dynamics of your relationships and identify ways to improve communication, connection, and intimacy."
     }
   ]
 }
