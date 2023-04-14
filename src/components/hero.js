@@ -23,19 +23,18 @@ export const AboutUsHero = () => {
       <div className="row px-4 align-items-center py-lg-5">
         <div className="col-lg-7 col-md-7 col-sm-12">
           <h2 className="d-none d-lg-block d-md-none d-sm-none d-xs-none aboutUsHeroText text-black pt-5">
-            Welcome! Our specialties include individual, couples, and group
-            sessions.
+            Our specialties include individual, couples, and group sessions.
             <br />
           </h2>
           <h3 className=" d-xs-block d-sm-block d-md-block d-lg-none aboutUsHeroText text-black pt-5">
-            Welcome! Our specialties include individual, couples, and group
-            sessions.
+            Our specialties include individual, couples, and group sessions.
             <br />
           </h3>
           <p className="text-black">
-            Our goal is to empower you with the tools and insights you need to
-            live a fulfilling life, and we work with you every step of the way
-            to help you achieve your goals.
+            We believe in breaking down the stigma surrounding mental health and
+            making it accessible to everyone. Our goal is to provide
+            high-quality, affordable mental health care to individuals across
+            Africa and beyond.
           </p>
         </div>
         <img src={aboutushero} alt="" className="col-lg-5 col-md-5 col-sm-12" />
@@ -137,9 +136,9 @@ export const HomePageHero = () => {
             therapy/counselling in{" "}
             <strong>
               {" "}
-              relationship, marriage, family counselling, Trauma{" "}
+              Relationship, Marriage, and Family Matters, Trauma Informed Care,
+              Mental health and Stress Management.
             </strong>{" "}
-            Informed Care Mental health and Stress Management
           </p>
           <div className="text-start mb-4">
             <BookASessionBtn />

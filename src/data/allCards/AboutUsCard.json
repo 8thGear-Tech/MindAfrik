@@ -16,28 +16,28 @@
   "ValuesInfo": [
     {
       "id": 1,
+      "image": "../../assets/images/corevalues/Empathy2.png",
+      "title": "Empathy and Compassion",
+      "text": "We prioritise understanding and caring for our clients' emotional experiences and staff’s wellbeing."
+    },
+    {
+      "id": 2,
+      "image": "../../assets/images/corevalues/evident.PNG",
+      "title": "Continuous learning",
+      "text": "We believe in staying up-to-date with the latest research, techniques and solutions in mental health and business, and constantly strive to improve our skills and knowledge."
+    },
+
+    {
+      "id": 3,
       "image": "../../assets/images/corevalues/Collaboration2.png",
       "title": "Collaboration and Inclusiveness",
       "text": "We value teamwork and diversity, and strive to create an inclusive environment that is welcoming."
     },
     {
-      "id": 2,
-      "image": "../../assets/images/corevalues/evident.PNG",
-      "title": "Empowerment",
-      "text": "We value and encourage personal growth, education as well as the development of  lifelong skills for staff and clients. "
-    },
-
-    {
-      "id": 3,
-      "image": "../../assets/images/corevalues/Rocket.jpg",
-      "title": "Continuous learning",
-      "text": "We believe in staying up-to-date with the latest research, techniques and solutions in mental health and business, and constantly strive to improve our skills and knowledge."
-    },
-    {
       "id": 4,
-      "image": "../../assets/images/corevalues/Empathy2.png",
-      "title": "Empathy and Compassion",
-      "text": "We prioritise understanding and caring for our clients' emotional experiences and staff’s wellbeing."
+      "image": "../../assets/images/corevalues/Rocket.jpg",
+      "title": "Empowerment",
+      "text": "We value and encourage personal growth, education as well as the development of  lifelong skills for staff and clients."
     }
   ]
 }

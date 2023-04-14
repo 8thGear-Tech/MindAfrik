@@ -55,7 +55,7 @@ export const NavSection = () => {
     <>
       <Navbar expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <img
               src={mindafrikfulllogo}
               className="d-inline-block align-top"
@@ -77,12 +77,12 @@ export const NavSection = () => {
               <Nav.Link href="/about" className="text-black mx-2 homeLink">
                 About Us
               </Nav.Link>
-              {/* <Nav.Link
+              <Nav.Link
                 href="/psychologicalAssessment"
                 className="text-black mx-2"
               >
                 Take a Test
-              </Nav.Link> */}
+              </Nav.Link>
               <Nav.Link href="/" className="text-black mx-2">
                 Contact
               </Nav.Link>
