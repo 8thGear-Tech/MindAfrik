@@ -2,6 +2,10 @@ import db from "../config/mysql.config.js";
 import Response from "../domain/response.js";
 import log from "../util/logger.js";
 import QUERY from "../query/clientsignup.query.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
+const saltRounds = 10;
 
 const HttpStatus = {
   OK: { code: 200, status: "OK" },
@@ -14,8 +18,8 @@ const HttpStatus = {
 
 export const getClients = (req, res) => {
   log.info(`${req.method} ${req.originalurl}, fetching clients`);
-  db.query(QUERY.SELECT_CLIENTS, (err, result) => {
-    if (!result) {
+  db.query(QUERY.SELECT_CLIENTS, (err, results) => {
+    if (!results) {
       res
         .status(HttpStatus.OK.code)
         .send(
@@ -33,7 +37,7 @@ export const getClients = (req, res) => {
             HttpStatus.OK.code,
             HttpStatus.OK.status,
             `Clients retrieved`,
-            { clients: result }
+            { clients: results }
           )
         );
     }
@@ -41,7 +45,8 @@ export const getClients = (req, res) => {
 };
 export const createClient = (req, res) => {
   log.info(`${req.method} ${req.originalurl}, creating client`);
-  db.query(QUERY.CREATE_CLIENT, Object.values(req.body), (err, result) => {
+  //Checks existing user
+  db.query(QUERY.CHECK_CLIENT, Object.values(req.body), (err, result) => {
     if (!result) {
       log.err(err.message);
       res
@@ -53,24 +58,210 @@ export const createClient = (req, res) => {
             `Error Occured`
           )
         );
-    } else {
-      const client = {
-        id: result.insertId,
-        ...req.body,
-        created_at: new Date(),
-      };
-      res
-        .status(HttpStatus.CREATED.code)
-        .send(
-          new Response(
-            HttpStatus.CREATED.code,
-            HttpStatus.CREATED.status,
-            `Client created`,
-            { client }
-          )
-        );
+    } else if (result.length) {
+      res.status(409).send("User already exists");
     }
+
+    // Hash password
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(req.body.password, salt);
+    console.log(hash);
+
+    //Create new user
+    db.query(
+      QUERY.CREATE_CLIENT,
+      [req.body.first_name, req.body.last_name, req.body.email, hash],
+      // [...Object.values(req.body), hash],
+      (err, result) => {
+        if (!result) {
+          log.err(err.message);
+          res
+            .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
+            .send(
+              new Response(
+                HttpStatus.INTERNAL_SERVER_ERROR.code,
+                HttpStatus.INTERNAL_SERVER_ERROR.status,
+                `Error Occured`
+              )
+            );
+        } else {
+          const client = {
+            id: result.insertId,
+            ...req.body,
+            password: hash,
+            created_at: new Date(),
+          };
+          res
+            .status(HttpStatus.CREATED.code)
+            .send(
+              new Response(
+                HttpStatus.CREATED.code,
+                HttpStatus.CREATED.status,
+                `Client created`,
+                { client }
+              )
+            );
+        }
+      }
+    );
   });
+  // db.query(QUERY.CREATE_CLIENT, Object.values(req.body), (err, result) => {
+  //   if (!result) {
+  //     log.err(err.message);
+  //     res
+  //       .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
+  //       .send(
+  //         new Response(
+  //           HttpStatus.INTERNAL_SERVER_ERROR.code,
+  //           HttpStatus.INTERNAL_SERVER_ERROR.status,
+  //           `Error Occured`
+  //         )
+  //       );
+  //   }
+  //   //Checks existing user
+  //   else if (result.length) {
+  //     res.status(409).json("User already exists");
+  //   } else {
+  //     const client = {
+  //       id: result.insertId,
+  //       ...req.body,
+  //       created_at: new Date(),
+  //     };
+  //     res
+  //       .status(HttpStatus.CREATED.code)
+  //       .send(
+  //         new Response(
+  //           HttpStatus.CREATED.code,
+  //           HttpStatus.CREATED.status,
+  //           `Client created`,
+  //           { client }
+  //         )
+  //       );
+  //   }
+  //   // Hash password
+  //   const salt = bcrypt.genSaltSync(10);
+  //   const hash = bcrypt.hashSync(req.body.password, salt);
+  // });
+  // // });
+};
+export const loginClient = (req, res) => {
+  // log.info(`${req.method} ${req.originalurl}, creating client`);
+  //Checks existing user
+  db.query(
+    QUERY.CHECK_CLIENT_BEFORE_LOGIN,
+    [req.body.email],
+    // Object.values(req.body),
+    (err, result) => {
+      if (!result) {
+        log.err(err.message);
+        res
+          .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
+          .send(
+            new Response(
+              HttpStatus.INTERNAL_SERVER_ERROR.code,
+              HttpStatus.INTERNAL_SERVER_ERROR.status,
+              `Error Occured`
+            )
+          );
+      } else if (result.length === 0) {
+        res.status(404).send("User not found");
+      }
+      //If there is no error, and user exists, check password
+
+      const isPasswordCorrect = bcrypt.compareSync(
+        req.body.password,
+        result[0].password
+      );
+
+      if (!isPasswordCorrect) res.status(400).send("Wrong email or password");
+
+      const token = jwt.sign({ id: result[0].id }, "jwtkey");
+      const { password, ...other } = result[0];
+
+      res
+        .cookie("access_token", token, {
+          httpOnly: true,
+        })
+        .status(200)
+        .json(other);
+
+      //  else if (result.length === 0) {
+      //   res.status(409).send("User already exists");
+      // }
+
+      // db.query(QUERY.CREATE_CLIENT, Object.values(req.body), (err, result) => {
+      //   if (!result) {
+      //     log.err(err.message);
+      //     res
+      //       .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
+      //       .send(
+      //         new Response(
+      //           HttpStatus.INTERNAL_SERVER_ERROR.code,
+      //           HttpStatus.INTERNAL_SERVER_ERROR.status,
+      //           `Error Occured`
+      //         )
+      //       );
+      //   } else {
+      //     const client = {
+      //       id: result.insertId,
+      //       ...req.body,
+      //       created_at: new Date(),
+      //     };
+      //     res
+      //       .status(HttpStatus.CREATED.code)
+      //       .send(
+      //         new Response(
+      //           HttpStatus.CREATED.code,
+      //           HttpStatus.CREATED.status,
+      //           `Client created`,
+      //           { client }
+      //         )
+      //       );
+      //   }
+      // });
+    }
+  );
+};
+export const logoutClient = (req, res) => {
+  res
+    .clearCookie("access_token", {
+      sameSite: "none",
+      secure: true,
+    })
+    .status(200)
+    .json("User has been logged out");
+
+  // db.query(QUERY.CREATE_CLIENT, Object.values(req.body), (err, result) => {
+  //   if (!result) {
+  //     log.err(err.message);
+  //     res
+  //       .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
+  //       .send(
+  //         new Response(
+  //           HttpStatus.INTERNAL_SERVER_ERROR.code,
+  //           HttpStatus.INTERNAL_SERVER_ERROR.status,
+  //           `Error Occured`
+  //         )
+  //       );
+  //   } else {
+  //     const client = {
+  //       id: result.insertId,
+  //       ...req.body,
+  //       created_at: new Date(),
+  //     };
+  //     res
+  //       .status(HttpStatus.CREATED.code)
+  //       .send(
+  //         new Response(
+  //           HttpStatus.CREATED.code,
+  //           HttpStatus.CREATED.status,
+  //           `Client created`,
+  //           { client }
+  //         )
+  //       );
+  //   }
+
+  // });
 };
 
 export const getClient = (req, res) => {

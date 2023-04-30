@@ -6,11 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./sassfiles/styles.min.css";
 import "./sassfiles/styles.css";
 import reportWebVitals from "./reportWebVitals";
+import { AuthContextProvider } from "./components/context/authContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+      <App />
+    </AuthContextProvider>
   </React.StrictMode>
 );
 

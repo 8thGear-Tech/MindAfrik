@@ -11,6 +11,13 @@ import ManOutlinedIcon from "@mui/icons-material/ManOutlined";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
+//context
+import { AuthContext } from "../context/authContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+// import { AuthContextProvider } from "../context/authContext";
+// import { useContext } from "react";
+
 // internal import
 import {} from "../allCards/dashBoardcards";
 import admin from "../../data/dashboardNavbar.json";
@@ -411,6 +418,8 @@ export const CounselleeDashboardSideNav = () => {
 };
 
 const CounselleeSmallShowExample = ({ name, ...props }) => {
+  const { currentUser, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const toggleShow = () => setShow((s) => !s);
@@ -480,7 +489,12 @@ const CounselleeSmallShowExample = ({ name, ...props }) => {
                 <div className="me-3">
                   <LogoutOutlinedIcon />
                 </div>
-                <span>Logout</span>
+                {currentUser ? (
+                  <span onClick={logout}>Logout</span>
+                ) : (
+                  navigate("/signInPage")
+                )}
+                {/* <span>Logout</span> */}
               </li>
             </ul>
           </div>
