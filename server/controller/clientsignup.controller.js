@@ -173,15 +173,6 @@ export const loginClient = (req, res) => {
         result[0].password
       );
       if (!isPasswordCorrect) res.status(400).send("Wrong email or password");
-      const token = jwt.sign({ id: result[0].id }, "jwtkey");
-      const { password, ...other } = result[0];
-
-      res
-        .cookie("access_token", token, {
-          httpOnly: true,
-        })
-        .status(200)
-        .json(other);
 
       //  else if (result.length === 0) {
       //   res.status(409).send("User already exists");
