@@ -172,6 +172,7 @@ export const loginClient = (req, res) => {
         req.body.password,
         result[0].password
       );
+      if (!isPasswordCorrect) res.status(400).send("Wrong email or password");
 
       //  else if (result.length === 0) {
       //   res.status(409).send("User already exists");
