@@ -6,13 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "mysqltoken#008",
-  database: "testoneform",
-});
-
 app.post("/create", (req, res) => {
   const name = req.body.name;
   const age = req.body.age;
