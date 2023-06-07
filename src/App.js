@@ -26,6 +26,9 @@ import UnderConstruction from "./pages/websitePages/underConstruction";
 import { Footer } from "./components/footer";
 import { DashboardNavbar } from "./components/Navbar/dashBoardNavbar";
 
+//email verification successful
+import EmailVerificationSuccess from "./pages/authenticationPages/emailVerified";
+
 //forms
 import { AssesmentForm } from "./components/Forms/websiteForms";
 
@@ -131,6 +134,7 @@ function App() {
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
         <Route path="signInPage" element={<SignInPage />} />
         <Route path="forgotPasswordPage" element={<ForgotPasswordPage />} />
+        <Route path="email-verified" element={<EmailVerificationSuccess />} />
         {/* <Route path="TestOneForm" element={<TestOneForm />} />
         <Route path="Blog" element={<Blog />} />
         <Route path="CreateBlog" element={<CreateBlog />} />

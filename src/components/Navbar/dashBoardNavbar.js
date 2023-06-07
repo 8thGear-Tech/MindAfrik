@@ -494,7 +494,6 @@ const CounselleeSmallShowExample = ({ name, ...props }) => {
                 ) : (
                   navigate("/signInPage")
                 )}
-                {/* <span>Logout</span> */}
               </li>
             </ul>
           </div>

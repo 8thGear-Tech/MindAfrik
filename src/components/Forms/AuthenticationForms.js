@@ -19,7 +19,11 @@ import KeyboardBackspaceOutlinedIcon from "@mui/icons-material/KeyboardBackspace
 import { AuthContext } from "../context/authContext";
 import { useContext } from "react";
 
-export const SignInForm = () => {
+// export const SignInForm = () => {
+export const SignInForm = ({ userRole }) => {
+  // const role = userRole || user.userRole || "defaultUserRole";
+  // export const SignInForm = ({ userRoles }) => {
+  // console.log(userRoles);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -29,6 +33,7 @@ export const SignInForm = () => {
 
   const navigate = useNavigate();
 
+  // const { currentUser } = useContext(AuthContext);
   const { login } = useContext(AuthContext);
   // console.log(currentUser);
 
@@ -39,11 +44,22 @@ export const SignInForm = () => {
     e.preventDefault();
     try {
       await login(inputs);
-      // await axios.post("http://localhost:3005/clients/clientlogin", inputs);
-      navigate("/counselleeDashboard");
+      if (userRole === "admin") {
+        navigate("/adminDashboardHomePage");
+      } else if (userRole === "counsellor") {
+        navigate("/counsellorDashboard");
+      } else if (userRole === "client") {
+        navigate("/counselleeDashboard");
+      } else {
+        navigate("/");
+      }
     } catch (err) {
       setErr(err.response.data);
     }
+    // // Redirect the user to the login page if they were previously on the /counselleeDashboard route
+    // if (window.location.pathname === "/counselleeDashboard") {
+    //   navigate("/login");
+    // }
   };
   return (
     <>
@@ -82,7 +98,7 @@ export const SignInForm = () => {
           {err}
         </p>
       )}
-      <button onClick={handleSubmit}>Hello</button>
+      <button onClick={handleSubmit}>Submit</button>
       {/* <div className="text-center">
         <LoginBtn />
       </div> */}
@@ -90,6 +106,29 @@ export const SignInForm = () => {
   );
 };
 export const ForgotPasswordForm = () => {
+  const [email, setEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Send a request to the backend API to initiate the password reset process
+      await axios.post("http://localhost:3005/clients/reset-password", {
+        email,
+      });
+
+      setSuccessMessage("Password reset email sent successfully");
+    } catch (error) {
+      setErrorMessage("Failed to send password reset email");
+    }
+  };
+
   return (
     <>
       <Form>
@@ -107,115 +146,27 @@ export const ForgotPasswordForm = () => {
         <Form.Group className="mb-3 py-2" controlId="formBasicEmail">
           <Form.Control
             type="email"
+            // id="email"
+            value={email}
+            onChange={handleEmailChange}
+            required
             placeholder="Email Address"
             className=" placeholderRadius"
           />
         </Form.Group>{" "}
       </Form>{" "}
       <div className="my-3 text-center">
-        <SendBtn />
+        <button className="btn btn-primary" onClick={handleSubmit}>
+          Send
+        </button>
+        {/* <SendBtn /> */}
       </div>
+      {successMessage && <p>{successMessage}</p>}
+      {errorMessage && <p>{errorMessage}</p>}
     </>
   );
 };
-// export const SignUpAsCounselleeForm = () => {
-//   const [firstnameReg, setFirstnameReg] = useState({});
-//   const [lastnameReg, setLastnameReg] = useState({});
-//   const [emailReg, setEmailReg] = useState({});
-//   const [passwordReg, setPasswordReg] = useState({});
 
-//   const handleSubmit = () => {
-//     axios
-//       .post("http://localhost:8800/clientsignup", {
-//         firstname: firstnameReg,
-//         lastname: lastnameReg,
-//         email: emailReg,
-//         password: passwordReg,
-//       })
-//       .then((response) => {
-//         console.log(response);
-//       });
-//   };
-
-//   // const [inputs, setInputs] = useState({
-//   //   firstname: "",
-//   //   lastname: "",
-//   //   email: "",
-//   //   password: "",
-//   //   confirmpassword: "",
-//   // });
-
-//   // const handleChange = (e) => {
-//   //   setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-//   // };
-//   // const handleSubmit = async (e) => {
-//   //   e.preventDefault();
-//   //   try {
-//   //     const res = await axios.post("/auth/counselleesignup", inputs);
-//   //     console.log(res);
-//   //   } catch (err) {
-//   //     console.log(err);
-//   //   }
-//   // };
-
-//   // console.log(inputs);
-//   return (
-//     <>
-//       <Form>
-//         <Form.Group className="mb-3 py-2" controlId="firstname">
-//           <Form.Control
-//             type="text"
-//             placeholder="First Name"
-//             className=" placeholderRadius"
-//             name="firstname"
-//           />
-//         </Form.Group>
-//         <Form.Group className="mb-3 py-2" controlId="lastname">
-//           <Form.Control
-//             type="text"
-//             placeholder="Last Name"
-//             className="placeholderRadius"
-//             name="lastname"
-//           />
-//         </Form.Group>
-//         <Form.Group className="mb-3 py-2" controlId="email">
-//           <Form.Control
-//             type="email"
-//             placeholder="Email"
-//             className="placeholderRadius"
-//             name="email"
-//           />
-//         </Form.Group>
-//         <Form.Group className="mb-3 py-2" controlId="password">
-//           <Form.Control
-//             type="password"
-//             placeholder="Password"
-//             className=" placeholderRadius"
-//             name="password"
-//           />
-//         </Form.Group>
-//         {/* <Form.Group className="mb-3 py-2" controlId="confirmpassword">
-//           <Form.Control
-//             type="password"
-//             placeholder="Confirm Password"
-//             className=" placeholderRadius"
-//             onChange={handleChange}
-//             name="confirmpassword"
-//           />
-//         </Form.Group> */}
-//         <Form.Text className="text-muted">
-//           By signing up, you agree to our Terms Of Service and acknowledge that
-//           you have read our Privacy Policy
-//         </Form.Text>
-//       </Form>
-//       <div className="my-3 text-center">
-//         {/* <button>Hello</button> */}
-//         <button onClick={handleSubmit}>Hello</button>
-//         {/* <SignUpBtn  /> */}
-//       </div>
-//     </>
-//   );
-// };
 export const SignUpAsCounselleeForm = () => {
   // const [firstnameReg, setFirstnameReg] = useState({});
   // const [lastnameReg, setLastnameReg] = useState({});
@@ -242,7 +193,7 @@ export const SignUpAsCounselleeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3005/clients", inputs);
+      await axios.post("http://localhost:3005/clients/clientsignup", inputs);
       // const response = await axios.post("http://localhost:3005/clients", {
 
       navigate("/signInPage");
@@ -252,30 +203,6 @@ export const SignUpAsCounselleeForm = () => {
       setErr(err.response.data);
     }
   };
-  // const handleSubmit = () => {
-  //   axios
-  //     .post("http://localhost:3005/clients", {
-  //       first_name: firstnameReg,
-  //       last_name: lastnameReg,
-  //       email: emailReg,
-  //       password: passwordReg,
-  //     })
-  //     .then((response) => {
-  //       console.log(response);
-  //     });
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios.post("/auth/counselleesignup", inputs);
-  //     console.log(res);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // console.log(inputs);
   return (
     <>
       <Form onSubmit={handleSubmit}>
@@ -286,9 +213,6 @@ export const SignUpAsCounselleeForm = () => {
             className=" placeholderRadius"
             name="first_name"
             onChange={handleChange}
-            // onChange={(e) => {
-            //   setFirstnameReg(e.target.value);
-            // }}
           />
         </Form.Group>
         <Form.Group className="mb-3 py-2" controlId="lastname">
@@ -298,9 +222,6 @@ export const SignUpAsCounselleeForm = () => {
             className="placeholderRadius"
             name="last_name"
             onChange={handleChange}
-            // onChange={(e) => {
-            //   setLastnameReg(e.target.value);
-            // }}
           />
         </Form.Group>
         <Form.Group className="mb-3 py-2" controlId="email">
@@ -310,41 +231,24 @@ export const SignUpAsCounselleeForm = () => {
             className="placeholderRadius"
             name="email"
             onChange={handleChange}
-            // onChange={(e) => {
-            //   setEmailReg(e.target.value);
-            // }}
           />
         </Form.Group>
         <Form.Group className="mb-3 py-2" controlId="password">
           <Form.Control
             type="password"
             placeholder="Password"
-            className=" placeholderRadius"
+            className="placeholderRadius"
             name="password"
             onChange={handleChange}
-            // onChange={(e) => {
-            //   setPasswordReg(e.target.value);
-            // }}
           />
         </Form.Group>
-        {/* <Form.Group className="mb-3 py-2" controlId="confirmpassword">
-          <Form.Control
-            type="password"
-            placeholder="Confirm Password"
-            className=" placeholderRadius"
-            onChange={handleChange}
-            name="confirmpassword"
-          />
-        </Form.Group> */}
         <Form.Text className="text-muted">
           By signing up, you agree to our Terms Of Service and acknowledge that
           you have read our Privacy Policy
         </Form.Text>
       </Form>
       <div className="my-3 text-center">
-        {/* <button>Hello</button> */}
-        {/* type="button" */}
-        <button onClick={handleSubmit}>Hello</button>
+        <button onClick={handleSubmit}>Submit</button>
         {/* <SignUpBtn  /> */}
         {err && (
           <p className="mt-3" style={{ color: "red" }}>

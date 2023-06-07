@@ -7,12 +7,16 @@ import {
   logoutClient,
   updateClient,
   deleteClient,
+  verifyEmail,
+  resetPassword,
 } from "../controller/clientsignup.controller.js";
 
 const clientsignupRoutes = express.Router();
 
 clientsignupRoutes.post("/clientsignup", createClient);
 clientsignupRoutes.get("/clientsignup", getClients);
+clientsignupRoutes.get("/verify-email", verifyEmail);
+clientsignupRoutes.get("/reset-password", resetPassword);
 clientsignupRoutes.post("/clientlogin", loginClient);
 clientsignupRoutes.post("/clientlogout", logoutClient);
 // clientsignupRoutes.post("clientsignup", logoutClient);

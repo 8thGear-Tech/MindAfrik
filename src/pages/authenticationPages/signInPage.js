@@ -13,6 +13,8 @@ import Form from "react-bootstrap/Form";
 import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
 
 const SignInPage = () => {
+  const userRole = "client";
+  // const userRole = ["admin", "counsellor", "client"];
   return (
     <>
       <Container fluid className="">
@@ -32,7 +34,10 @@ const SignInPage = () => {
               <KeyboardBackspaceOutlinedIcon />
             </Link>
             {/* <h4 className="text-center pb-3">Sign In</h4> */}
-            <SignInForm />
+            <SignInForm userRole={userRole} />
+
+            {/* method 1 */}
+            {/* <SignInForm userRoles={["admin", "counsellor", "client"]} /> */}
           </Col>
         </Row>
       </Container>

@@ -8,6 +8,7 @@ export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("client")) || null
   );
+  const [userRole, setUserRole] = useState();
   const login = async (inputs) => {
     const res = await axios.post(
       "http://localhost:3005/clients/clientlogin",
@@ -15,6 +16,7 @@ export const AuthContextProvider = ({ children }) => {
     );
     // console.log(res.data);
     setCurrentUser(res.data);
+    setUserRole(res.data.userRole);
   };
   const logout = async (inputs) => {
     await axios.post("http://localhost:3005/clients/clientlogout");
