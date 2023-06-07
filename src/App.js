@@ -2,6 +2,12 @@ import * as React from "react";
 // import { Component } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+// import { TestOneForm } from "./components/Forms/testoneform";
+// import { Blog } from "./components/Forms/blog";
+// import { CreateBlog } from "./components/Forms/createBlog";
+// import { IndividualBlog } from "./components/Forms/individualBlog";
+// import { CrudApp } from "./components/Forms/crudapplication";
+
 import Home from "./pages/websitePages/homePage";
 import About from "./pages/websitePages/aboutUsPage";
 import Contact from "./pages/websitePages/contactUsPage";
@@ -19,6 +25,9 @@ import ResultPage from "./pages/websitePages/allAssessment/testResultPage";
 import UnderConstruction from "./pages/websitePages/underConstruction";
 import { Footer } from "./components/footer";
 import { DashboardNavbar } from "./components/Navbar/dashBoardNavbar";
+
+//email verification successful
+import EmailVerificationSuccess from "./pages/authenticationPages/emailVerified";
 
 //forms
 import { AssesmentForm } from "./components/Forms/websiteForms";
@@ -126,6 +135,12 @@ function App() {
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
         <Route path="signInPage" element={<SignInPage />} />
         <Route path="forgotPasswordPage" element={<ForgotPasswordPage />} />
+        <Route path="email-verified" element={<EmailVerificationSuccess />} />
+        {/* <Route path="TestOneForm" element={<TestOneForm />} />
+        <Route path="Blog" element={<Blog />} />
+        <Route path="CreateBlog" element={<CreateBlog />} />
+        <Route path="blog/:blogId" element={<IndividualBlog />} />
+        <Route path="CrudApp" element={<CrudApp />} /> */}
       </Routes>
 
       <footer>

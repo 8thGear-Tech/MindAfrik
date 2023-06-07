@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 import { ScheduleASessionIcon } from "../../assets/icons/dashBoardcardIcons";
 import { SendBtn } from "../Buttons/actionBtn";
 import { AddToCalendarBtn } from "../Buttons/actionBtn";
@@ -16,7 +17,9 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 // counseleeProfilePageCard
 // viewProfileCard
 // counseleeSessionPageCard
-
+import { AuthContext } from "../context/authContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 //images
 import dashboardProfile_CardsImage from "../../assets/images/hero/dashboardProfile_Cards.png";
 import counselleeDashboardImage from "../../assets/images/hero/counselleeDashboardImage.png";
@@ -148,12 +151,15 @@ export const DashboardProfileCards = () => {
 };
 
 export const CounseleeDashboardCard = () => {
+  const { currentUser, logout } = useContext(AuthContext);
+  // const navigate = useNavigate();
   return (
     <div>
       <div className="counselorsDashboardCard container px-5">
         <div className="row d-flex juatify-content-center align-items-center">
           <div className="col-lg-7 col-md-12 col-sm-12 mt-5 align-items-center text-center">
-            <h3 className="">Welcome, Peter Uche</h3>
+            <h3 className="">{currentUser?.email}</h3>
+            {/* <h3 className="">Welcome, Peter Uche</h3> */}
             <p className="">
               “Not until we are lost do we begin to understand ourselves”
             </p>
@@ -176,6 +182,11 @@ export const CounseleeDashboardCard = () => {
           </div>
         </div>
       </div> */}
+      {/* {currentUser ? (
+        <button onClick={logout}>Logout</button>
+      ) : (
+        navigate("/signInPage")
+      )} */}
     </div>
   );
 };
