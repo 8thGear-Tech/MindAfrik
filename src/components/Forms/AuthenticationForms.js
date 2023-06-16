@@ -119,9 +119,12 @@ export const ForgotPasswordForm = () => {
 
     try {
       // Send a request to the backend API to initiate the password reset process
-      await axios.post("http://localhost:3005/clients/reset-password", {
-        email,
-      });
+      await axios.post(
+        "https://mindafrik-backend.onrender.com/clients/reset-password",
+        {
+          email,
+        }
+      );
 
       setSuccessMessage("Password reset email sent successfully");
     } catch (error) {
@@ -193,7 +196,10 @@ export const SignUpAsCounselleeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3005/clients/clientsignup", inputs);
+      await axios.post(
+        "https://mindafrik-backend.onrender.com/clients/clientsignup",
+        inputs
+      );
       // const response = await axios.post("http://localhost:3005/clients", {
 
       navigate("/signInPage");
