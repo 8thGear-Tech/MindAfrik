@@ -52,6 +52,7 @@ const HowItWorksOne = () => {
       <div className="container-fluid p-5 ">
         {" "}
         <h3 className="text-center">How It Works</h3>
+        <h3 className="text-center">How It Works</h3>
         <img
           src={howitworksstepsone}
           className="py-4 img-fluid mx-auto d-none d-lg-block d-md-none d-sm-none d-xs-none"
