@@ -195,6 +195,7 @@ export const SignUpAsCounselleeForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.preventDefault();
     try {
       await axios.post(
         "https://mindafrik-backend.onrender.com/clients/clientsignup",
