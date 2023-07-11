@@ -203,7 +203,7 @@ export const SignUpAsCounselleeForm = () => {
       // const response = await axios.post("http://localhost:3005/clients", {
 
       navigate("/signInPage");
-      console.log(response);
+      // console.log(response);
     } catch (err) {
       // console.log(err);
       setErr(err.response.data);
