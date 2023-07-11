@@ -119,7 +119,7 @@ export const ForgotPasswordForm = () => {
 
     try {
       // Send a request to the backend API to initiate the password reset process
-      await axios.post("https://localhost:3000/clients/reset-password", {
+      await axios.post("http://localhost:3305/clients/reset-password", {
         email,
       });
 
@@ -193,7 +193,7 @@ export const SignUpAsCounselleeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://localhost:3000/clients/clientsignup", inputs);
+      await axios.post("http://localhost:3005/clients/clientsignup", inputs);
       // const response = await axios.post("http://localhost:3005/clients", {
 
       navigate("/signInPage");
