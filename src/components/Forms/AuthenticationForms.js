@@ -199,7 +199,8 @@ export const SignUpAsCounselleeForm = () => {
       await axios.post(
         // "http://localhost:3005/clients/clientsignup",
         "https://mindafrik-app-backend.onrender.com/clients/clientsignup",
-        inputs
+        inputs,
+        { withCredentials: true }
       );
       // const response = await axios.post("http://localhost:3005/clients", {
 
