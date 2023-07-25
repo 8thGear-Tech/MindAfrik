@@ -176,8 +176,8 @@ export const SignUpAsCounselleeForm = () => {
   // const [emailReg, setEmailReg] = useState({});
   // const [passwordReg, setPasswordReg] = useState({});
   const [inputs, setInputs] = useState({
-    first_name: "",
-    last_name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     // confirmpassword: "",
@@ -198,9 +198,8 @@ export const SignUpAsCounselleeForm = () => {
     try {
       await axios.post(
         // "http://localhost:3005/clients/clientsignup",
-        "https://mindafrik-app-backend.onrender.com/clients/clientsignup",
-        inputs,
-        { withCredentials: true }
+        "https://cravings-meal-backend.onrender.com/user/signup",
+        inputs
       );
       // const response = await axios.post("http://localhost:3005/clients", {
 
@@ -219,7 +218,7 @@ export const SignUpAsCounselleeForm = () => {
             type="text"
             placeholder="First Name"
             className=" placeholderRadius"
-            name="first_name"
+            name="firstName"
             onChange={handleChange}
           />
         </Form.Group>
@@ -228,7 +227,7 @@ export const SignUpAsCounselleeForm = () => {
             type="text"
             placeholder="Last Name"
             className="placeholderRadius"
-            name="last_name"
+            name="lastName"
             onChange={handleChange}
           />
         </Form.Group>
