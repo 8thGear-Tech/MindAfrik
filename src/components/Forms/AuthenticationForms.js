@@ -183,6 +183,7 @@ export const SignUpAsCounselleeForm = () => {
     // confirmpassword: "",
   });
 
+  const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
@@ -195,6 +196,35 @@ export const SignUpAsCounselleeForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const errors = {};
+
+    if (!inputs.firstName.trim()) {
+      errors.firstName = "First Name is required";
+    }
+
+    if (!inputs.lastName.trim()) {
+      errors.lastName = "Last Name is required";
+    }
+
+    if (!inputs.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!isValidEmail(inputs.email)) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!inputs.password.trim()) {
+      errors.password = "Password is required";
+    } else if (!isValidPassword(inputs.password)) {
+      errors.password =
+        "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character";
+    }
+
+    setValidationErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
     try {
       await axios.post(
         // "http://localhost:3005/clients/clientsignup",
@@ -210,6 +240,18 @@ export const SignUpAsCounselleeForm = () => {
       setErr(err.response.data);
     }
   };
+
+  const isValidEmail = (email) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
+  const isValidPassword = (password) => {
+    const passwordPattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    return passwordPattern.test(password);
+  };
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
