@@ -11,7 +11,7 @@ export const AuthContextProvider = ({ children }) => {
   const [userRole, setUserRole] = useState();
   const login = async (inputs) => {
     const res = await axios.post(
-      "http://localhost:3005/clients/clientlogin",
+      "https://mindafrikserver.onrender.com/user/login",
       inputs
     );
     // console.log(res.data);
