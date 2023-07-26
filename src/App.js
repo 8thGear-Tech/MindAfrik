@@ -143,9 +143,9 @@ function App() {
         <Route path="CrudApp" element={<CrudApp />} /> */}
       </Routes>
 
-      {/* <footer>
+      <footer>
         <Footer />
-      </footer> */}
+      </footer>
     </BrowserRouter>
   );
 }
