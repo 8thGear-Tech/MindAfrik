@@ -27,6 +27,17 @@ export const LoginBtn = () => {
     </>
   );
 };
+export const ContinueLoginBtn = () => {
+  return (
+    <>
+      <Link to="/signInPage">
+        {" "}
+        <Button className="LoginBtn">Continue</Button>
+      </Link>
+    </>
+  );
+};
+
 // export const SignUpBtn = () => {
 //   return (
 //     <>

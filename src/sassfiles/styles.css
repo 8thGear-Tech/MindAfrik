@@ -893,4 +893,10 @@ p {
   border-radius: 10px;
   height: 500px;
 }
+
+.emailVerifiedCard {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: #fff;
+}
 /*# sourceMappingURL=styles.css.map */
