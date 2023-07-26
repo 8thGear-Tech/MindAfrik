@@ -228,7 +228,7 @@ export const SignUpAsCounselleeForm = () => {
     try {
       await axios.post(
         // "http://localhost:3005/clients/clientsignup",
-        "https://cravings-meal-backend.onrender.com/user/signup",
+        "https://mindafrikserver.onrender.com/user/signup",
         inputs
       );
       // const response = await axios.post("http://localhost:3005/clients", {
