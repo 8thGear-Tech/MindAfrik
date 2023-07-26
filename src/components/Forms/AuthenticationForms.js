@@ -171,10 +171,6 @@ export const ForgotPasswordForm = () => {
 };
 
 export const SignUpAsCounselleeForm = () => {
-  // const [firstnameReg, setFirstnameReg] = useState({});
-  // const [lastnameReg, setLastnameReg] = useState({});
-  // const [emailReg, setEmailReg] = useState({});
-  // const [passwordReg, setPasswordReg] = useState({});
   const [inputs, setInputs] = useState({
     firstName: "",
     lastName: "",
@@ -191,8 +187,6 @@ export const SignUpAsCounselleeForm = () => {
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
-  // console.log(inputs);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
