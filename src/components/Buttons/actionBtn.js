@@ -221,6 +221,13 @@ export const SendBtn = () => {
     </div>
   );
 };
+export const SubmitFormBtn = () => {
+  return (
+    <div>
+      <Button className="sendBtn">Submit</Button>{" "}
+    </div>
+  );
+};
 
 export const StartADiscussionBtn = () => {
   return (

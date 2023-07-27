@@ -184,6 +184,20 @@ p {
   width: 8rem;
 }
 
+.submitFormBtn {
+  background: #0060c6;
+  border-radius: 10px;
+  height: 3rem;
+  width: 11.5rem;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  width: 10rem;
+}
+
 .bookNowBtn {
   background: #0060c6;
   border-radius: 10px;
@@ -856,8 +870,9 @@ p {
 
 .placeholderRadius {
   border: 1px solid #828282;
+  background-color: #ffffff;
   border-radius: 50px;
-  padding: 8px 20px;
+  padding: 0px 20px;
 }
 
 .errormsg {
@@ -866,6 +881,34 @@ p {
 
 .hello {
   color: red;
+}
+
+.auth-input-error {
+  border: 1px solid red;
+}
+
+.auth-form-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(235, 232, 232);
+  border-radius: 8px;
+  width: 380px;
+  height: 46px;
+  background-color: rgb(236, 245, 248);
+  transition: border-color 0.3s ease;
+}
+
+.auth-error-message {
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: red;
+}
+
+.formikFieldStyle {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  outline: none !important;
 }
 
 .sectionOneBgColor {

@@ -21,6 +21,10 @@
   @include reoccuredBtnProperties;
   width: 8rem;
 }
+.submitFormBtn {
+  @include reoccuredBtnProperties;
+  width: 10rem;
+}
 .bookNowBtn {
   @include reoccuredBtnProperties;
   width: 9rem;

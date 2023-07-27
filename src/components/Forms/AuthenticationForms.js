@@ -9,15 +9,21 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 import {
   SignUpBtn,
   LoginBtn,
 } from "../../components/Buttons/authenticationBtn";
-import { SendBtn } from "../Buttons/actionBtn";
+import Button from "react-bootstrap/Button";
+import { SendBtn, SubmitForm } from "../Buttons/actionBtn";
 import KeyboardBackspaceOutlinedIcon from "@mui/icons-material/KeyboardBackspaceOutlined";
 import { AuthContext } from "../context/authContext";
 import { useContext } from "react";
+
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 // export const SignInForm = () => {
 export const SignInForm = ({ userRole }) => {
@@ -171,9 +177,184 @@ export const ForgotPasswordForm = () => {
 };
 
 export const SignUpAsCounselleeForm = () => {
+  // const [inputs, setInputs] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   password: "",
+  // });
+
+  const [showPassword1, setShowPassword1] = useState(false);
+  const togglePasswordVisibility1 = () => {
+    setShowPassword1((prevShowPassword) => !prevShowPassword);
+  };
+
+  const [validationErrors, setValidationErrors] = useState({});
+  const [err, setErr] = useState(null);
+
+  const navigate = useNavigate();
+
+  // const handleChange = (e) => {
+  //   setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  // };
+
+  const handleSubmit = async (values) => {
+    // const handleSubmit = async (e, values) => {
+    // e.preventDefault();
+
+    const firstName = values.firstName;
+    const lastName = values.lastName;
+    const email = values.email;
+    const password = values.password;
+    // setValidationErrors(errors);
+
+    try {
+      await axios.post(
+        // "https://localhost:4000/user/signup",
+        "https://mindafrikserver.onrender.com/user/signup",
+        // inputs
+        {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+        }
+      );
+      navigate("/signInPage");
+    } catch (err) {
+      setErr(err.response.data);
+    }
+  };
+
   return (
     <>
-      <h3>Formik</h3>
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+        }}
+        validationSchema={Yup.object().shape({
+          firstName: Yup.string().required("First name is required"),
+          lastName: Yup.string().required("Last name is required"),
+          email: Yup.string()
+            .matches(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+              "Invalid email format"
+            )
+            // .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email address")
+            .required("Email is required"),
+          password: Yup.string()
+            .required("Password is required")
+            .min(8, "Password must be at least 8 characters")
+            .matches(
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
+              // /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
+              "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
+            ),
+        })}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+        // onSubmit={handleSubmit}
+      >
+        {({ errors, touched, isSubmitting }) => (
+          <Form>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="firstName"
+                  type="text"
+                  autoComplete="off"
+                  placeholder="First Name"
+                  className="w-100 my-2 formikFieldStyle"
+                  // onChange={handleChange}
+                />
+              </div>
+              {errors.firstName && touched.firstName ? (
+                <div className="ms-3 auth-error-message">
+                  {errors.firstName}
+                </div>
+              ) : null}
+            </div>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="lastName"
+                  type="text"
+                  autoComplete="off"
+                  placeholder="Last Name"
+                  className="w-100 my-2 formikFieldStyle"
+                  // onChange={handleChange}
+                />
+              </div>
+              {errors.lastName && touched.lastName ? (
+                <div className="ms-3 auth-error-message">{errors.lastName}</div>
+              ) : null}
+            </div>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="email"
+                  type="email"
+                  autoComplete="off"
+                  placeholder="Email"
+                  className="w-100 my-2 formikFieldStyle"
+                  // onChange={handleChange}
+                />
+              </div>{" "}
+              {errors.email && touched.email ? (
+                <div className="ms-3 auth-error-message">{errors.email}</div>
+              ) : null}
+            </div>
+            <div>
+              <div className="d-flex align-items-center placeholderRadius mt-4">
+                {" "}
+                <Field
+                  name="password"
+                  type={showPassword1 ? "text" : "password"}
+                  autoComplete="off"
+                  placeholder="Password"
+                  className="w-100 my-2 formikFieldStyle"
+                  // onChange={handleChange}
+                />
+                <div onClick={togglePasswordVisibility1}>
+                  {showPassword1 ? <RemoveRedEyeIcon /> : <VisibilityOffIcon />}
+                </div>
+              </div>
+
+              {errors.password && touched.password ? (
+                <div className="ms-3 auth-error-message">{errors.password}</div>
+              ) : null}
+            </div>
+            {/* <div className="text-center mt-4">
+              <button type="submit">Submit</button>
+            </div> */}
+            <div className="my-3 text-center">
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="submitFormBtn"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </Button>
+              {/* <button onClick={handleSubmit} type="button">
+                Submit
+              </button> */}
+              {/* <SignUpBtn  /> */}
+              {err && (
+                <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                  {err}
+                </p>
+              )}
+            </div>
+          </Form>
+        )}
+      </Formik>
     </>
   );
 };
@@ -255,7 +436,7 @@ export const SignUpAsCounselleeFormm = () => {
           <Form.Control
             type="text"
             placeholder="First Name"
-            className=" placeholderRadius"
+            className="placeholderRadius"
             name="firstName"
             onChange={handleChange}
           />
@@ -297,7 +478,7 @@ export const SignUpAsCounselleeFormm = () => {
         <button onClick={handleSubmit}>Submit</button>
         {/* <SignUpBtn  /> */}
         {err && (
-          <p className="mt-3" style={{ color: "red" }}>
+          <p className="mt-3 auth-error-message" style={{ color: "red" }}>
             {err}
           </p>
         )}
