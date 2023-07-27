@@ -171,6 +171,13 @@ export const ForgotPasswordForm = () => {
 };
 
 export const SignUpAsCounselleeForm = () => {
+  return (
+    <>
+      <h3>Formik</h3>
+    </>
+  );
+};
+export const SignUpAsCounselleeFormm = () => {
   const [inputs, setInputs] = useState({
     firstName: "",
     lastName: "",
@@ -221,16 +228,11 @@ export const SignUpAsCounselleeForm = () => {
     }
     try {
       await axios.post(
-        // "http://localhost:3005/clients/clientsignup",
         "https://mindafrikserver.onrender.com/user/signup",
         inputs
       );
-      // const response = await axios.post("http://localhost:3005/clients", {
-
       navigate("/signInPage");
-      // console.log(response);
     } catch (err) {
-      // console.log(err);
       setErr(err.response.data);
     }
   };
@@ -286,8 +288,9 @@ export const SignUpAsCounselleeForm = () => {
           />
         </Form.Group>
         <Form.Text className="text-muted">
-          By signing up, you agree to our Terms Of Service and acknowledge that
-          you have read our Privacy Policy
+          By signing up, you agree to our{" "}
+          <Link to="/termsOfService">Terms Of Service</Link> and acknowledge
+          that you have read our <Link to="/privacyPolicy">Privacy Policy</Link>
         </Form.Text>
       </Form>
       <div className="my-3 text-center">
@@ -302,3 +305,131 @@ export const SignUpAsCounselleeForm = () => {
     </>
   );
 };
+// export const SignUpAsCounselleeForm = () => {
+//   const [inputs, setInputs] = useState({
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     password: "",
+//     // confirmpassword: "",
+//   });
+
+//   const [validationErrors, setValidationErrors] = useState({});
+//   const [err, setErr] = useState(null);
+
+//   const navigate = useNavigate();
+
+//   const handleChange = (e) => {
+//     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     const errors = {};
+
+//     if (!inputs.firstName.trim()) {
+//       errors.firstName = "First Name is required";
+//     }
+
+//     if (!inputs.lastName.trim()) {
+//       errors.lastName = "Last Name is required";
+//     }
+
+//     if (!inputs.email.trim()) {
+//       errors.email = "Email is required";
+//     } else if (!isValidEmail(inputs.email)) {
+//       errors.email = "Invalid email format";
+//     }
+
+//     if (!inputs.password.trim()) {
+//       errors.password = "Password is required";
+//     } else if (!isValidPassword(inputs.password)) {
+//       errors.password =
+//         "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character";
+//     }
+
+//     setValidationErrors(errors);
+
+//     if (Object.keys(errors).length > 0) {
+//       return;
+//     }
+//     try {
+//       await axios.post(
+//         "https://mindafrikserver.onrender.com/user/signup",
+//         inputs
+//       );
+//       navigate("/signInPage");
+//     } catch (err) {
+//       setErr(err.response.data);
+//     }
+//   };
+
+//   const isValidEmail = (email) => {
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     return emailPattern.test(email);
+//   };
+
+//   const isValidPassword = (password) => {
+//     const passwordPattern =
+//       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+//     return passwordPattern.test(password);
+//   };
+
+//   return (
+//     <>
+//       <Form onSubmit={handleSubmit}>
+//         <Form.Group className="mb-3 py-2" controlId="firstname">
+//           <Form.Control
+//             type="text"
+//             placeholder="First Name"
+//             className=" placeholderRadius"
+//             name="firstName"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-3 py-2" controlId="lastname">
+//           <Form.Control
+//             type="text"
+//             placeholder="Last Name"
+//             className="placeholderRadius"
+//             name="lastName"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-3 py-2" controlId="email">
+//           <Form.Control
+//             type="email"
+//             placeholder="Email"
+//             className="placeholderRadius"
+//             name="email"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-3 py-2" controlId="password">
+//           <Form.Control
+//             type="password"
+//             placeholder="Password"
+//             className="placeholderRadius"
+//             name="password"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Text className="text-muted">
+//           By signing up, you agree to our{" "}
+//           <Link to="/termsOfService">Terms Of Service</Link> and acknowledge
+//           that you have read our <Link to="/privacyPolicy">Privacy Policy</Link>
+//         </Form.Text>
+//       </Form>
+//       <div className="my-3 text-center">
+//         <button onClick={handleSubmit}>Submit</button>
+//         {/* <SignUpBtn  /> */}
+//         {err && (
+//           <p className="mt-3" style={{ color: "red" }}>
+//             {err}
+//           </p>
+//         )}
+//       </div>
+//     </>
+//   );
+// };
