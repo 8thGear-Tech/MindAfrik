@@ -189,7 +189,7 @@ export const SignUpAsCounselleeForm = () => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
   };
 
-  const [validationErrors, setValidationError] = useState({});
+  const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
