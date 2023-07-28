@@ -2,7 +2,35 @@ import React from "react";
 import { ContinueLoginBtn } from "../../components/Buttons/authenticationBtn";
 import mindafriklogo from "../../assets/images/logo/mindafriklogo.png";
 import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
+import emailnotverified from "../../assets/images/emailverification/emailnotverified.png";
 import emailverified from "../../assets/images/emailverification/emailverified.png";
+
+export const PendingVerification = () => {
+  return (
+    <div className="row d-flex justify-content-center g-0">
+      {" "}
+      <div className="col-lg-4 col-sm-4 pt-5 mt-5 text-center">
+        {/* <img src={mindafrikfulllogo} className="img-fluid py-5" /> */}
+        <div className="emailVerifiedCard py-5">
+          {" "}
+          <h5 className="">You can now verify your email</h5>
+          <div className="">
+            <img
+              src={emailnotverified}
+              className="img-fluid"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p style={{ fontSize: "0.9rem" }}>
+            Check your inbox and click on the verification link to complete your
+            signup.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const EmailVerificationSuccess = () => {
   return (

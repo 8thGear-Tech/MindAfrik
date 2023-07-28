@@ -131,7 +131,7 @@ export const SignInForm = ({ userRole }) => {
           password: password,
         }
       );
-      navigate("/");
+      navigate("/counselleeSignUp");
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
@@ -314,7 +314,7 @@ export const SignUpAsCounselleeForm = () => {
           password: password,
         }
       );
-      navigate("/signInPage");
+      navigate("/verify-email");
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);

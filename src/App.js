@@ -26,7 +26,8 @@ import UnderConstruction from "./pages/websitePages/underConstruction";
 import { Footer } from "./components/footer";
 import { DashboardNavbar } from "./components/Navbar/dashBoardNavbar";
 
-//email verification successful
+//email verification
+import { PendingVerification } from "./pages/authenticationPages/emailVerified";
 import EmailVerificationSuccess from "./pages/authenticationPages/emailVerified";
 
 //forms
@@ -135,6 +136,7 @@ function App() {
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
         <Route path="signInPage" element={<SignInPage />} />
         <Route path="forgotPasswordPage" element={<ForgotPasswordPage />} />
+        <Route path="verify-email" element={<PendingVerification />} />
         <Route path="email-verified" element={<EmailVerificationSuccess />} />
         {/* <Route path="TestOneForm" element={<TestOneForm />} />
         <Route path="Blog" element={<Blog />} />
