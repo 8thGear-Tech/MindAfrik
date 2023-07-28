@@ -1,11 +1,3 @@
-// Chris
-// SignInForm
-// ForgotPasswordForm
-// SignUpAsCounselorForm
-
-// Michael
-// SignUpAsCounseleeForm
-//SubscribeToNewsletterForm
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -25,89 +17,203 @@ import * as Yup from "yup";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-// export const SignInForm = () => {
+// // export const SignInForm = () => {
+// export const SignInForm = ({ userRole }) => {
+//   // const role = userRole || user.userRole || "defaultUserRole";
+//   // export const SignInForm = ({ userRoles }) => {
+//   // console.log(userRoles);
+//   const [inputs, setInputs] = useState({
+//     email: "",
+//     password: "",
+//   });
+
+//   const [err, setErr] = useState(null);
+
+//   const navigate = useNavigate();
+
+//   // const { currentUser } = useContext(AuthContext);
+//   const { login } = useContext(AuthContext);
+//   // console.log(currentUser);
+
+//   const handleChange = (e) => {
+//     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+//   };
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       await login(inputs);
+//       if (userRole === "admin") {
+//         navigate("/adminDashboardHomePage");
+//       } else if (userRole === "counsellor") {
+//         navigate("/counsellorDashboard");
+//       } else if (userRole === "client") {
+//         navigate("/counselleeDashboard");
+//       } else {
+//         navigate("/");
+//       }
+//     } catch (err) {
+//       setErr(err.response.data);
+//     }
+//     // // Redirect the user to the login page if they were previously on the /counselleeDashboard route
+//     // if (window.location.pathname === "/counselleeDashboard") {
+//     //   navigate("/login");
+//     // }
+//   };
+//   return (
+//     <>
+//       {" "}
+//       {/* <Link to="/" className="text-black">
+//         <KeyboardBackspaceOutlinedIcon />
+//       </Link> */}
+//       <Form>
+//         <Form.Group className="mb-3 pb-2 pt-5" controlId="formBasicEmail">
+//           <Form.Control
+//             type="email"
+//             placeholder="Email Address"
+//             className=" placeholderRadius"
+//             name="email"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-2 pt-2" controlId="formBasicPassword">
+//           <Form.Control
+//             type="password"
+//             placeholder="Password"
+//             className="placeholderRadius"
+//             name="password"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <h6 className="text-muted text-end">
+//           Forgot Password, <Link to="/ForgotPasswordPage">Click here</Link>
+//         </h6>
+//         <h6 className="text-muted text-center pt-2">
+//           Don't have an account? <Link to="/counselleeSignUp">SignUp</Link>
+//         </h6>
+//       </Form>{" "}
+//       {err && (
+//         <p className="mt-3" style={{ color: "red" }}>
+//           {err}
+//         </p>
+//       )}
+//       <button onClick={handleSubmit}>Submit</button>
+//       {/* <div className="text-center">
+//         <LoginBtn />
+//       </div> */}
+//     </>
+//   );
+// };
+
 export const SignInForm = ({ userRole }) => {
-  // const role = userRole || user.userRole || "defaultUserRole";
-  // export const SignInForm = ({ userRoles }) => {
-  // console.log(userRoles);
-  const [inputs, setInputs] = useState({
-    email: "",
-    password: "",
-  });
+  const [isSubmitting, setSubmitting] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
+  const togglePasswordVisibility1 = () => {
+    setShowPassword1((prevShowPassword) => !prevShowPassword);
+  };
 
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
 
-  // const { currentUser } = useContext(AuthContext);
-  const { login } = useContext(AuthContext);
-  // console.log(currentUser);
+  const handleSubmit = async (values) => {
+    setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
-  const handleChange = (e) => {
-    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const email = values.email;
+    const password = values.password;
+
     try {
-      await login(inputs);
-      if (userRole === "admin") {
-        navigate("/adminDashboardHomePage");
-      } else if (userRole === "counsellor") {
-        navigate("/counsellorDashboard");
-      } else if (userRole === "client") {
-        navigate("/counselleeDashboard");
-      } else {
-        navigate("/");
-      }
+      await axios.post(
+        "http://localhost:4000/user/login",
+        // "https://mindafrikserver.onrender.com/user/login",
+
+        {
+          email: email,
+          password: password,
+        }
+      );
+      navigate("/");
     } catch (err) {
-      setErr(err.response.data);
+      const errorMessage = err.response?.data || "An error occurred";
+      setErr(errorMessage);
+    } finally {
+      setSubmitting(false); // Set form submission state to false
     }
-    // // Redirect the user to the login page if they were previously on the /counselleeDashboard route
-    // if (window.location.pathname === "/counselleeDashboard") {
-    //   navigate("/login");
-    // }
   };
   return (
     <>
-      {" "}
-      {/* <Link to="/" className="text-black">
-        <KeyboardBackspaceOutlinedIcon />
-      </Link> */}
-      <Form>
-        <Form.Group className="mb-3 pb-2 pt-5" controlId="formBasicEmail">
-          <Form.Control
-            type="email"
-            placeholder="Email Address"
-            className=" placeholderRadius"
-            name="email"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-2 pt-2" controlId="formBasicPassword">
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            className="placeholderRadius"
-            name="password"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <h6 className="text-muted text-end">
-          Forgot Password, <Link to="/ForgotPasswordPage">Click here</Link>
-        </h6>
-        <h6 className="text-muted text-center pt-2">
-          Don't have an account? <Link to="/counselleeSignUp">SignUp</Link>
-        </h6>
-      </Form>{" "}
-      {err && (
-        <p className="mt-3" style={{ color: "red" }}>
-          {err}
-        </p>
-      )}
-      <button onClick={handleSubmit}>Submit</button>
-      {/* <div className="text-center">
-        <LoginBtn />
-      </div> */}
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+        }}
+        validationSchema={Yup.object().shape({
+          email: Yup.string()
+            .matches(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+              "Invalid email format"
+            )
+            .required("Email is required"),
+          password: Yup.string()
+            .required("Password is required")
+            .min(8, "Password must be at least 8 characters")
+            .matches(
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
+              "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
+            ),
+        })}
+        onSubmit={handleSubmit}
+      >
+        {({ errors, touched }) => (
+          <Form>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="email"
+                  type="email"
+                  autoComplete="off"
+                  placeholder="Email"
+                  className="w-100 my-2 formikFieldStyle"
+                />
+              </div>{" "}
+              {errors.email && touched.email ? (
+                <div className="ms-3 auth-error-message">{errors.email}</div>
+              ) : null}
+            </div>
+            <div>
+              <div className="d-flex align-items-center placeholderRadius mt-4">
+                {" "}
+                <Field
+                  name="password"
+                  type={showPassword1 ? "text" : "password"}
+                  autoComplete="off"
+                  placeholder="Password"
+                  className="w-100 my-2 formikFieldStyle"
+                />
+                <div onClick={togglePasswordVisibility1}>
+                  {showPassword1 ? <RemoveRedEyeIcon /> : <VisibilityOffIcon />}
+                </div>
+              </div>
+
+              {errors.password && touched.password ? (
+                <div className="ms-3 auth-error-message">{errors.password}</div>
+              ) : null}
+            </div>
+
+            <div className="my-3 text-center">
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+
+              {err && (
+                <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                  {err}
+                </p>
+              )}
+            </div>
+          </Form>
+        )}
+      </Formik>
     </>
   );
 };
@@ -177,13 +283,7 @@ export const ForgotPasswordForm = () => {
 };
 
 export const SignUpAsCounselleeForm = () => {
-  // const [inputs, setInputs] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   email: "",
-  //   password: "",
-  // });
-
+  const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const togglePasswordVisibility1 = () => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
@@ -194,24 +294,18 @@ export const SignUpAsCounselleeForm = () => {
 
   const navigate = useNavigate();
 
-  // const handleChange = (e) => {
-  //   setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  // };
-
   const handleSubmit = async (values) => {
-    // const handleSubmit = async (e, values) => {
-    // e.preventDefault();
+    setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
     const firstName = values.firstName;
     const lastName = values.lastName;
     const email = values.email;
     const password = values.password;
-    // setValidationErrors(errors);
 
     try {
       await axios.post(
-        // "https://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/signup",
+        "http://localhost:4000/user/signup",
+        // "https://mindafrikserver.onrender.com/user/signup",
         // inputs
         {
           firstName: firstName,
@@ -222,7 +316,10 @@ export const SignUpAsCounselleeForm = () => {
       );
       navigate("/signInPage");
     } catch (err) {
-      setErr(err.response.data);
+      const errorMessage = err.response?.data || "An error occurred";
+      setErr(errorMessage);
+    } finally {
+      setSubmitting(false); // Set form submission state to false
     }
   };
 
@@ -243,23 +340,18 @@ export const SignUpAsCounselleeForm = () => {
               /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
               "Invalid email format"
             )
-            // .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email address")
             .required("Email is required"),
           password: Yup.string()
             .required("Password is required")
             .min(8, "Password must be at least 8 characters")
             .matches(
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
-              // /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
               "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
             ),
         })}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
       >
-        {({ errors, touched, isSubmitting }) => (
+        {({ errors, touched }) => (
           <Form>
             <div>
               {" "}
@@ -270,7 +362,6 @@ export const SignUpAsCounselleeForm = () => {
                   autoComplete="off"
                   placeholder="First Name"
                   className="w-100 my-2 formikFieldStyle"
-                  // onChange={handleChange}
                 />
               </div>
               {errors.firstName && touched.firstName ? (
@@ -288,7 +379,6 @@ export const SignUpAsCounselleeForm = () => {
                   autoComplete="off"
                   placeholder="Last Name"
                   className="w-100 my-2 formikFieldStyle"
-                  // onChange={handleChange}
                 />
               </div>
               {errors.lastName && touched.lastName ? (
@@ -304,7 +394,6 @@ export const SignUpAsCounselleeForm = () => {
                   autoComplete="off"
                   placeholder="Email"
                   className="w-100 my-2 formikFieldStyle"
-                  // onChange={handleChange}
                 />
               </div>{" "}
               {errors.email && touched.email ? (
@@ -320,7 +409,6 @@ export const SignUpAsCounselleeForm = () => {
                   autoComplete="off"
                   placeholder="Password"
                   className="w-100 my-2 formikFieldStyle"
-                  // onChange={handleChange}
                 />
                 <div onClick={togglePasswordVisibility1}>
                   {showPassword1 ? <RemoveRedEyeIcon /> : <VisibilityOffIcon />}
@@ -335,13 +423,23 @@ export const SignUpAsCounselleeForm = () => {
               <button type="submit">Submit</button>
             </div> */}
             <div className="my-3 text-center">
-              <Button
+              {/* <button 
+                // onClick={handleSubmit}
+                type="button"
+                isSubmitting={isSubmitting}
+              >
+                Submit
+              </button> */}
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+              {/* <Button
                 type="submit"
                 disabled={isSubmitting}
                 className="submitFormBtn"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
-              </Button>
+              </Button> */}
               {/* <button onClick={handleSubmit} type="button">
                 Submit
               </button> */}
@@ -358,134 +456,134 @@ export const SignUpAsCounselleeForm = () => {
     </>
   );
 };
-export const SignUpAsCounselleeFormm = () => {
-  const [inputs, setInputs] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    // confirmpassword: "",
-  });
+// export const SignUpAsCounselleeFormm = () => {
+//   const [inputs, setInputs] = useState({
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     password: "",
+//     // confirmpassword: "",
+//   });
 
-  const [validationErrors, setValidationErrors] = useState({});
-  const [err, setErr] = useState(null);
+//   const [validationErrors, setValidationErrors] = useState({});
+//   const [err, setErr] = useState(null);
 
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+//   const handleChange = (e) => {
+//     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+//   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
 
-    const errors = {};
+//     const errors = {};
 
-    if (!inputs.firstName.trim()) {
-      errors.firstName = "First Name is required";
-    }
+//     if (!inputs.firstName.trim()) {
+//       errors.firstName = "First Name is required";
+//     }
 
-    if (!inputs.lastName.trim()) {
-      errors.lastName = "Last Name is required";
-    }
+//     if (!inputs.lastName.trim()) {
+//       errors.lastName = "Last Name is required";
+//     }
 
-    if (!inputs.email.trim()) {
-      errors.email = "Email is required";
-    } else if (!isValidEmail(inputs.email)) {
-      errors.email = "Invalid email format";
-    }
+//     if (!inputs.email.trim()) {
+//       errors.email = "Email is required";
+//     } else if (!isValidEmail(inputs.email)) {
+//       errors.email = "Invalid email format";
+//     }
 
-    if (!inputs.password.trim()) {
-      errors.password = "Password is required";
-    } else if (!isValidPassword(inputs.password)) {
-      errors.password =
-        "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character";
-    }
+//     if (!inputs.password.trim()) {
+//       errors.password = "Password is required";
+//     } else if (!isValidPassword(inputs.password)) {
+//       errors.password =
+//         "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character";
+//     }
 
-    setValidationErrors(errors);
+//     setValidationErrors(errors);
 
-    if (Object.keys(errors).length > 0) {
-      return;
-    }
-    try {
-      await axios.post(
-        "https://mindafrikserver.onrender.com/user/signup",
-        inputs
-      );
-      navigate("/signInPage");
-    } catch (err) {
-      setErr(err.response.data);
-    }
-  };
+//     if (Object.keys(errors).length > 0) {
+//       return;
+//     }
+//     try {
+//       await axios.post(
+//         "https://mindafrikserver.onrender.com/user/signup",
+//         inputs
+//       );
+//       navigate("/signInPage");
+//     } catch (err) {
+//       setErr(err.response.data);
+//     }
+//   };
 
-  const isValidEmail = (email) => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
+//   const isValidEmail = (email) => {
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     return emailPattern.test(email);
+//   };
 
-  const isValidPassword = (password) => {
-    const passwordPattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-    return passwordPattern.test(password);
-  };
+//   const isValidPassword = (password) => {
+//     const passwordPattern =
+//       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+//     return passwordPattern.test(password);
+//   };
 
-  return (
-    <>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3 py-2" controlId="firstname">
-          <Form.Control
-            type="text"
-            placeholder="First Name"
-            className="placeholderRadius"
-            name="firstName"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3 py-2" controlId="lastname">
-          <Form.Control
-            type="text"
-            placeholder="Last Name"
-            className="placeholderRadius"
-            name="lastName"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3 py-2" controlId="email">
-          <Form.Control
-            type="email"
-            placeholder="Email"
-            className="placeholderRadius"
-            name="email"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3 py-2" controlId="password">
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            className="placeholderRadius"
-            name="password"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Text className="text-muted">
-          By signing up, you agree to our{" "}
-          <Link to="/termsOfService">Terms Of Service</Link> and acknowledge
-          that you have read our <Link to="/privacyPolicy">Privacy Policy</Link>
-        </Form.Text>
-      </Form>
-      <div className="my-3 text-center">
-        <button onClick={handleSubmit}>Submit</button>
-        {/* <SignUpBtn  /> */}
-        {err && (
-          <p className="mt-3 auth-error-message" style={{ color: "red" }}>
-            {err}
-          </p>
-        )}
-      </div>
-    </>
-  );
-};
+//   return (
+//     <>
+//       <Form onSubmit={handleSubmit}>
+//         <Form.Group className="mb-3 py-2" controlId="firstname">
+//           <Form.Control
+//             type="text"
+//             placeholder="First Name"
+//             className="placeholderRadius"
+//             name="firstName"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-3 py-2" controlId="lastname">
+//           <Form.Control
+//             type="text"
+//             placeholder="Last Name"
+//             className="placeholderRadius"
+//             name="lastName"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-3 py-2" controlId="email">
+//           <Form.Control
+//             type="email"
+//             placeholder="Email"
+//             className="placeholderRadius"
+//             name="email"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Group className="mb-3 py-2" controlId="password">
+//           <Form.Control
+//             type="password"
+//             placeholder="Password"
+//             className="placeholderRadius"
+//             name="password"
+//             onChange={handleChange}
+//           />
+//         </Form.Group>
+//         <Form.Text className="text-muted">
+//           By signing up, you agree to our{" "}
+//           <Link to="/termsOfService">Terms Of Service</Link> and acknowledge
+//           that you have read our <Link to="/privacyPolicy">Privacy Policy</Link>
+//         </Form.Text>
+//       </Form>
+//       <div className="my-3 text-center">
+//         <button onClick={handleSubmit}>Submit</button>
+//         {/* <SignUpBtn  /> */}
+//         {err && (
+//           <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+//             {err}
+//           </p>
+//         )}
+//       </div>
+//     </>
+//   );
+// };
 // export const SignUpAsCounselleeForm = () => {
 //   const [inputs, setInputs] = useState({
 //     firstName: "",
