@@ -22,8 +22,14 @@
   width: 8rem;
 }
 .submitFormBtn {
-  @include reoccuredBtnProperties;
+  // @include reoccuredBtnProperties;
   width: 10rem;
+  background-color: $btncolor;
+  color: #fff;
+  &:hover {
+    background-color: $btncolor;
+    color: #fff;
+  }
 }
 .bookNowBtn {
   @include reoccuredBtnProperties;

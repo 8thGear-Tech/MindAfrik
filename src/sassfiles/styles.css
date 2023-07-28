@@ -185,17 +185,13 @@ p {
 }
 
 .submitFormBtn {
-  background: #0060c6;
-  border-radius: 10px;
-  height: 3rem;
-  width: 11.5rem;
-  font-weight: 500;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #ffffff;
   width: 10rem;
+  background-color: #0060c6;
+  color: #fff;
+}
+.submitFormBtn:hover {
+  background-color: #0060c6;
+  color: #fff;
 }
 
 .bookNowBtn {

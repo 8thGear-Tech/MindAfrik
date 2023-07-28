@@ -205,14 +205,13 @@ export const SignInForm = ({ userRole }) => {
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button> */}
 
-              <Button
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                className="submitFormBtn"
+                className="submitFormBtn btn"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
-              </Button>
-
+              </button>
               {err && (
                 <p className="mt-3 auth-error-message" style={{ color: "red" }}>
                   {err}
@@ -438,16 +437,20 @@ export const SignUpAsCounselleeForm = () => {
               >
                 Submit
               </button> */}
-              {/* <button type="submit" disabled={isSubmitting}>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="submitFormBtn btn"
+              >
                 {isSubmitting ? "Submitting..." : "Submit"}
-              </button> */}
-              <Button
+              </button>
+              {/* <Button
                 type="submit"
                 disabled={isSubmitting}
                 className="submitFormBtn"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
-              </Button>
+              </Button> */}
               {/* <button onClick={handleSubmit} type="button">
                 Submit
               </button> */}
