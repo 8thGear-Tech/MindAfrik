@@ -123,8 +123,8 @@ export const SignInForm = ({ userRole }) => {
 
     try {
       await axios.post(
-        "http://localhost:4000/user/login",
-        // "https://mindafrikserver.onrender.com/user/login",
+        // "http://localhost:4000/user/login",
+        "https://mindafrikserver.onrender.com/user/login",
 
         {
           email: email,
@@ -304,8 +304,8 @@ export const SignUpAsCounselleeForm = () => {
 
     try {
       await axios.post(
-        "http://localhost:4000/user/signup",
-        // "https://mindafrikserver.onrender.com/user/signup",
+        // "http://localhost:4000/user/signup",
+        "https://mindafrikserver.onrender.com/user/signup",
         // inputs
         {
           firstName: firstName,
