@@ -259,8 +259,8 @@ export const ForgotPasswordForm = () => {
 
     try {
       await axios.patch(
-        // "https://mindafrikserver.onrender.com/user/send-otp",
-        "https://localhost:4000/user/send-otp",
+        "https://mindafrikserver.onrender.com/user/send-otp",
+        // "https://localhost:4000/user/send-otp",
         // inputs
         {
           email: email,
@@ -449,8 +449,8 @@ export const VerifyOtpForm = () => {
     try {
       // Send request to server to confirm OTP
       const response = await axios.patch(
-        `http://localhost:4000/user/verify-otp?email=${email}`,
-        // `https://mindafrikserver.onrender.com/user/verify-otp?email=${email}`,
+        // `http://localhost:4000/user/verify-otp?email=${email}`,
+        `https://mindafrikserver.onrender.com/user/verify-otp?email=${email}`,
         { otp: otp }
       );
       // const isAuthenticated = response.data; // Get authentication status from response
