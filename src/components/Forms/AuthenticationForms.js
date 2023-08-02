@@ -391,6 +391,7 @@ export const VerifyOtpForm = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const email = queryParams.get("email");
+  console.log("Email from URL: ", email);
 
   const navigate = useNavigate();
 
@@ -412,7 +413,7 @@ export const VerifyOtpForm = () => {
     onSubmit: async (values) => {
       const otp = values.otp.join(""); // Join the OTP array values into a single string
       // Check if the OTP length is equal to 4
-      if (otp.length === 4) {
+      if (otp.length === 4 && values.email) {
         handleSubmit(otp, values.email); // Call the submitForm function with the OTP and email values
       }
     },
