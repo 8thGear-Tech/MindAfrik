@@ -109,6 +109,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 export const SignInForm = ({ userRole }) => {
   const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const togglePasswordVisibility1 = () => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
   };
@@ -135,8 +136,9 @@ export const SignInForm = ({ userRole }) => {
       );
       navigate("/counselleeDashboard");
     } catch (err) {
-      const errorMessage = err.response?.data || "An error occurred";
-      setErr(errorMessage);
+      //  setErrorMessage("Invalid OTP");
+      // setErr(errorMessage);
+      setErrorMessage("Email not verified. Please verify your email first.");
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
@@ -233,19 +235,10 @@ export const SignInForm = ({ userRole }) => {
   );
 };
 export const ForgotPasswordForm = () => {
-  // const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
   const [isSubmitting, setSubmitting] = useState(false);
-  // const [showPassword1, setShowPassword1] = useState(false);
-  //  const togglePasswordVisibility1 = () => {
-  //    setShowPassword1((prevShowPassword) => !prevShowPassword);
-  //  };
 
   const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
@@ -272,60 +265,11 @@ export const ForgotPasswordForm = () => {
     } catch (error) {
       setErrorMessage("Email not verified. Please verify your email first.");
     } finally {
-      setSubmitting(false); // Set form submission state to false
+      setSubmitting(false);
     }
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     // Send a request to the backend API to initiate the password reset process
-  //     await axios.post(
-  //       "https://mindafrik-app-backend.onrender.com/clients/reset-password",
-  //       {
-  //         email,
-  //       }
-  //     );
-
-  //     setSuccessMessage("Password reset email sent successfully");
-  //   } catch (error) {
-  //     setErrorMessage("Failed to send password reset email");
-  //   }
-  // };
-
   return (
     <>
-      {/* <Form>
-        <Link to="/" className="text-black">
-          <KeyboardBackspaceOutlinedIcon />
-        </Link>
-        <h6 className="text-muted text-center py-2">
-          <b>Forgot your password ?</b>
-        </h6>
-        <h6 className="text-muted">
-          To reset your password, enter the email address that you used to set
-          up your account. We'll send you a link to help you get back into your
-          account
-        </h6>
-        <Form.Group className="mb-3 py-2" controlId="formBasicEmail">
-          <Form.Control
-            type="email"
-            // id="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-            placeholder="Email Address"
-            className=" placeholderRadius"
-          />
-        </Form.Group>{" "}
-      </Form>{" "}
-      <div className="my-3 text-center">
-        <button className="btn btn-primary" onClick={handleSubmit}>
-          Send
-        </button>
-        <SendBtn />
-      </div> */}
       <Formik
         initialValues={{
           email: "",
@@ -343,7 +287,20 @@ export const ForgotPasswordForm = () => {
         {({ errors, touched }) => (
           <Form>
             <div>
-              {" "}
+              <div className="align-items-center">
+                {" "}
+                <h5
+                  className="text-muted text-center py-2"
+                  style={{ fontSize: "1.1rem" }}
+                >
+                  <b>Forgot your password?</b>
+                </h5>
+                <p className="text-muted" style={{ fontSize: "0.8rem" }}>
+                  To reset your password, enter the email address that you used
+                  to set up your account. We'll send you an OTP to help you get
+                  back into your account
+                </p>{" "}
+              </div>
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="email"
@@ -381,7 +338,6 @@ export const ForgotPasswordForm = () => {
 };
 
 export const VerifyOtpForm = () => {
-  // State variables
   const [isSubmitting, setSubmitting] = useState(); // Tracks form submission state
   const [status, setStatus] = useState(); // Stores status message
   const [err, setErr] = useState(null);
@@ -400,8 +356,8 @@ export const VerifyOtpForm = () => {
   // Formik setup
   const formik = useFormik({
     initialValues: {
-      otp: new Array(4).fill(""), // Initializes the `otp` field as an array with 4 empty strings
-      email: email || "", // Initializes the `email` field with the value of the `email` variable if it exists, otherwise it initializes it as an empty string
+      otp: new Array(4).fill(""),
+      email: email || "",
     },
     validationSchema: Yup.object({
       otp: Yup.array()
@@ -433,74 +389,25 @@ export const VerifyOtpForm = () => {
     }
   };
 
-  // // Handles OTP field change
-  // const handleOTPChange = (index, event) => {
-  //   const { value } = event.target; // Extract the value from the event target
-
-  //   // Validate the value to allow only digits
-  //   if (/^\d*$/.test(value)) {
-  //     const otp = [...formik.values.otp]; // Make a copy of the otp array from formik values
-  //     otp[index] = value; // Update the OTP value at the specified index
-  //     formik.setFieldValue("otp", otp); // Update the otp field value in formik
-  //   }
-  // };
-
   // Handles form submission
   const handleSubmit = async (otp, email) => {
     setSubmitting(true); // Set form submission state to true
 
     try {
-      // Send request to server to confirm OTP
       const response = await axios.patch(
         // `http://localhost:4000/user/verify-otp?email=${email}`,
         `https://mindafrikserver.onrender.com/user/verify-otp?email=${email}`,
         { otp: otp }
       );
-      // const isAuthenticated = response.data; // Get authentication status from response
-      // if (isAuthenticated) {
-      //   // If user is authenticated, pass the nextStep function as a prop to the parent component
-      //   nextStep(isAuthenticated, email);
-      // }
+
       setSuccessMessage("OTP verified successfully");
       navigate("/");
     } catch (error) {
-      // catch (error) {
-      //   console.error("Error:", error);
-      //   if (error.response) {
-      //     setStatus(error.response.data.message); // Set error message from response
-      //     setTimeout(() => {
-      //       setStatus("");
-      //     }, 5000); // Clear status message after 5 seconds
-      //   }
       setErrorMessage("Invalid OTP");
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
   };
-
-  // // Handles resend OTP request
-  // const handleResendOTP = async () => {
-  //   const email = formik.values.email; // Get email value from form
-
-  //   try {
-  //     // Send request to server to resend OTP
-  //     const response = await axios.patch(
-  //       `https://mindafrikserver.onrender.com/user/verify-otp?email=${email}`
-  //     );
-  //     if (response.data) {
-  //       // If user is authenticated, set status message from response
-  //       setStatus("New OTP has been sent. Please check your email.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     if (error.response) {
-  //       setStatus(error.response.data.message); // Set error message from response
-  //       setTimeout(() => {
-  //         setStatus("");
-  //       }, "5000"); // Clear status message after 5 seconds
-  //     }
-  //   }
-  // };
 
   return (
     <>
@@ -526,49 +433,11 @@ export const VerifyOtpForm = () => {
                       value={digit} // Sets the value of each input to the corresponding digit value
                       onChange={(event) => handleOTPChange(index, event)} // Calls the `handleOTPChange` function when the input value changes
                       onBlur={formik.handleBlur}
-                      // className={
-                      //   formik.errors.otp &&
-                      //   formik.touched.otp &&
-                      //   formik.errors.otp[index] &&
-                      //   formik.touched.otp[index]
-                      //     ? "Auth-input-error Auth-otp-field"
-                      //     : "Auth-otp-field"
-                      // }
                     />
-                    {/* {formik.errors.otp &&
-                    formik.touched.otp &&
-                    formik.errors.otp[index] &&
-                    formik.touched.otp[index] ? (
-                      <div className="ms-3 auth-error-message">
-                        {errors.email}
-                      </div>
-                    ) : null} */}
                   </>
                 );
               })}
-            {/* Render the error message for the "otp" field if it has errors, has been touched, 
-            and the form has been submitted at least once */}
-            {/* <div className="Auth-otp-error-message">
-              {formik.errors.otp &&
-                formik.touched.otp &&
-                formik.submitCount > 0 && (
-                  <p className="Auth-error-message">{formik.errors.otp}</p>
-                )}
-            </div> */}
-            {/* <div className="align-items-center placeholderRadius mt-4">
-              <Field
-                key={index}
-                name={`otp[${index}]`}
-                value={digit}
-                type="otp"
-                autoComplete="off"
-                placeholder="0"
-                maxLength="1"
-                className="w-100 my-2 formikFieldStyle"
-                // onChange={(event) => handleOTPChange(index, event)}
-                onBlur={props.handleBlur}
-              />
-            </div>{" "} */}
+
             {formik.errors.otp &&
             formik.touched.otp &&
             formik.errors.otp &&
@@ -581,19 +450,7 @@ export const VerifyOtpForm = () => {
             ) : null}
           </div>
         </div>
-        <div className="Auth-verification-instruction">
-          {/* <p className="Auth-sub-title"> Enter OTP</p>
-          <p className="Auth-instruction">
-            Enter the four digits OTP sent to your mail
-          </p> */}
-          {/* <p className="Auth-instruction">
-            Click
-            <Link onClick={handleResendOTP} className="Auth-otp-link">
-              HERE
-            </Link>
-            to resend OTP
-          </p> */}
-        </div>
+        <div className="Auth-verification-instruction"></div>
         <div className="my-3 text-center">
           <button
             type="submit"
