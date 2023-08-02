@@ -270,7 +270,7 @@ export const ForgotPasswordForm = () => {
       setSuccessMessage("Password reset email sent successfully");
       navigate("/verify-otp", { state: { email: email } });
     } catch (error) {
-      setErrorMessage("Email not found");
+      setErrorMessage("Email not verified. Please verify your email first.");
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
