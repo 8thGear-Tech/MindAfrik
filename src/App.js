@@ -51,6 +51,7 @@ import CounsellorsDetails from "./pages/websitePages/selectcounselorPage";
 import SignInPage from "./pages/authenticationPages/signInPage";
 import CounselleeSignUp from "./pages/authenticationPages/counseleeSignUpPage";
 import ForgotPasswordPage from "./pages/authenticationPages/recoverPasswordPage";
+import { VerifyOTP } from "./pages/authenticationPages/recoverPasswordPage";
 
 //counsellee
 import CounselleeDashboardHomePage from "./pages/dashboardPages/counsellee/counseleeDashboardHomePage";
@@ -135,9 +136,10 @@ function App() {
         {/* Authentication pages */}
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
         <Route path="signInPage" element={<SignInPage />} />
-        <Route path="forgotPasswordPage" element={<ForgotPasswordPage />} />
         <Route path="verify-email" element={<PendingVerification />} />
         <Route path="email-verified" element={<EmailVerificationSuccess />} />
+        <Route path="forgotPasswordPage" element={<ForgotPasswordPage />} />
+        <Route path="verify-otp" element={<VerifyOTP />} />
         {/* <Route path="TestOneForm" element={<TestOneForm />} />
         <Route path="Blog" element={<Blog />} />
         <Route path="CreateBlog" element={<CreateBlog />} />

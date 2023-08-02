@@ -32,7 +32,8 @@ export const ContinueLoginBtn = () => {
     <>
       <Link to="/signInPage">
         {" "}
-        <Button className="LoginBtn">Continue</Button>
+        <Button className="submitFormBtn btn">Continue</Button>
+        {/* <Button className="LoginBtn">Continue</Button> */}
       </Link>
     </>
   );
