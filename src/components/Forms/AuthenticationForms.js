@@ -258,7 +258,7 @@ export const ForgotPasswordForm = () => {
     const email = values.email;
 
     try {
-      const response = await axios.patch(
+      await axios.patch(
         "https://mindafrikserver.onrender.com/user/send-otp",
         // "https://localhost:4000/user/send-otp",
         // inputs
@@ -266,13 +266,11 @@ export const ForgotPasswordForm = () => {
           email: email,
         }
       );
-      // Extract the 'email' parameter from the response data
-      const { email: emailFromResponse } = response.data.data;
+
       setSuccessMessage("Password reset email sent successfully");
-      // navigate("/verify-otp");
-      navigate(`/verify-otp?email=${emailFromResponse}`);
+      navigate("/verify-otp", { state: { email: email } });
     } catch (error) {
-      setErrorMessage("Failed to send password reset email");
+      setErrorMessage("Email not found");
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
@@ -392,8 +390,9 @@ export const VerifyOtpForm = () => {
 
   // Get email from URL query parameter
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const email = queryParams.get("email");
+  // const queryParams = new URLSearchParams(location.search);
+  // const email = queryParams.get("email");
+  const email = location.state ? location.state.email : "";
   console.log("Email from URL: ", email);
 
   const navigate = useNavigate();
