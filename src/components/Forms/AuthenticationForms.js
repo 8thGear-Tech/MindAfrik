@@ -143,16 +143,6 @@ export const SignInForm = ({ userRole }) => {
       setSubmitting(false); // Set form submission state to false
     }
   };
-  //new logout
-  const handleLogout = async () => {
-    try {
-      await axios.post("https://mindafrikserver.onrender.com/user/logout");
-      // Redirect to the login page after successful logout
-      navigate("/");
-    } catch (err) {
-      console.error("Logout failed:", err);
-    }
-  };
   return (
     <>
       <Formik
@@ -235,12 +225,6 @@ export const SignInForm = ({ userRole }) => {
           </Form>
         )}
       </Formik>
-      {/* new logout */}
-      {/* Render the logout button */}
-      <button onClick={handleLogout} className="submitFormBtn btn">
-        Logout
-      </button>
-      {/* ... Other components ... */}
       <h6 className="text-muted text-end">
         Forgot Password, <Link to="/ForgotPasswordPage">Click here</Link>{" "}
       </h6>{" "}
