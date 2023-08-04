@@ -234,6 +234,28 @@ export const SignInForm = ({ userRole }) => {
     </>
   );
 };
+
+export const LogoutButton = () => {
+  const navigate = useNavigate();
+
+  // Function to handle logout
+  const handleLogout = async () => {
+    try {
+      await axios.post("https://mindafrikserver.onrender.com/user/logout");
+      // Redirect to the login page after successful logout
+      navigate("/login");
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
+  };
+
+  return (
+    <button onClick={handleLogout} className="submitFormBtn btn">
+      Logout
+    </button>
+  );
+};
+
 export const ForgotPasswordForm = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");

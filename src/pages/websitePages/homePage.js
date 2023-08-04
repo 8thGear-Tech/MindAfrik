@@ -28,6 +28,7 @@ import howitworksstepsone from "../../assets/images/home/howitworksstepsone.png"
 import howitworksstepstwo from "../../assets/images/home/howitworksstepstwo.png";
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import { LogoutButton } from "../../components/Forms/AuthenticationForms";
 
 const Home = () => (
   <>
@@ -54,6 +55,7 @@ const HowItWorksOne = () => {
         {/* <a href="/signInPage">
           <h3 className="text-center">Sign In</h3>
         </a> */}
+        {/* <LogoutButton /> */}
         <h3 className="text-center">How It Works</h3>
         <img
           src={howitworksstepsone}
