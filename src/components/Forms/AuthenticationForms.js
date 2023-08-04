@@ -148,7 +148,7 @@ export const SignInForm = ({ userRole }) => {
     try {
       await axios.post("https://mindafrikserver.onrender.com/user/logout");
       // Redirect to the login page after successful logout
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.error("Logout failed:", err);
     }

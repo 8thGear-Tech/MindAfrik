@@ -51,6 +51,9 @@ const HowItWorksOne = () => {
     <>
       <div className="container-fluid p-5 ">
         {" "}
+        {/* <a href="/signInPage">
+          <h3 className="text-center">Sign In</h3>
+        </a> */}
         <h3 className="text-center">How It Works</h3>
         <img
           src={howitworksstepsone}
