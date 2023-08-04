@@ -143,6 +143,16 @@ export const SignInForm = ({ userRole }) => {
       setSubmitting(false); // Set form submission state to false
     }
   };
+  //new logout
+  const handleLogout = async () => {
+    try {
+      await axios.post("https://mindafrikserver.onrender.com/user/logout");
+      // Redirect to the login page after successful logout
+      navigate("/login");
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
+  };
   return (
     <>
       <Formik
@@ -225,6 +235,12 @@ export const SignInForm = ({ userRole }) => {
           </Form>
         )}
       </Formik>
+      {/* new logout */}
+      {/* Render the logout button */}
+      <button onClick={handleLogout} className="submitFormBtn btn">
+        Logout
+      </button>
+      {/* ... Other components ... */}
       <h6 className="text-muted text-end">
         Forgot Password, <Link to="/ForgotPasswordPage">Click here</Link>{" "}
       </h6>{" "}
@@ -411,11 +427,9 @@ export const VerifyOtpForm = () => {
 
   return (
     <>
-      {/* {status && <p className="Auth-status-message">{status}</p>} */}
-      {/* <form onSubmit={formik.handleSubmit}> */}
       <form onSubmit={formik.handleSubmit}>
         <div className="Auth-otp-container">
-          <div className="Auth-otp-wrapper">
+          <div className="Auth-otp-wrapper py-3">
             {formik.values.otp && // Checks if the `otp` field value exists
               formik.values.otp.map((digit, index) => {
                 // Maps over each digit in the `otp` field
@@ -424,7 +438,6 @@ export const VerifyOtpForm = () => {
                     {" "}
                     <input
                       key={`otp-${index}`}
-                      // key={index}
                       type="text"
                       placeholder="0"
                       autoComplete="off"
@@ -433,6 +446,7 @@ export const VerifyOtpForm = () => {
                       value={digit} // Sets the value of each input to the corresponding digit value
                       onChange={(event) => handleOTPChange(index, event)} // Calls the `handleOTPChange` function when the input value changes
                       onBlur={formik.handleBlur}
+                      className="auth-otp-field"
                     />
                   </>
                 );

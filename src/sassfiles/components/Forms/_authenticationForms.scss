@@ -62,3 +62,20 @@
   padding: 0 !important;
   outline: none !important;
 }
+
+.auth-otp-field {
+  width: 3rem;
+  height: 4.8rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid rgb(232, 232, 235);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #b2adad;
+}
+.auth-otp-field::placeholder {
+  color: rgb(175, 173, 173);
+}

@@ -11,7 +11,8 @@ export const PendingVerification = () => {
       {" "}
       <div className="col-lg-4 col-sm-4 pt-5 mt-5 text-center">
         {/* <img src={mindafrikfulllogo} className="img-fluid py-5" /> */}
-        <div className="emailVerifiedCard py-5">
+        {/* <div className="emailVerifiedCard py-5"> */}
+        <div className="py-5">
           {" "}
           <h5 className="">You can now verify your email</h5>
           <div className="">
@@ -36,9 +37,10 @@ const EmailVerificationSuccess = () => {
   return (
     <div className="row d-flex justify-content-center g-0">
       {" "}
-      <div className="col-lg-4 col-sm-4 pt-5 mt-5 text-center">
+      <div className="col-lg-4 col-sm-4 pt-5 text-center">
         {/* <img src={mindafrikfulllogo} className="img-fluid py-5" /> */}
-        <div className="emailVerifiedCard py-5">
+        {/* <div className="emailVerifiedCard py-5"> */}
+        <div className="py-5">
           {" "}
           <h5 className="">Email Verified Successfully!</h5>
           <div className="">
