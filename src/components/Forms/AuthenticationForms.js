@@ -883,8 +883,8 @@ export const SignUpAsCounselleeForm = () => {
 
     try {
       await axios.post(
-        "http://localhost:4000/user/signup",
-        // "https://mindafrikserver.onrender.com/user/signup",
+        // "http://localhost:4000/user/signup",
+        "https://mindafrikserver.onrender.com/user/signup",
         // inputs
         {
           firstName: firstName,
