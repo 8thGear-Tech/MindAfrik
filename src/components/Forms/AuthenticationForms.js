@@ -121,28 +121,93 @@ export const SignInForm = ({ userRole }) => {
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
+    const firstName = values.firstName;
+    const lastName = values.lastName;
     const email = values.email;
     const password = values.password;
 
     try {
       await axios.post(
-        // "http://localhost:4000/user/login",
-        "https://mindafrikserver.onrender.com/user/login",
-
+        // "http://localhost:4000/user/signup",
+        "https://mindafrikserver.onrender.com/user/signup",
+        // inputs
         {
+          firstName: firstName,
+          lastName: lastName,
           email: email,
           password: password,
         }
       );
-      navigate("/counselleeDashboard");
+      navigate("/verify-email");
     } catch (err) {
-      //  setErrorMessage("Invalid OTP");
-      // setErr(errorMessage);
-      setErrorMessage("Email not verified. Please verify your email first.");
+      const errorMessage = err.response?.data || "An error occurred";
+      setErr(errorMessage);
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
   };
+
+  // const handleSubmit = async (values) => {
+  //   setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
+
+  //   const email = values.email;
+  //   const password = values.password;
+
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:4000/user/login",
+  //       // "https://mindafrikserver.onrender.com/user/login",
+
+  //       {
+  //         email: email,
+  //         password: password,
+  //       }
+  //       // {
+  //       //   headers: {
+  //       //     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+  //       //   },
+  //       // }
+  //     );
+
+  //     // const accessToken = response.data?.access_token;
+  //     // if (accessToken) {
+  //     //   // Parse the access token to get the userRole
+  //     //   const decodedToken = jwt.decode(accessToken);
+  //     //   const userRole = decodedToken?.userRole;
+
+  //     //   // Navigate to the corresponding dashboard based on the user's role
+  //     //   if (userRole === "counsellee") {
+  //     //     navigate("/counselleeDashboard");
+  //     //   } else if (userRole === "admin") {
+  //     //     navigate("/adminDashboard");
+  //     //   } else if (userRole === "counsellor") {
+  //     //     navigate("/counsellorDashboard");
+  //     //   }
+  //     // }
+
+  //     // No need to store the token in local storage
+  //     // Instead, the token should be in an HttpOnly cookie set by the server
+  //     // The server should handle the authentication and role-based authorization
+
+  //     // Navigate to the corresponding dashboard based on the user's role
+  //     const userRole = response.data?.data?.user?.userRole;
+  //     if (userRole === "counsellee") {
+  //       navigate("/counselleeDashboard");
+  //     } else if (userRole === "admin") {
+  //       navigate("/adminDashboard");
+  //     } else if (userRole === "counsellor") {
+  //       navigate("/counsellorDashboard");
+  //     } else {
+
+  //       setErrorMessage("Unauthorized user role");
+  //     }
+  //   } catch (err) {
+  //     setErrorMessage(err.response?.data?.message || "An error occurred");
+
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
   return (
     <>
       <Formik
@@ -243,7 +308,7 @@ export const LogoutButton = () => {
     try {
       await axios.post("https://mindafrikserver.onrender.com/user/logout");
       // Redirect to the login page after successful logout
-      navigate("/login");
+      navigate("/signInPage");
     } catch (err) {
       console.error("Logout failed:", err);
     }
@@ -818,8 +883,8 @@ export const SignUpAsCounselleeForm = () => {
 
     try {
       await axios.post(
-        // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/signup",
+        "http://localhost:4000/user/signup",
+        // "https://mindafrikserver.onrender.com/user/signup",
         // inputs
         {
           firstName: firstName,
@@ -845,6 +910,7 @@ export const SignUpAsCounselleeForm = () => {
           lastName: "",
           email: "",
           password: "",
+          userRole: "counsellee",
         }}
         validationSchema={Yup.object().shape({
           firstName: Yup.string().required("First name is required"),
@@ -933,6 +999,8 @@ export const SignUpAsCounselleeForm = () => {
                 <div className="ms-3 auth-error-message">{errors.password}</div>
               ) : null}
             </div>
+
+            <Field type="hidden" name="userRole" value="counsellee" />
             {/* <div className="text-center mt-4">
               <button type="submit">Submit</button>
             </div> */}
