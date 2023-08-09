@@ -50,6 +50,7 @@ import CounsellorsDetails from "./pages/websitePages/selectcounselorPage";
 //Authentication pages
 import SignInPage from "./pages/authenticationPages/signInPage";
 import CounselleeSignUp from "./pages/authenticationPages/counseleeSignUpPage";
+import CounsellorSignUp from "./pages/authenticationPages/counsellorSignUpPage";
 import ForgotPasswordPage from "./pages/authenticationPages/recoverPasswordPage";
 import { VerifyOTP } from "./pages/authenticationPages/recoverPasswordPage";
 
@@ -136,6 +137,7 @@ function App() {
 
         {/* Authentication pages */}
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
+        <Route path="sign-up-as-a-counsellor" element={<CounsellorSignUp />} />
         <Route path="signInPage" element={<SignInPage />} />
         <Route path="verify-email" element={<PendingVerification />} />
         <Route path="email-verified" element={<EmailVerificationSuccess />} />
