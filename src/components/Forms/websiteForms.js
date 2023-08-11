@@ -442,7 +442,7 @@ export const SupportiveListeningSessionForm = () => {
             "This field is required"
           ),
           location: Yup.string().required("This field is required"),
-          dateOfBirth: Yup.string().required("This field is required"),
+          dateOfBirth: Yup.string(),
           age: Yup.string().required("This field is required"),
           maritalStatus: Yup.string().required("This field is required"),
           meetingMode: Yup.string().required("This field is required"),
