@@ -359,7 +359,7 @@ export const SupportiveListeningSessionForm = () => {
     const activeMobileNumber = values.activeMobileNumber;
     const alternativeMobileNumber = values.alternativeMobileNumber;
     const location = values.location;
-    const dateOfBirth = values.dateOfBirth;
+    const dateOfBirth = startDate;
     const age = values.age;
     const maritalStatus = values.maritalStatus;
     const meetingMode = values.meetingMode;
