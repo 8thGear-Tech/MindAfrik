@@ -929,7 +929,7 @@ export const SupportiveListeningSessionForm = () => {
 
               {err && (
                 <p className="mt-3 auth-error-message" style={{ color: "red" }}>
-                  {err}
+                  {err.message}
                 </p>
               )}
             </div>
