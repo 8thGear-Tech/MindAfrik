@@ -437,8 +437,8 @@ export const SupportiveListeningSessionForm = () => {
             )
             .required("Email is required"),
           gender: Yup.string().required("Gender is required"),
-          activeMobileNumber: Yup.number().required("This field is required"),
-          alternativeMobileNumber: Yup.number().required(
+          activeMobileNumber: Yup.string().required("This field is required"),
+          alternativeMobileNumber: Yup.string().required(
             "This field is required"
           ),
           location: Yup.string().required("This field is required"),
@@ -533,7 +533,7 @@ export const SupportiveListeningSessionForm = () => {
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="activeMobileNumber"
-                  type="number"
+                  type="text"
                   autoComplete="off"
                   placeholder="Active Mobile Number"
                   className="w-100 my-2 formikFieldStyle"
@@ -550,7 +550,7 @@ export const SupportiveListeningSessionForm = () => {
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="alternativeMobileNumber"
-                  type="number"
+                  type="text"
                   autoComplete="off"
                   placeholder="Alternative Mobile Number"
                   className="w-100 my-2 formikFieldStyle"
