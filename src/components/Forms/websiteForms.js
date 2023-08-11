@@ -455,7 +455,11 @@ export const SupportiveListeningSessionForm = () => {
           socialMediaFollowership: Yup.string().required(
             "This field is required"
           ),
-          socialHandleSubscribedTo: Yup.array("This field is required"),
+          // socialHandleSubscribedTo: Yup.array("This field is required"),
+          socialHandleSubscribedTo: Yup.array()
+            .min(1, "Select at least one social media handle")
+            .required("At least one social media handle is required"),
+
           // socialHandleSubscribedTo: Yup.required("This field is required"),
         })}
         onSubmit={handleSubmit}
@@ -598,7 +602,7 @@ export const SupportiveListeningSessionForm = () => {
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="age"
-                  type="number"
+                  type="text"
                   autoComplete="off"
                   placeholder="Age"
                   className="w-100 my-2 formikFieldStyle"
