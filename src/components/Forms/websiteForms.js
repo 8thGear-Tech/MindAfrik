@@ -372,8 +372,8 @@ export const SupportiveListeningSessionForm = () => {
 
     try {
       await axios.post(
-        // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/signup-as-a-counsellor",
+        // "http://localhost:4000/booking/book-a-supportive-listening-session",
+        "https://mindafrikserver.onrender.com/booking/book-a-supportive-listening-session",
         // formData
         // inputs
         {
