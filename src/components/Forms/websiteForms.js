@@ -332,6 +332,9 @@ export const SupportiveListeningSessionPage = () => {
         <div className="row justify-content-center">
           {" "}
           <div className="col-lg-6">
+            <h4 className="text-center mt-5">
+              Book a Supportive Listening Session
+            </h4>
             <SupportiveListeningSessionForm />
           </div>
         </div>
@@ -916,6 +919,149 @@ export const SupportiveListeningSessionForm = () => {
                 <div className="ms-3 auth-error-message">
                   {errors.socialHandleSubscribedTo}
                 </div>
+              ) : null}
+            </div>
+            <div className="my-3 text-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="submitFormBtn btn"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+
+              {err && (
+                <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                  {err.message}
+                </p>
+              )}
+            </div>
+          </Form>
+        )}
+      </Formik>
+    </>
+  );
+};
+
+export const NewsletterPage = () => {
+  return (
+    <>
+      <div className="container px-5">
+        <div className="row justify-content-center">
+          {" "}
+          <div className="col-lg-6">
+            <h4 className="text-center mt-5">Subscribe to Newsletter</h4>
+            <NewsletterForm />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+export const NewsletterForm = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [isSubmitting, setSubmitting] = useState(false);
+
+  const [validationErrors, setValidationErrors] = useState({});
+  const [err, setErr] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (values) => {
+    setSubmitting(true);
+
+    const firstName = values.firstName;
+    const lastName = values.lastName;
+    const email = values.email;
+
+    try {
+      await axios.post(
+        // "http://localhost:4000/booking/book-a-supportive-listening-session",
+        "https://mindafrikserver.onrender.com/subscriber/new-subscriber",
+        // formData
+        // inputs
+        {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+        }
+      );
+      navigate("/subscribe-to-newsletter");
+    } catch (err) {
+      const errorMessage = err.response?.data || "An error occurred";
+      setErr(errorMessage);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <>
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          email: "",
+        }}
+        validationSchema={Yup.object().shape({
+          firstName: Yup.string().required("First name is required"),
+          lastName: Yup.string().required("Last name is required"),
+          email: Yup.string()
+            .matches(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+              "Invalid email format"
+            )
+            .required("Email is required"),
+        })}
+        onSubmit={handleSubmit}
+      >
+        {({ errors, touched }) => (
+          <Form>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="firstName"
+                  type="text"
+                  autoComplete="off"
+                  placeholder="First Name"
+                  className="w-100 my-2 formikFieldStyle"
+                />
+              </div>
+              {errors.firstName && touched.firstName ? (
+                <div className="ms-3 auth-error-message">
+                  {errors.firstName}
+                </div>
+              ) : null}
+            </div>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="lastName"
+                  type="text"
+                  autoComplete="off"
+                  placeholder="Last Name"
+                  className="w-100 my-2 formikFieldStyle"
+                />
+              </div>
+              {errors.lastName && touched.lastName ? (
+                <div className="ms-3 auth-error-message">{errors.lastName}</div>
+              ) : null}
+            </div>
+            <div>
+              {" "}
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="email"
+                  type="email"
+                  autoComplete="off"
+                  placeholder="Email"
+                  className="w-100 my-2 formikFieldStyle"
+                />
+              </div>{" "}
+              {errors.email && touched.email ? (
+                <div className="ms-3 auth-error-message">{errors.email}</div>
               ) : null}
             </div>
             <div className="my-3 text-center">

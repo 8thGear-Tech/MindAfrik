@@ -24,6 +24,7 @@ import ResultPage from "./pages/websitePages/allAssessment/testResultPage";
 
 //Sessions
 import { SupportiveListeningSessionPage } from "./components/Forms/websiteForms";
+import { NewsletterPage } from "./components/Forms/websiteForms";
 
 import UnderConstruction from "./pages/websitePages/underConstruction";
 import { Footer } from "./components/footer";
@@ -157,6 +158,7 @@ function App() {
           path="book-a-supportive-listening-session"
           element={<SupportiveListeningSessionPage />}
         />
+        <Route path="subscribe-to-newsletter" element={<NewsletterPage />} />
       </Routes>
 
       <footer>

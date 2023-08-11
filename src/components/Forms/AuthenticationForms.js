@@ -1348,7 +1348,7 @@ export const SignUpAsCounsellorForm = () => {
     formData.append("phoneNumber", values.phoneNumber);
     formData.append("nationality", values.nationality);
     formData.append("stateOfOrigin", values.stateOfOrigin);
-    formData.append("dateOfBirth", values.dateOfBirth);
+    formData.append("dateOfBirth", startDate);
     formData.append("school", values.school);
     formData.append("degree", values.degree);
     formData.append("discipline", values.discipline);
@@ -1405,13 +1405,13 @@ export const SignUpAsCounsellorForm = () => {
           phoneNumber: "",
           nationality: "",
           stateOfOrigin: "",
-          resume: "",
           dateOfBirth: "",
-          school: "",
+          resume: "",
           coverletter: "",
+          school: "",
+          degree: "",
           discipline: "",
           experience: "",
-          degree: "",
           whyJoinUs: "",
         }}
         validationSchema={Yup.object().shape({
@@ -1431,13 +1431,14 @@ export const SignUpAsCounsellorForm = () => {
               "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
             ),
           gender: Yup.string().required("Gender is required"),
-          phoneNumber: Yup.number().required("Phone Number is required"),
-          stateOfOrigin: Yup.string().required("State of origin is required"),
+          phoneNumber: Yup.string().required("Phone Number is required"),
           nationality: Yup.string().required("Nationality is required"),
-          resume: Yup.string().required("Resume is required"),
+          stateOfOrigin: Yup.string().required("State of origin is required"),
           dateOfBirth: Yup.string().required("Date of birth is required"),
-          school: Yup.string().required("School is required"),
+          resume: Yup.string().required("Resume is required"),
           coverletter: Yup.string().required("Coverletter is required"),
+          school: Yup.string().required("School is required"),
+          degree: Yup.string().required("Degree is required"),
           discipline: Yup.string().required("Discipline is required"),
           experience: Yup.string().required("Experience is required"),
           whyJoinUs: Yup.string().required("This field is required"),
@@ -1550,7 +1551,7 @@ export const SignUpAsCounsellorForm = () => {
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="phoneNumber"
-                  type="number"
+                  type="text"
                   autoComplete="off"
                   placeholder="Phone Number"
                   className="w-100 my-2 formikFieldStyle"
@@ -1746,7 +1747,7 @@ export const SignUpAsCounsellorForm = () => {
 
               {err && (
                 <p className="mt-3 auth-error-message" style={{ color: "red" }}>
-                  {err}
+                  {err.message}
                 </p>
               )}
             </div>
