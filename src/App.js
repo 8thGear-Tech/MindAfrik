@@ -22,6 +22,9 @@ import TakeaTest from "./pages/websitePages/allAssessment/take-a-testPage";
 import { UnderstandingYourResult } from "./pages/websitePages/allAssessment/take-a-testPage";
 import ResultPage from "./pages/websitePages/allAssessment/testResultPage";
 
+//Sessions
+import { SupportiveListeningSessionPage } from "./components/Forms/websiteForms";
+
 import UnderConstruction from "./pages/websitePages/underConstruction";
 import { Footer } from "./components/footer";
 import { DashboardNavbar } from "./components/Navbar/dashBoardNavbar";
@@ -148,6 +151,12 @@ function App() {
         <Route path="CreateBlog" element={<CreateBlog />} />
         <Route path="blog/:blogId" element={<IndividualBlog />} />
         <Route path="CrudApp" element={<CrudApp />} /> */}
+
+        {/* Session */}
+        <Route
+          path="book-a-supportive-listening-session"
+          element={<SupportiveListeningSessionPage />}
+        />
       </Routes>
 
       <footer>

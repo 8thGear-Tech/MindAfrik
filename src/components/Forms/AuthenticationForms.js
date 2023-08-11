@@ -1321,46 +1321,68 @@ export const SignUpAsCounsellorForm = () => {
   const handleSubmit = async (values) => {
     setSubmitting(true);
 
-    const firstName = values.firstName;
-    const lastName = values.lastName;
-    const email = values.email;
-    const password = values.password;
-    const gender = values.gender;
-    const phoneNumber = values.phoneNumber;
-    const nationality = values.nationality;
-    const stateOfOrigin = values.stateOfOrigin;
-    const dateOfBirth = values.dateOfBirth;
-    const resume = values.resume;
-    const coverletter = values.coverletter;
-    const school = values.school;
-    const degree = values.degree;
-    const discipline = values.discipline;
-    const experience = values.experience;
-    const whyJoinUs = values.whyJoinUs;
+    const formData = new FormData();
+
+    // const firstName = values.firstName;
+    // const lastName = values.lastName;
+    // const email = values.email;
+    // const password = values.password;
+    // const gender = values.gender;
+    // const phoneNumber = values.phoneNumber;
+    // const nationality = values.nationality;
+    // const stateOfOrigin = values.stateOfOrigin;
+    // const dateOfBirth = values.dateOfBirth;
+    // const resume = values.resume;
+    // const coverletter = values.coverletter;
+    // const school = values.school;
+    // const degree = values.degree;
+    // const discipline = values.discipline;
+    // const experience = values.experience;
+    // const whyJoinUs = values.whyJoinUs;
+    // Append other form data fields
+    formData.append("firstName", values.firstName);
+    formData.append("lastName", values.lastName);
+    formData.append("email", values.email);
+    formData.append("password", values.password);
+    formData.append("gender", values.gender);
+    formData.append("phoneNumber", values.phoneNumber);
+    formData.append("nationality", values.nationality);
+    formData.append("stateOfOrigin", values.stateOfOrigin);
+    formData.append("dateOfBirth", values.dateOfBirth);
+    formData.append("school", values.school);
+    formData.append("degree", values.degree);
+    formData.append("discipline", values.discipline);
+    formData.append("experience", values.experience);
+    formData.append("whyJoinUs", values.whyJoinUs);
+
+    // Append resume and coverletter files
+    formData.append("resume", values.resume[0]);
+    formData.append("coverletter", values.coverletter[0]);
 
     try {
       await axios.post(
         // "http://localhost:4000/user/signup",
         "https://mindafrikserver.onrender.com/user/signup-as-a-counsellor",
+        formData
         // inputs
-        {
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password,
-          gender: gender,
-          phoneNumber: phoneNumber,
-          nationality: nationality,
-          stateOfOrigin: stateOfOrigin,
-          resume: resume,
-          dateOfBirth: dateOfBirth,
-          school: school,
-          coverletter: coverletter,
-          discipline: discipline,
-          experience: experience,
-          degree: degree,
-          whyJoinUs: whyJoinUs,
-        }
+        // {
+        //   firstName: firstName,
+        //   lastName: lastName,
+        //   email: email,
+        //   password: password,
+        //   gender: gender,
+        //   phoneNumber: phoneNumber,
+        //   nationality: nationality,
+        //   stateOfOrigin: stateOfOrigin,
+        //   resume: resume,
+        //   dateOfBirth: dateOfBirth,
+        //   school: school,
+        //   coverletter: coverletter,
+        //   discipline: discipline,
+        //   experience: experience,
+        //   degree: degree,
+        //   whyJoinUs: whyJoinUs,
+        // }
       );
       navigate("/verify-email");
     } catch (err) {
@@ -1598,9 +1620,11 @@ export const SignUpAsCounsellorForm = () => {
                 <Field
                   name="resume"
                   type="file"
+                  a
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
                 />
+                {/* <input acc/> */}
               </div>
               {errors.resume && touched.resume ? (
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
