@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { NavSection } from "../Navbar/guestNavbar";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 // import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -15,9 +15,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 
-//images
-
+//newslettermodal
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import Dropdown from "react-bootstrap/Dropdown";
+
+//images
+import newsletter from "../../assets/images/newsletter/newsletter.png";
 
 export const AssesmentForm = (props) => {
   // const { id, text } = props;
@@ -946,28 +950,80 @@ export const SupportiveListeningSessionForm = () => {
 export const NewsletterPage = () => {
   return (
     <>
-      <div className="container px-5">
-        <div className="row justify-content-center">
-          {" "}
-          <div className="col-lg-6">
-            <h4 className="text-center mt-5">Subscribe to Newsletter</h4>
-            <NewsletterForm />
+      <div className="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div className="row align-items-center g-lg-5 py-5">
+          <div className="row">
+            {" "}
+            <div className="col-lg-12 text-center">
+              <h4 className="mb-4">
+                Subscribe to our newsletter for free and timely well-being tips.
+              </h4>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-5 col-md-10 mx-auto">
+              <NewsletterForm />
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 };
-export const NewsletterForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [isSubmitting, setSubmitting] = useState(false);
 
+const NewssletterModal = () => {
+  return (
+    <div className="modal-backdrop show" style={{ zIndex: "1000" }}>
+      <div
+        className="modal show"
+        tabIndex="-1"
+        style={{ display: "block" }}
+        // style={{ display: "block", position: "initial" }}
+      >
+        <Modal.Dialog>
+          <Modal.Header closeButton>
+            <Modal.Title>Thank you for subscribing!</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <p>Kindly check you email for more details</p>
+          </Modal.Body>
+
+          {/* <Modal.Footer>
+            <Button variant="secondary">Close</Button>
+            <Button variant="primary">Save changes</Button>
+          </Modal.Footer> */}
+        </Modal.Dialog>
+      </div>
+    </div>
+  );
+};
+const NewsletterModal = ({ handleClose }) => {
+  return (
+    <>
+      <Modal show={true} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <div className="text-center pb-4 pt-2">
+          <img src={newsletter} width="150" height="80" />
+        </div>
+        <h4 className="text-center">Thank you for subscribing!</h4>
+        <p className="text-center pb-3">
+          Kindly check your email for more details
+        </p>
+      </Modal>
+    </>
+  );
+};
+
+export const NewsletterForm = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     setSubmitting(true);
 
     const firstName = values.firstName;
@@ -977,7 +1033,8 @@ export const NewsletterForm = () => {
     try {
       await axios.post(
         // "http://localhost:4000/booking/book-a-supportive-listening-session",
-        "https://mindafrikserver.onrender.com/subscriber/new-subscriber",
+        "http://localhost:4000/subscriber/new-subscriber",
+        // "https://mindafrikserver.onrender.com/subscriber/new-subscriber",
         // formData
         // inputs
         {
@@ -986,7 +1043,10 @@ export const NewsletterForm = () => {
           email: email,
         }
       );
-      navigate("/subscribe-to-newsletter");
+      // navigate("/");
+      resetForm();
+      setShowModal(true);
+      console.log(showModal);
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
@@ -1016,10 +1076,13 @@ export const NewsletterForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form>
+          <Form
+            className="p-4 p-md-5 border rounded-3 bg-body-tertiary"
+            style={{ backgroundColor: "#fcfcfc" }}
+          >
             <div>
               {" "}
-              <div className="align-items-center placeholderRadius mt-4">
+              <div className="align-items-center placeholderRadius">
                 <Field
                   name="firstName"
                   type="text"
@@ -1064,7 +1127,7 @@ export const NewsletterForm = () => {
                 <div className="ms-3 auth-error-message">{errors.email}</div>
               ) : null}
             </div>
-            <div className="my-3 text-center">
+            <div className="mt-4 text-center">
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -1074,7 +1137,7 @@ export const NewsletterForm = () => {
               </button>
 
               {err && (
-                <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                <p className="mt-4 auth-error-message" style={{ color: "red" }}>
                   {err.message}
                 </p>
               )}
@@ -1082,6 +1145,8 @@ export const NewsletterForm = () => {
           </Form>
         )}
       </Formik>
+      {showModal && <NewsletterModal handleClose={() => setShowModal(false)} />}
+      {/* {showModal && <NewsletterModal onClose={() => setShowModal(false)} />} */}
     </>
   );
 };
