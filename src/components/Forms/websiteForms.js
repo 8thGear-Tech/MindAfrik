@@ -971,33 +971,6 @@ export const NewsletterPage = () => {
   );
 };
 
-const NewssletterModal = () => {
-  return (
-    <div className="modal-backdrop show" style={{ zIndex: "1000" }}>
-      <div
-        className="modal show"
-        tabIndex="-1"
-        style={{ display: "block" }}
-        // style={{ display: "block", position: "initial" }}
-      >
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Thank you for subscribing!</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>
-            <p>Kindly check you email for more details</p>
-          </Modal.Body>
-
-          {/* <Modal.Footer>
-            <Button variant="secondary">Close</Button>
-            <Button variant="primary">Save changes</Button>
-          </Modal.Footer> */}
-        </Modal.Dialog>
-      </div>
-    </div>
-  );
-};
 const NewsletterModal = ({ handleClose }) => {
   return (
     <>
@@ -1046,7 +1019,7 @@ export const NewsletterForm = () => {
       // navigate("/");
       resetForm();
       setShowModal(true);
-      console.log(showModal);
+      // console.log(showModal);
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
