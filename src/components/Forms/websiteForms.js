@@ -22,6 +22,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 //images
 import newsletter from "../../assets/images/newsletter/newsletter.png";
+import mindafrikbannerlogo from "../../assets/images/logo/mindafrikbannerlogo.png";
 
 export const AssesmentForm = (props) => {
   // const { id, text } = props;
@@ -345,8 +346,13 @@ export const SupportiveListeningSessionPage = () => {
       </div> */}
       <div className="container col-xl-10 col-xxl-8 py-5">
         <div className="row align-items-center g-lg-5 py-5">
+          <div className="row justify-content-center text-center">
+            <div className="col-lg-12">
+              {" "}
+              <img src={mindafrikbannerlogo} height="200" />
+            </div>
+          </div>
           <div className="row justify-content-center">
-            {" "}
             <div className="col-lg-7">
               <h4 className="mb-4">Book a Supportive Listening Session</h4>
               <p>
