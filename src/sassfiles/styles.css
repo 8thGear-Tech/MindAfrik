@@ -832,6 +832,11 @@ p {
   border-bottom: none !important;
 }
 
+.formOptions {
+  color: #5c5b5b;
+  font-size: 0.85rem;
+}
+
 .sectionTwoBgColor {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 35px;

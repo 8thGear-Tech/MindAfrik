@@ -332,7 +332,7 @@ export const ContactForm = () => {
 export const SupportiveListeningSessionPage = () => {
   return (
     <>
-      <div className="container px-5">
+      {/* <div className="container px-5">
         <div className="row justify-content-center">
           {" "}
           <div className="col-lg-6">
@@ -340,6 +340,37 @@ export const SupportiveListeningSessionPage = () => {
               Book a Supportive Listening Session
             </h4>
             <SupportiveListeningSessionForm />
+          </div>
+        </div>
+      </div> */}
+      <div className="container col-xl-10 col-xxl-8 py-5">
+        <div className="row align-items-center g-lg-5 py-5">
+          <div className="row justify-content-center">
+            {" "}
+            <div className="col-lg-7">
+              <h4 className="mb-4">Book a Supportive Listening Session</h4>
+              <p>
+                Thank you for your interest in booking a supportive listening
+                session with us.
+              </p>
+              <p>
+                Please note that the sessions are paid and calculated per hour
+                (45 -60 mins) and is done virtually.
+              </p>
+              <p className="p-0 m-0">The first minutes is free.</p>
+              <p>
+                Subsequent Payment ranges from 5000 monthly on a 2 hours per
+                week bases.
+              </p>
+              <p>
+                Details will be sent to your email once we receive your details.
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-7 col-md-10 mx-auto mt-3">
+              <SupportiveListeningSessionForm />
+            </div>
           </div>
         </div>
       </div>
@@ -379,8 +410,8 @@ export const SupportiveListeningSessionForm = () => {
 
     try {
       await axios.post(
-        // "http://localhost:4000/booking/book-a-supportive-listening-session",
-        "https://mindafrikserver.onrender.com/booking/book-a-supportive-listening-session",
+        "http://localhost:4000/booking/book-a-supportive-listening-session",
+        // "https://mindafrikserver.onrender.com/booking/book-a-supportive-listening-session",
         // formData
         // inputs
         {
@@ -472,7 +503,10 @@ export const SupportiveListeningSessionForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form>
+          <Form
+            className="p-4 p-md-5 border rounded-3 bg-body-tertiary"
+            style={{ backgroundColor: "#fcfcfc" }}
+          >
             <div>
               {" "}
               <div className="align-items-center placeholderRadius mt-4">
@@ -526,12 +560,22 @@ export const SupportiveListeningSessionForm = () => {
                 Gender
               </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label className="mx-2">
-                  <Field type="radio" name="gender" value="Male" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="Male"
+                    className="me-2"
+                  />
                   Male
                 </label>
-                <label className="mx-2">
-                  <Field type="radio" name="gender" value="Female" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="Female"
+                    className="me-2"
+                  />
                   Female
                 </label>
               </div>
@@ -576,7 +620,7 @@ export const SupportiveListeningSessionForm = () => {
             </div>
             <div>
               {" "}
-              <div className="align-items-center placeholderRadius mt-4">
+              <div className="align-items-center placeholderRadius mt-3">
                 <Field
                   name="location"
                   type="text"
@@ -591,7 +635,7 @@ export const SupportiveListeningSessionForm = () => {
             </div>
             <div>
               {" "}
-              <div>Date of birth</div>
+              <div className="ms-2 mt-3">Date of birth</div>
               <DatePicker
                 showIcon
                 selected={startDate}
@@ -625,24 +669,49 @@ export const SupportiveListeningSessionForm = () => {
                 Marital Status
               </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label className="mx-2">
-                  <Field type="radio" name="maritalStatus" value="Single" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="maritalStatus"
+                    value="Single"
+                    className="me-2"
+                  />
                   Single
                 </label>
-                <label className="mx-2">
-                  <Field type="radio" name="maritalStatus" value="Engaged" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="maritalStatus"
+                    value="Engaged"
+                    className="me-2"
+                  />
                   Engaged
                 </label>
-                <label className="mx-2">
-                  <Field type="radio" name="maritalStatus" value="Married" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="maritalStatus"
+                    value="Married"
+                    className="me-2"
+                  />
                   Married
                 </label>
-                <label className="mx-2">
-                  <Field type="radio" name="maritalStatus" value="Divorced" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="maritalStatus"
+                    value="Divorced"
+                    className="me-2"
+                  />
                   Divorced
                 </label>
-                <label className="mx-2">
-                  <Field type="radio" name="maritalStatus" value="Divorced" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="maritalStatus"
+                    value="Complicated"
+                    className="me-2 formOptions"
+                  />
                   Complicated
                 </label>
               </div>
@@ -658,19 +727,21 @@ export const SupportiveListeningSessionForm = () => {
                 What mode of meeting would you prefer?
               </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="meetingMode"
                     value="Virtual (on Google meet)"
+                    className="me-2"
                   />
                   Virtual (on Google meet)
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="meetingMode"
                     value="Chat (WhatsApp)"
+                    className="me-2"
                   />
                   Chat (WhatsApp)
                 </label>
@@ -687,43 +758,48 @@ export const SupportiveListeningSessionForm = () => {
                 What area of counselling are you booking for?
               </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="counsellingArea"
                     value="Relationship advice"
+                    className="me-2"
                   />
                   Relationship advice
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="counsellingArea"
                     value="Premarital counselling"
+                    className="me-2"
                   />
                   Premarital counselling
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="counsellingArea"
                     value="Marriage and Family"
+                    className="me-2"
                   />
                   Marriage and Family
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="counsellingArea"
                     value="Traumatic experience (Trauma informed care)"
+                    className="me-2"
                   />
                   Traumatic experience (Trauma informed care)
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="counsellingArea"
                     value="Mental health (Stress, depression, anxiety, etc.)"
+                    className="me-2"
                   />
                   Mental health (Stress, depression, anxiety, etc.)
                 </label>
@@ -739,7 +815,8 @@ export const SupportiveListeningSessionForm = () => {
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="counsellingPurpose"
-                  type="text"
+                  // type="text"
+                  as="textarea"
                   autoComplete="off"
                   placeholder="What is the purpose for which you have booked this counselling session?"
                   className="w-100 my-2 formikFieldStyle"
@@ -757,51 +834,57 @@ export const SupportiveListeningSessionForm = () => {
                 What time slot works best for you?
               </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="timeSlot"
                     value="Weekdays mornings"
+                    className="me-2"
                   />
                   Weekdays mornings
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="timeSlot"
                     value="Weekdays afternoons"
+                    className="me-2"
                   />
                   Weekdays afternoons
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="timeSlot"
                     value="Weekdays evenings"
+                    className="me-2"
                   />
                   Weekdays evenings
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="timeSlot"
                     value="Weekend Mornings"
+                    className="me-2"
                   />
                   Weekend Mornings
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="timeSlot"
                     value="Weekend afternoons"
+                    className="me-2"
                   />
                   Weekend afternoons
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="timeSlot"
                     value="Weekend evenings"
+                    className="me-2"
                   />
                   Weekend evenings
                 </label>
@@ -815,7 +898,8 @@ export const SupportiveListeningSessionForm = () => {
               <div className="align-items-center placeholderRadius mt-4">
                 <Field
                   name="questionCommentSuggestion"
-                  type="text"
+                  // type="textarea"
+                  as="textarea"
                   autoComplete="off"
                   placeholder="Have you got any question, comment or suggestion?"
                   className="w-100 my-2 formikFieldStyle"
@@ -834,27 +918,30 @@ export const SupportiveListeningSessionForm = () => {
                 Are you following us on all our social media handles?
               </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="socialMediaFollowership"
                     value="Yes"
+                    className="me-2"
                   />
                   Yes
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="socialMediaFollowership"
                     value="No"
+                    className="me-2"
                   />
                   No
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="radio"
                     name="socialMediaFollowership"
                     value="Some"
+                    className="me-2"
                   />
                   Some
                 </label>
@@ -872,7 +959,7 @@ export const SupportiveListeningSessionForm = () => {
                 to?
               </div>
               <div role="group" aria-labelledby="checkbox-group">
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="checkbox"
                     name="socialHandleSubscribedTo"
@@ -881,7 +968,7 @@ export const SupportiveListeningSessionForm = () => {
                   />
                   Facebook
                 </label>
-                <label className="mx-2">
+                <label className="mx-2 formOptions">
                   <Field
                     type="checkbox"
                     name="socialHandleSubscribedTo"
@@ -890,7 +977,7 @@ export const SupportiveListeningSessionForm = () => {
                   />
                   Instagram
                 </label>
-                <label>
+                <label className="formOptions">
                   <Field
                     type="checkbox"
                     name="socialHandleSubscribedTo"
@@ -899,7 +986,7 @@ export const SupportiveListeningSessionForm = () => {
                   />
                   LinkedIn
                 </label>
-                <label>
+                <label className="formOptions">
                   <Field
                     type="checkbox"
                     name="socialHandleSubscribedTo"
@@ -908,7 +995,7 @@ export const SupportiveListeningSessionForm = () => {
                   />
                   Twitter
                 </label>
-                <label>
+                <label className="formOptions">
                   <Field
                     type="checkbox"
                     name="socialHandleSubscribedTo"
@@ -925,7 +1012,7 @@ export const SupportiveListeningSessionForm = () => {
                 </div>
               ) : null}
             </div>
-            <div className="my-3 text-center">
+            <div className="mt-5 mb-3 text-center">
               <button
                 type="submit"
                 disabled={isSubmitting}
