@@ -1033,8 +1033,8 @@ export const NewsletterForm = () => {
     try {
       await axios.post(
         // "http://localhost:4000/booking/book-a-supportive-listening-session",
-        "http://localhost:4000/subscriber/new-subscriber",
-        // "https://mindafrikserver.onrender.com/subscriber/new-subscriber",
+        // "http://localhost:4000/subscriber/new-subscriber",
+        "https://mindafrikserver.onrender.com/subscriber/new-subscriber",
         // formData
         // inputs
         {
