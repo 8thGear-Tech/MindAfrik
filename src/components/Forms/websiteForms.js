@@ -344,38 +344,44 @@ export const SupportiveListeningSessionPage = () => {
           </div>
         </div>
       </div> */}
-      <div className="container col-xl-10 col-xxl-8 py-5">
-        <div className="row align-items-center g-lg-5 py-5">
-          <div className="row justify-content-center text-center">
-            <div className="col-lg-12">
-              {" "}
-              <img src={mindafrikbannerlogo} height="200" />
+      <div className="container-fluid">
+        {/* <NavSection /> */}
+        <div className="container col-xl-10 col-xxl-8 py-5">
+          <div className="row align-items-center g-lg-5 pb-5 pt-4">
+            <div className="row justify-content-center text-center">
+              <div className="col-lg-7 col-md-12 col-sm-12 card mb-3">
+                {" "}
+                <img src={mindafrikbannerlogo} />
+              </div>
             </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-lg-7">
-              <h4 className="mb-4">Book a Supportive Listening Session</h4>
-              <p>
-                Thank you for your interest in booking a supportive listening
-                session with us.
-              </p>
-              <p>
-                Please note that the sessions are paid and calculated per hour
-                (45 -60 mins) and is done virtually.
-              </p>
-              <p className="p-0 m-0">The first minutes is free.</p>
-              <p>
-                Subsequent Payment ranges from 5000 monthly on a 2 hours per
-                week bases.
-              </p>
-              <p>
-                Details will be sent to your email once we receive your details.
-              </p>
+            <div className="row justify-content-center">
+              <div className="col-lg-7">
+                <h4 className="p-0 m-0">Book a Supportive Listening Session</h4>
+                <p className="bookingFormText p-0 m-0">
+                  Thank you for your interest in booking a supportive listening
+                  session with us.
+                </p>
+                <p className="bookingFormText p-0 m-0">
+                  Please note that the sessions are paid and calculated per hour
+                  <b>(45 -60 mins)</b> and is done virtually.
+                </p>
+                <p className="p-0 m-0 bookingFormText">
+                  The first minutes is free.
+                </p>
+                <p className="bookingFormText p-0 m-0">
+                  Subsequent Payment ranges from <b>&#8358;5000</b> monthly on a
+                  2 hours per week bases.
+                </p>
+                <p className="bookingFormText p-0 m-0">
+                  Details will be sent to your email once we receive your
+                  details.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-7 col-md-10 mx-auto mt-3">
-              <SupportiveListeningSessionForm />
+            <div className="row">
+              <div className="col-lg-7 col-md-10 mx-auto mt-3">
+                <SupportiveListeningSessionForm />
+              </div>
             </div>
           </div>
         </div>
@@ -510,8 +516,8 @@ export const SupportiveListeningSessionForm = () => {
       >
         {({ errors, touched }) => (
           <Form
-            className="p-4 p-md-5 border rounded-3 bg-body-tertiary"
-            style={{ backgroundColor: "#fcfcfc" }}
+            className="p-4 p-md-5 border rounded-3 bookingFormBg"
+            // style={{ backgroundColor: "#fcfcfc", border: "1px solid #0060c6" }}
           >
             <div>
               {" "}
