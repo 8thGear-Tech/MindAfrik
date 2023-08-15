@@ -161,9 +161,9 @@ function App() {
         <Route path="subscribe-to-newsletter" element={<NewsletterPage />} />
       </Routes>
 
-      {/* <footer>
+      <footer>
         <Footer />
-      </footer> */}
+      </footer>
     </BrowserRouter>
   );
 }
