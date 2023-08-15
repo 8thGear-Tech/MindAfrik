@@ -1430,7 +1430,7 @@ export const SignUpAsCounsellorForm = () => {
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
               "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
             ),
-          gender: Yup.string().required("Gender is required"),
+          gender: Yup.string(),
           phoneNumber: Yup.string().required("Phone Number is required"),
           nationality: Yup.string().required("Nationality is required"),
           stateOfOrigin: Yup.string().required("State of origin is required"),
@@ -1533,18 +1533,18 @@ export const SignUpAsCounsellorForm = () => {
               <div id="my-radio-group">Gender</div>
               <div role="group" aria-labelledby="my-radio-group">
                 <label>
-                  <Field type="radio" name="picked" value="Male" />
+                  <Field type="radio" name="gender" value="Male" />
                   Male
                 </label>
                 <label>
-                  <Field type="radio" name="picked" value="Female" />
+                  <Field type="radio" name="gender" value="Female" />
                   Female
                 </label>
                 {/* <div>Picked: {values.picked}</div> */}
               </div>
-              {errors.gender && touched.gender ? (
+              {/* {errors.gender && touched.gender ? (
                 <div className="ms-3 auth-error-message">{errors.gender}</div>
-              ) : null}
+              ) : null} */}
             </div>
             <div>
               {" "}
