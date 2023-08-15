@@ -1434,7 +1434,7 @@ export const SignUpAsCounsellorForm = () => {
           phoneNumber: Yup.string().required("Phone Number is required"),
           nationality: Yup.string().required("Nationality is required"),
           stateOfOrigin: Yup.string().required("State of origin is required"),
-          dateOfBirth: Yup.string().required("Date of birth is required"),
+          dateOfBirth: Yup.string(),
           resume: Yup.string().required("Resume is required"),
           coverletter: Yup.string().required("Coverletter is required"),
           school: Yup.string().required("School is required"),
@@ -1606,11 +1606,11 @@ export const SignUpAsCounsellorForm = () => {
                 onChange={(date) => setStartDate(date)}
                 className="placeholderRadius mt-4"
               />
-              {errors.dateOfBirth && touched.dateOfBirth ? (
+              {/* {errors.dateOfBirth && touched.dateOfBirth ? (
                 <div className="ms-3 auth-error-message">
                   {errors.dateOfBirth}
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
             <div>
               {" "}
