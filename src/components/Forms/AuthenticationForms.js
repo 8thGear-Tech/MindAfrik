@@ -1627,9 +1627,9 @@ export const SignUpAsCounsellorForm = () => {
                 <div>Resume/CV</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
                 <Field
+                  as="input"
                   name="resume"
                   type="file"
-                  a
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
                 />
@@ -1646,6 +1646,7 @@ export const SignUpAsCounsellorForm = () => {
                 <div>Coverletter</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
                 <Field
+                  as="input"
                   name="coverletter"
                   type="file"
                   autoComplete="off"
