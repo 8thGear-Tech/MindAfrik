@@ -1626,13 +1626,14 @@ export const SignUpAsCounsellorForm = () => {
                 {" "}
                 <div>Resume/CV</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                <Field
+                {/* <Field
                   as="input"
                   name="resume"
                   type="file"
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
-                />
+                /> */}
+                <input type="file" name="resume" />
                 {/* <input acc/> */}
               </div>
               {errors.resume && touched.resume ? (
@@ -1645,13 +1646,14 @@ export const SignUpAsCounsellorForm = () => {
                 {" "}
                 <div>Coverletter</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                <Field
+                {/* <Field
                   as="input"
                   name="coverletter"
                   type="file"
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
-                />
+                /> */}
+                <input type="file" name="coverletter" />
               </div>
               {errors.coverletter && touched.coverletter ? (
                 <div className="ms-3 auth-error-message">
