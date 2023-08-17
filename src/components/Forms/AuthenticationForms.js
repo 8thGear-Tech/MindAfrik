@@ -1362,7 +1362,7 @@ export const SignUpAsCounsellorForm = () => {
     try {
       await axios.post(
         // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/signup-as-a-counsellor",
+        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
         formData
         // inputs
         // {
