@@ -1349,14 +1349,17 @@ export const SignUpAsCounsellorForm = () => {
     formData.append("nationality", values.nationality);
     formData.append("stateOfOrigin", values.stateOfOrigin);
     formData.append("dateOfBirth", startDate);
-    // Append resume and coverletter files
-    formData.append("resume", values.resume[0]);
-    formData.append("coverletter", values.coverletter[0]);
     formData.append("school", values.school);
     formData.append("degree", values.degree);
     formData.append("discipline", values.discipline);
     formData.append("experience", values.experience);
     formData.append("whyJoinUs", values.whyJoinUs);
+
+    formData.append("resume", values.resume?.[0]); // Use the safe navigation operator '?'
+    formData.append("coverletter", values.coverletter?.[0]); // Use the safe navigation operator '?'
+    // // Append resume and coverletter files
+    // formData.append("resume", values.resume[0]);
+    // formData.append("coverletter", values.coverletter[0]);
 
     try {
       await axios.post(
