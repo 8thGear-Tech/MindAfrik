@@ -1636,9 +1636,9 @@ export const SignUpAsCounsellorForm = () => {
                 <input type="file" name="resume" />
                 {/* <input acc/> */}
               </div>
-              {errors.resume && touched.resume ? (
+              {/* {errors.resume && touched.resume ? (
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
-              ) : null}
+              ) : null} */}
             </div>
             <div>
               {" "}
@@ -1655,11 +1655,11 @@ export const SignUpAsCounsellorForm = () => {
                 /> */}
                 <input type="file" name="coverletter" />
               </div>
-              {errors.coverletter && touched.coverletter ? (
+              {/* {errors.coverletter && touched.coverletter ? (
                 <div className="ms-3 auth-error-message">
                   {errors.coverletter}
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
             <div>
               {" "}
