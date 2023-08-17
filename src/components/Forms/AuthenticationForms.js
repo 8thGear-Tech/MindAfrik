@@ -1357,6 +1357,7 @@ export const SignUpAsCounsellorForm = () => {
 
     formData.append("resume", values.resume?.[0]); // Use the safe navigation operator '?'
     formData.append("coverletter", values.coverletter?.[0]); // Use the safe navigation operator '?'
+    console.log("formData:", formData);
     // // Append resume and coverletter files
     // formData.append("resume", values.resume[0]);
     // formData.append("coverletter", values.coverletter[0]);
@@ -1365,7 +1366,12 @@ export const SignUpAsCounsellorForm = () => {
       await axios.post(
         // "http://localhost:4000/user/signup",
         "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
-        formData
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data", // Make sure this header is set
+          },
+        }
         // inputs
         // {
         //   firstName: firstName,
