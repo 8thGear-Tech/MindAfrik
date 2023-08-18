@@ -1626,19 +1626,18 @@ export const SignUpAsCounsellorForm = () => {
                 {" "}
                 <div>Resume/CV</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                {/* <Field
-                  as="input"
+                <Field
+                  input="file"
                   name="resume"
                   type="file"
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
-                /> */}
-                <input type="file" name="resume" />
+                />
                 {/* <input acc/> */}
               </div>
-              {/* {errors.resume && touched.resume ? (
+              {errors.resume && touched.resume ? (
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
-              ) : null} */}
+              ) : null}
             </div>
             <div>
               {" "}
@@ -1646,20 +1645,19 @@ export const SignUpAsCounsellorForm = () => {
                 {" "}
                 <div>Coverletter</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                {/* <Field
-                  as="input"
+                <Field
+                  input="file"
                   name="coverletter"
                   type="file"
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
-                /> */}
-                <input type="file" name="coverletter" />
+                />
               </div>
-              {/* {errors.coverletter && touched.coverletter ? (
+              {errors.coverletter && touched.coverletter ? (
                 <div className="ms-3 auth-error-message">
                   {errors.coverletter}
                 </div>
-              ) : null} */}
+              ) : null}
             </div>
             <div>
               {" "}
