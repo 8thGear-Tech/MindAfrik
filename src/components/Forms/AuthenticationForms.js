@@ -891,7 +891,7 @@ export const SignUpAsCounselleeForm = () => {
     try {
       await axios.post(
         // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
+        "https://mindafrikserver.onrender.com/user/signup",
         // inputs
         {
           firstName: firstName,
@@ -1320,60 +1320,45 @@ export const SignUpAsCounsellorForm = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (values) => {
-    setSubmitting(true);
+  const [resume, setResume] = useState();
+  const onInputChange = (e) => {
+    console.log(e.target.files[0]);
+    setResume(e.target.files[0]);
+  };
 
-    // const formData = new FormData();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // setSubmitting(true);
 
-    const firstName = values.firstName;
-    const lastName = values.lastName;
-    const email = values.email;
-    const password = values.password;
-    const gender = values.gender;
-    const phoneNumber = values.phoneNumber;
-    const nationality = values.nationality;
-    const stateOfOrigin = values.stateOfOrigin;
-    const dateOfBirth = values.dateOfBirth;
-    const resume = values.resume;
-    const coverletter = values.coverletter;
-    const school = values.school;
-    const degree = values.degree;
-    const discipline = values.discipline;
-    const experience = values.experience;
-    const whyJoinUs = values.whyJoinUs;
-    // // Append other form data fields
-    // formData.append("firstName", values.firstName);
-    // formData.append("lastName", values.lastName);
-    // formData.append("email", values.email);
-    // formData.append("password", values.password);
-    // formData.append("gender", values.gender);
-    // formData.append("phoneNumber", values.phoneNumber);
-    // formData.append("nationality", values.nationality);
-    // formData.append("stateOfOrigin", values.stateOfOrigin);
-    // formData.append("dateOfBirth", startDate);
-    // formData.append("school", values.school);
-    // formData.append("degree", values.degree);
-    // formData.append("discipline", values.discipline);
-    // formData.append("experience", values.experience);
-    // formData.append("whyJoinUs", values.whyJoinUs);
-
-    // formData.append("resume", values.resume?.[0]); // Use the safe navigation operator '?'
-    // formData.append("coverletter", values.coverletter?.[0]); // Use the safe navigation operator '?'
-    // console.log("formData:", formData);
-    // // Append resume and coverletter files
-    // formData.append("resume", values.resume[0]);
-    // formData.append("coverletter", values.coverletter[0]);
+    const formData = new FormData();
+    formData.append("resume", resume);
+    // const firstName = values.firstName;
+    // const lastName = values.lastName;
+    // const email = values.email;
+    // const password = values.password;
+    // const gender = values.gender;
+    // const phoneNumber = values.phoneNumber;
+    // const nationality = values.nationality;
+    // const stateOfOrigin = values.stateOfOrigin;
+    // const dateOfBirth = values.dateOfBirth;
+    // const resume = values.resume;
+    // const coverletter = values.coverletter;
+    // const school = values.school;
+    // const degree = values.degree;
+    // const discipline = values.discipline;
+    // const experience = values.experience;
+    // const whyJoinUs = values.whyJoinUs;
 
     try {
       await axios.post(
-        // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor"
-        // formData,
-        // {
-        //   headers: {
-        //     "Content-Type": "multipart/form-data", // Make sure this header is set
-        //   },
-        // }
+        "http://localhost:4000/user/sign-up-as-a-counsellor",
+        // "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
         // inputs
         // {
         //   firstName: firstName,
@@ -1394,7 +1379,7 @@ export const SignUpAsCounsellorForm = () => {
         //   whyJoinUs: whyJoinUs,
         // }
       );
-      navigate("/verify-email");
+      // navigate("/verify-email");
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
@@ -1403,391 +1388,23 @@ export const SignUpAsCounsellorForm = () => {
     }
   };
 
-  const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
-    const baseSixtyFour = await convertToBaseSIxtyFour(file);
-    console.log(baseSixtyFour);
-  };
+  // const handleFileUpload = async (e) => {
+  //   const file = e.target.files[0];
+  //   const baseSixtyFour = await convertToBaseSIxtyFour(file);
+  //   console.log(baseSixtyFour);
+  // };
 
   return (
     <>
-      <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          email: "",
-          password: "",
-          gender: "",
-          phoneNumber: "",
-          nationality: "",
-          stateOfOrigin: "",
-          dateOfBirth: "",
-          resume: "",
-          coverletter: "",
-          school: "",
-          degree: "",
-          discipline: "",
-          experience: "",
-          whyJoinUs: "",
-        }}
-        validationSchema={Yup.object().shape({
-          firstName: Yup.string().required("First name is required"),
-          lastName: Yup.string().required("Last name is required"),
-          email: Yup.string()
-            .matches(
-              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-              "Invalid email format"
-            )
-            .required("Email is required"),
-          password: Yup.string()
-            .required("Password is required")
-            .min(8, "Password must be at least 8 characters")
-            .matches(
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
-              "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
-            ),
-          gender: Yup.string(),
-          phoneNumber: Yup.string().required("Phone Number is required"),
-          nationality: Yup.string().required("Nationality is required"),
-          stateOfOrigin: Yup.string().required("State of origin is required"),
-          // dateOfBirth: Yup.string(),
-          dateOfBirth: Yup.date()
-            .nullable()
-            .required("Date of birth is required"),
-
-          resume: Yup.string().required("Resume is required"),
-          coverletter: Yup.string().required("Coverletter is required"),
-          school: Yup.string().required("School is required"),
-          degree: Yup.string().required("Degree is required"),
-          discipline: Yup.string().required("Discipline is required"),
-          experience: Yup.string().required("Experience is required"),
-          whyJoinUs: Yup.string().required("This field is required"),
-        })}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="firstName"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="First Name"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.firstName && touched.firstName ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.firstName}
-                </div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="lastName"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Last Name"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.lastName && touched.lastName ? (
-                <div className="ms-3 auth-error-message">{errors.lastName}</div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="email"
-                  type="email"
-                  autoComplete="off"
-                  placeholder="Email"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>{" "}
-              {errors.email && touched.email ? (
-                <div className="ms-3 auth-error-message">{errors.email}</div>
-              ) : null}
-            </div>
-            <div>
-              <div className="d-flex align-items-center placeholderRadius mt-4">
-                {" "}
-                <Field
-                  name="password"
-                  type={showPassword1 ? "text" : "password"}
-                  autoComplete="off"
-                  placeholder="Password"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-                <div onClick={togglePasswordVisibility1}>
-                  {showPassword1 ? <RemoveRedEyeIcon /> : <VisibilityOffIcon />}
-                </div>
-              </div>
-
-              {errors.password && touched.password ? (
-                <div className="ms-3 auth-error-message">{errors.password}</div>
-              ) : null}
-            </div>
-            {/* <div> */}{" "}
-            {/* <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  component="select"
-                  name="gender"
-                  type="email"
-                  // autoComplete="off"
-                  placeholder="Select options"
-                  className="w-100 my-2 formikFieldStyle"
-                >
-                  <options value="male">Male</options>
-                  <options value="female">Female</options>
-                </Field>
-             
-              </div>{" "} */}
-            <div>
-              {" "}
-              <div id="my-radio-group">Gender</div>
-              <div role="group" aria-labelledby="my-radio-group">
-                <label>
-                  <Field type="radio" name="gender" value="male" />
-                  Male
-                </label>
-                <label>
-                  <Field type="radio" name="gender" value="female" />
-                  Female
-                </label>
-                {/* <div>Picked: {values.picked}</div> */}
-              </div>
-              {/* {errors.gender && touched.gender ? (
-                <div className="ms-3 auth-error-message">{errors.gender}</div>
-              ) : null} */}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="phoneNumber"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Phone Number"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.phoneNumber && touched.phoneNumber ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.phoneNumber}
-                </div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="nationality"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Nationality"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.nationality && touched.nationality ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.nationality}
-                </div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="stateOfOrigin"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="State of Origin"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.stateOfOrigin && touched.stateOfOrigin ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.stateOfOrigin}
-                </div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div>Date of birth</div>
-              <DatePicker
-                showIcon
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                className="placeholderRadius mt-4"
-              />
-              {/* {errors.dateOfBirth && touched.dateOfBirth ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.dateOfBirth}
-                </div>
-              ) : null} */}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center mt-4">
-                {" "}
-                <div>Resume/CV</div>
-                {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                {/* <Field
-                  input="file"
-                  name="resume"
-                  type="file"
-                  autoComplete="off"
-                  className="w-100 my-2 formikFieldStyle"
-                /> */}
-                <input
-                  type="file"
-                  name="resume"
-                  id="resume-upload"
-                  accept=".jpeg, .png, .jpg"
-                  onChange={(e) => handleFileUpload(e)}
-                />
-              </div>
-              {/* {errors.resume && touched.resume ? (
-                <div className="ms-3 auth-error-message">{errors.resume}</div>
-              ) : null} */}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center mt-4">
-                {" "}
-                <div>Coverletter</div>
-                {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                {/* <Field
-                  input="file"
-                  name="coverletter"
-                  type="file"
-                  autoComplete="off"
-                  className="w-100 my-2 formikFieldStyle"
-                /> */}
-                <input
-                  type="file"
-                  name="coverletter"
-                  id="coverletter-upload"
-                  accept=".jpeg, .png, .jpg"
-                  onChange={(e) => handleFileUpload(e)}
-                />
-              </div>
-              {/* {errors.coverletter && touched.coverletter ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.coverletter}
-                </div>
-              ) : null} */}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="school"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="School"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.school && touched.school ? (
-                <div className="ms-3 auth-error-message">{errors.school}</div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="degree"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Degree"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.degree && touched.degree ? (
-                <div className="ms-3 auth-error-message">{errors.degree}</div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="discipline"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Discipline"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.discipline && touched.discipline ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.discipline}
-                </div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="experience"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Experience (in years)"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.experience && touched.experience ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.experience}
-                </div>
-              ) : null}
-            </div>
-            <div>
-              {" "}
-              <div className="align-items-center placeholderRadius mt-4">
-                <Field
-                  name="whyJoinUs"
-                  type="text"
-                  autoComplete="off"
-                  placeholder="Why do you want to join Mindafrik?"
-                  className="w-100 my-2 formikFieldStyle"
-                />
-              </div>
-              {errors.whyJoinUs && touched.whyJoinUs ? (
-                <div className="ms-3 auth-error-message">
-                  {errors.whyJoinUs}
-                </div>
-              ) : null}
-            </div>
-            {/* {errors.email && touched.email ? (
-                <div className="ms-3 auth-error-message">{errors.email}</div>
-              ) : null} */}
-            {/* </div> */}
-            {/* <Field type="hidden" name="userRole" value="counsellee" /> */}
-            <div className="my-3 text-center">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="submitFormBtn btn"
-              >
-                {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
-
-              {err && (
-                <p className="mt-3 auth-error-message" style={{ color: "red" }}>
-                  {err.message}
-                </p>
-              )}
-            </div>
-          </Form>
-        )}
-      </Formik>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="file"
+          // accept="image/"
+          accept=".jpeg, .png, .jpg"
+          onChange={onInputChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </>
   );
 };
@@ -1804,3 +1421,496 @@ const convertToBaseSIxtyFour = (file) => {
     };
   });
 };
+// export const SignUpAsCounsellorForm = () => {
+//   const [startDate, setStartDate] = useState(new Date());
+//   const [isSubmitting, setSubmitting] = useState(false);
+//   const [showPassword1, setShowPassword1] = useState(false);
+//   const togglePasswordVisibility1 = () => {
+//     setShowPassword1((prevShowPassword) => !prevShowPassword);
+//   };
+
+//   const [validationErrors, setValidationErrors] = useState({});
+//   const [err, setErr] = useState(null);
+
+//   const navigate = useNavigate();
+
+//   const handleSubmit = async (values) => {
+//     setSubmitting(true);
+
+//     const formData = new FormData();
+
+//     // const firstName = values.firstName;
+//     // const lastName = values.lastName;
+//     // const email = values.email;
+//     // const password = values.password;
+//     // const gender = values.gender;
+//     // const phoneNumber = values.phoneNumber;
+//     // const nationality = values.nationality;
+//     // const stateOfOrigin = values.stateOfOrigin;
+//     // const dateOfBirth = values.dateOfBirth;
+//     // const resume = values.resume;
+//     // const coverletter = values.coverletter;
+//     // const school = values.school;
+//     // const degree = values.degree;
+//     // const discipline = values.discipline;
+//     // const experience = values.experience;
+//     // const whyJoinUs = values.whyJoinUs;
+//     // Append other form data fields
+//     formData.append("firstName", values.firstName);
+//     formData.append("lastName", values.lastName);
+//     formData.append("email", values.email);
+//     formData.append("password", values.password);
+//     formData.append("gender", values.gender);
+//     formData.append("phoneNumber", values.phoneNumber);
+//     formData.append("nationality", values.nationality);
+//     formData.append("stateOfOrigin", values.stateOfOrigin);
+//     formData.append("dateOfBirth", startDate);
+//     formData.append("school", values.school);
+//     formData.append("degree", values.degree);
+//     formData.append("discipline", values.discipline);
+//     formData.append("experience", values.experience);
+//     formData.append("whyJoinUs", values.whyJoinUs);
+
+//     formData.append("resume", values.resume?.[0]); // Use the safe navigation operator '?'
+//     formData.append("coverletter", values.coverletter?.[0]); // Use the safe navigation operator '?'
+//     console.log("formData:", formData);
+//     // // Append resume and coverletter files
+//     // formData.append("resume", values.resume[0]);
+//     // formData.append("coverletter", values.coverletter[0]);
+
+//     try {
+//       await axios.post(
+//         // "http://localhost:4000/user/signup",
+//         "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
+//         formData,
+//         {
+//           headers: {
+//             "Content-Type": "multipart/form-data", // Make sure this header is set
+//           },
+//         }
+//         // inputs
+//         // {
+//         //   firstName: firstName,
+//         //   lastName: lastName,
+//         //   email: email,
+//         //   password: password,
+//         //   gender: gender,
+//         //   phoneNumber: phoneNumber,
+//         //   nationality: nationality,
+//         //   stateOfOrigin: stateOfOrigin,
+//         //   resume: resume,
+//         //   dateOfBirth: dateOfBirth,
+//         //   school: school,
+//         //   coverletter: coverletter,
+//         //   discipline: discipline,
+//         //   experience: experience,
+//         //   degree: degree,
+//         //   whyJoinUs: whyJoinUs,
+//         // }
+//       );
+//       navigate("/verify-email");
+//     } catch (err) {
+//       const errorMessage = err.response?.data || "An error occurred";
+//       setErr(errorMessage);
+//     } finally {
+//       setSubmitting(false);
+//     }
+//   };
+
+//   const handleFileUpload = async (e) => {
+//     const file = e.target.files[0];
+//     const baseSixtyFour = await convertToBaseSIxtyFour(file)
+//     console.log(baseSixtyFour);
+//   };
+
+//   return (
+//     <>
+//       <Formik
+//         initialValues={{
+//           firstName: "",
+//           lastName: "",
+//           email: "",
+//           password: "",
+//           gender: "",
+//           phoneNumber: "",
+//           nationality: "",
+//           stateOfOrigin: "",
+//           dateOfBirth: "",
+//           resume: "",
+//           coverletter: "",
+//           school: "",
+//           degree: "",
+//           discipline: "",
+//           experience: "",
+//           whyJoinUs: "",
+//         }}
+//         validationSchema={Yup.object().shape({
+//           firstName: Yup.string().required("First name is required"),
+//           lastName: Yup.string().required("Last name is required"),
+//           email: Yup.string()
+//             .matches(
+//               /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+//               "Invalid email format"
+//             )
+//             .required("Email is required"),
+//           password: Yup.string()
+//             .required("Password is required")
+//             .min(8, "Password must be at least 8 characters")
+//             .matches(
+//               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
+//               "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
+//             ),
+//           gender: Yup.string(),
+//           phoneNumber: Yup.string().required("Phone Number is required"),
+//           nationality: Yup.string().required("Nationality is required"),
+//           stateOfOrigin: Yup.string().required("State of origin is required"),
+//           dateOfBirth: Yup.string(),
+//           resume: Yup.string().required("Resume is required"),
+//           coverletter: Yup.string().required("Coverletter is required"),
+//           school: Yup.string().required("School is required"),
+//           degree: Yup.string().required("Degree is required"),
+//           discipline: Yup.string().required("Discipline is required"),
+//           experience: Yup.string().required("Experience is required"),
+//           whyJoinUs: Yup.string().required("This field is required"),
+//         })}
+//         onSubmit={handleSubmit}
+//       >
+//         {({ errors, touched }) => (
+//           <Form>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="firstName"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="First Name"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.firstName && touched.firstName ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.firstName}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="lastName"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Last Name"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.lastName && touched.lastName ? (
+//                 <div className="ms-3 auth-error-message">{errors.lastName}</div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="email"
+//                   type="email"
+//                   autoComplete="off"
+//                   placeholder="Email"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>{" "}
+//               {errors.email && touched.email ? (
+//                 <div className="ms-3 auth-error-message">{errors.email}</div>
+//               ) : null}
+//             </div>
+//             <div>
+//               <div className="d-flex align-items-center placeholderRadius mt-4">
+//                 {" "}
+//                 <Field
+//                   name="password"
+//                   type={showPassword1 ? "text" : "password"}
+//                   autoComplete="off"
+//                   placeholder="Password"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//                 <div onClick={togglePasswordVisibility1}>
+//                   {showPassword1 ? <RemoveRedEyeIcon /> : <VisibilityOffIcon />}
+//                 </div>
+//               </div>
+
+//               {errors.password && touched.password ? (
+//                 <div className="ms-3 auth-error-message">{errors.password}</div>
+//               ) : null}
+//             </div>
+//             {/* <div> */}{" "}
+//             {/* <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   component="select"
+//                   name="gender"
+//                   type="email"
+//                   // autoComplete="off"
+//                   placeholder="Select options"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 >
+//                   <options value="male">Male</options>
+//                   <options value="female">Female</options>
+//                 </Field>
+
+//               </div>{" "} */}
+//             <div>
+//               {" "}
+//               <div id="my-radio-group">Gender</div>
+//               <div role="group" aria-labelledby="my-radio-group">
+//                 <label>
+//                   <Field type="radio" name="gender" value="Male" />
+//                   Male
+//                 </label>
+//                 <label>
+//                   <Field type="radio" name="gender" value="Female" />
+//                   Female
+//                 </label>
+//                 {/* <div>Picked: {values.picked}</div> */}
+//               </div>
+//               {/* {errors.gender && touched.gender ? (
+//                 <div className="ms-3 auth-error-message">{errors.gender}</div>
+//               ) : null} */}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="phoneNumber"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Phone Number"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.phoneNumber && touched.phoneNumber ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.phoneNumber}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="nationality"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Nationality"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.nationality && touched.nationality ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.nationality}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="stateOfOrigin"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="State of Origin"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.stateOfOrigin && touched.stateOfOrigin ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.stateOfOrigin}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div>Date of birth</div>
+//               <DatePicker
+//                 showIcon
+//                 selected={startDate}
+//                 onChange={(date) => setStartDate(date)}
+//                 className="placeholderRadius mt-4"
+//               />
+//               {/* {errors.dateOfBirth && touched.dateOfBirth ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.dateOfBirth}
+//                 </div>
+//               ) : null} */}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center mt-4">
+//                 {" "}
+//                 <div>Resume/CV</div>
+//                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
+//                 {/* <Field
+//                   input="file"
+//                   name="resume"
+//                   type="file"
+//                   autoComplete="off"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 /> */}
+//                 <input
+//                   type="file"
+//                   name="resume"
+//                   id="resume-upload"
+//                   accept=".jpeg, .png, .jpg"
+//                   onChange={(e) => handleFileUpload(e)}
+//                 />
+//               </div>
+//               {errors.resume && touched.resume ? (
+//                 <div className="ms-3 auth-error-message">{errors.resume}</div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center mt-4">
+//                 {" "}
+//                 <div>Coverletter</div>
+//                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
+//                 {/* <Field
+//                   input="file"
+//                   name="coverletter"
+//                   type="file"
+//                   autoComplete="off"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 /> */}
+//                 <input
+//                   type="file"
+//                   name="coverletter"
+//                   id="coverletter-upload"
+//                   accept=".jpeg, .png, .jpg"
+//                   onChange={(e) => handleFileUpload(e)}
+//                 />
+//               </div>
+//               {errors.coverletter && touched.coverletter ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.coverletter}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="school"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="School"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.school && touched.school ? (
+//                 <div className="ms-3 auth-error-message">{errors.school}</div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="degree"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Degree"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.degree && touched.degree ? (
+//                 <div className="ms-3 auth-error-message">{errors.degree}</div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="discipline"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Discipline"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.discipline && touched.discipline ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.discipline}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="experience"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Experience (in years)"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.experience && touched.experience ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.experience}
+//                 </div>
+//               ) : null}
+//             </div>
+//             <div>
+//               {" "}
+//               <div className="align-items-center placeholderRadius mt-4">
+//                 <Field
+//                   name="whyJoinUs"
+//                   type="text"
+//                   autoComplete="off"
+//                   placeholder="Why do you want to join Mindafrik?"
+//                   className="w-100 my-2 formikFieldStyle"
+//                 />
+//               </div>
+//               {errors.whyJoinUs && touched.whyJoinUs ? (
+//                 <div className="ms-3 auth-error-message">
+//                   {errors.whyJoinUs}
+//                 </div>
+//               ) : null}
+//             </div>
+//             {/* {errors.email && touched.email ? (
+//                 <div className="ms-3 auth-error-message">{errors.email}</div>
+//               ) : null} */}
+//             {/* </div> */}
+//             {/* <Field type="hidden" name="userRole" value="counsellee" /> */}
+//             <div className="my-3 text-center">
+//               <button
+//                 type="submit"
+//                 disabled={isSubmitting}
+//                 className="submitFormBtn btn"
+//               >
+//                 {isSubmitting ? "Submitting..." : "Submit"}
+//               </button>
+
+//               {err && (
+//                 <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+//                   {err.message}
+//                 </p>
+//               )}
+//             </div>
+//           </Form>
+//         )}
+//       </Formik>
+//     </>
+//   );
+// };
+
+// const convertToBaseSIxtyFour = (file) => {
+//   return new Promise((resolve, reject) => {
+//     const fileReader = new FileReader();
+//     fileReader.readAsDataURL(file);
+//     fileReader.onload = () => {
+//       resolve(fileReader.result);
+//     };
+//     fileReader.onerror = (error) => {
+//       reject(error);
+//     };
+//   });
+// };
