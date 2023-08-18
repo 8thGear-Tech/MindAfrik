@@ -23,6 +23,8 @@ import PropTypes from "prop-types";
 
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+// import { rejects } from "assert";
+// import { error } from "console";
 
 // // export const SignInForm = () => {
 // export const SignInForm = ({ userRole }) => {
@@ -1401,6 +1403,12 @@ export const SignUpAsCounsellorForm = () => {
     }
   };
 
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const baseSixtyFour = await convertToBaseSIxtyFour(file);
+    console.log(baseSixtyFour);
+  };
+
   return (
     <>
       <Formik
@@ -1626,14 +1634,20 @@ export const SignUpAsCounsellorForm = () => {
                 {" "}
                 <div>Resume/CV</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                <Field
+                {/* <Field
                   input="file"
                   name="resume"
                   type="file"
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
+                /> */}
+                <input
+                  type="file"
+                  name="resume"
+                  id="resume-upload"
+                  accept=".jpeg, .png, .jpg"
+                  onChange={(e) => handleFileUpload(e)}
                 />
-                {/* <input acc/> */}
               </div>
               {errors.resume && touched.resume ? (
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
@@ -1645,12 +1659,19 @@ export const SignUpAsCounsellorForm = () => {
                 {" "}
                 <div>Coverletter</div>
                 {/* <div className="align-items-center placeholderRadius mt-4"> */}
-                <Field
+                {/* <Field
                   input="file"
                   name="coverletter"
                   type="file"
                   autoComplete="off"
                   className="w-100 my-2 formikFieldStyle"
+                /> */}
+                <input
+                  type="file"
+                  name="coverletter"
+                  id="coverletter-upload"
+                  accept=".jpeg, .png, .jpg"
+                  onChange={(e) => handleFileUpload(e)}
                 />
               </div>
               {errors.coverletter && touched.coverletter ? (
@@ -1765,4 +1786,17 @@ export const SignUpAsCounsellorForm = () => {
       </Formik>
     </>
   );
+};
+
+const convertToBaseSIxtyFour = (file) => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
 };

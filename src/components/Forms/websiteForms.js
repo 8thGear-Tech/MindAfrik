@@ -337,7 +337,7 @@ const SupportiveListeningSessionModal = ({ handleClose }) => {
       <Modal show={true} onHide={handleClose}>
         <Modal.Header closeButton></Modal.Header>
         <div className="text-center pb-4 pt-2">
-          <img src={bookingconfirmed} width="200" height="200" />
+          <img src={bookingconfirmed} width="300" height="200" />
         </div>
         <h4 className="text-center">
           Your booking has been successfully processed!
