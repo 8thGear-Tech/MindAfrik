@@ -1383,8 +1383,6 @@ export const SignUpAsCounsellorForm = () => {
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
-    } finally {
-      // setSubmitting(false);
     }
   };
 
