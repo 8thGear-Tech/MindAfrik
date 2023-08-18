@@ -1308,17 +1308,17 @@ export const SignUpAsCounselleeForm = () => {
 
 //Counsellor Form
 export const SignUpAsCounsellorForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [isSubmitting, setSubmitting] = useState(false);
-  const [showPassword1, setShowPassword1] = useState(false);
-  const togglePasswordVisibility1 = () => {
-    setShowPassword1((prevShowPassword) => !prevShowPassword);
-  };
+  // const [startDate, setStartDate] = useState(new Date());
+  // const [isSubmitting, setSubmitting] = useState(false);
+  // const [showPassword1, setShowPassword1] = useState(false);
+  // const togglePasswordVisibility1 = () => {
+  //   setShowPassword1((prevShowPassword) => !prevShowPassword);
+  // };
 
-  const [validationErrors, setValidationErrors] = useState({});
+  // const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [resume, setResume] = useState();
   const onInputChange = (e) => {
@@ -1384,7 +1384,7 @@ export const SignUpAsCounsellorForm = () => {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
     } finally {
-      setSubmitting(false);
+      // setSubmitting(false);
     }
   };
 
