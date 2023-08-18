@@ -1323,43 +1323,43 @@ export const SignUpAsCounsellorForm = () => {
   const handleSubmit = async (values) => {
     setSubmitting(true);
 
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    // const firstName = values.firstName;
-    // const lastName = values.lastName;
-    // const email = values.email;
-    // const password = values.password;
-    // const gender = values.gender;
-    // const phoneNumber = values.phoneNumber;
-    // const nationality = values.nationality;
-    // const stateOfOrigin = values.stateOfOrigin;
-    // const dateOfBirth = values.dateOfBirth;
-    // const resume = values.resume;
-    // const coverletter = values.coverletter;
-    // const school = values.school;
-    // const degree = values.degree;
-    // const discipline = values.discipline;
-    // const experience = values.experience;
-    // const whyJoinUs = values.whyJoinUs;
-    // Append other form data fields
-    formData.append("firstName", values.firstName);
-    formData.append("lastName", values.lastName);
-    formData.append("email", values.email);
-    formData.append("password", values.password);
-    formData.append("gender", values.gender);
-    formData.append("phoneNumber", values.phoneNumber);
-    formData.append("nationality", values.nationality);
-    formData.append("stateOfOrigin", values.stateOfOrigin);
-    formData.append("dateOfBirth", startDate);
-    formData.append("school", values.school);
-    formData.append("degree", values.degree);
-    formData.append("discipline", values.discipline);
-    formData.append("experience", values.experience);
-    formData.append("whyJoinUs", values.whyJoinUs);
+    const firstName = values.firstName;
+    const lastName = values.lastName;
+    const email = values.email;
+    const password = values.password;
+    const gender = values.gender;
+    const phoneNumber = values.phoneNumber;
+    const nationality = values.nationality;
+    const stateOfOrigin = values.stateOfOrigin;
+    const dateOfBirth = values.dateOfBirth;
+    const resume = values.resume;
+    const coverletter = values.coverletter;
+    const school = values.school;
+    const degree = values.degree;
+    const discipline = values.discipline;
+    const experience = values.experience;
+    const whyJoinUs = values.whyJoinUs;
+    // // Append other form data fields
+    // formData.append("firstName", values.firstName);
+    // formData.append("lastName", values.lastName);
+    // formData.append("email", values.email);
+    // formData.append("password", values.password);
+    // formData.append("gender", values.gender);
+    // formData.append("phoneNumber", values.phoneNumber);
+    // formData.append("nationality", values.nationality);
+    // formData.append("stateOfOrigin", values.stateOfOrigin);
+    // formData.append("dateOfBirth", startDate);
+    // formData.append("school", values.school);
+    // formData.append("degree", values.degree);
+    // formData.append("discipline", values.discipline);
+    // formData.append("experience", values.experience);
+    // formData.append("whyJoinUs", values.whyJoinUs);
 
-    formData.append("resume", values.resume?.[0]); // Use the safe navigation operator '?'
-    formData.append("coverletter", values.coverletter?.[0]); // Use the safe navigation operator '?'
-    console.log("formData:", formData);
+    // formData.append("resume", values.resume?.[0]); // Use the safe navigation operator '?'
+    // formData.append("coverletter", values.coverletter?.[0]); // Use the safe navigation operator '?'
+    // console.log("formData:", formData);
     // // Append resume and coverletter files
     // formData.append("resume", values.resume[0]);
     // formData.append("coverletter", values.coverletter[0]);
@@ -1367,13 +1367,13 @@ export const SignUpAsCounsellorForm = () => {
     try {
       await axios.post(
         // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data", // Make sure this header is set
-          },
-        }
+        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor"
+        // formData,
+        // {
+        //   headers: {
+        //     "Content-Type": "multipart/form-data", // Make sure this header is set
+        //   },
+        // }
         // inputs
         // {
         //   firstName: firstName,
