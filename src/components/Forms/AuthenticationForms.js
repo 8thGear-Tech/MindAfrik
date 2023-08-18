@@ -1450,7 +1450,11 @@ export const SignUpAsCounsellorForm = () => {
           phoneNumber: Yup.string().required("Phone Number is required"),
           nationality: Yup.string().required("Nationality is required"),
           stateOfOrigin: Yup.string().required("State of origin is required"),
-          dateOfBirth: Yup.string(),
+          // dateOfBirth: Yup.string(),
+          dateOfBirth: Yup.date()
+            .nullable()
+            .required("Date of birth is required"),
+
           resume: Yup.string().required("Resume is required"),
           coverletter: Yup.string().required("Coverletter is required"),
           school: Yup.string().required("School is required"),
@@ -1549,11 +1553,11 @@ export const SignUpAsCounsellorForm = () => {
               <div id="my-radio-group">Gender</div>
               <div role="group" aria-labelledby="my-radio-group">
                 <label>
-                  <Field type="radio" name="gender" value="Male" />
+                  <Field type="radio" name="gender" value="male" />
                   Male
                 </label>
                 <label>
-                  <Field type="radio" name="gender" value="Female" />
+                  <Field type="radio" name="gender" value="female" />
                   Female
                 </label>
                 {/* <div>Picked: {values.picked}</div> */}
