@@ -670,10 +670,20 @@ export const SupportiveListeningSessionForm = () => {
             <div>
               {" "}
               <div className="ms-2 mt-3">Date of birth</div>
+              {/* <DatePicker
+                showIcon
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                className="placeholderRadius mt-4"
+              /> */}
               <DatePicker
                 showIcon
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+                peekNextMonth
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
                 className="placeholderRadius mt-4"
               />
               {errors.dateOfBirth && touched.dateOfBirth ? (
