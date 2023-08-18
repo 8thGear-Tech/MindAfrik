@@ -1649,9 +1649,9 @@ export const SignUpAsCounsellorForm = () => {
                   onChange={(e) => handleFileUpload(e)}
                 />
               </div>
-              {errors.resume && touched.resume ? (
+              {/* {errors.resume && touched.resume ? (
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
-              ) : null}
+              ) : null} */}
             </div>
             <div>
               {" "}
@@ -1674,11 +1674,11 @@ export const SignUpAsCounsellorForm = () => {
                   onChange={(e) => handleFileUpload(e)}
                 />
               </div>
-              {errors.coverletter && touched.coverletter ? (
+              {/* {errors.coverletter && touched.coverletter ? (
                 <div className="ms-3 auth-error-message">
                   {errors.coverletter}
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
             <div>
               {" "}
