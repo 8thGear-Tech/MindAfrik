@@ -22,6 +22,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 //images
 import newsletter from "../../assets/images/newsletter/newsletter.png";
+import bookingconfirmed from "../../assets/images/emailverification/emailnotverified.png";
 import mindafrikbannerlogo from "../../assets/images/logo/mindafrikbannerlogo.png";
 
 export const AssesmentForm = (props) => {
@@ -330,6 +331,23 @@ export const ContactForm = () => {
 //   );
 // };
 
+const SupportiveListeningSessionModal = ({ handleClose }) => {
+  return (
+    <>
+      <Modal show={true} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <div className="text-center pb-4 pt-2">
+          <img src={bookingconfirmed} width="150" height="80" />
+        </div>
+        <h4 className="text-center">
+          Your booking has been successfully processed!
+        </h4>
+        <p className="text-center pb-3">Check your email for more details</p>
+      </Modal>
+    </>
+  );
+};
+
 export const SupportiveListeningSessionPage = () => {
   return (
     <>
@@ -391,6 +409,7 @@ export const SupportiveListeningSessionPage = () => {
 };
 
 export const SupportiveListeningSessionForm = () => {
+  const [showModal, setShowModal] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [isSubmitting, setSubmitting] = useState(false);
 
@@ -399,7 +418,7 @@ export const SupportiveListeningSessionForm = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     setSubmitting(true);
 
     const firstName = values.firstName;
@@ -446,7 +465,10 @@ export const SupportiveListeningSessionForm = () => {
           socialHandleSubscribedTo: socialHandleSubscribedTo,
         }
       );
-      navigate("/verify-email");
+      //  navigate("/verify-email");
+      resetForm();
+      setShowModal(true);
+      // console.log(showModal);
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
@@ -1042,6 +1064,11 @@ export const SupportiveListeningSessionForm = () => {
           </Form>
         )}
       </Formik>
+      {showModal && (
+        <SupportiveListeningSessionModal
+          handleClose={() => setShowModal(false)}
+        />
+      )}
     </>
   );
 };
