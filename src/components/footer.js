@@ -11,7 +11,7 @@ export const Footer = () => {
     <>
       <div class="container-fluid justify-content-center aboutHeroColor">
         {/* row-cols-1 row-cols-sm-2 row-cols-md-5 */}
-        <footer class="row pt-5 mt-5 d-flex   justify-content-between">
+        <footer class="row pt-5 mt-5 d-flex justify-content-between">
           <div class="col-lg-3 col-md-12 col-sm-6 col-xs-6 mb-3">
             <a
               href="/"
@@ -82,7 +82,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  mb-3">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mb-3">
             <h5>Legal Stuff</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
@@ -103,7 +103,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  mb-3">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mb-3">
             <h5>Useful links</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
@@ -137,7 +137,7 @@ export const Footer = () => {
             </ul>
           </div>
         </footer>
-        <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
+        <div class="d-flex flex-column flex-sm-row justify-content-center py-4 border-top">
           <p>Copyright © 2023 mindAfrik inc.</p>
           {/* <ul class="list-unstyled d-flex">
         <li class="ms-3">

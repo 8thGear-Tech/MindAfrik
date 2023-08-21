@@ -1086,8 +1086,9 @@ export const SupportiveListeningSessionForm = () => {
 export const NewsletterPage = () => {
   return (
     <>
-      <div className="container col-xl-10 col-xxl-8 px-4 py-5">
-        <div className="row align-items-center g-lg-5 py-5">
+      {/* <div className="container-fluid col-xl-10 col-xxl-8 px-4 py-5 newsletterBg"> */}
+      <div className="container-fluid py-4 newsletterBg">
+        <div className="row align-items-center py-5">
           <div className="row">
             {" "}
             <div className="col-lg-12 text-center">
@@ -1186,7 +1187,7 @@ export const NewsletterForm = () => {
       >
         {({ errors, touched }) => (
           <Form
-            className="p-4 p-md-5 border rounded-3 bg-body-tertiary"
+            className="p-4 p-md-5 border rounded-3 bg-body-tertiary newsletterFormShadow"
             style={{ backgroundColor: "#fcfcfc" }}
           >
             <div>

@@ -10,22 +10,24 @@
       "id": 2,
       "icon": "../assets/icons/howitworks/takeanassessment.png",
       "title": "Take our Assessment test",
-      "text": "Take our assessment test , to enable us provide you a customized service."
+      "text": "Take our assessment test , to enable us provide you a customized service.",
+      "link": "/psychologicalAssessment"
     },
     {
       "id": 3,
       "icon": "../assets/icons/howitworks/searchtherapist.png",
       "title": "Search for a therapist",
-      "text": "Browse through our community of licensed therapists, based on your location, language, and specialty. You can view the therapist's profile, ratings, and availability."
+      "text": "Browse through our community of licensed therapists, based on your location, language, and specialty. You can view the therapist's profile, ratings, and availability.",
+      "link": "/available-counsellors"
     }
   ],
   "homepageDataTwo": [
     {
       "id": 4,
       "icon": "../assets/icons/howitworks/bookasession.png",
-
       "title": "Book a session",
-      "text": "Select a convenient time slot and book your first session with the therapist of your choice; in the most accessible and convenient way for everyone, anywhere, at any time."
+      "text": "Select a convenient time slot and book your first session with the therapist of your choice; in the most accessible and convenient way for everyone, anywhere, at any time.",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSc02gsz28SwYWwPIQoj7iIry4XY9W0hxyCqioQiXeVxjNZFkw/viewform"
     },
     {
       "id": 5,

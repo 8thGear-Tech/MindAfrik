@@ -79,6 +79,7 @@ function App() {
         <Route path="privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="termsOfService" element={<TermsOfService />} />
         <Route path="assessment" element={<Assessment />} />
+        <Route path="available-counsellors" element={<CounsellorsDetails />} />
         {/* <Route path="assessment" element={<Assessment />} /> */}
         <Route
           path="psychologicalAssessment"

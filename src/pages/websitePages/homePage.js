@@ -29,6 +29,7 @@ import howitworksstepstwo from "../../assets/images/home/howitworksstepstwo.png"
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import { LogoutButton } from "../../components/Forms/AuthenticationForms";
+import { NewsletterPage } from "../../components/Forms/websiteForms";
 
 const Home = () => (
   <>
@@ -42,8 +43,9 @@ const Home = () => (
     {/* <TestimonialCarouselTwo /> */}
     {/* <WhyChooseUsCard /> */}
     <TestimonialsNew />
+    <NewsletterPage />
     {/* <TestimonialsCard /> */}
-    <Newsletter />
+    {/* <Newsletter /> */}
   </>
 );
 
