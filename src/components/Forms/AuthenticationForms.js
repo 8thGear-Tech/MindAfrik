@@ -1307,7 +1307,95 @@ export const SignUpAsCounselleeForm = () => {
 // };
 
 //Counsellor Form
+
 export const SignUpAsCounsellorForm = () => {
+  const [err, setErr] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (values, { setSubmitting }) => {
+    const formData = new FormData();
+    formData.append("firstName", values.firstName);
+    formData.append("resume", values.resume);
+
+    try {
+      await axios.post(
+        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      setSubmitting(false);
+      navigate("/verify-email");
+    } catch (err) {
+      const errorMessage = err.response?.data || "An error occurred";
+      setErr(errorMessage);
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <>
+      <Formik
+        initialValues={{
+          firstName: "",
+          resume: null,
+        }}
+        validationSchema={Yup.object().shape({
+          firstName: Yup.string().required("First name is required"),
+          resume: Yup.mixed().required("Resume is required"),
+        })}
+        onSubmit={handleSubmit}
+      >
+        {({ errors, touched, isSubmitting, setFieldValue }) => (
+          <Form>
+            <div className="align-items-center placeholderRadius mt-4">
+              <Field
+                name="firstName"
+                type="text"
+                autoComplete="off"
+                placeholder="First Name"
+                className="w-100 my-2 formikFieldStyle"
+              />
+              {errors.firstName && touched.firstName && (
+                <div className="ms-3 auth-error-message">
+                  {errors.firstName}
+                </div>
+              )}
+            </div>
+
+            <div className="align-items-center mt-4">
+              <div>Resume/CV</div>
+              <input
+                type="file"
+                name="resume"
+                accept=".jpeg, .png, .jpg"
+                onChange={(event) => {
+                  setFieldValue("resume", event.currentTarget.files[0]);
+                }}
+              />
+              {errors.resume && touched.resume && (
+                <div className="ms-3 auth-error-message">{errors.resume}</div>
+              )}
+            </div>
+
+            {err && (
+              <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                {err.message}
+              </p>
+            )}
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </button>
+          </Form>
+        )}
+      </Formik>
+    </>
+  );
+};
+export const SignUpUpAsCounsellorForm = () => {
   // const [startDate, setStartDate] = useState(new Date());
   // const [isSubmitting, setSubmitting] = useState(false);
   // const [showPassword1, setShowPassword1] = useState(false);
