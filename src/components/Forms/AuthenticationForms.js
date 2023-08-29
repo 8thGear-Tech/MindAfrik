@@ -1331,10 +1331,10 @@ export const SignUpAsCounsellorForm = () => {
     // setSubmitting(true);
 
     const formData = new FormData();
-    formData.append("firstName", values.firstName);
+    const firstName = values.firstName;
+    // formData.append("firstName", values.firstName);
     formData.append("resume", values.resume);
 
-    // const firstName = values.firstName;
     // const lastName = values.lastName;
     // const email = values.email;
     // const password = values.password;
