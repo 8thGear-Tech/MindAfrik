@@ -1320,7 +1320,7 @@ export const SignUpAsCounsellorForm = () => {
 
   const navigate = useNavigate();
 
-  // const [resume, setResume] = useState();
+  const [resume, setResume] = useState();
   // const onInputChange = (e) => {
   //   console.log(e.target.files[0]);
   //   setResume(e.target.files[0]);
@@ -1332,7 +1332,7 @@ export const SignUpAsCounsellorForm = () => {
 
     const formData = new FormData();
     const firstName = values.firstName;
-    // formData.append("firstName", values.firstName);
+    formData.append("firstName", values.firstName);
     formData.append("resume", values.resume);
 
     // const lastName = values.lastName;
@@ -1360,26 +1360,26 @@ export const SignUpAsCounsellorForm = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        },
-        // inputs
-        {
-          firstName: firstName,
-          //   lastName: lastName,
-          //   email: email,
-          //   password: password,
-          //   gender: gender,
-          //   phoneNumber: phoneNumber,
-          //   nationality: nationality,
-          //   stateOfOrigin: stateOfOrigin,
-          //   resume: resume,
-          //   dateOfBirth: dateOfBirth,
-          //   school: school,
-          //   coverletter: coverletter,
-          //   discipline: discipline,
-          //   experience: experience,
-          //   degree: degree,
-          //   whyJoinUs: whyJoinUs,
         }
+        // // inputs
+        // {
+        //   firstName: firstName,
+        //   //   lastName: lastName,
+        //   //   email: email,
+        //   //   password: password,
+        //   //   gender: gender,
+        //   //   phoneNumber: phoneNumber,
+        //   //   nationality: nationality,
+        //   //   stateOfOrigin: stateOfOrigin,
+        //   //   resume: resume,
+        //   //   dateOfBirth: dateOfBirth,
+        //   //   school: school,
+        //   //   coverletter: coverletter,
+        //   //   discipline: discipline,
+        //   //   experience: experience,
+        //   //   degree: degree,
+        //   //   whyJoinUs: whyJoinUs,
+        // }
       );
       navigate("/verify-email");
     } catch (err) {
@@ -1399,11 +1399,11 @@ export const SignUpAsCounsellorForm = () => {
       <Formik
         initialValues={{
           firstName: "",
-          // resume: "",
+          resume: null, // Change to null instead of an empty string
         }}
         validationSchema={Yup.object().shape({
           firstName: Yup.string().required("First name is required"),
-          // resume: Yup.string().required("Resume is required"),/
+          resume: Yup.string().required("Resume is required"),
         })}
         onSubmit={handleSubmit}
       >
@@ -1443,6 +1443,10 @@ export const SignUpAsCounsellorForm = () => {
                   type="file"
                   name="resume"
                   accept=".jpeg, .png, .jpg"
+                  onChange={(e) => {
+                    // setResume("resume", event.currentTarget.files[0]);
+                    setResume("resume", e.target.files[0]);
+                  }}
                   // onChange={onInputChange}
                 />
                 {/* <input
