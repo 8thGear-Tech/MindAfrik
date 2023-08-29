@@ -50,7 +50,6 @@ export const BookASessionBtn = () => {
       <Link to="/book-a-supportive-listening-session">
         <Button className="BookaSessionBtn">Book a Session</Button>
       </Link>
-
       {/* </a> */}
       {/* <a href="/counsellorsDetails">
         {" "}

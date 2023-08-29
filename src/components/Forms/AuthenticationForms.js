@@ -1315,10 +1315,10 @@ export const SignUpAsCounsellorForm = () => {
   //   setShowPassword1((prevShowPassword) => !prevShowPassword);
   // };
 
-  // const [validationErrors, setValidationErrors] = useState({});
+  const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [resume, setResume] = useState();
   const onInputChange = (e) => {
@@ -1326,12 +1326,14 @@ export const SignUpAsCounsellorForm = () => {
     setResume(e.target.files[0]);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (values) => {
+    // e.preventDefault();
     // setSubmitting(true);
 
     const formData = new FormData();
-    formData.append("resume", resume);
+    formData.append("firstName", values.firstName);
+    formData.append("resume", values.resume);
+
     // const firstName = values.firstName;
     // const lastName = values.lastName;
     // const email = values.email;
@@ -1379,7 +1381,7 @@ export const SignUpAsCounsellorForm = () => {
         //   whyJoinUs: whyJoinUs,
         // }
       );
-      // navigate("/verify-email");
+      navigate("/verify-email");
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
@@ -1394,7 +1396,86 @@ export const SignUpAsCounsellorForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <Formik
+        initialValues={{
+          firstName: "",
+          resume: "",
+        }}
+        validationSchema={Yup.object().shape({
+          firstName: Yup.string().required("First name is required"),
+          resume: Yup.string().required("Resume is required"),
+        })}
+        onSubmit={handleSubmit}
+      >
+        {({ errors, touched }) => (
+          <Form onSubmit={handleSubmit}>
+            <div>
+              <div className="align-items-center placeholderRadius mt-4">
+                <Field
+                  name="firstName"
+                  type="text"
+                  autoComplete="off"
+                  placeholder="First Name"
+                  className="w-100 my-2 formikFieldStyle"
+                />
+              </div>
+              {errors.firstName && touched.firstName ? (
+                <div className="ms-3 auth-error-message">
+                  {errors.firstName}
+                </div>
+              ) : null}
+            </div>
+
+            <div>
+              {" "}
+              <div className="align-items-center mt-4">
+                {" "}
+                <div>Resume/CV</div>
+                {/* <div className="align-items-center placeholderRadius mt-4"> */}
+                {/* <Field
+                  input="file"
+                  name="resume"
+                  type="file"
+                  autoComplete="off"
+                  className="w-100 my-2 formikFieldStyle"
+                /> */}
+                <input
+                  type="file"
+                  name="resume"
+                  accept=".jpeg, .png, .jpg"
+                  onChange={onInputChange}
+                />
+                {/* <input
+                  type="file"
+                  name="resume"
+                  id="resume-upload"
+                  accept=".jpeg, .png, .jpg"
+                  onChange={(e) => handleFileUpload(e)}
+                /> */}
+              </div>
+              {errors.resume && touched.resume ? (
+                <div className="ms-3 auth-error-message">{errors.resume}</div>
+              ) : null}
+            </div>
+            {err && (
+              <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                {err.message}
+              </p>
+            )}
+            <button type="submit">Submit</button>
+            {/* <div className="my-3 text-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="submitFormBtn btn"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+            </div> */}
+          </Form>
+        )}
+      </Formik>
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="file"
           // accept="image/"
@@ -1402,7 +1483,7 @@ export const SignUpAsCounsellorForm = () => {
           onChange={onInputChange}
         />
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
     </>
   );
 };
