@@ -1321,10 +1321,10 @@ export const SignUpAsCounsellorForm = () => {
   const navigate = useNavigate();
 
   const [resume, setResume] = useState();
-  const onInputChange = (e) => {
-    console.log(e.target.files[0]);
-    setResume(e.target.files[0]);
-  };
+  // const onInputChange = (e) => {
+  //   console.log(e.target.files[0]);
+  //   setResume(e.target.files[0]);
+  // };
 
   const handleSubmit = async (values) => {
     // e.preventDefault();
@@ -1332,7 +1332,7 @@ export const SignUpAsCounsellorForm = () => {
 
     const formData = new FormData();
     formData.append("firstName", values.firstName);
-    formData.append("resume", values.resume);
+    formData.append("resume", resume);
 
     // const firstName = values.firstName;
     // const lastName = values.lastName;
@@ -1399,11 +1399,11 @@ export const SignUpAsCounsellorForm = () => {
       <Formik
         initialValues={{
           firstName: "",
-          resume: "",
+          // resume: "",
         }}
         validationSchema={Yup.object().shape({
           firstName: Yup.string().required("First name is required"),
-          resume: Yup.string().required("Resume is required"),
+          // resume: Yup.string().required("Resume is required"),/
         })}
         onSubmit={handleSubmit}
       >
@@ -1443,7 +1443,7 @@ export const SignUpAsCounsellorForm = () => {
                   type="file"
                   name="resume"
                   accept=".jpeg, .png, .jpg"
-                  onChange={onInputChange}
+                  // onChange={onInputChange}
                 />
                 {/* <input
                   type="file"
