@@ -1444,8 +1444,8 @@ export const SignUpAsCounsellorForm = () => {
                   name="resume"
                   accept=".jpeg, .png, .jpg"
                   onChange={(e) => {
-                    // setResume("resume", event.currentTarget.files[0]);
-                    setResume("resume", e.target.files[0]);
+                    setResume("resume", e.currentTarget.files[0]);
+                    // setResume("resume", e.target.files[0]);
                   }}
                   // onChange={onInputChange}
                 />
