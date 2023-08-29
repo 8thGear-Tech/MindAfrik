@@ -1360,26 +1360,26 @@ export const SignUpAsCounsellorForm = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
         // inputs
-        // {
-        //   firstName: firstName,
-        //   lastName: lastName,
-        //   email: email,
-        //   password: password,
-        //   gender: gender,
-        //   phoneNumber: phoneNumber,
-        //   nationality: nationality,
-        //   stateOfOrigin: stateOfOrigin,
-        //   resume: resume,
-        //   dateOfBirth: dateOfBirth,
-        //   school: school,
-        //   coverletter: coverletter,
-        //   discipline: discipline,
-        //   experience: experience,
-        //   degree: degree,
-        //   whyJoinUs: whyJoinUs,
-        // }
+        {
+          firstName: firstName,
+          //   lastName: lastName,
+          //   email: email,
+          //   password: password,
+          //   gender: gender,
+          //   phoneNumber: phoneNumber,
+          //   nationality: nationality,
+          //   stateOfOrigin: stateOfOrigin,
+          //   resume: resume,
+          //   dateOfBirth: dateOfBirth,
+          //   school: school,
+          //   coverletter: coverletter,
+          //   discipline: discipline,
+          //   experience: experience,
+          //   degree: degree,
+          //   whyJoinUs: whyJoinUs,
+        }
       );
       navigate("/verify-email");
     } catch (err) {
