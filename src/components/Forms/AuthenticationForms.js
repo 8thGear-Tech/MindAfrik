@@ -1320,7 +1320,7 @@ export const SignUpAsCounsellorForm = () => {
 
   const navigate = useNavigate();
 
-  const [resume, setResume] = useState();
+  // const [resume, setResume] = useState();
   // const onInputChange = (e) => {
   //   console.log(e.target.files[0]);
   //   setResume(e.target.files[0]);
@@ -1332,7 +1332,7 @@ export const SignUpAsCounsellorForm = () => {
 
     const formData = new FormData();
     formData.append("firstName", values.firstName);
-    formData.append("resume", resume);
+    formData.append("resume", values.resume);
 
     // const firstName = values.firstName;
     // const lastName = values.lastName;
