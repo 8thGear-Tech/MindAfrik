@@ -1309,7 +1309,8 @@ export const SignUpAsCounselleeForm = () => {
 //Counsellor Form
 
 export const SignUpAsCounsellorForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState("");
+  // const [startDate, setStartDate] = useState(new Date());
   const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const togglePasswordVisibility1 = () => {
@@ -1333,7 +1334,7 @@ export const SignUpAsCounsellorForm = () => {
     formData.append("stateOfOrigin", values.stateOfOrigin);
     formData.append("dateOfBirth", startDate);
     formData.append("resume", values.resume);
-    // formData.append("coverletter", values.coverletter);
+    formData.append("coverletter", values.coverletter);
     formData.append("school", values.school);
     formData.append("degree", values.degree);
     formData.append("discipline", values.discipline);
@@ -1373,7 +1374,7 @@ export const SignUpAsCounsellorForm = () => {
           stateOfOrigin: "",
           dateOfBirth: "",
           resume: null,
-          // coverletter: null,
+          coverletter: null,
           school: "",
           degree: "",
           discipline: "",
@@ -1402,7 +1403,7 @@ export const SignUpAsCounsellorForm = () => {
           stateOfOrigin: Yup.string().required("State of origin is required"),
           dateOfBirth: Yup.string(),
           resume: Yup.mixed().required("Resume is required"),
-          // coverletter: Yup.mixed().required("Coverletter is required"),
+          coverletter: Yup.mixed().required("Coverletter is required"),
           school: Yup.string().required("School is required"),
           degree: Yup.string().required("Degree is required"),
           discipline: Yup.string().required("Discipline is required"),
@@ -1589,7 +1590,7 @@ export const SignUpAsCounsellorForm = () => {
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
               )}
             </div>
-            {/* <div className="align-items-center mt-4">
+            <div className="align-items-center mt-4">
               <div>Coverletter</div>
               <input
                 type="file"
@@ -1604,7 +1605,7 @@ export const SignUpAsCounsellorForm = () => {
                   {errors.coverletter}
                 </div>
               )}
-            </div> */}
+            </div>
             <div>
               {" "}
               <div className="align-items-center placeholderRadius mt-4">
