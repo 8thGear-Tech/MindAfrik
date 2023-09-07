@@ -1358,8 +1358,10 @@ export const SignUpAsCounsellorForm = () => {
           },
         }
       );
-      setSubmitting(false);
-      navigate("/verify-email");
+      resetForm();
+      setShowModal(true);
+      // setSubmitting(false);
+      // navigate("/verify-email");
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
