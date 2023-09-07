@@ -1340,7 +1340,7 @@ export const SignUpAsCounsellorForm = () => {
     formData.append("stateOfOrigin", values.stateOfOrigin);
     formData.append("dateOfBirth", startDate);
     formData.append("resume", values.resume);
-    formData.append("coverletter", values.coverletter);
+    // formData.append("coverletter", values.coverletter);
     formData.append("school", values.school);
     formData.append("degree", values.degree);
     formData.append("discipline", values.discipline);
@@ -1381,7 +1381,7 @@ export const SignUpAsCounsellorForm = () => {
           stateOfOrigin: "",
           dateOfBirth: "",
           resume: null,
-          coverletter: null,
+          // coverletter: null,
           school: "",
           degree: "",
           discipline: "",
@@ -1410,7 +1410,7 @@ export const SignUpAsCounsellorForm = () => {
           stateOfOrigin: Yup.string().required("State of origin is required"),
           dateOfBirth: Yup.string(),
           resume: Yup.mixed().required("Resume is required"),
-          coverletter: Yup.mixed().required("Coverletter is required"),
+          // coverletter: Yup.mixed().required("Coverletter is required"),
           school: Yup.string().required("School is required"),
           degree: Yup.string().required("Degree is required"),
           discipline: Yup.string().required("Discipline is required"),
