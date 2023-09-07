@@ -1325,7 +1325,10 @@ export const SignUpAsCounsellorForm = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+  // const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { resetForm }) => {
+    setSubmitting(true);
+
     const formData = new FormData();
     formData.append("firstName", values.firstName);
     formData.append("lastName", values.lastName);
@@ -1416,7 +1419,8 @@ export const SignUpAsCounsellorForm = () => {
         })}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched, isSubmitting, setFieldValue }) => (
+        {({ errors, touched, setFieldValue }) => (
+          // {({ errors, touched, isSubmitting, setFieldValue }) => (
           <Form>
             <div className="align-items-center placeholderRadius mt-4">
               <Field
