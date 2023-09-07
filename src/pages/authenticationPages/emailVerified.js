@@ -4,6 +4,26 @@ import mindafriklogo from "../../assets/images/logo/mindafriklogo.png";
 import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
 import emailnotverified from "../../assets/images/emailverification/emailnotverified.png";
 import emailverified from "../../assets/images/emailverification/emailverified.png";
+import Modal from "react-bootstrap/Modal";
+
+export const PendingVerificationModal = ({ handleClose }) => {
+  return (
+    <>
+      <Modal show={true} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <div className="text-center pb-4 pt-2">
+          <img src={emailnotverified} width="300" height="200" />
+        </div>
+        <h4 className="text-center">You can now verify your email</h4>
+        <p className="text-center pb-3">
+          {" "}
+          Check your inbox and click on the verification link to complete your
+          signup.
+        </p>
+      </Modal>
+    </>
+  );
+};
 
 export const PendingVerification = () => {
   return (

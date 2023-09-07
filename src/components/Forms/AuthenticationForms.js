@@ -23,6 +23,8 @@ import PropTypes from "prop-types";
 
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { PendingVerificationModal } from "../../pages/authenticationPages/emailVerified";
+
 // import { rejects } from "assert";
 // import { error } from "console";
 
@@ -1309,6 +1311,7 @@ export const SignUpAsCounselleeForm = () => {
 //Counsellor Form
 
 export const SignUpAsCounsellorForm = () => {
+  const [showModal, setShowModal] = useState(false);
   const [startDate, setStartDate] = useState("");
   // const [startDate, setStartDate] = useState(new Date());
   const [isSubmitting, setSubmitting] = useState(false);
@@ -1344,6 +1347,7 @@ export const SignUpAsCounsellorForm = () => {
     try {
       await axios.post(
         "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellor",
+        // "https://localhost:4000/user/sign-up-as-a-counsellor",
         formData,
         {
           headers: {
@@ -1494,14 +1498,26 @@ export const SignUpAsCounsellorForm = () => {
               </div>{" "} */}
             <div>
               {" "}
-              <div id="my-radio-group">Gender</div>
+              <div id="my-radio-group" className="ms-2 mt-3 mb-2">
+                Gender
+              </div>
               <div role="group" aria-labelledby="my-radio-group">
-                <label>
-                  <Field type="radio" name="gender" value="Male" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="Male"
+                    className="me-2"
+                  />
                   Male
                 </label>
-                <label>
-                  <Field type="radio" name="gender" value="Female" />
+                <label className="mx-2 formOptions">
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="Female"
+                    className="me-2"
+                  />
                   Female
                 </label>
                 {/* <div>Picked: {values.picked}</div> */}
@@ -1590,7 +1606,7 @@ export const SignUpAsCounsellorForm = () => {
                 <div className="ms-3 auth-error-message">{errors.resume}</div>
               )}
             </div>
-            <div className="align-items-center mt-4">
+            {/* <div className="align-items-center mt-4">
               <div>Coverletter</div>
               <input
                 type="file"
@@ -1605,7 +1621,7 @@ export const SignUpAsCounsellorForm = () => {
                   {errors.coverletter}
                 </div>
               )}
-            </div>
+            </div> */}
             <div>
               {" "}
               <div className="align-items-center placeholderRadius mt-4">
@@ -1692,12 +1708,30 @@ export const SignUpAsCounsellorForm = () => {
                 {err.message}
               </p>
             )}
-            <button type="submit" disabled={isSubmitting}>
+            <div className="mt-5 mb-3 text-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="submitFormBtn btn"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+
+              {err && (
+                <p className="mt-3 auth-error-message" style={{ color: "red" }}>
+                  {err.message}
+                </p>
+              )}
+            </div>
+            {/* <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Submitting..." : "Submit"}
-            </button>
+            </button> */}
           </Form>
         )}
       </Formik>
+      {showModal && (
+        <PendingVerificationModal handleClose={() => setShowModal(false)} />
+      )}
     </>
   );
 };
