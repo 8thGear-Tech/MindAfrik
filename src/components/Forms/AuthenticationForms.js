@@ -1586,10 +1586,20 @@ export const SignUpAsCounsellorForm = () => {
             <div>
               {" "}
               <div>Date of birth</div>
+              {/* <DatePicker
+                showIcon
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                className="placeholderRadius mt-4"
+              /> */}
               <DatePicker
                 showIcon
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+                peekNextMonth
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
                 className="placeholderRadius mt-4"
               />
               {/* {errors.dateOfBirth && touched.dateOfBirth ? (
