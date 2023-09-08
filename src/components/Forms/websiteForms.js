@@ -15,6 +15,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 
+//React Toastify
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //newslettermodal
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -1160,6 +1165,7 @@ export const NewsletterForm = () => {
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setSubmitting(false);
     }
