@@ -1173,6 +1173,7 @@ export const NewsletterForm = () => {
 
   return (
     <>
+      <ToastContainer />
       <Formik
         initialValues={{
           firstName: "",
