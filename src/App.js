@@ -1,5 +1,7 @@
 import * as React from "react";
 // import { Component } from "react";
+//auth
+import RequireAuth from "./components/requireAuth";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // import { TestOneForm } from "./components/Forms/testoneform";
@@ -42,6 +44,7 @@ import AdminDashboardCounselleesPage from "./pages/dashboardPages/admin/adminDas
 import AdminDashboardCounsellorsPage from "./pages/dashboardPages/admin/adminDashboardCounselorsPage";
 import AdminDashboardHomePage from "./pages/dashboardPages/admin/adminDashboardHomePage";
 import AdminDashboardNotificationPage from "./pages/dashboardPages/admin/adminDashboardNotificationPage";
+import { Unauthorized } from "./pages/websitePages/unauthorized";
 
 //Counsellor Dashboard Pages
 import CounsellorDashboardHomePage from "./pages/dashboardPages/counsellor/counselorsDashboardHomePage";
@@ -66,6 +69,12 @@ import CounselleeNotification from "./pages/dashboardPages/counsellee/counselees
 import CounselleeTestPage from "./pages/dashboardPages/counsellee/counseleesDashboard_TakeATestPage";
 import { NavbarSection } from "./components/Navbar/guestNavbar";
 
+const ROLES = {
+  Admin: 1,
+  Counsellor: 2,
+  Counsellee: 3,
+};
+
 function App() {
   return (
     <BrowserRouter>
@@ -86,10 +95,14 @@ function App() {
           element={<PsychologicalAssessment />}
         />
         {/* Admin Dashboard */}
-        <Route
-          path="adminDashboardHomePage"
-          element={<AdminDashboardHomePage />}
-        />
+        <Route path="unauthorized" element={<Unauthorized />} />
+        {/* Protected Routes */}
+        <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+          <Route
+            path="adminDashboardHomePage"
+            element={<AdminDashboardHomePage />}
+          />
+        </Route>
         <Route
           path="adminDashboardCounselleesPage"
           element={<AdminDashboardCounselleesPage />}
@@ -103,10 +116,12 @@ function App() {
           element={<AdminDashboardNotificationPage />}
         />
         {/* Counsellors Dashboard */}
-        <Route
-          path="counsellorDashboard"
-          element={<CounsellorDashboardHomePage />}
-        />
+        <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}>
+          <Route
+            path="counsellorDashboard"
+            element={<CounsellorDashboardHomePage />}
+          />
+        </Route>
         <Route path="counsellorProfile" element={<CounsellorProfile />} />
         <Route
           path="counsellorCounselleeList"
@@ -119,10 +134,12 @@ function App() {
         <Route path="counsellorNote" element={<CounsellorNote />} />
         <Route path="counsellorsDetails" element={<CounsellorsDetails />} />
         {/* Counsellee Dashboard */}
-        <Route
-          path="counselleeDashboard"
-          element={<CounselleeDashboardHomePage />}
-        />
+        <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}>
+          <Route
+            path="counselleeDashboard"
+            element={<CounselleeDashboardHomePage />}
+          />
+        </Route>
         <Route path="counselleeProfile" element={<CounselleeProfile />} />
         <Route path="counselleeSession" element={<CounselleeSession />} />
         <Route

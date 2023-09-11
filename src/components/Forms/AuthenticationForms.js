@@ -1,4 +1,5 @@
 import { useState } from "react";
+// import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
@@ -14,8 +15,8 @@ import {
 import Button from "react-bootstrap/Button";
 import { SendBtn, SubmitForm } from "../Buttons/actionBtn";
 import KeyboardBackspaceOutlinedIcon from "@mui/icons-material/KeyboardBackspaceOutlined";
-import { AuthContext } from "../context/authContext";
-import { useContext } from "react";
+// import { AuthContext, AuthContextProvider } from "../context/authContext";
+import useAuth from "../hooks/useAuth";
 
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
@@ -116,6 +117,8 @@ import { PendingVerificationModal } from "../../pages/authenticationPages/emailV
 // };
 
 export const SignInForm = ({ userRole }) => {
+  const { setAuth } = useAuth();
+  // const { setAuth } = useContext(AuthContextProvider);
   const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -126,31 +129,49 @@ export const SignInForm = ({ userRole }) => {
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
-    const firstName = values.firstName;
-    const lastName = values.lastName;
+    // const firstName = values.firstName;
+    // const lastName = values.lastName;
     const email = values.email;
     const password = values.password;
 
     try {
-      await axios.post(
-        // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/signup",
+      const response = await axios.post(
+        // "http://localhost:4000/user/login",
+        "https://mindafrikserver.onrender.com/user/login",
         // inputs
         {
-          firstName: firstName,
-          lastName: lastName,
+          // firstName: firstName,
+          // lastName: lastName,
           email: email,
           password: password,
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
         }
       );
-      navigate("/verify-email");
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      setAuth({ email, password, roles, accessToken });
+      navigate(from, { replace: true });
     } catch (err) {
-      const errorMessage = err.response?.data || "An error occurred";
-      setErr(errorMessage);
+      // const errorMessage = err.response?.data || "An error occurred";
+      // setErr(errorMessage);
+      if (!err?.response) {
+        setErr("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErr("Missing email or password");
+      } else if (err.response?.status === 401) {
+        setErrorMessage("Unauthorized");
+      } else {
+        setErr("Login failed");
+      }
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
