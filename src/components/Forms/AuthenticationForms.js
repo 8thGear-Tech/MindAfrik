@@ -157,8 +157,9 @@ export const SignInForm = ({ userRole }) => {
         }
       );
       const accessToken = response?.data?.access_token;
-      const roles = response?.data?.roles;
-      setAuth({ email, password, roles, accessToken });
+      const role = response?.data?.role;
+      // const roles = response?.data?.roles;
+      setAuth({ email, password, role, accessToken });
 
       //new
 
