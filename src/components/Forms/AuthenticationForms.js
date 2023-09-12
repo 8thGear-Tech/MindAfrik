@@ -169,7 +169,8 @@ export const SignInForm = ({ userRole }) => {
         console.log("Access Token:", access_token);
 
         // Assuming setAuth is a function to set authentication state
-        setAuth(true); // Set authentication state to true
+        setAuth({ email, password, role, access_token }); // Set authentication state to true
+        // setAuth(true); // Set authentication state to true
         navigate(from, { replace: true });
       }
       //  else {
