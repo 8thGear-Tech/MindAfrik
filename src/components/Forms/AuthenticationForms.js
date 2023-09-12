@@ -158,8 +158,10 @@ export const SignInForm = ({ userRole }) => {
       );
 
       console.log("Response:", response);
-      const accessToken = response?.data?.access_token;
-      const role = response?.data?.role;
+      const accessToken = response.data.access_token;
+      // const accessToken = response?.data?.access_token;
+      const role = response.data.role;
+      // const role = response?.data?.role;
 
       // Update the data with the access token and role
       const data = {
