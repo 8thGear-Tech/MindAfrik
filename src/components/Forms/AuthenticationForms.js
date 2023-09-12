@@ -165,12 +165,12 @@ export const SignInForm = ({ userRole }) => {
       const data = {
         email,
         password,
-        role,
         accessToken,
+        role,
       };
 
       setAuth(data);
-      setAuth({ data });
+      // setAuth({ email, password, role, accessToken });
       // setAuth({ email, password, role, accessToken });
 
       //new
