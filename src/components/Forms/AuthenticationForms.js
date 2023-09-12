@@ -156,16 +156,16 @@ export const SignInForm = ({ userRole }) => {
           // withCredentials: true,
         }
       );
-      const accessToken = response?.data?.accessToken;
+      const accessToken = response?.data?.access_token;
       const roles = response?.data?.roles;
-      // setAuth({ email, password, roles, accessToken });
+      setAuth({ email, password, roles, accessToken });
 
       //new
 
-      setAuth({
-        user: { email, password },
-        role: "Counsellor", // Set the user's role based on your logic
-      });
+      // setAuth({
+      //   user: { email, password },
+      //   role: "Counsellor", // Set the user's role based on your logic
+      // });
       navigate(from, { replace: true });
     } catch (err) {
       // const errorMessage = err.response?.data || "An error occurred";
