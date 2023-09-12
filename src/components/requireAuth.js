@@ -27,47 +27,47 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import useAuth from "./hooks/useAuth";
 
-const RequireAuth = ({ allowedRoles }) => {
-  const { auth } = useAuth();
-  const location = useLocation();
-
-  if (
-    auth &&
-    auth.role &&
-    auth.access_token &&
-    allowedRoles.includes(auth.role)
-  ) {
-    return <Outlet />;
-  } else {
-    return auth?.user ? (
-      <Navigate to="/unauthorized" state={{ from: location }} replace />
-    ) : (
-      <Navigate to="/signInPage" state={{ from: location }} replace />
-    );
-  }
-};
-
-export default RequireAuth;
 // const RequireAuth = ({ allowedRoles }) => {
 //   const { auth } = useAuth();
 //   const location = useLocation();
 
-//   console.log("Auth:", auth);
-//   console.log("Allowed Roles:", allowedRoles);
-//   // return auth?.role?.find((role) => allowedRoles?.includes(role)) ? (
-//   // return auth?.role && allowedRoles.includes(auth?.role) ? (
-//   // return auth?.role &&
-//   //   allowedRoles.includes(auth?.role) &&
-//   //   auth?.access_token ? (
-//   return auth?.role &&
-//     auth?.access_token &&
-//     allowedRoles.includes(auth?.role) ? (
-//     <Outlet />
-//   ) : auth?.user ? (
-//     <Navigate to="/unauthorized" state={{ from: location }} replace />
-//   ) : (
-//     <Navigate to="/signInPage" state={{ from: location }} replace />
-//   );
+//   if (
+//     auth &&
+//     auth.role &&
+//     auth.access_token &&
+//     allowedRoles.includes(auth.role)
+//   ) {
+//     return <Outlet />;
+//   } else {
+//     return auth?.email ? (
+//       <Navigate to="/unauthorized" state={{ from: location }} replace />
+//     ) : (
+//       <Navigate to="/signInPage" state={{ from: location }} replace />
+//     );
+//   }
 // };
 
 // export default RequireAuth;
+const RequireAuth = ({ allowedRoles }) => {
+  const { auth } = useAuth();
+  const location = useLocation();
+
+  console.log("Auth:", auth);
+  console.log("Allowed Roles:", allowedRoles);
+  // return auth?.role?.find((role) => allowedRoles?.includes(role)) ? (
+  return auth?.role && allowedRoles.includes(auth?.role) ? (
+    // return auth?.role &&
+    //   allowedRoles.includes(auth?.role) &&
+    //   auth?.access_token ? (
+    // return auth?.role &&
+    //   auth?.access_token &&
+    //   allowedRoles.includes(auth?.role) ? (
+    <Outlet />
+  ) : auth?.email ? (
+    <Navigate to="/unauthorized" state={{ from: location }} replace />
+  ) : (
+    <Navigate to="/signInPage" state={{ from: location }} replace />
+  );
+};
+
+export default RequireAuth;
