@@ -177,7 +177,8 @@ export const SignInForm = ({ userRole }) => {
       } else if (err.response?.status === 401) {
         setErrorMessage("Unauthorized");
       } else {
-        setErr("Login failed");
+        // setErr("Login failed");
+        console.error("Error during login:", err);
       }
     } finally {
       setSubmitting(false); // Set form submission state to false
