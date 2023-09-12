@@ -158,20 +158,40 @@ export const SignInForm = ({ userRole }) => {
       );
 
       console.log("Response:", response);
-      const accessToken = response.data.access_token;
-      // const accessToken = response?.data?.access_token;
-      const role = response.data.role;
-      // const role = response?.data?.role;
+      // const accessToken = response.data.access_token;
+      const { data } = response; // Destructure the data from the response
 
-      // Update the data with the access token and role
-      const data = {
-        email,
-        password,
-        accessToken,
-        role,
-      };
+      if (data.status === "Success") {
+        const { role, access_token } = data.data; // Destructure role and access_token from data.data
 
-      setAuth(data);
+        // Now you can use role and access_token as needed
+        console.log("Role:", role);
+        console.log("Access Token:", access_token);
+
+        // Assuming setAuth is a function to set authentication state
+        setAuth(true); // Set authentication state to true
+        navigate(from, { replace: true });
+      }
+      //  else {
+      //     console.error("Error during login:", err);
+      //  }
+
+      //start
+      // // const accessToken = response?.data?.access_token;
+      // const role = response.data.role;
+      // // const role = response?.data?.role;
+
+      // // Update the data with the access token and role
+      // const data = {
+      //   email,
+      //   password,
+      //   accessToken,
+      //   role,
+      // };
+
+      // setAuth(data);
+
+      //stop
       // setAuth({ email, password, role, accessToken });
       // setAuth({ email, password, role, accessToken });
 
@@ -181,7 +201,7 @@ export const SignInForm = ({ userRole }) => {
       //   user: { email, password },
       //   role: "Counsellor", // Set the user's role based on your logic
       // });
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
     } catch (err) {
       // const errorMessage = err.response?.data || "An error occurred";
       // setErr(errorMessage);
