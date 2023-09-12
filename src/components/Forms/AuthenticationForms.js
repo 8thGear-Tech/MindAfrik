@@ -160,8 +160,18 @@ export const SignInForm = ({ userRole }) => {
       console.log("Response:", response);
       const accessToken = response?.data?.access_token;
       const role = response?.data?.role;
-      // const roles = response?.data?.roles;
-      setAuth({ email, password, role, accessToken });
+
+      // Update the data with the access token and role
+      const data = {
+        email,
+        password,
+        role,
+        accessToken,
+      };
+
+      setAuth(data);
+      setAuth({ data });
+      // setAuth({ email, password, role, accessToken });
 
       //new
 
