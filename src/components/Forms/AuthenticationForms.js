@@ -156,6 +156,8 @@ export const SignInForm = ({ userRole }) => {
           // withCredentials: true,
         }
       );
+
+        console.log("Response:", response);
       const accessToken = response?.data?.access_token;
       const role = response?.data?.role;
       // const roles = response?.data?.roles;
