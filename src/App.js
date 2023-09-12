@@ -70,9 +70,9 @@ import CounselleeTestPage from "./pages/dashboardPages/counsellee/counseleesDash
 import { NavbarSection } from "./components/Navbar/guestNavbar";
 
 const ROLES = {
-  Admin: 1,
-  Counsellor: 2,
-  Counsellee: 3,
+  'Admin': 1,
+  'Counsellor': 2,
+  'Counsellee': 3,
 };
 
 function App() {
@@ -116,7 +116,7 @@ function App() {
           element={<AdminDashboardNotificationPage />}
         />
         {/* Counsellors Dashboard */}
-        <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}>
+        <Route element={<RequireAuth allowedRoles={[ROLES.Counsellor]} />}>
           <Route
             path="counsellorDashboard"
             element={<CounsellorDashboardHomePage />}
