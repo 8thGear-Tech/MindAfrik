@@ -171,7 +171,16 @@ export const SignInForm = ({ userRole }) => {
         // Assuming setAuth is a function to set authentication state
         setAuth({ email, password, role, access_token }); // Set authentication state to true
         // setAuth(true); // Set authentication state to true
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        if (role === "Counsellor") {
+          navigate("/counsellorDashboard", { replace: true });
+        } else if (role === "Admin") {
+          navigate("/adminDashboard", { replace: true });
+        } else if (role === "Counselee") {
+          navigate("/counselleeDashboard", { replace: true });
+        } else {
+          navigate("/unauthorized", { replace: true });
+        }
       }
       //  else {
       //     console.error("Error during login:", err);
