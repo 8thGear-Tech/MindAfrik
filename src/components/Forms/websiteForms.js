@@ -1092,7 +1092,7 @@ export const NewsletterPage = () => {
   return (
     <>
       {/* <div className="container-fluid col-xl-10 col-xxl-8 px-4 py-5 newsletterBg"> */}
-      <div className="container-fluid py-4 newsletterBg">
+      <div className="container-fluid py-4 ">
         <div className="row align-items-center py-5">
           <div className="row">
             {" "}

@@ -1000,7 +1000,7 @@ const TestimonialsNewCard = (props) => {
 
 export const TestimonialsNew = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid newsletterBg">
       <div className="row d-flex justify-content-center my-3">
         <h3 className="text-center pt-5">Testimonials</h3>
         <p className="text-center">
