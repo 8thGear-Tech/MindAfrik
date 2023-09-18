@@ -207,15 +207,15 @@ export const SignInForm = ({ userRole }) => {
         //     navigate("/unauthorized", { replace: true });
         //   }
         // }
-        if (role === "Counsellor") {
-          navigate("/counsellorDashboard", { replace: true });
-        } else if (role === "Admin") {
-          navigate("/adminDashboard", { replace: true });
-        } else if (role === "Counselee") {
-          navigate("/counselleeDashboard", { replace: true });
-        } else {
-          navigate("/unauthorized", { replace: true });
-        }
+        // if (role === "Counsellor") {
+        //   navigate("/counsellorDashboard", { replace: true });
+        // } else if (role === "Admin") {
+        //   navigate("/adminDashboard", { replace: true });
+        // } else if (role === "Counselee") {
+        //   navigate("/counselleeDashboard", { replace: true });
+        // } else {
+        //   navigate("/unauthorized", { replace: true });
+        // }
       }
       //  else {
       //     console.error("Error during login:", err);
