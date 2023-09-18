@@ -195,18 +195,18 @@ export const SignInForm = ({ userRole }) => {
         setAuth({ email, password, role, access_token }); // Set authentication state to true
         // setAuth(true); // Set authentication state to true
         // navigate(from, { replace: true });
-        // if (access_token) {
-        //   // Redirect to appropriate dashboard
-        //   if (role === "Counsellor") {
-        //     navigate("/counsellorDashboard", { replace: true });
-        //   } else if (role === "Admin") {
-        //     navigate("/adminDashboard", { replace: true });
-        //   } else if (role === "Counsellee") {
-        //     navigate("/counselleeDashboard", { replace: true });
-        //   } else {
-        //     navigate("/unauthorized", { replace: true });
-        //   }
-        // }
+        if (access_token) {
+          // Redirect to appropriate dashboard
+          if (role === "Counsellor") {
+            navigate("/counsellorDashboard", { replace: true });
+          } else if (role === "Admin") {
+            navigate("/adminDashboard", { replace: true });
+          } else if (role === "Counsellee") {
+            navigate("/counselleeDashboard", { replace: true });
+          } else {
+            navigate("/unauthorized", { replace: true });
+          }
+        }
         // if (role === "Counsellor") {
         //   navigate("/counsellorDashboard", { replace: true });
         // } else if (role === "Admin") {
