@@ -57,22 +57,35 @@ const RequireAuth = ({ allowedRoles }) => {
   console.log("Allowed Roles:", allowedRoles);
   // Add a check for the `access_token` cookie
   // const accessToken = Cookies.get("access_token");
-  if (accessToken && new Date(accessToken.expires) > new Date()) {
-    // If the access token is still valid, persist it
-    Cookies.set("access_token", accessToken, { expires: 3600 }); // Adjust the expiration time as needed
-    // Then check the role
-    return auth?.role && allowedRoles.includes(auth?.role) ? (
-      <Outlet />
-    ) : auth?.email ? (
-      <Navigate to="/unauthorized" state={{ from: location }} replace />
-    ) : (
-      <Navigate to="/signInPage" state={{ from: location }} replace />
-    );
-  } else {
-    // If the access token is not valid, redirect to the sign-in page
-    return <Navigate to="/" state={{ from: location }} replace />;
-  }
+  // Set the expiration time of the `access_token` cookie to 1 hour
+  Cookies.set("access_token", accessToken, { expires: 3600 });
+
+  // Then check the role
+  return auth?.role && allowedRoles.includes(auth?.role) ? (
+    <Outlet />
+  ) : auth?.email ? (
+    <Navigate to="/unauthorized" state={{ from: location }} replace />
+  ) : (
+    <Navigate to="/signInPage" state={{ from: location }} replace />
+  );
 };
+
+//   if (accessToken && new Date(accessToken.expires) > new Date()) {
+//     // If the access token is still valid, persist it
+//     Cookies.set("access_token", accessToken, { expires: 3600 }); // Adjust the expiration time as needed
+//     // Then check the role
+//     return auth?.role && allowedRoles.includes(auth?.role) ? (
+//       <Outlet />
+//     ) : auth?.email ? (
+//       <Navigate to="/unauthorized" state={{ from: location }} replace />
+//     ) : (
+//       <Navigate to="/signInPage" state={{ from: location }} replace />
+//     );
+//   } else {
+//     // If the access token is not valid, redirect to the sign-in page
+//     return <Navigate to="/" state={{ from: location }} replace />;
+//   }
+// };
 //   return auth?.role && allowedRoles.includes(auth?.role) ? (
 //     <Outlet />
 //   ) : auth?.email ? (
