@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -132,6 +132,32 @@ export const SignInForm = ({ userRole }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    // Check if access token exists on page load
+    const accessToken = getAccessToken();
+    if (accessToken) {
+      handleSuccessfulLogin(accessToken);
+    }
+  }, []); // Empty dependency array ensures this runs once on mount
+
+  const getAccessToken = () => {
+    const cookies = document.cookie.split(";").map((cookie) => cookie.trim());
+    const accessTokenCookie = cookies.find((cookie) =>
+      cookie.startsWith("access_token=")
+    );
+
+    if (accessTokenCookie) {
+      return accessTokenCookie.split("=")[1];
+    }
+
+    return null;
+  };
+
+  const handleSuccessfulLogin = (accessToken) => {
+    // Use the provided access token for authentication
+    axios.defaults.headers.common["access_token"] = accessToken;
+  };
+
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
@@ -164,7 +190,7 @@ export const SignInForm = ({ userRole }) => {
       if (data.status === "Success") {
         const { role, access_token } = data.data; // Destructure role and access_token from data.data
         //NEW
-        document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
+        // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
 
         // Now you can use role and access_token as needed
         console.log("Role:", role);
