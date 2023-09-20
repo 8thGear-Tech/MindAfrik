@@ -117,9 +117,9 @@ import { PendingVerificationModal } from "../../pages/authenticationPages/emailV
 //   );
 // };
 
-export const SignInForm = ({ userRole }) => {
+// export const SignInForm = ({ userRole }) => {
+export const SignInForm = () => {
   const { setAuth } = useAuth();
-  // const { setAuth } = useContext(AuthContextProvider);
   const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -127,68 +127,22 @@ export const SignInForm = ({ userRole }) => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
   };
 
-  const [accessToken, setAccessToken] = useState("");
-
   const [err, setErr] = useState(null);
-  const [loading, setLoading] = useState(true); // Step 1: Add loading state
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // useEffect(() => {
-  //   const access_token = Cookies.get("access_token");
-
-  //   if (access_token) {
-  //     // You can perform any additional validation or use it for authentication here
-  //     setAuth({ access_token }); // Set authentication state with the retrieved token
-  //     navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   const access_token = Cookies.get("access_token");
-
-  //   if (access_token) {
-  //     setAuth({ access_token }); // Set authentication state with the retrieved token
-  //     navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
-  //   }
-  // }, [auth?.access_token, navigate, from, setAuth]);
-  // useEffect(() => {
-  //   const access_token = Cookies.get("access_token");
-
-  //   if (access_token) {
-  //     setAuth({ access_token });
-  //   }
-
-  //   setLoading(false); // Step 2: Set loading state to false after token check
-  // }, [setAuth]);
-
-  // useEffect(() => {
-  //   // Check if there is an access token stored in cookies.
-  //   const storedAccessToken = Cookies.get("access_token");
-  //   if (storedAccessToken) {
-  //     // Set the access token state.
-  //     setAccessToken(storedAccessToken);
-  //   }
-  // }, []);
-
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
-    // const firstName = values.firstName;
-    // const lastName = values.lastName;
     const email = values.email;
     const password = values.password;
 
     try {
       const response = await axios.post(
-        // "http://localhost:4000/user/login",
         "https://mindafrikserver.onrender.com/user/login",
-        // inputs
         {
-          // firstName: firstName,
-          // lastName: lastName,
           email: email,
           password: password,
         },
@@ -199,23 +153,20 @@ export const SignInForm = ({ userRole }) => {
       );
 
       console.log("Response:", response);
-      // const accessToken = response.data.access_token;
       const { data } = response; // Destructure the data from the response
 
       if (data.status === "Success") {
         const { role, access_token } = data.data; // Destructure role and access_token from data.data
-        //NEW
-        // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
-        Cookies.set("access_token", access_token, { expires: 3600 }); // Adjust the expiration time as needed
-        // Cookies.set("role", role, { expires: 1 });
+
+        Cookies.set("access_token", access_token, {
+          expires: new Date(Date.now() + 5 * 60 * 60 * 1000),
+        }); // Adjust the expiration time as needed
         // Now you can use role and access_token as needed
         console.log("Role:", role);
         console.log("Access Token:", access_token);
 
         // Assuming setAuth is a function to set authentication state
         setAuth({ email, password, role, access_token }); // Set authentication state to true
-        // setAuth(true); // Set authentication state to true
-        // navigate(from, { replace: true });
         if (role === "Counsellor") {
           navigate("/counsellorDashboard", { replace: true });
         } else if (role === "Admin") {
@@ -226,39 +177,7 @@ export const SignInForm = ({ userRole }) => {
           navigate("/unauthorized", { replace: true });
         }
       }
-      //  else {
-      //     console.error("Error during login:", err);
-      //  }
-
-      //start
-      // // const accessToken = response?.data?.access_token;
-      // const role = response.data.role;
-      // // const role = response?.data?.role;
-
-      // // Update the data with the access token and role
-      // const data = {
-      //   email,
-      //   password,
-      //   accessToken,
-      //   role,
-      // };
-
-      // setAuth(data);
-
-      //stop
-      // setAuth({ email, password, role, accessToken });
-      // setAuth({ email, password, role, accessToken });
-
-      //new
-
-      // setAuth({
-      //   user: { email, password },
-      //   role: "Counsellor", // Set the user's role based on your logic
-      // });
-      // navigate(from, { replace: true });
     } catch (err) {
-      // const errorMessage = err.response?.data || "An error occurred";
-      // setErr(errorMessage);
       if (!err?.response) {
         setErr("No Server Response");
       } else if (err.response?.status === 400) {
@@ -266,97 +185,13 @@ export const SignInForm = ({ userRole }) => {
       } else if (err.response?.status === 401) {
         setErrorMessage("Unauthorized");
       } else {
-        // setErr("Login failed");
         console.error("Error during login:", err);
       }
     } finally {
       setSubmitting(false); // Set form submission state to false
     }
   };
-  // Check if the access token is stored in cookies on page load
-  // useEffect(() => {
-  //   const accessToken = Cookies.get("access_token");
 
-  //   if (!accessToken) {
-  //     navigate("/signIn");
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   const accessToken = Cookies.get("access_token");
-
-  //   // Get the expiry date of the access token
-  //   const expiryDate = new Date(accessToken.split(".")[1]);
-
-  //   // Check if the current time is greater than or equal to the expiry date
-  //   if (Date.now() <= expiryDate.getTime()) {
-  //     // The access token has expired, so navigate to the sign-in page
-  //     console.log("Access token intact");
-  //     navigate("/signIn");
-  //   }
-  // }, []);
-
-  // const handleSubmit = async (values) => {
-  //   setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
-
-  //   const email = values.email;
-  //   const password = values.password;
-
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:4000/user/login",
-  //       // "https://mindafrikserver.onrender.com/user/login",
-
-  //       {
-  //         email: email,
-  //         password: password,
-  //       }
-  //       // {
-  //       //   headers: {
-  //       //     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-  //       //   },
-  //       // }
-  //     );
-
-  //     // const accessToken = response.data?.access_token;
-  //     // if (accessToken) {
-  //     //   // Parse the access token to get the userRole
-  //     //   const decodedToken = jwt.decode(accessToken);
-  //     //   const userRole = decodedToken?.userRole;
-
-  //     //   // Navigate to the corresponding dashboard based on the user's role
-  //     //   if (userRole === "counsellee") {
-  //     //     navigate("/counselleeDashboard");
-  //     //   } else if (userRole === "admin") {
-  //     //     navigate("/adminDashboard");
-  //     //   } else if (userRole === "counsellor") {
-  //     //     navigate("/counsellorDashboard");
-  //     //   }
-  //     // }
-
-  //     // No need to store the token in local storage
-  //     // Instead, the token should be in an HttpOnly cookie set by the server
-  //     // The server should handle the authentication and role-based authorization
-
-  //     // Navigate to the corresponding dashboard based on the user's role
-  //     const userRole = response.data?.data?.user?.userRole;
-  //     if (userRole === "counsellee") {
-  //       navigate("/counselleeDashboard");
-  //     } else if (userRole === "admin") {
-  //       navigate("/adminDashboard");
-  //     } else if (userRole === "counsellor") {
-  //       navigate("/counsellorDashboard");
-  //     } else {
-
-  //       setErrorMessage("Unauthorized user role");
-  //     }
-  //   } catch (err) {
-  //     setErrorMessage(err.response?.data?.message || "An error occurred");
-
-  //   } finally {
-  //     setSubmitting(false);
-  //   }
-  // };
   return (
     <>
       <Formik
