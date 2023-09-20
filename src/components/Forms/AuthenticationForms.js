@@ -173,24 +173,6 @@ export const SignInForm = ({ userRole }) => {
   //   }
   // }, []);
 
-  useEffect(() => {
-    const accessToken = Cookies.get("access_token");
-    if (accessToken) {
-      // If access token is found in cookies, set authentication and navigate
-      setAuth({ role: userRole, access_token: accessToken });
-      if (userRole === "Counsellor") {
-        navigate("/counsellorDashboard", { replace: true });
-      } else if (userRole === "Admin") {
-        navigate("/adminDashboard", { replace: true });
-      } else if (userRole === "Counselee") {
-        navigate("/counselleeDashboard", { replace: true });
-      } else {
-        navigate("/unauthorized", { replace: true });
-      }
-    } else {
-      setLoading(false); // Set loading to false once the check is complete
-    }
-  }, [userRole, navigate, setAuth]);
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
