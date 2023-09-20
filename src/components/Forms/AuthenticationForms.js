@@ -164,15 +164,33 @@ export const SignInForm = ({ userRole }) => {
   //   setLoading(false); // Step 2: Set loading state to false after token check
   // }, [setAuth]);
 
-  useEffect(() => {
-    // Check if there is an access token stored in cookies.
-    const storedAccessToken = Cookies.get("access_token");
-    if (storedAccessToken) {
-      // Set the access token state.
-      setAccessToken(storedAccessToken);
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Check if there is an access token stored in cookies.
+  //   const storedAccessToken = Cookies.get("access_token");
+  //   if (storedAccessToken) {
+  //     // Set the access token state.
+  //     setAccessToken(storedAccessToken);
+  //   }
+  // }, []);
 
+  useEffect(() => {
+    const accessToken = Cookies.get("access_token");
+    if (accessToken) {
+      // If access token is found in cookies, set authentication and navigate
+      setAuth({ role: userRole, access_token: accessToken });
+      if (userRole === "Counsellor") {
+        navigate("/counsellorDashboard", { replace: true });
+      } else if (userRole === "Admin") {
+        navigate("/adminDashboard", { replace: true });
+      } else if (userRole === "Counselee") {
+        navigate("/counselleeDashboard", { replace: true });
+      } else {
+        navigate("/unauthorized", { replace: true });
+      }
+    } else {
+      setLoading(false); // Set loading to false once the check is complete
+    }
+  }, [userRole, navigate, setAuth]);
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
@@ -203,34 +221,26 @@ export const SignInForm = ({ userRole }) => {
       const { data } = response; // Destructure the data from the response
 
       if (data.status === "Success") {
-        const { role, access_token, expires_in } = data.data;
-        const expirationTime = Date.now() + expires_in * 1000;
-        if (expirationTime < Date.now()) {
-          console.log("Access Token has expired.");
+        const { role, access_token } = data.data; // Destructure role and access_token from data.data
+        //NEW
+        // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
+        Cookies.set("access_token", access_token, { expires: 1 }); // Adjust the expiration time as needed
+        // Now you can use role and access_token as needed
+        console.log("Role:", role);
+        console.log("Access Token:", access_token);
+
+        // Assuming setAuth is a function to set authentication state
+        setAuth({ email, password, role, access_token }); // Set authentication state to true
+        // setAuth(true); // Set authentication state to true
+        // navigate(from, { replace: true });
+        if (role === "Counsellor") {
+          navigate("/counsellorDashboard", { replace: true });
+        } else if (role === "Admin") {
+          navigate("/adminDashboard", { replace: true });
+        } else if (role === "Counselee") {
+          navigate("/counselleeDashboard", { replace: true });
         } else {
-          Cookies.set("access_token", access_token, { expires: 1 });
-
-          // const { role, access_token } = data.data; // Destructure role and access_token from data.data
-          // //NEW
-          // // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
-          // Cookies.set("access_token", access_token, { expires: 1 }); // Adjust the expiration time as needed
-          // Now you can use role and access_token as needed
-          console.log("Role:", role);
-          console.log("Access Token:", access_token);
-
-          // Assuming setAuth is a function to set authentication state
-          setAuth({ email, password, role, access_token }); // Set authentication state to true
-          // setAuth(true); // Set authentication state to true
-          // navigate(from, { replace: true });
-          if (role === "Counsellor") {
-            navigate("/counsellorDashboard", { replace: true });
-          } else if (role === "Admin") {
-            navigate("/adminDashboard", { replace: true });
-          } else if (role === "Counselee") {
-            navigate("/counselleeDashboard", { replace: true });
-          } else {
-            navigate("/unauthorized", { replace: true });
-          }
+          navigate("/unauthorized", { replace: true });
         }
       }
       //  else {
