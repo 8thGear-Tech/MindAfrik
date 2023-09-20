@@ -74,7 +74,7 @@ const RequireAuth = ({ allowedRoles }) => {
     return auth?.accessToken ? (
       <Outlet />
     ) : (
-      <Navigate to="/signInPage" state={{ from: location }} replace />
+      <Navigate to="/" state={{ from: location }} replace />
     );
   }
 };
