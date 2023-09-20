@@ -59,7 +59,9 @@ const RequireAuth = ({ allowedRoles }) => {
   // const accessToken = Cookies.get("access_token");
   if (accessToken && new Date(accessToken.expires) > new Date()) {
     // If the access token is still valid, persist it
-    Cookies.set("access_token", accessToken, { expires: 1 }); // Adjust the expiration time as needed
+    Cookies.set("access_token", accessToken, {
+      expires: new Date(Date.now() + 60 * 60 * 1000),
+    }); // Adjust the expiration time as needed
     // Then check the role
     return auth?.role && allowedRoles.includes(auth?.role) ? (
       <Outlet />

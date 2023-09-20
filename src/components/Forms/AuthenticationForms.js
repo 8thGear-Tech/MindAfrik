@@ -207,7 +207,7 @@ export const SignInForm = ({ userRole }) => {
         //NEW
         // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
         Cookies.set("access_token", access_token, { expires: 1 }); // Adjust the expiration time as needed
-        Cookies.set("role", role, { expires: 1 });
+        // Cookies.set("role", role, { expires: 1 });
         // Now you can use role and access_token as needed
         console.log("Role:", role);
         console.log("Access Token:", access_token);
