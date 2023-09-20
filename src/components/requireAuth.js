@@ -59,9 +59,7 @@ const RequireAuth = ({ allowedRoles }) => {
   // const accessToken = Cookies.get("access_token");
   if (accessToken && new Date(accessToken.expires) > new Date()) {
     // If the access token is still valid, persist it
-    Cookies.set("access_token", accessToken, {
-      expires: new Date(Date.now() + 60 * 60 * 1000),
-    }); // Adjust the expiration time as needed
+    Cookies.set("access_token", accessToken, { expires: 3600 }); // Adjust the expiration time as needed
     // Then check the role
     return auth?.role && allowedRoles.includes(auth?.role) ? (
       <Outlet />
@@ -72,7 +70,7 @@ const RequireAuth = ({ allowedRoles }) => {
     );
   } else {
     // If the access token is not valid, redirect to the sign-in page
-    return <Navigate to="/signInPage" state={{ from: location }} replace />;
+    return <Navigate to="/" state={{ from: location }} replace />;
   }
 };
 //   return auth?.role && allowedRoles.includes(auth?.role) ? (
