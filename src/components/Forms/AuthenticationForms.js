@@ -127,6 +127,8 @@ export const SignInForm = ({ userRole }) => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
   };
 
+  const [accessToken, setAccessToken] = useState("");
+
   const [err, setErr] = useState(null);
   const [loading, setLoading] = useState(true); // Step 1: Add loading state
 
@@ -162,6 +164,15 @@ export const SignInForm = ({ userRole }) => {
   //   setLoading(false); // Step 2: Set loading state to false after token check
   // }, [setAuth]);
 
+  useEffect(() => {
+    // Check if there is an access token stored in cookies.
+    const storedAccessToken = Cookies.get("access_token");
+    if (storedAccessToken) {
+      // Set the access token state.
+      setAccessToken(storedAccessToken);
+    }
+  }, []);
+
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
@@ -192,26 +203,34 @@ export const SignInForm = ({ userRole }) => {
       const { data } = response; // Destructure the data from the response
 
       if (data.status === "Success") {
-        const { role, access_token } = data.data; // Destructure role and access_token from data.data
-        //NEW
-        // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
-        Cookies.set("access_token", access_token, { expires: 1, path: "" }); // Adjust the expiration time as needed
-        // Now you can use role and access_token as needed
-        console.log("Role:", role);
-        console.log("Access Token:", access_token);
-
-        // Assuming setAuth is a function to set authentication state
-        setAuth({ email, password, role, access_token }); // Set authentication state to true
-        // setAuth(true); // Set authentication state to true
-        // navigate(from, { replace: true });
-        if (role === "Counsellor") {
-          navigate("/counsellorDashboard", { replace: true });
-        } else if (role === "Admin") {
-          navigate("/adminDashboard", { replace: true });
-        } else if (role === "Counselee") {
-          navigate("/counselleeDashboard", { replace: true });
+        const { role, access_token, expires_in } = data.data;
+        const expirationTime = Date.now() + expires_in * 1000;
+        if (expirationTime < Date.now()) {
+          console.log("Access Token has expired.");
         } else {
-          navigate("/unauthorized", { replace: true });
+          Cookies.set("access_token", access_token, { expires: 1 });
+
+          // const { role, access_token } = data.data; // Destructure role and access_token from data.data
+          // //NEW
+          // // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
+          // Cookies.set("access_token", access_token, { expires: 1 }); // Adjust the expiration time as needed
+          // Now you can use role and access_token as needed
+          console.log("Role:", role);
+          console.log("Access Token:", access_token);
+
+          // Assuming setAuth is a function to set authentication state
+          setAuth({ email, password, role, access_token }); // Set authentication state to true
+          // setAuth(true); // Set authentication state to true
+          // navigate(from, { replace: true });
+          if (role === "Counsellor") {
+            navigate("/counsellorDashboard", { replace: true });
+          } else if (role === "Admin") {
+            navigate("/adminDashboard", { replace: true });
+          } else if (role === "Counselee") {
+            navigate("/counselleeDashboard", { replace: true });
+          } else {
+            navigate("/unauthorized", { replace: true });
+          }
         }
       }
       //  else {
@@ -270,19 +289,19 @@ export const SignInForm = ({ userRole }) => {
   //   }
   // }, []);
 
-  useEffect(() => {
-    const accessToken = Cookies.get("access_token");
+  // useEffect(() => {
+  //   const accessToken = Cookies.get("access_token");
 
-    // Get the expiry date of the access token
-    const expiryDate = new Date(accessToken.split(".")[1]);
+  //   // Get the expiry date of the access token
+  //   const expiryDate = new Date(accessToken.split(".")[1]);
 
-    // Check if the current time is greater than or equal to the expiry date
-    if (Date.now() <= expiryDate.getTime()) {
-      // The access token has expired, so navigate to the sign-in page
-      console.log("Access token intact");
-      navigate("/signIn");
-    }
-  }, []);
+  //   // Check if the current time is greater than or equal to the expiry date
+  //   if (Date.now() <= expiryDate.getTime()) {
+  //     // The access token has expired, so navigate to the sign-in page
+  //     console.log("Access token intact");
+  //     navigate("/signIn");
+  //   }
+  // }, []);
 
   // const handleSubmit = async (values) => {
   //   setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
