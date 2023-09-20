@@ -26,7 +26,6 @@
 
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import useAuth from "./hooks/useAuth";
-import Cookies from "js-cookie";
 
 // const RequireAuth = ({ allowedRoles }) => {
 //   const { auth } = useAuth();
@@ -55,11 +54,6 @@ const RequireAuth = ({ allowedRoles }) => {
 
   console.log("Auth:", auth);
   console.log("Allowed Roles:", allowedRoles);
-  // Add a check for the `access_token` cookie
-  const accessToken = Cookies.get("access_token");
-  if (accessToken && new Date(accessToken.expires) > new Date()) {
-    return <Outlet />;
-  }
 
   return auth?.role && allowedRoles.includes(auth?.role) ? (
     <Outlet />
@@ -69,13 +63,5 @@ const RequireAuth = ({ allowedRoles }) => {
     <Navigate to="/signInPage" state={{ from: location }} replace />
   );
 };
-//   return auth?.role && allowedRoles.includes(auth?.role) ? (
-//     <Outlet />
-//   ) : auth?.email ? (
-//     <Navigate to="/unauthorized" state={{ from: location }} replace />
-//   ) : (
-//     <Navigate to="/signInPage" state={{ from: location }} replace />
-//   );
-// };
 
 export default RequireAuth;

@@ -136,6 +136,20 @@ export const SignInForm = ({ userRole }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    const accessToken = Cookies.get("access_token");
+    if (accessToken) {
+      const role = Cookies.get("role");
+      if (role === "Counsellor") {
+        navigate("/counsellorDashboard", { replace: true });
+      } else if (role === "Admin") {
+        navigate("/adminDashboard", { replace: true });
+      } else if (role === "Counsellee") {
+        navigate("/counselleeDashboard", { replace: true });
+      }
+    }
+  }, []);
+
   // useEffect(() => {
   //   const access_token = Cookies.get("access_token");
 
@@ -207,6 +221,8 @@ export const SignInForm = ({ userRole }) => {
         //NEW
         // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
         Cookies.set("access_token", access_token, { expires: 1 }); // Adjust the expiration time as needed
+        Cookies.set("role", role, { expires: 1 });
+
         // Now you can use role and access_token as needed
         console.log("Role:", role);
         console.log("Access Token:", access_token);
