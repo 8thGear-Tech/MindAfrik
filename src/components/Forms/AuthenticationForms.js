@@ -133,15 +133,24 @@ export const SignInForm = ({ userRole }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+  // useEffect(() => {
+  //   const access_token = Cookies.get("access_token");
+
+  //   if (access_token) {
+  //     // You can perform any additional validation or use it for authentication here
+  //     setAuth({ access_token }); // Set authentication state with the retrieved token
+  //     navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
+  //   }
+  // }, []);
+
   useEffect(() => {
     const access_token = Cookies.get("access_token");
 
-    if (access_token) {
-      // You can perform any additional validation or use it for authentication here
+    if (access_token && !auth?.access_token) {
       setAuth({ access_token }); // Set authentication state with the retrieved token
       navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
     }
-  }, []);
+  }, [auth?.access_token, navigate, from, setAuth]);
 
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
