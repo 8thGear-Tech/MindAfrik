@@ -152,15 +152,15 @@ export const SignInForm = ({ userRole }) => {
   //     navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
   //   }
   // }, [auth?.access_token, navigate, from, setAuth]);
-  useEffect(() => {
-    const access_token = Cookies.get("access_token");
+  // useEffect(() => {
+  //   const access_token = Cookies.get("access_token");
 
-    if (access_token) {
-      setAuth({ access_token });
-    }
+  //   if (access_token) {
+  //     setAuth({ access_token });
+  //   }
 
-    setLoading(false); // Step 2: Set loading state to false after token check
-  }, [setAuth]);
+  //   setLoading(false); // Step 2: Set loading state to false after token check
+  // }, [setAuth]);
 
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
@@ -261,6 +261,14 @@ export const SignInForm = ({ userRole }) => {
       setSubmitting(false); // Set form submission state to false
     }
   };
+  // Check if the access token is stored in cookies on page load
+  useEffect(() => {
+    const accessToken = Cookies.get("access_token");
+
+    if (!accessToken) {
+      navigate("/signIn");
+    }
+  }, []);
 
   // const handleSubmit = async (values) => {
   //   setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
