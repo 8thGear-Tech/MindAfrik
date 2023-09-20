@@ -128,6 +128,7 @@ export const SignInForm = ({ userRole }) => {
   };
 
   const [err, setErr] = useState(null);
+  const [loading, setLoading] = useState(true); // Step 1: Add loading state
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -143,14 +144,23 @@ export const SignInForm = ({ userRole }) => {
   //   }
   // }, []);
 
+  // useEffect(() => {
+  //   const access_token = Cookies.get("access_token");
+
+  //   if (access_token) {
+  //     setAuth({ access_token }); // Set authentication state with the retrieved token
+  //     navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
+  //   }
+  // }, [auth?.access_token, navigate, from, setAuth]);
   useEffect(() => {
     const access_token = Cookies.get("access_token");
 
-    if (access_token && !auth?.access_token) {
-      setAuth({ access_token }); // Set authentication state with the retrieved token
-      navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
+    if (access_token) {
+      setAuth({ access_token });
     }
-  }, [auth?.access_token, navigate, from, setAuth]);
+
+    setLoading(false); // Step 2: Set loading state to false after token check
+  }, [setAuth]);
 
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
