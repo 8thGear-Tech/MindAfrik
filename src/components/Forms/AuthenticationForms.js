@@ -208,7 +208,6 @@ export const SignInForm = ({ userRole }) => {
         // document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
         Cookies.set("access_token", access_token, { expires: 1 }); // Adjust the expiration time as needed
         Cookies.set("role", role, { expires: 1 });
-
         // Now you can use role and access_token as needed
         console.log("Role:", role);
         console.log("Access Token:", access_token);
@@ -274,20 +273,6 @@ export const SignInForm = ({ userRole }) => {
       setSubmitting(false); // Set form submission state to false
     }
   };
-
-  useEffect(() => {
-    const accessToken = Cookies.get("access_token");
-    if (accessToken) {
-      const role = Cookies.get("role");
-      if (role === "Counsellor") {
-        navigate("/counsellorDashboard", { replace: true });
-      } else if (role === "Admin") {
-        navigate("/adminDashboard", { replace: true });
-      } else if (role === "Counsellee") {
-        navigate("/counselleeDashboard", { replace: true });
-      }
-    }
-  }, []);
   // Check if the access token is stored in cookies on page load
   // useEffect(() => {
   //   const accessToken = Cookies.get("access_token");
