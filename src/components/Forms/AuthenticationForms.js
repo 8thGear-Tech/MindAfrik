@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 // import { useState, useContext } from "react";
 import axios from "axios";
@@ -132,6 +132,28 @@ export const SignInForm = ({ userRole }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    const access_token = Cookies.get("access_token");
+    if (access_token) {
+      // Perform authentication with the access_token
+      // This could be a function you already have for setting the authentication state
+      // Example:
+      setAuth({ access_token });
+
+      // Then, navigate to the appropriate dashboard based on the role
+      const role = ""; // Get the role from your authentication context
+      if (role === "Counsellor") {
+        navigate("/counsellorDashboard", { replace: true });
+      } else if (role === "Admin") {
+        navigate("/adminDashboard", { replace: true });
+      } else if (role === "Counselee") {
+        navigate("/counselleeDashboard", { replace: true });
+      } else {
+        navigate("/unauthorized", { replace: true });
+      }
+    }
+  }, []);
 
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
