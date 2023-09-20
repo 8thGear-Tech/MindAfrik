@@ -135,23 +135,11 @@ export const SignInForm = ({ userRole }) => {
 
   useEffect(() => {
     const access_token = Cookies.get("access_token");
-    if (access_token) {
-      // Perform authentication with the access_token
-      // This could be a function you already have for setting the authentication state
-      // Example:
-      setAuth({ access_token });
 
-      // Then, navigate to the appropriate dashboard based on the role
-      const role = ""; // Get the role from your authentication context
-      if (role === "Counsellor") {
-        navigate("/counsellorDashboard", { replace: true });
-      } else if (role === "Admin") {
-        navigate("/adminDashboard", { replace: true });
-      } else if (role === "Counselee") {
-        navigate("/counselleeDashboard", { replace: true });
-      } else {
-        navigate("/unauthorized", { replace: true });
-      }
+    if (access_token) {
+      // You can perform any additional validation or use it for authentication here
+      setAuth({ access_token }); // Set authentication state with the retrieved token
+      navigate(from, { replace: true }); // Redirect the user to the previous page or a default page
     }
   }, []);
 
