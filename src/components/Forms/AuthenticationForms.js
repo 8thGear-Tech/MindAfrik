@@ -277,8 +277,9 @@ export const SignInForm = ({ userRole }) => {
     const expiryDate = new Date(accessToken.split(".")[1]);
 
     // Check if the current time is greater than or equal to the expiry date
-    if (Date.now() >= expiryDate.getTime()) {
+    if (Date.now() <= expiryDate.getTime()) {
       // The access token has expired, so navigate to the sign-in page
+      console.log("Access token intact");
       navigate("/signIn");
     }
   }, []);
