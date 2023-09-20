@@ -136,20 +136,6 @@ export const SignInForm = ({ userRole }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    const accessToken = Cookies.get("access_token");
-    if (accessToken) {
-      const role = Cookies.get("role");
-      if (role === "Counsellor") {
-        navigate("/counsellorDashboard", { replace: true });
-      } else if (role === "Admin") {
-        navigate("/adminDashboard", { replace: true });
-      } else if (role === "Counsellee") {
-        navigate("/counselleeDashboard", { replace: true });
-      }
-    }
-  }, []);
-
   // useEffect(() => {
   //   const access_token = Cookies.get("access_token");
 
@@ -288,6 +274,20 @@ export const SignInForm = ({ userRole }) => {
       setSubmitting(false); // Set form submission state to false
     }
   };
+
+  useEffect(() => {
+    const accessToken = Cookies.get("access_token");
+    if (accessToken) {
+      const role = Cookies.get("role");
+      if (role === "Counsellor") {
+        navigate("/counsellorDashboard", { replace: true });
+      } else if (role === "Admin") {
+        navigate("/adminDashboard", { replace: true });
+      } else if (role === "Counsellee") {
+        navigate("/counselleeDashboard", { replace: true });
+      }
+    }
+  }, []);
   // Check if the access token is stored in cookies on page load
   // useEffect(() => {
   //   const accessToken = Cookies.get("access_token");
