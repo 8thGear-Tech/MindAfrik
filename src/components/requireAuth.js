@@ -52,7 +52,7 @@ const RequireAuth = ({ allowedRoles }) => {
   const { auth } = useAuth();
   const location = useLocation();
   const accessToken = Cookies.get("access_token");
-
+  console.log("Access Token:", accessToken);
   console.log("Auth:", auth);
   console.log("Allowed Roles:", allowedRoles);
   if (accessToken && auth?.role) {
