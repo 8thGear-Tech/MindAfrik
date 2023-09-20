@@ -163,6 +163,8 @@ export const SignInForm = ({ userRole }) => {
 
       if (data.status === "Success") {
         const { role, access_token } = data.data; // Destructure role and access_token from data.data
+        //NEW
+        document.cookie = `access_token=${access_token}; path=/; secure; HttpOnly; SameSite=Strict;`;
 
         // Now you can use role and access_token as needed
         console.log("Role:", role);
