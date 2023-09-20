@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -132,29 +132,6 @@ export const SignInForm = ({ userRole }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    // Check for existing authentication on page load
-    const token = document.cookie.replace(
-      /(?:(?:^|.*;\s*)access_token\s*=\s*([^;]*).*$)|^.*$/,
-      "$1"
-    );
-    if (token) {
-      // Set authentication state based on the token
-      const role = "Counsellor"; // Assuming you have a way to get the user's role
-      setAuth({ role, access_token: token });
-      // Redirect to appropriate dashboard
-      if (role === "Counsellor") {
-        navigate("/counsellorDashboard", { replace: true });
-      } else if (role === "Admin") {
-        navigate("/adminDashboard", { replace: true });
-      } else if (role === "Counsellee") {
-        navigate("/counselleeDashboard", { replace: true });
-      } else {
-        navigate("/unauthorized", { replace: true });
-      }
-    }
-  }, [navigate]);
-
   const handleSubmit = async (values) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
@@ -195,27 +172,15 @@ export const SignInForm = ({ userRole }) => {
         setAuth({ email, password, role, access_token }); // Set authentication state to true
         // setAuth(true); // Set authentication state to true
         // navigate(from, { replace: true });
-        if (access_token) {
-          // Redirect to appropriate dashboard
-          if (role === "Counsellor") {
-            navigate("/counsellorDashboard", { replace: true });
-          } else if (role === "Admin") {
-            navigate("/adminDashboard", { replace: true });
-          } else if (role === "Counsellee") {
-            navigate("/counselleeDashboard", { replace: true });
-          } else {
-            navigate("/unauthorized", { replace: true });
-          }
+        if (role === "Counsellor") {
+          navigate("/counsellorDashboard", { replace: true });
+        } else if (role === "Admin") {
+          navigate("/adminDashboard", { replace: true });
+        } else if (role === "Counselee") {
+          navigate("/counselleeDashboard", { replace: true });
+        } else {
+          navigate("/unauthorized", { replace: true });
         }
-        // if (role === "Counsellor") {
-        //   navigate("/counsellorDashboard", { replace: true });
-        // } else if (role === "Admin") {
-        //   navigate("/adminDashboard", { replace: true });
-        // } else if (role === "Counselee") {
-        //   navigate("/counselleeDashboard", { replace: true });
-        // } else {
-        //   navigate("/unauthorized", { replace: true });
-        // }
       }
       //  else {
       //     console.error("Error during login:", err);
