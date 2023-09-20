@@ -262,10 +262,23 @@ export const SignInForm = ({ userRole }) => {
     }
   };
   // Check if the access token is stored in cookies on page load
+  // useEffect(() => {
+  //   const accessToken = Cookies.get("access_token");
+
+  //   if (!accessToken) {
+  //     navigate("/signIn");
+  //   }
+  // }, []);
+
   useEffect(() => {
     const accessToken = Cookies.get("access_token");
 
-    if (!accessToken) {
+    // Get the expiry date of the access token
+    const expiryDate = new Date(accessToken.split(".")[1]);
+
+    // Check if the current time is greater than or equal to the expiry date
+    if (Date.now() >= expiryDate.getTime()) {
+      // The access token has expired, so navigate to the sign-in page
       navigate("/signIn");
     }
   }, []);
