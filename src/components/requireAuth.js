@@ -55,19 +55,24 @@ const RequireAuth = ({ allowedRoles }) => {
   console.log("Access Token:", accessToken);
   console.log("Auth:", auth);
   console.log("Allowed Roles:", allowedRoles);
-  if (accessToken && auth?.role) {
-    // User is authenticated and has a role
-    return allowedRoles.includes(auth?.role) ? (
+  // Add a check for the `access_token` cookie
+  // const accessToken = Cookies.get("access_token");
+  if (accessToken && new Date(accessToken.expires) > new Date()) {
+    // If the access token is still valid, persist it
+    Cookies.set("access_token", accessToken, { expires: 1 }); // Adjust the expiration time as needed
+    // Then check the role
+    return auth?.role && allowedRoles.includes(auth?.role) ? (
       <Outlet />
-    ) : (
+    ) : auth?.email ? (
       <Navigate to="/unauthorized" state={{ from: location }} replace />
+    ) : (
+      <Navigate to="/signInPage" state={{ from: location }} replace />
     );
   } else {
-    // Redirect to sign-in page
+    // If the access token is not valid, redirect to the sign-in page
     return <Navigate to="/signInPage" state={{ from: location }} replace />;
   }
 };
-
 //   return auth?.role && allowedRoles.includes(auth?.role) ? (
 //     <Outlet />
 //   ) : auth?.email ? (
