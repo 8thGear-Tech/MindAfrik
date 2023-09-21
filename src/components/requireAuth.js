@@ -16,13 +16,48 @@ const RequireAuth = ({ allowedRoles }) => {
     return <Navigate to="/signInPage" state={{ from: location }} replace />;
   }
 
+  // if (!auth?.role && storedAccessToken) {
+  //   // Role doesn't exist but access token exists
+  //   // Check if the stored access token is associated with the user's role
+  //   const { data } = response; // Destructure the data from the response
+  //   if (allowedRoles.includes(data.data.role)) {
+  //     return <Outlet />;
+  //   } else {
+  //     return <Navigate to="/" state={{ from: location }} replace />;
+  //   }
+  // }
+
+  // if (!auth?.role && storedAccessToken) {
+  //   // Role doesn't exist but access token exists
+  //   // You should verify the token server-side to ensure its validity
+  //   // Assuming you've verified the token and obtained the user's role
+  //   // const userRole = role; // Replace this with the actual role from the token
+
+  //   if (allowedRoles.includes(role)) {
+  //     return <Outlet />;
+  //   } else {
+  //     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
+  //   }
+  // }
+
+  // if (!auth?.role && storedAccessToken) {
+  //   // Role doesn't exist but access token exists, consider user authenticated
+  //   // Verify the token server-side and pass the user role in the response
+  //   // Assuming you've received the user role in the response
+  //   // const userRole = response.data.role;
+
+  //   if (!allowedRoles.includes(role)) {
+  //     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
+  //   }
+
+  //   return <Outlet />;
+  // }
   if (!auth?.role && storedAccessToken) {
-    // Role doesn't exist but access token exists
-    // Check if the stored access token is associated with the user's role
-    if (allowedRoles.includes(response.data.role)) {
+    // Role doesn't exist but access token exists, consider user authenticated
+    if (allowedRoles.includes(auth?.role)) {
       return <Outlet />;
     } else {
-      return <Navigate to="/" state={{ from: location }} replace />;
+      return <Navigate to="/unauthorized" state={{ from: location }} replace />;
     }
   }
 
