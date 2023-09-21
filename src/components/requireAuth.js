@@ -104,7 +104,7 @@ const RequireAuth = ({ allowedRoles }) => {
     if (storedAccessToken) {
       // If stored access token exists, make a request to decode it
       axios
-        .post("https://mindafrikserver.onrender.com/user/decode-token", {
+        .get("https://mindafrikserver.onrender.com/user/decode-token", {
           access_token: storedAccessToken,
         })
         .then((response) => {
@@ -130,7 +130,7 @@ const RequireAuth = ({ allowedRoles }) => {
 
   if (!auth?.role && decodedRole) {
     // Role doesn't exist but access token exists, consider user authenticated
-    // Now, you can compare the decodedRole with the allowedRoles
+    // Now, you can compare the decodedRole with the allowedRo  les
     if (allowedRoles.includes(decodedRole)) {
       return <Outlet />;
     } else {
