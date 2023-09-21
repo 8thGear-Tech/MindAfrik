@@ -6,6 +6,7 @@ const RequireAuth = ({ allowedRoles }) => {
   const { auth } = useAuth();
   const location = useLocation();
   const storedAccessToken = Cookies.get("access_token");
+  // const userRole = response.data.data;
 
   console.log("Auth:", auth);
   console.log("Allowed Roles:", allowedRoles);
@@ -33,32 +34,26 @@ const RequireAuth = ({ allowedRoles }) => {
   //   // Assuming you've verified the token and obtained the user's role
   //   // const userRole = role; // Replace this with the actual role from the token
 
-  //   if (allowedRoles.includes(role)) {
+  //   if (allowedRoles.includes(userRole)) {
   //     return <Outlet />;
   //   } else {
   //     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
   //   }
   // }
-
-  // if (!auth?.role && storedAccessToken) {
-  //   // Role doesn't exist but access token exists, consider user authenticated
-  //   // Verify the token server-side and pass the user role in the response
-  //   // Assuming you've received the user role in the response
-  //   // const userRole = response.data.role;
-
-  //   if (!allowedRoles.includes(role)) {
-  //     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
-  //   }
-
-  //   return <Outlet />;
-  // }
   if (!auth?.role && storedAccessToken) {
-    // Role doesn't exist but access token exists, consider user authenticated
-    if (allowedRoles.includes(auth?.role)) {
-      return <Outlet />;
-    } else {
-      return <Navigate to="/unauthorized" state={{ from: location }} replace />;
+    // Decode and verify the token server-side here
+    const decodedToken = decodedToken(storedAccessToken); // Implement this function
+
+    if (decodedToken) {
+      const userRole = decodedToken.role;
+
+      if (allowedRoles.includes(userRole)) {
+        return <Outlet />;
+      }
     }
+
+    // Redirect to unauthorized page if role is not allowed
+    return <Navigate to="/unauthorized" state={{ from: location }} replace />;
   }
 
   // if (!auth?.role && storedAccessToken) {
