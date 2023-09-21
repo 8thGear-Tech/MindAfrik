@@ -15,7 +15,7 @@ const RequireAuth = ({ allowedRoles }) => {
   if (!auth?.role && storedAccessToken) {
     // Role doesn't exist but access token exists, consider user authenticated
     // You might want to decode and verify the token server-side here
-    return <Outlet />;
+    return <Navigate to="/" state={{ from: location }} replace />;
   }
 
   if (auth?.role && allowedRoles.includes(auth?.role)) {
