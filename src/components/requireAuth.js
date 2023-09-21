@@ -17,10 +17,20 @@ const RequireAuth = ({ allowedRoles }) => {
   }
 
   if (!auth?.role && storedAccessToken) {
-    // Role doesn't exist but access token exists, consider user authenticated
-    // You might want to decode and verify the token server-side here
-    return <Outlet />;
+    // Role doesn't exist but access token exists
+    // Check if the stored access token is associated with the user's role
+    if (allowedRoles.includes(response.data.role)) {
+      return <Outlet />;
+    } else {
+      return <Navigate to="/" state={{ from: location }} replace />;
+    }
   }
+
+  // if (!auth?.role && storedAccessToken) {
+  //   // Role doesn't exist but access token exists, consider user authenticated
+  //   // You might want to decode and verify the token server-side here
+  //   return <Outlet />;
+  // }
 
   if (auth?.role && allowedRoles.includes(auth?.role)) {
     // User has the required role
