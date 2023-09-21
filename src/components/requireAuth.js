@@ -12,7 +12,7 @@ const RequireAuth = ({ allowedRoles }) => {
     return <Navigate to="/signInPage" state={{ from: location }} replace />;
   }
 
-  if (auth?.role && storedAccessToken) {
+  if (auth?.role && allowedRoles.includes(auth?.role) && storedAccessToken) {
     // Role doesn't exist but access token exists, consider user authenticated
     // You might want to decode and verify the token server-side here
     return <Outlet />;
