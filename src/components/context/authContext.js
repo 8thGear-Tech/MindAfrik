@@ -6,16 +6,16 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   const [persist, setPersist] = useState(
-    JSON.parse(localStorage.getItem("persist")) || true
+    JSON.parse(localStorage.getItem("persist")) || false
   );
   //new
   // const [auth, setAuth] = useState({
   //   user: null,
   //   role: null,
   // });
-  useEffect(() => {
-    localStorage.setItem("persist", JSON.stringify(persist));
-  }, [persist]);
+  // useEffect(() => {
+  //   localStorage.setItem("persist", JSON.stringify(persist));
+  // }, [persist]);
 
   return (
     <AuthContext.Provider value={{ auth, setAuth, persist, setPersist }}>

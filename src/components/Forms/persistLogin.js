@@ -26,6 +26,7 @@ const PersistLogin = () => {
 
     console.log(`auth?.access_token: ${auth?.access_token}`);
     console.log(`persist: ${persist}`);
+
     // persist added here AFTER tutorial video
     // Avoids unwanted call to verifyRefreshToken
     !auth?.access_token && persist ? verifyRefreshToken() : setIsLoading(false);
