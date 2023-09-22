@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import useRefreshToken from "../useRefreshToken";
 import useAuth from "../hooks/useAuth";
@@ -6,6 +7,7 @@ import useAuth from "../hooks/useAuth";
 const PersistLogin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const refresh = useRefreshToken();
+  const storedAccessToken = Cookies.get("access_token");
   const { auth, persist } = useAuth();
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const PersistLogin = () => {
 
   useEffect(() => {
     console.log(`isLoading: ${isLoading}`);
-    console.log(`aT: ${JSON.stringify(auth?.access_token)}`);
+    console.log(`aT: ${JSON.stringify(auth?.storedAccessToken)}`);
   }, [isLoading]);
 
   return (
