@@ -16,58 +16,59 @@ const RequireAuth = ({ allowedRoles }) => {
   console.log("Allowed Roles:", allowedRoles);
   console.log("Access Token:", storedAccessToken);
 
-  useEffect(() => {
-    // Check if the user has a valid access token and decoded token
-    if (!auth?.role && storedAccessToken && decodedToken) {
-      const userRole = decodedToken.payload.role;
+  //   useEffect(() => {
+  //     // Check if the user has a valid access token and decoded token
+  //     if (!auth?.role && storedAccessToken && decodedToken) {
+  //       const userRole = decodedToken.payload.role;
 
-      if (userRole) {
-        setAuth({ ...auth, role: userRole });
-        return <Outlet />;
-      }
-    }
-  }, [auth, storedAccessToken, decodedToken, setAuth]);
+  //       if (userRole) {
+  //         setAuth({ ...auth, role: userRole });
+  //         return <Outlet />;
+  //       }
+  //     }
+  //   }, [auth, storedAccessToken, decodedToken, setAuth]);
 
+  //   if (!auth?.role && !storedAccessToken) {
+  //     return <Navigate to="/signInPage" state={{ from: location }} replace />;
+  //   }
+
+  //   if (!auth?.role && storedAccessToken) {
+  //     return <Outlet />;
+  //   }
+
+  //   if (auth?.role && allowedRoles.includes(auth?.role)) {
+  //     return <Outlet />;
+  //   }
+
+  //   return <Navigate to="/unauthorized" state={{ from: location }} replace />;
+  // };
+
+  //START
   if (!auth?.role && !storedAccessToken) {
+    // Neither role nor access token exists, redirect to sign-in
     return <Navigate to="/signInPage" state={{ from: location }} replace />;
   }
 
-  if (!auth?.role && storedAccessToken) {
+  if (!auth?.role && storedAccessToken && decodedToken) {
+    // Role doesn't exist but access token exists, consider user authenticated
+    const userRole = decodedToken.payload.role;
+    // You might want to decode and verify the token server-side here
+    if (userRole) {
+      // Set the user's role in the authentication state
+      // auth({ ...auth, role: userRole });
+      setAuth({ ...auth, role: userRole });
+    }
     return <Outlet />;
   }
 
   if (auth?.role && allowedRoles.includes(auth?.role)) {
+    // User has the required role
     return <Outlet />;
   }
 
+  // User has a role, but it's not in the allowedRoles
   return <Navigate to="/unauthorized" state={{ from: location }} replace />;
 };
-
-//START
-//   if (!auth?.role && !storedAccessToken) {
-//     // Neither role nor access token exists, redirect to sign-in
-//     return <Navigate to="/signInPage" state={{ from: location }} replace />;
-//   }
-
-//   if (!auth?.role && storedAccessToken && decodedToken) {
-//     // Role doesn't exist but access token exists, consider user authenticated
-//     const userRole = decodedToken.payload.role;
-//     // You might want to decode and verify the token server-side here
-//     if (userRole) {
-//       // Set the user's role in the authentication state
-//       auth({ ...auth, role: userRole });
-//     }
-//     return <Outlet />;
-//   }
-
-//   if (auth?.role && allowedRoles.includes(auth?.role)) {
-//     // User has the required role
-//     return <Outlet />;
-//   }
-
-//   // User has a role, but it's not in the allowedRoles
-//   return <Navigate to="/unauthorized" state={{ from: location }} replace />;
-// };
 
 //END
 // //   const accessToken = Cookies.get("access_token");
