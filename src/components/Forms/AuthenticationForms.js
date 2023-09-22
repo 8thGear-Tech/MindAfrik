@@ -159,7 +159,7 @@ export const SignInForm = () => {
       setAuth({ email, password, role, access_token }, true);
       // setUser("");
       // setPwd("");
-      // navigate(from, { replace: true });
+      navigate(from, { replace: true });
 
       // const { data } = response; // Destructure the data from the response
 

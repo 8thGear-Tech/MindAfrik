@@ -80,6 +80,29 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Counsellee Dashboard */}
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth allowedRoles={["Counsellee"]} />}>
+            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}> */}
+            <Route
+              path="counselleeDashboard"
+              element={<CounselleeDashboardHomePage />}
+            />
+          </Route>
+          <Route element={<RequireAuth allowedRoles={["Admin"]} />}>
+            <Route
+              path="adminDashboardHomePage"
+              element={<AdminDashboardHomePage />}
+            />
+          </Route>
+          <Route element={<RequireAuth allowedRoles={["Counsellor"]} />}>
+            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellor]} />}> */}
+            <Route
+              path="counsellorDashboard"
+              element={<CounsellorDashboardHomePage />}
+            />
+          </Route>
+        </Route>
         <Route path="/" element={<Home />} />
         <Route path="/logout" element={<UnderConstruction />} />
         <Route path="about" element={<About />} />
@@ -99,15 +122,15 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
         {/* Persist Login */}
         {/* Protected Routes */}
-        <Route element={<PersistLogin />}>
+        {/* <Route element={<PersistLogin />}>
           <Route element={<RequireAuth allowedRoles={["Admin"]} />}>
-            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}> */}
+            
             <Route
               path="adminDashboardHomePage"
               element={<AdminDashboardHomePage />}
             />
           </Route>
-        </Route>
+        </Route> */}
         <Route
           path="adminDashboardCounselleesPage"
           element={<AdminDashboardCounselleesPage />}
@@ -121,15 +144,15 @@ function App() {
           element={<AdminDashboardNotificationPage />}
         />
         {/* Counsellors Dashboard */}
-        <Route element={<PersistLogin />}>
+        {/* <Route element={<PersistLogin />}>
           <Route element={<RequireAuth allowedRoles={["Counsellor"]} />}>
-            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellor]} />}> */}
+           
             <Route
               path="counsellorDashboard"
               element={<CounsellorDashboardHomePage />}
             />
           </Route>
-        </Route>
+        </Route> */}
         <Route path="counsellorProfile" element={<CounsellorProfile />} />
         <Route
           path="counsellorCounselleeList"
@@ -141,16 +164,7 @@ function App() {
         />
         <Route path="counsellorNote" element={<CounsellorNote />} />
         <Route path="counsellorsDetails" element={<CounsellorsDetails />} />
-        {/* Counsellee Dashboard */}
-        <Route element={<PersistLogin />}>
-          <Route element={<RequireAuth allowedRoles={["Counsellee"]} />}>
-            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}> */}
-            <Route
-              path="counselleeDashboard"
-              element={<CounselleeDashboardHomePage />}
-            />
-          </Route>
-        </Route>
+
         <Route path="counselleeProfile" element={<CounselleeProfile />} />
         <Route path="counselleeSession" element={<CounselleeSession />} />
         <Route
