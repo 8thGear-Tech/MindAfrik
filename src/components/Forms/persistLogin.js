@@ -35,9 +35,10 @@ const PersistLogin = () => {
     console.log(`aT: ${JSON.stringify(auth?.access_token)}`);
   }, [isLoading]);
 
-  return (
-    <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>
-  );
+  return <>{auth?.access_token ? <Outlet /> : null}</>;
+  //   return (
+  //     <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>
+  //   );
 };
 
 export default PersistLogin;
