@@ -161,7 +161,8 @@ export const SignInForm = () => {
         console.log("Decoded Token:", decodedToken);
 
         Cookies.set("access_token", access_token, {
-          expires: new Date(Date.now() + 5 * 60 * 60 * 1000),
+          maxAge: 24 * 60 * 60 * 1000,
+          // expires: new Date(Date.now() + 5 * 60 * 60 * 1000),
         }); // Adjust the expiration time as needed
         // Now you can use role and access_token as needed
         console.log("Role:", role);

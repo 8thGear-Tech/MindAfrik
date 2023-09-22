@@ -2,6 +2,7 @@ import * as React from "react";
 // import { Component } from "react";
 //auth
 import RequireAuth from "./components/requireAuth";
+import PersistLogin from "./components/Forms/persistLogin";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // import { TestOneForm } from "./components/Forms/testoneform";
@@ -96,13 +97,16 @@ function App() {
         />
         {/* Admin Dashboard */}
         <Route path="unauthorized" element={<Unauthorized />} />
+        {/* Persist Login */}
         {/* Protected Routes */}
-        <Route element={<RequireAuth allowedRoles={["Admin"]} />}>
-          {/* <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}> */}
-          <Route
-            path="adminDashboardHomePage"
-            element={<AdminDashboardHomePage />}
-          />
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth allowedRoles={["Admin"]} />}>
+            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}> */}
+            <Route
+              path="adminDashboardHomePage"
+              element={<AdminDashboardHomePage />}
+            />
+          </Route>
         </Route>
         <Route
           path="adminDashboardCounselleesPage"
@@ -117,12 +121,14 @@ function App() {
           element={<AdminDashboardNotificationPage />}
         />
         {/* Counsellors Dashboard */}
-        <Route element={<RequireAuth allowedRoles={["Counsellor"]} />}>
-          {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellor]} />}> */}
-          <Route
-            path="counsellorDashboard"
-            element={<CounsellorDashboardHomePage />}
-          />
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth allowedRoles={["Counsellor"]} />}>
+            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellor]} />}> */}
+            <Route
+              path="counsellorDashboard"
+              element={<CounsellorDashboardHomePage />}
+            />
+          </Route>
         </Route>
         <Route path="counsellorProfile" element={<CounsellorProfile />} />
         <Route
@@ -136,12 +142,14 @@ function App() {
         <Route path="counsellorNote" element={<CounsellorNote />} />
         <Route path="counsellorsDetails" element={<CounsellorsDetails />} />
         {/* Counsellee Dashboard */}
-        <Route element={<RequireAuth allowedRoles={["Counsellee"]} />}>
-          {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}> */}
-          <Route
-            path="counselleeDashboard"
-            element={<CounselleeDashboardHomePage />}
-          />
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth allowedRoles={["Counsellee"]} />}>
+            {/* <Route element={<RequireAuth allowedRoles={[ROLES.Counsellee]} />}> */}
+            <Route
+              path="counselleeDashboard"
+              element={<CounselleeDashboardHomePage />}
+            />
+          </Route>
         </Route>
         <Route path="counselleeProfile" element={<CounselleeProfile />} />
         <Route path="counselleeSession" element={<CounselleeSession />} />
@@ -151,7 +159,6 @@ function App() {
         />
         <Route path="counselleeSession" element={<CounselleeSession />} />
         <Route path="counselleeTest" element={<CounselleeTestPage />} />
-
         {/* website */}
         <Route path="takeaTest" element={<TakeaTest />} />
         <Route
@@ -159,7 +166,6 @@ function App() {
           element={<UnderstandingYourResult />}
         />
         <Route path="resultPage" element={<ResultPage />} />
-
         {/* Authentication pages */}
         <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
         <Route path="sign-up-as-a-counsellor" element={<CounsellorSignUp />} />
@@ -173,7 +179,6 @@ function App() {
         <Route path="CreateBlog" element={<CreateBlog />} />
         <Route path="blog/:blogId" element={<IndividualBlog />} />
         <Route path="CrudApp" element={<CrudApp />} /> */}
-
         {/* Session */}
         <Route
           path="book-a-supportive-listening-session"
