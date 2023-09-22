@@ -5,16 +5,21 @@ export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
-
+  const [persist, setPersist] = useState(
+    JSON.parse(localStorage.getItem("persist")) || false
+  );
   //new
   // const [auth, setAuth] = useState({
   //   user: null,
   //   role: null,
   // });
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AuthContext.Provider value={{ auth, setAuth, persist, setPersist }}>
       {children}
     </AuthContext.Provider>
+    // <AuthContext.Provider value={{ auth, setAuth }}>
+    //   {children}
+    // </AuthContext.Provider>
   );
 };
 // export const AuthContext = createContext();
