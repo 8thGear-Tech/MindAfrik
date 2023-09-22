@@ -8,6 +8,7 @@ const RequireAuth = ({ allowedRoles }) => {
   const { auth } = useAuth();
   const location = useLocation();
   const storedAccessToken = Cookies.get("access_token");
+  const decodedToken = auth.decodedToken; // Access decodedToken from client-side state
   // const userRole = response.data.data;
   //  const [decodedRole, setDecodedRole] = useState(null);
 
@@ -59,9 +60,14 @@ const RequireAuth = ({ allowedRoles }) => {
   //   return <Navigate to="/unauthorized" state={{ from: location }} replace />;
   // }
 
-  if (!auth?.role && storedAccessToken) {
+  if (!auth?.role && storedAccessToken && decodedToken) {
     // Role doesn't exist but access token exists, consider user authenticated
+    const userRole = decodedToken.payload.role;
     // You might want to decode and verify the token server-side here
+    if (userRole) {
+      // Set the user's role in the authentication state
+      auth({ ...auth, role: userRole });
+    }
     return <Outlet />;
   }
   // "https://mindafrikserver.onrender.com/user/decode-token",
