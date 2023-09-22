@@ -153,15 +153,21 @@ export const SignInForm = () => {
         }
       );
 
-      console.log("Response:", response);
-      const access_token = response?.data?.access_token;
-      const role = response?.data?.role;
-      console.log("Access Token:", access_token);
-      console.log("Role:", role);
-      setAuth({ email, password, role, access_token }, true);
-      // setUser("");
-      // setPwd("");
-      navigate(from, { replace: true });
+      // console.log("Response:", response);
+
+      const { data } = response;
+
+      if (data.status === "Success") {
+        const { role, access_token } = data.data;
+        // const access_token = response?.data?.access_token;
+        // const role = response?.data?.role;
+        console.log("Access Token:", access_token);
+        console.log("Role:", role);
+        setAuth({ email, password, role, access_token }, true);
+        // setUser("");
+        // setPwd("");
+        navigate(from, { replace: true });
+      }
 
       // const { data } = response; // Destructure the data from the response
 
