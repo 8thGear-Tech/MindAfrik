@@ -23,6 +23,7 @@ const RequireAuth = ({ allowedRoles }) => {
 
       if (userRole) {
         setAuth({ ...auth, role: userRole });
+        return <Outlet />;
       }
     }
   }, [auth, storedAccessToken, decodedToken, setAuth]);
