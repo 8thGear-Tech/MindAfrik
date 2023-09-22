@@ -223,7 +223,13 @@ export const SignInForm = () => {
       setSubmitting(false); // Set form submission state to false
     }
   };
+  const togglePersist = () => {
+    setPersist((prev) => !prev);
+  };
 
+  useEffect(() => {
+    localStorage.setItem("persist", persist);
+  }, [persist]);
   return (
     <>
       <Formik
