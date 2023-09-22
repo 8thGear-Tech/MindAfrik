@@ -43,6 +43,9 @@ const RequireAuth = ({ allowedRoles }) => {
 
   //   return <Navigate to="/unauthorized" state={{ from: location }} replace />;
   // };
+  if (!auth?.access_token) {
+    return <Navigate to="/signInPage" state={{ from: location }} replace />;
+  }
 
   return auth?.role?.find((role) => allowedRoles?.includes(role)) ? (
     <Outlet />
