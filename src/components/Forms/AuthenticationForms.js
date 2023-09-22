@@ -166,7 +166,16 @@ export const SignInForm = () => {
         setAuth({ email, password, role, access_token }, true);
         // setUser("");
         // setPwd("");
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        if (role === "Counsellor") {
+          navigate("/counsellorDashboard", { replace: true });
+        } else if (role === "Admin") {
+          navigate("/adminDashboard", { replace: true });
+        } else if (role === "Counselee") {
+          navigate("/counselleeDashboard", { replace: true });
+        } else {
+          navigate("/unauthorized", { replace: true });
+        }
       }
 
       // const { data } = response; // Destructure the data from the response
