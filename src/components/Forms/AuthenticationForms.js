@@ -164,6 +164,7 @@ export const SignInForm = () => {
         // Now you can use role and access_token as needed
         console.log("Role:", role);
         console.log("Access Token:", access_token);
+        console.log("Decoded Token:", decodedToken);
 
         // Assuming setAuth is a function to set authentication state
         setAuth({ email, password, role, access_token, decodedToken }); // Set authentication state to true
