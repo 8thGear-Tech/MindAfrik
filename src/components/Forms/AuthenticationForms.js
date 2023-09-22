@@ -308,6 +308,15 @@ export const SignInForm = () => {
                   {err}
                 </p>
               )}
+              <div className="persistCheck">
+                <input
+                  type="checkbox"
+                  id="persist"
+                  onChange={togglePersist}
+                  checked={persist}
+                />
+                <label htmlFor="persist">Trust This Device</label>
+              </div>
             </div>
           </Form>
         )}
