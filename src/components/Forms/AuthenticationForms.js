@@ -163,8 +163,8 @@ export const SignInForm = () => {
         // const role = response?.data?.role;
         console.log("Access Token:", access_token);
         console.log("Role:", role);
-        setAuth({ email, password, role, access_token });
-        // setAuth({ email, password, role, access_token }, true);
+        // setAuth({ email, password, role, access_token });
+        setAuth({ email, password, role, access_token }, true);
         // setUser("");
         // setPwd("");
         // navigate(from, { replace: true });
