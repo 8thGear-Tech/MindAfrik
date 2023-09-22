@@ -157,6 +157,8 @@ export const SignInForm = () => {
 
       if (data.status === "Success") {
         const { role, access_token, decodedToken } = data.data; // Destructure role and access_token from data.data
+        // Log the decodedToken
+        console.log("Decoded Token:", decodedToken);
 
         Cookies.set("access_token", access_token, {
           expires: new Date(Date.now() + 5 * 60 * 60 * 1000),
