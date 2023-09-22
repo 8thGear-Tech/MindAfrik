@@ -156,9 +156,10 @@ export const SignInForm = () => {
       const { data } = response; // Destructure the data from the response
 
       if (data.status === "Success") {
-        const { role, access_token, decodedToken } = data.data; // Destructure role and access_token from data.data
+        const { role, access_token } = data.data; // Destructure role and access_token from data.data
+        // const { role, access_token, decodedToken } = data.data; // Destructure role and access_token from data.data
         // Log the decodedToken
-        console.log("Decoded Token:", decodedToken);
+        // console.log("Decoded Token:", decodedToken);
 
         Cookies.set("access_token", access_token, {
           maxAge: 24 * 60 * 60 * 1000,
@@ -167,10 +168,11 @@ export const SignInForm = () => {
         // Now you can use role and access_token as needed
         console.log("Role:", role);
         console.log("Access Token:", access_token);
-        console.log("Decoded Token:", decodedToken);
+        // console.log("Decoded Token:", decodedToken);
 
         // Assuming setAuth is a function to set authentication state
-        setAuth({ email, password, role, access_token, decodedToken }); // Set authentication state to true
+        setAuth({ email, password, role, access_token }); // Set authentication state to true
+        // setAuth({ email, password, role, access_token, decodedToken }); // Set authentication state to true
         if (role === "Counsellor") {
           navigate("/counsellorDashboard", { replace: true });
         } else if (role === "Admin") {
