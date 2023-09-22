@@ -15,6 +15,7 @@ const RequireAuth = ({ allowedRoles }) => {
   console.log("Auth:", auth);
   console.log("Allowed Roles:", allowedRoles);
   console.log("Access Token:", storedAccessToken);
+  console.log("Decoded Token:", decodedToken);
 
   //   useEffect(() => {
   //     // Check if the user has a valid access token and decoded token
