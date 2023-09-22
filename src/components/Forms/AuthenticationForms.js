@@ -119,7 +119,8 @@ import { PendingVerificationModal } from "../../pages/authenticationPages/emailV
 
 // export const SignInForm = ({ userRole }) => {
 export const SignInForm = () => {
-  const { setAuth } = useAuth();
+  const { setAuth, persist, setPersist } = useAuth();
+  // const { setAuth } = useAuth();
   const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -153,36 +154,43 @@ export const SignInForm = () => {
       );
 
       console.log("Response:", response);
-      const { data } = response; // Destructure the data from the response
+      const access_token = response?.data?.access_token;
+      const roles = response?.data?.role;
+      setAuth({ email, password, roles, access_token });
+      // setUser("");
+      // setPwd("");
+      navigate(from, { replace: true });
 
-      if (data.status === "Success") {
-        const { role, access_token } = data.data; // Destructure role and access_token from data.data
-        // const { role, access_token, decodedToken } = data.data; // Destructure role and access_token from data.data
-        // Log the decodedToken
-        // console.log("Decoded Token:", decodedToken);
+      // const { data } = response; // Destructure the data from the response
 
-        Cookies.set("access_token", access_token, {
-          maxAge: 24 * 60 * 60 * 1000,
-          // expires: new Date(Date.now() + 5 * 60 * 60 * 1000),
-        }); // Adjust the expiration time as needed
-        // Now you can use role and access_token as needed
-        console.log("Role:", role);
-        console.log("Access Token:", access_token);
-        // console.log("Decoded Token:", decodedToken);
+      // if (data.status === "Success") {
+      //   const { role, access_token } = data.data; // Destructure role and access_token from data.data
+      //   // const { role, access_token, decodedToken } = data.data; // Destructure role and access_token from data.data
+      //   // Log the decodedToken
+      //   // console.log("Decoded Token:", decodedToken);
 
-        // Assuming setAuth is a function to set authentication state
-        setAuth({ email, password, role, access_token }, true); // Set authentication state to true
-        // setAuth({ email, password, role, access_token, decodedToken }); // Set authentication state to true
-        if (role === "Counsellor") {
-          navigate("/counsellorDashboard", { replace: true });
-        } else if (role === "Admin") {
-          navigate("/adminDashboard", { replace: true });
-        } else if (role === "Counselee") {
-          navigate("/counselleeDashboard", { replace: true });
-        } else {
-          navigate("/unauthorized", { replace: true });
-        }
-      }
+      //   Cookies.set("access_token", access_token, {
+      //     maxAge: 24 * 60 * 60 * 1000,
+      //     // expires: new Date(Date.now() + 5 * 60 * 60 * 1000),
+      //   }); // Adjust the expiration time as needed
+      //   // Now you can use role and access_token as needed
+      //   console.log("Role:", role);
+      //   console.log("Access Token:", access_token);
+      //   // console.log("Decoded Token:", decodedToken);
+
+      //   // Assuming setAuth is a function to set authentication state
+      //   setAuth({ email, password, role, access_token }, true); // Set authentication state to true
+      //   // setAuth({ email, password, role, access_token, decodedToken }); // Set authentication state to true
+      //   if (role === "Counsellor") {
+      //     navigate("/counsellorDashboard", { replace: true });
+      //   } else if (role === "Admin") {
+      //     navigate("/adminDashboard", { replace: true });
+      //   } else if (role === "Counselee") {
+      //     navigate("/counselleeDashboard", { replace: true });
+      //   } else {
+      //     navigate("/unauthorized", { replace: true });
+      //   }
+      // }
     } catch (err) {
       if (!err?.response) {
         setErr("No Server Response");
