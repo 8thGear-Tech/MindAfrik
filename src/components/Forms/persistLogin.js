@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 const PersistLogin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const refresh = useRefreshToken();
-  const storedAccessToken = Cookies.get("access_token");
+  //   const storedAccessToken = Cookies.get("access_token");
   const { auth, persist } = useAuth();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const PersistLogin = () => {
 
   useEffect(() => {
     console.log(`isLoading: ${isLoading}`);
-    console.log(`aT: ${JSON.stringify(auth?.storedAccessToken)}`);
+    console.log(`aT: ${JSON.stringify(auth?.access_token)}`);
   }, [isLoading]);
 
   return (
