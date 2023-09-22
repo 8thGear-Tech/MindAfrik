@@ -171,7 +171,7 @@ export const SignInForm = () => {
         // console.log("Decoded Token:", decodedToken);
 
         // Assuming setAuth is a function to set authentication state
-        setAuth({ email, password, role, access_token }); // Set authentication state to true
+        setAuth({ email, password, role, access_token }, true); // Set authentication state to true
         // setAuth({ email, password, role, access_token, decodedToken }); // Set authentication state to true
         if (role === "Counsellor") {
           navigate("/counsellorDashboard", { replace: true });
