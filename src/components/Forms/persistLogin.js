@@ -23,20 +23,12 @@ const PersistLogin = () => {
       }
     };
 
-    if (auth) {
-      !auth?.access_token && persist
-        ? verifyRefreshToken()
-        : setIsLoading(false);
-    }
+    // persist added here AFTER tutorial video
+    // Avoids unwanted call to verifyRefreshToken
+    !auth?.access_token && persist ? verifyRefreshToken() : setIsLoading(false);
 
     return () => (isMounted = false);
-  }, [auth, persist]);
-  //     // persist added here AFTER tutorial video
-  //     // Avoids unwanted call to verifyRefreshToken
-  //     !auth?.access_token && persist ? verifyRefreshToken() : setIsLoading(false);
-
-  //     return () => (isMounted = false);
-  //   }, []);
+  }, []);
 
   useEffect(() => {
     console.log(`isLoading: ${isLoading}`);
