@@ -13,6 +13,10 @@ export const AuthContextProvider = ({ children }) => {
   //   user: null,
   //   role: null,
   // });
+  useEffect(() => {
+    localStorage.setItem("persist", JSON.stringify(persist));
+  }, [persist]);
+
   return (
     <AuthContext.Provider value={{ auth, setAuth, persist, setPersist }}>
       {children}
