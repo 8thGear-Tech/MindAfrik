@@ -143,10 +143,11 @@ export const SignInForm = () => {
     try {
       const response = await axios.post(
         "https://mindafrikserver.onrender.com/user/login",
-        {
+        JSON.stringify({
           email: email,
           password: password,
-        },
+        }),
+
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
