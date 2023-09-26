@@ -8,6 +8,11 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+
 // import Form from "react-bootstrap/Form";
 import {
   SignUpBtn,
@@ -1334,7 +1339,8 @@ export const SignUpAsCounselleeForm = () => {
 
 export const SignUpAsCounsellorForm = () => {
   const [showModal, setShowModal] = useState(false);
-  const [startDate, setStartDate] = useState("");
+  // const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
   // const [startDate, setStartDate] = useState(new Date());
   const [isSubmitting, setSubmitting] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
@@ -1614,7 +1620,7 @@ export const SignUpAsCounsellorForm = () => {
                 onChange={(date) => setStartDate(date)}
                 className="placeholderRadius mt-4"
               /> */}
-              <DatePicker
+              {/* <DatePicker
                 showIcon
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
@@ -1623,6 +1629,30 @@ export const SignUpAsCounsellorForm = () => {
                 showYearDropdown
                 dropdownMode="select"
                 className="placeholderRadius mt-4"
+              /> */}
+              {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DemoContainer
+                  components={["DatePicker", "DatePicker", "DatePicker"]}
+                >
+                  <DatePicker
+                    label={'"year", "month" and "day"'}
+                    views={["year", "month", "day"]}
+                  />
+                  <DatePicker label={'"day"'} views={["day"]} />
+                  <DatePicker
+                    label={'"month" and "year"'}
+                    views={["month", "year"]}
+                  />
+                </DemoContainer>
+              </LocalizationProvider> */}
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                dropdownMode="select"
+                showMonthDropdown
+                showYearDropdown
+                maxDate={new Date()}
+                // maxDate={addDays(new Date(), 5)}
               />
               {/* {errors.dateOfBirth && touched.dateOfBirth ? (
                 <div className="ms-3 auth-error-message">
