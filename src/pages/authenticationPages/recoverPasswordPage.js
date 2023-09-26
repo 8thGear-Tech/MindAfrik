@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import verifyOtp from "../../assets/images/emailverification/verifyOtp.png";
+// import verifyOtp from "../../assets/images/emailverification/verifyOtp.png";
 
 //images
 import mindafrikfulllogo from "../../assets/images/logo/mindafrik-full-logo-250.png";
@@ -55,7 +55,7 @@ export const VerifyOTP = () => {
               <div className="pb-5">
                 <div className="">
                   <img
-                    src={verifyOtp}
+                    // src={verifyOtp}
                     className="img-fluid"
                     width="400"
                     height="400"

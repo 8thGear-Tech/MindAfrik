@@ -181,7 +181,7 @@ function App() {
         />
         <Route path="resultPage" element={<ResultPage />} />
         {/* Authentication pages */}
-        <Route path="counselleeSignUp" element={<CounselleeSignUp />} />
+        <Route path="sign-up-as-a-counsellee" element={<CounselleeSignUp />} />
         <Route path="sign-up-as-a-counsellor" element={<CounsellorSignUp />} />
         <Route path="signInPage" element={<SignInPage />} />
         <Route path="verify-email" element={<PendingVerification />} />
