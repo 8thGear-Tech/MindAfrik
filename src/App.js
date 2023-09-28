@@ -3,7 +3,13 @@ import * as React from "react";
 //auth
 import RequireAuth from "./components/requireAuth";
 import PersistLogin from "./components/Forms/persistLogin";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useRoutes,
+} from "react-router-dom";
 
 // import { TestOneForm } from "./components/Forms/testoneform";
 // import { Blog } from "./components/Forms/blog";
@@ -101,6 +107,7 @@ function App() {
               path="counsellorDashboard"
               element={<CounsellorDashboardHomePage />}
             />
+            <Route path="counsellorProfile" element={<CounsellorProfile />} />
           </Route>
         </Route>
         <Route path="/" element={<Home />} />
@@ -153,7 +160,6 @@ function App() {
             />
           </Route>
         </Route> */}
-        <Route path="counsellorProfile" element={<CounsellorProfile />} />
         <Route
           path="counsellorCounselleeList"
           element={<CounselorsDashboardCounseleesPage />}
@@ -201,9 +207,21 @@ function App() {
         <Route path="subscribe-to-newsletter" element={<NewsletterPage />} />
       </Routes>
 
-      <footer>
+      {/* Footer conditional rendering */}
+      {window.location.pathname.includes("sign-up-as-a-counsellee") ||
+      window.location.pathname.includes("sign-up-as-a-counsellor") ||
+      window.location.pathname.includes("signInPage") ||
+      window.location.pathname.includes("counselleeDashboard") ||
+      window.location.pathname.includes("adminDashboardHomePage") ||
+      window.location.pathname.includes("counsellorDashboard") ? null : (
+        <footer>
+          <Footer />
+        </footer>
+      )}
+
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </BrowserRouter>
   );
 }
