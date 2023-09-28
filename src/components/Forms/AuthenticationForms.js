@@ -898,18 +898,18 @@ export const ResetPasswordForm = () => {
 };
 
 export const SignUpAsCounselleeForm = () => {
-  const [isSubmitting, setSubmitting] = useState(false);
+    const [showModal, setShowModal] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const togglePasswordVisibility1 = () => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
   };
-
+ const [isSubmitting, setSubmitting] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     setSubmitting(true); // Set isSubmitting to true to disable the button during form submission
 
     const firstName = values.firstName;
@@ -920,7 +920,7 @@ export const SignUpAsCounselleeForm = () => {
     try {
       await axios.post(
         // "http://localhost:4000/user/signup",
-        "https://mindafrikserver.onrender.com/user/signup",
+        "https://mindafrikserver.onrender.com/user/sign-up-as-a-counsellee",
         // inputs
         {
           firstName: firstName,
@@ -929,7 +929,9 @@ export const SignUpAsCounselleeForm = () => {
           password: password,
         }
       );
-      navigate("/verify-email");
+      // navigate("/verify-email");
+        resetForm();
+        setShowModal(true);
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
@@ -946,7 +948,7 @@ export const SignUpAsCounselleeForm = () => {
           lastName: "",
           email: "",
           password: "",
-          userRole: "counsellee",
+          // userRole: "counsellee",
         }}
         validationSchema={Yup.object().shape({
           firstName: Yup.string().required("First name is required"),
@@ -1036,7 +1038,7 @@ export const SignUpAsCounselleeForm = () => {
               ) : null}
             </div>
 
-            <Field type="hidden" name="userRole" value="counsellee" />
+            {/* <Field type="hidden" name="userRole" value="counsellee" /> */}
             {/* <div className="text-center mt-4">
               <button type="submit">Submit</button>
             </div> */}
@@ -1075,6 +1077,9 @@ export const SignUpAsCounselleeForm = () => {
           </Form>
         )}
       </Formik>
+      {showModal && (
+        <PendingVerificationModal handleClose={() => setShowModal(false)} />
+      )}
     </>
   );
 };
