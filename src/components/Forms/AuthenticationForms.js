@@ -106,7 +106,7 @@ import { PendingVerificationModal } from "../../pages/authenticationPages/emailV
 //           Forgot Password, <Link to="/ForgotPasswordPage">Click here</Link>
 //         </h6>
 //         <h6 className="text-muted text-center pt-2">
-//           Don't have an account? <Link to="/counselleeSignUp">SignUp</Link>
+//           Don't have an account? <Link to="/sign-up-as-a-counsellee">SignUp</Link>
 //         </h6>
 //       </Form>{" "}
 //       {err && (
@@ -177,7 +177,7 @@ export const SignInForm = () => {
           navigate("/counsellorDashboard", { replace: true });
         } else if (role === "Admin") {
           navigate("/adminDashboard", { replace: true });
-        } else if (role === "Counselee") {
+        } else if (role === "Counsellee") {
           navigate("/counselleeDashboard", { replace: true });
         } else {
           navigate("/unauthorized", { replace: true });
@@ -898,12 +898,12 @@ export const ResetPasswordForm = () => {
 };
 
 export const SignUpAsCounselleeForm = () => {
-    const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const togglePasswordVisibility1 = () => {
     setShowPassword1((prevShowPassword) => !prevShowPassword);
   };
- const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   const [err, setErr] = useState(null);
 
@@ -930,8 +930,8 @@ export const SignUpAsCounselleeForm = () => {
         }
       );
       // navigate("/verify-email");
-        resetForm();
-        setShowModal(true);
+      resetForm();
+      setShowModal(true);
     } catch (err) {
       const errorMessage = err.response?.data || "An error occurred";
       setErr(errorMessage);
