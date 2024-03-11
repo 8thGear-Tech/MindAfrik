@@ -15,6 +15,7 @@ import underconstructionhero from "../../assets/images/hero/underconstructionher
 //icons
 import { PhoneIcon } from "../../assets/icons/socialIcons";
 import { Mailicon } from "../../assets/icons/socialIcons";
+import { LogoutButton } from "../../components/Forms/AuthenticationForms";
 // cards
 // import { AdminStatisticsCard } from "../../components/allCards/dashBoardcards";
 // import { CoreValues } from "../../components/allCards/AboutUsCards";
@@ -28,6 +29,7 @@ const UnderConstruction = () => {
       <div className="px-3">
         {" "}
         <NavbarSection />
+        <LogoutButton />
         <div className="px-4 container-fluid underconstructionPageBg pb-4">
           <div className="row align-items-center justify-content-center mt-3">
             <div className="col-lg-6 col-md-12 col-sm-12 ">

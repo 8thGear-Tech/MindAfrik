@@ -184,6 +184,16 @@ p {
   width: 8rem;
 }
 
+.submitFormBtn {
+  width: 10rem;
+  background-color: #0060c6;
+  color: #fff;
+}
+.submitFormBtn:hover {
+  background-color: #0060c6;
+  color: #fff;
+}
+
 .bookNowBtn {
   background: #0060c6;
   border-radius: 10px;
@@ -683,6 +693,10 @@ p {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
 }
 
+.communityBorder {
+  border: 1px solid #0060c6 !important;
+}
+
 .AdvisoryImage {
   overflow: hidden;
   height: 300px;
@@ -818,6 +832,27 @@ p {
     height: 2200px;
   }
 }
+.modal-header {
+  border-bottom: none !important;
+}
+
+.formOptions {
+  color: #5c5b5b;
+  font-size: 0.85rem;
+}
+
+.bookingFormBg {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bookingFormText {
+  font-size: 0.85rem;
+}
+
+.newsletterFormShadow {
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
 .sectionTwoBgColor {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 35px;
@@ -855,9 +890,10 @@ p {
 }
 
 .placeholderRadius {
-  border: 1px solid #828282;
-  border-radius: 50px;
-  padding: 8px 20px;
+  border: 1px solid #d8d7d7;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 3px 20px;
 }
 
 .errormsg {
@@ -866,6 +902,57 @@ p {
 
 .hello {
   color: red;
+}
+
+.auth-input-error {
+  border: 1px solid red;
+}
+
+.auth-form-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(235, 232, 232);
+  border-radius: 8px;
+  width: 380px;
+  height: 46px;
+  background-color: rgb(236, 245, 248);
+  transition: border-color 0.3s ease;
+}
+
+.auth-error-message {
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: red;
+}
+
+.formikFieldStyle {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  outline: none !important;
+  color: #000 !important;
+}
+
+.auth-otp-field {
+  width: 3rem;
+  height: 4.8rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid rgb(232, 232, 235);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #b2adad;
+}
+
+.auth-otp-field::-moz-placeholder {
+  color: rgb(175, 173, 173);
+}
+
+.auth-otp-field::placeholder {
+  color: rgb(175, 173, 173);
 }
 
 .sectionOneBgColor {
@@ -892,5 +979,11 @@ p {
   background: rgba(129, 229, 140, 0.5);
   border-radius: 10px;
   height: 500px;
+}
+
+.emailVerifiedCard {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: #fff;
 }
 /*# sourceMappingURL=styles.css.map */

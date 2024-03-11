@@ -42,13 +42,15 @@ import Button from "react-bootstrap/Button";
 export const BookASessionBtn = () => {
   return (
     <>
-      <a
+      {/* <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSc02gsz28SwYWwPIQoj7iIry4XY9W0hxyCqioQiXeVxjNZFkw/viewform"
         target="_blank"
       >
-        {" "}
+        {" "} */}
+      <Link to="/book-a-supportive-listening-session">
         <Button className="BookaSessionBtn">Book a Session</Button>
-      </a>
+      </Link>
+      {/* </a> */}
       {/* <a href="/counsellorsDetails">
         {" "}
         <Button className="BookaSessionBtn">Book a Session</Button>
@@ -218,6 +220,13 @@ export const SendBtn = () => {
   return (
     <div>
       <Button className="sendBtn">Send</Button>{" "}
+    </div>
+  );
+};
+export const SubmitFormBtn = () => {
+  return (
+    <div>
+      <Button className="sendBtn">Submit</Button>{" "}
     </div>
   );
 };

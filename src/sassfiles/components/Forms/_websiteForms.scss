@@ -1,3 +1,5 @@
+@use "../../colors" as *;
+
 .formBg {
   background: rgba(255, 255, 255, 0.7);
   filter: blur(0.5px);
@@ -19,4 +21,24 @@
   .assessmentBgColor {
     height: 2200px;
   }
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.formOptions {
+  color: #5c5b5b;
+  font-size: 0.85rem;
+}
+.bookingFormBg {
+  // border: 1px solid #cce3fc !important;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bookingFormText {
+  font-size: 0.85rem;
+}
+.newsletterFormShadow {
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }

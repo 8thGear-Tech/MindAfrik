@@ -23,7 +23,7 @@ export const PrivacyPolicy = () => {
         <div className="container">
           <div className="row pb-5 pt-2 mb-5">
             <div className="justify-content-end">
-              <h3 className="">Privacy Policy</h3>
+              <h3 className="mt-5">Privacy Policy</h3>
               <p className="">
                 Mindafrik is committed to protecting the privacy and security of
                 her users. This Privacy Policy outlines the types of personal

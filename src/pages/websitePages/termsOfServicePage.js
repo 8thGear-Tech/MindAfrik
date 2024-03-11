@@ -22,7 +22,7 @@ export const TermsOfService = () => {
         <NavSection />{" "}
         <div className="container">
           <div className="row pb-5 pt-2 my-5">
-            <div className="justify-content-center text-center">
+            <div className="justify-content-center ">
               <h3 className="">Terms of Service</h3>
               {/* <hr style={{ width: "331px" }} className="text-center" /> */}
               <p className="">

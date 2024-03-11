@@ -27,6 +27,9 @@
 @use "./pages/dashboardPages/counsellee/counseleesDashboardHomePage" as *;
 @use "./pages/dashboardPages/counsellee/counseleeDashboard-take-a-testPage" as *;
 
+//authentication
+@use "./pages/authenticationPages/emailVerified" as *;
+
 // .offcanvas {
 //   transition: transform 1000ms ease-in-out;
 // }

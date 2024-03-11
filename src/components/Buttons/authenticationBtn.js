@@ -27,6 +27,18 @@ export const LoginBtn = () => {
     </>
   );
 };
+export const ContinueLoginBtn = () => {
+  return (
+    <>
+      <Link to="/signInPage">
+        {" "}
+        <Button className="submitFormBtn btn">Continue</Button>
+        {/* <Button className="LoginBtn">Continue</Button> */}
+      </Link>
+    </>
+  );
+};
+
 // export const SignUpBtn = () => {
 //   return (
 //     <>

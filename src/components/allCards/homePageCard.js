@@ -1,7 +1,4 @@
-// howItWorksCard
-// whyChooseUsCard
-// testimonialsCard
-
+import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
@@ -30,7 +27,7 @@ import image3 from "../../assets/images/home/image3.png";
 import { BookASessionBtn } from "../Buttons/actionBtn";
 
 export const HowItWorksCard = (props) => {
-  const { icon, title, text } = props;
+  const { icon, title, text, link } = props;
   return (
     <>
       <Card
@@ -59,7 +56,7 @@ export const HowItWorksCard = (props) => {
             //   fontSize: "1rem",
             //   fontWeight: 600,
             // }}
-            href="#"
+            href={link}
           >
             Read More
           </Card.Link>
@@ -434,9 +431,9 @@ export const WhyChooseUsCardNew = () => {
               </div>
             </div>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <BookASessionBtn />
-          </div>
+          </div> */}
 
           {/* <div className="col-lg-4 col-md-4 col-sm-10 px-lg-4 d-flex align-items-center ">
             {" "}
@@ -592,6 +589,11 @@ export const WhyChooseUsCardNew = () => {
               </Card> */}
         {/* </div>
           </div> */}
+        <p className="text-center">
+          Book empowering hours per month where you can freely share, heal and
+          flourish. Click{" "}
+          <Link to="/book-a-supportive-listening-session">here</Link> to start.
+        </p>
       </div>
       {/* </div> */}
     </>
@@ -998,7 +1000,7 @@ const TestimonialsNewCard = (props) => {
 
 export const TestimonialsNew = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid newsletterBg">
       <div className="row d-flex justify-content-center my-3">
         <h3 className="text-center pt-5">Testimonials</h3>
         <p className="text-center">

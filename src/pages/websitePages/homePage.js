@@ -21,6 +21,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
 
 //images
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -28,6 +29,8 @@ import howitworksstepsone from "../../assets/images/home/howitworksstepsone.png"
 import howitworksstepstwo from "../../assets/images/home/howitworksstepstwo.png";
 import CardIcon from "../../assets/images/jeremy-perkins-UgNjyPkphtU-unsplash.jpg";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import { LogoutButton } from "../../components/Forms/AuthenticationForms";
+import { NewsletterPage } from "../../components/Forms/websiteForms";
 
 const Home = () => (
   <>
@@ -40,7 +43,9 @@ const Home = () => (
     {/* <TestimonialCarousel /> */}
     {/* <TestimonialCarouselTwo /> */}
     {/* <WhyChooseUsCard /> */}
+    <Community />
     <TestimonialsNew />
+    <NewsletterPage />
     {/* <TestimonialsCard /> */}
     {/* <Newsletter /> */}
   </>
@@ -51,6 +56,10 @@ const HowItWorksOne = () => {
     <>
       <div className="container-fluid p-5 ">
         {" "}
+        {/* <a href="/signInPage">
+          <h3 className="text-center">Sign In</h3>
+        </a> */}
+        {/* <LogoutButton /> */}
         <h3 className="text-center">How It Works</h3>
         <img
           src={howitworksstepsone}
@@ -128,6 +137,83 @@ const HowItWorksTwo = () => {
           <BookASessionBtn />
         </div>
       </div>
+    </>
+  );
+};
+
+const Community = () => {
+  return (
+    <>
+      <div className="container-fluid">
+        <div className="row justify-content-center g-4 mt-2 py-4">
+          <div className="col-lg-5 col-md-6 d-flex align-items-center">
+            <div className="p-5 bg-body-tertiary border rounded-3 text-center communityBorder">
+              <h3>Join a support group</h3>
+              <p>
+                Join a community for empowerment sessions to connect, share,
+                learn, heal, and flourish with other like-minded fellows.
+              </p>
+              <a href="https://forms.gle/oDf261Ybmn69d9Ex7" target="_blank">
+                <Button className="BookaSessionBtn">Join Now</Button>
+              </a>
+            </div>
+          </div>
+          <div className="col-lg-5 col-md-6 d-flex align-items-center">
+            <div className="p-5 bg-body-tertiary border rounded-3 text-center communityBorder">
+              <h3>Join our Gist House</h3>
+              <p>
+                The gist house is our community group where regular helpful tips
+                and sessions take place to support your well-being and total
+                success.
+                {/* While the support group is more personalized,
+                sectionalized, and periodical, the gist house gives you access
+                to regular tips and sessions to all our services. Click to join
+                now. */}
+              </p>
+              <a href="https://bit.ly/MindAfrikGISTSHOUSE" target="_blank">
+                <Button className="BookaSessionBtn">Join Now</Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="container-fluid">
+        {" "}
+        <div class="row d-flex justify-content-between g-0 mt-5 py-4">
+       
+          <div class="col-lg-6 col-md-6 align-items-center">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3 text-center">
+             
+              <h3>Join a support group</h3>
+              <p>
+                Join a community for empowerment sessions to connect, share,
+                learn, heal, and flourish with other like-minded fellows.
+              </p>
+              <a href="https://forms.gle/oDf261Ybmn69d9Ex7" target="_blank">
+                {" "}
+                <Button className="BookaSessionBtn">Join Now</Button>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 align-items-center">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3 text-center">
+              <h3>Join our Gist House</h3>
+              <p>
+                The gist house is our community group where regular helpful tips
+                and sessions take place to support your well-being and total
+                success. While the support group is more personalized,
+                sectionalized, and periodical, the gist house gives you access
+                to regular tips and sessions to all our services. Click to join
+                now.
+              </p>
+              <a href="https://forms.gle/oDf261Ybmn69d9Ex7" target="_blank">
+                <Button className="BookaSessionBtn">Join Now</Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </>
   );
 };
