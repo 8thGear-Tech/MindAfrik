@@ -32,12 +32,12 @@ export const Footer = () => {
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
                 <a href="#" class="nav-link p-0 text-muted">
-                  info@mindafrik.com
+                  info@8thgearpartners.com
                 </a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">
-                  +2349060845747
+                <a href="tel:2348094818883" class="nav-link p-0 text-muted">
+                  +2348094818883
                 </a>
               </li>
               <div className="d-flex">
